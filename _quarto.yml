@@ -1,0 +1,25 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  navbar:
+    left:
+      - text: "home"
+        href: eam-home.qmd
+      - text: "theory"
+        href: eam-slide.qmd
+      - text: "practice"
+        href: eam-workshop.qmd
+      - text: "credits"
+        href: eam-credits.qmd
+
+format:
+  html: 
+    theme: cosmo
+    fontsize: 1em
+    linestretch: 1.7
+    mainfont: Helvetica Neue
+    css: styles.css
+    toc: true
+

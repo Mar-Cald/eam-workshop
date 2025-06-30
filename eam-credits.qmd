@@ -1,0 +1,14 @@
+---
+title: " "
+---
+
+## 🔬 EMC2 Resources
+### 📘 Tutorial
+[Model Based Sampling with EMC2 - Extended Models of Choice](https://bookdown.org/reilly_innes/EMC_bookdown/){target="_blank"}.
+A comprehensive, step-by-step guide covering model structure, inference, and visualization using EMC2.
+
+### 📄 [Preprint](https://osf.io/2e4dq_v3){target="_blank"}
+Provides theoretical background, methodology, and applications of EMC2.
+
+### 🧠 Summer School Materials
+From the [Model Based Neuroscience Summer School](https://modelbasedneurosci.com/){target="_blank"} — highly recommended for those interested in hands-on training in cognitive modeling and Bayesian inference.

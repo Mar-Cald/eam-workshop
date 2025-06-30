@@ -1,0 +1,25 @@
+---
+title: " "
+---
+
+## Set up
+
+```{r, echo=TRUE}
+# # If not already done, install the EMC2 package
+# remotes::install_github("ampl-psych/EMC2",ref="dev")
+library(EMC2)
+```
+
+## Design specification
+
+Specify how model parameters map to experimental conditions using linear model formulas. The design function creates a design object that specifies:
+
+• The model type (e.g., DDM)
+
+• Linear models for estimated parameter types (omitted types are set to default values)
+
+• Parameters to fix as constants (optional)
+
+• Functions to create custom factors (optional)
+
+• Custom contrast coding for factors (optional)

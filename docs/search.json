@@ -1,0 +1,86 @@
+[
+  {
+    "objectID": "eam-credits.html",
+    "href": "eam-credits.html",
+    "title": "",
+    "section": "",
+    "text": "Model Based Sampling with EMC2 - Extended Models of Choice. A comprehensive, step-by-step guide covering model structure, inference, and visualization using EMC2.\n\n\n\nProvides theoretical background, methodology, and applications of EMC2.\n\n\n\nFrom the Model Based Neuroscience Summer School — highly recommended for those interested in hands-on training in cognitive modeling and Bayesian inference."
+  },
+  {
+    "objectID": "eam-credits.html#set-up",
+    "href": "eam-credits.html#set-up",
+    "title": "Practical introduction",
+    "section": "",
+    "text": "# # If not already done, install the EMC2 package\n# remotes::install_github(\"ampl-psych/EMC2\",ref=\"dev\")\nlibrary(EMC2)"
+  },
+  {
+    "objectID": "eam-credits.html#design-specification",
+    "href": "eam-credits.html#design-specification",
+    "title": "Practical introduction",
+    "section": "Design specification",
+    "text": "Design specification\nSpecify how model parameters map to experimental conditions using linear model formulas. The design function creates a design object that specifies:\n• The model type (e.g., DDM)\n• Linear models for estimated parameter types (omitted types are set to default values)\n• Parameters to fix as constants (optional)\n• Functions to create custom factors (optional)\n• Custom contrast coding for factors (optional)"
+  },
+  {
+    "objectID": "eam-workshop.html",
+    "href": "eam-workshop.html",
+    "title": "",
+    "section": "",
+    "text": "# # If not already done, install the EMC2 package\n# remotes::install_github(\"ampl-psych/EMC2\",ref=\"dev\")\nlibrary(EMC2)"
+  },
+  {
+    "objectID": "eam-workshop.html#set-up",
+    "href": "eam-workshop.html#set-up",
+    "title": "",
+    "section": "",
+    "text": "# # If not already done, install the EMC2 package\n# remotes::install_github(\"ampl-psych/EMC2\",ref=\"dev\")\nlibrary(EMC2)"
+  },
+  {
+    "objectID": "eam-workshop.html#design-specification",
+    "href": "eam-workshop.html#design-specification",
+    "title": "",
+    "section": "Design specification",
+    "text": "Design specification\nSpecify how model parameters map to experimental conditions using linear model formulas. The design function creates a design object that specifies:\n• The model type (e.g., DDM)\n• Linear models for estimated parameter types (omitted types are set to default values)\n• Parameters to fix as constants (optional)\n• Functions to create custom factors (optional)\n• Custom contrast coding for factors (optional)"
+  },
+  {
+    "objectID": "eam-home.html",
+    "href": "eam-home.html",
+    "title": "Introduction to Evidence Accumulation Models",
+    "section": "",
+    "text": "This tutorial is designed to provide the foundations for using evidence accumulation models on experiments involving perceptual judgements. In visual perception, researchers frequently rely just on participants’ choices. This approach is valuable, but it overlooks the temporal information embedded within response times, which can reflect underlying perceptual processes. Evidence accumulation models offer a more comprehensive approach by jointly considering participants’ choices and response times. Moreover, these models can also handle multiple-choice scenarios (two or more), allowing the analysis of responses in a broader range of visual perception tasks. This tutorial will introduce the rationale for using evidence accumulation models in visual perception research."
+  },
+  {
+    "objectID": "eam-slide.html",
+    "href": "eam-slide.html",
+    "title": "Practical introduction",
+    "section": "",
+    "text": "# # If not already done, install the EMC2 package\n# remotes::install_github(\"ampl-psych/EMC2\",ref=\"dev\")\nlibrary(EMC2)"
+  },
+  {
+    "objectID": "eam-slide.html#set-up",
+    "href": "eam-slide.html#set-up",
+    "title": "Practical introduction",
+    "section": "",
+    "text": "# # If not already done, install the EMC2 package\n# remotes::install_github(\"ampl-psych/EMC2\",ref=\"dev\")\nlibrary(EMC2)"
+  },
+  {
+    "objectID": "eam-slide.html#design-specification",
+    "href": "eam-slide.html#design-specification",
+    "title": "Practical introduction",
+    "section": "Design specification",
+    "text": "Design specification\nSpecify how model parameters map to experimental conditions using linear model formulas. The design function creates a design object that specifies:\n• The model type (e.g., DDM)\n• Linear models for estimated parameter types (omitted types are set to default values)\n• Parameters to fix as constants (optional)\n• Functions to create custom factors (optional)\n• Custom contrast coding for factors (optional)"
+  },
+  {
+    "objectID": "eam-credits.html#emc2",
+    "href": "eam-credits.html#emc2",
+    "title": "",
+    "section": "",
+    "text": "Model Based Sampling with EMC2 - Extended Models of Choice. A comprehensive step-by-step guide to using EMC2, including model structure, inference, and visualization.\n\n\n\nSchool Material from Model Based Neuroscience Summer School (highly recommended)"
+  },
+  {
+    "objectID": "eam-credits.html#emc2-resources",
+    "href": "eam-credits.html#emc2-resources",
+    "title": "",
+    "section": "",
+    "text": "Model Based Sampling with EMC2 - Extended Models of Choice. A comprehensive, step-by-step guide covering model structure, inference, and visualization using EMC2.\n\n\n\nProvides theoretical background, methodology, and applications of EMC2.\n\n\n\nFrom the Model Based Neuroscience Summer School — highly recommended for those interested in hands-on training in cognitive modeling and Bayesian inference."
+  }
+]
