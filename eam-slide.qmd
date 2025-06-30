@@ -1,13 +1,21 @@
 ---
-title: "Theory"
-author: Margherita Calderan, Carolina Maria Oletto
-format:  
-  revealjs:  
-    width: 1200
-date: 2025/08/24
-date-format: long  
-from: markdown+emoji  
-logo: img/logo.png
+title: " "
 ---
+
+You can access the slides in both PDF and HTML formats:
+
+## Intro to EAM
+
+[PDF version]
+
+[HTML version](eam-intro.qmd)
+
+## EAM in Visual Perception Research
+
+[PDF version]
+
+[HTML version](eam-karim.qmd)
+
+
 
 

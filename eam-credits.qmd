@@ -2,7 +2,7 @@
 title: " "
 ---
 
-## 🔬 EMC2 Resources
+## EMC2 Resources
 ### 📘 Tutorial
 [Model Based Sampling with EMC2 - Extended Models of Choice](https://bookdown.org/reilly_innes/EMC_bookdown/){target="_blank"}.
 A comprehensive, step-by-step guide covering model structure, inference, and visualization using EMC2.

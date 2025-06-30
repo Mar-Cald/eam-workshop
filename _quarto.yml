@@ -17,7 +17,7 @@ website:
 format:
   html: 
     theme: cosmo
-    fontsize: 1em
+    fontsize: 1.2em
     linestretch: 1.7
     mainfont: Helvetica Neue
     css: styles.css

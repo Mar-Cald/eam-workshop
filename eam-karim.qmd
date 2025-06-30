@@ -1,0 +1,13 @@
+---
+title: "EAM in Visual Perception Research"
+author: Carolina Maria Oletto
+format:  
+  revealjs:  
+    width: 1200
+date: 2025/08/24
+date-format: long  
+from: markdown+emoji  
+logo: img/logo.png
+---
+
+

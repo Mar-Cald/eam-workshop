@@ -1,0 +1,13 @@
+---
+title: "Intro to EAM"
+author: Margherita Calderan
+format:  
+  revealjs:  
+    width: 1200
+date: 2025/08/24
+date-format: long  
+from: markdown+emoji  
+logo: img/logo.png
+---
+
+

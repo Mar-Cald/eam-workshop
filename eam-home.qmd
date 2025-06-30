@@ -1,5 +1,5 @@
 ---
-title: "Introduction to Evidence Accumulation Models"
+title: "Evidence Accumulation Models"
 image: img/logo.png
 about:
   id: hero-heading
@@ -12,5 +12,5 @@ engine: knitr
 ---
 
 ::: {#hero-heading}
-This tutorial is designed to provide the foundations for using evidence accumulation models on experiments involving perceptual judgements. In visual perception, researchers frequently rely just on participants’ choices. This approach is valuable, but it overlooks the temporal information embedded within response times, which can reflect underlying perceptual processes. Evidence accumulation models offer a more comprehensive approach by jointly considering participants’ choices and response times. Moreover, these models can also handle multiple-choice scenarios (two or more), allowing the analysis of responses in a broader range of visual perception tasks. This tutorial will introduce the rationale for using evidence accumulation models in visual perception research. 
+This tutorial is designed to provide the foundations for using evidence accumulation models on experiments involving perceptual judgements. Evidence accumulation models offer a comprehensive approach by jointly considering participants’ choices and response times. These models can also handle multiple-choice scenarios (two or more), allowing the analysis of responses in a broad range of tasks. This tutorial will introduce the rationale for using evidence accumulation models in visual perception research. 
 :::
