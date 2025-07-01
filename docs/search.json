@@ -1,5 +1,138 @@
 [
   {
+    "objectID": "eam-intro.html#decision-making",
+    "href": "eam-intro.html#decision-making",
+    "title": "Intro to EAM",
+    "section": "Decision Making",
+    "text": "Decision Making\n\nMany decisions are made rapidly and at a low cognitive level.\nPerception triggers stored knowledge → triggers action.\nThis process matches perception to known representations and selects a response.\n\n\n\n\n\n\n\nMulder, M. J., Wagenmakers, E. J., Ratcliff, R., Boekel, W., & Forstmann, B. U. (2012). Bias in the brain: a diffusion model analysis of prior probability and potential payoff. Journal of Neuroscience, 32(7), 2335–2343."
+  },
+  {
+    "objectID": "eam-intro.html#sequential-sampling-models",
+    "href": "eam-intro.html#sequential-sampling-models",
+    "title": "Intro to EAM",
+    "section": "Sequential Sampling Models",
+    "text": "Sequential Sampling Models\nMany models assume accumulation of noisy evidence to thresholds. Can vary in:\n\nNumber of accumulators\nRelative vs absolute decision rules\nConstant vs time-varying drift rate\nStochastic vs deterministic noise\nWith/without inhibition or decay"
+  },
+  {
+    "objectID": "eam-intro.html#wiener-process",
+    "href": "eam-intro.html#wiener-process",
+    "title": "Intro to EAM",
+    "section": "Wiener Process",
+    "text": "Wiener Process\nThe Wiener process (Brownian motion) is the foundation of many decision models. It models the accumulation of evidence as a noisy process:\n x(t)=z+vt+sW(t)\nx(t) = z + vt + sW(t)\n \n\n\n\nx(t)x(t): accumulated evidence at time tt\nz: starting point\nv: drift rate (signal strength)\ns: noise (standard deviation of the increments)\nW(t)W(t): standard Wiener process (Gaussian increments)"
+  },
+  {
+    "objectID": "eam-intro.html#wiener-first-passage-time-fpt",
+    "href": "eam-intro.html#wiener-first-passage-time-fpt",
+    "title": "Intro to EAM",
+    "section": "Wiener First Passage Time (FPT)",
+    "text": "Wiener First Passage Time (FPT)\n d(t,x=0|α,τ,β,δ)=1α2exp[−αβδ−12δ2(t−τ)]f(|t−τ|α2|β)\nd(t,x=0|\\alpha,\\tau,\\beta,\\delta) = \\frac{1}{\\alpha^2} \\exp\\left[-\\alpha\\beta\\delta - \\frac{1}{2}\\delta^2(t-\\tau)\\right] f\\left(\\frac{|t-\\tau|}{\\alpha^2}\\bigg|\\beta\\right)\n \n\n\n\n\n\nIt is the expected distribution of the time until the process first hits or crosses one or the other boundary. This results in a bivariate distribution, over responses xx and hitting times tt.\n\n\n\nWabersich and Vandekerckhove (2014), The R Journal"
+  },
+  {
+    "objectID": "eam-intro.html#full-diffusion-decision-model",
+    "href": "eam-intro.html#full-diffusion-decision-model",
+    "title": "Intro to EAM",
+    "section": "Full Diffusion Decision Model",
+    "text": "Full Diffusion Decision Model\n\nThe Full DDM accounts for more behavioral phenomena by allowing trial-to-trial variability in key parameters:\n\nDrift rate: v∼𝒩(μv,η2)v \\sim \\mathcal{N}(\\mu_v, \\eta^2)\nStarting point: z∼Uniform(z−sz/2,z+sz/2)z \\sim \\text{Uniform}(z - s_z/2, z + s_z/2)\nNon-decision time: t0∼Uniform(t0−st0/2,t0+st0/2)t_0 \\sim \\text{Uniform}(t_0 - s_{t_0}/2, t_0 + s_{t_0}/2)"
+  },
+  {
+    "objectID": "eam-intro.html#full-ddm-parameters",
+    "href": "eam-intro.html#full-ddm-parameters",
+    "title": "Intro to EAM",
+    "section": "Full DDM Parameters",
+    "text": "Full DDM Parameters\n\n\na: decision boundary\nz: starting point\nv: drift rate\nt_0: non-decision time\ns: noise scale (usually fixed)\nη\\eta: SD of drift rate across trials\nszs_{z}: variability in start point\nst0s_{t_0}: variability in non-decision time\n\n\n\n\nBoehm, U., Annis, J., Frank, … & Wagenmakers, E. J. (2018). Estimating across-trial variability parameters of the Diffusion Decision Model: Expert advice and recommendations. Journal of Mathematical Psychology, 87, 46-75. Ratcliff, R., & Rouder, J. N. (1998). Modeling Response Times for Two-Choice Decisions. Psychological Science, 9(5), 347-356."
+  },
+  {
+    "objectID": "eam-intro.html#purpose-of-variability",
+    "href": "eam-intro.html#purpose-of-variability",
+    "title": "Intro to EAM",
+    "section": "Purpose of Variability",
+    "text": "Purpose of Variability\n\nAdding variability improves the model’s ability to:\n\nCapture error RT differences\nReflect trial-to-trial attention or difficulty changes \n\nHowever, it increases computational demands."
+  },
+  {
+    "objectID": "eam-intro.html#racing-diffusion-model",
+    "href": "eam-intro.html#racing-diffusion-model",
+    "title": "Intro to EAM",
+    "section": "Racing Diffusion Model",
+    "text": "Racing Diffusion Model\n\nInstead of a single process choosing between boundaries, the Racing Diffusion Model (RDM) uses multiple independent diffusion processes, one per option:\n\ndxk(t)=vkdt+sdWk(t)for k=1,…,K\ndx_k(t) = v_k \\, dt + s \\, dW_k(t) \\quad \\text{for } k = 1,\\dots,K\n \nEach accumulator races toward its threshold. The first to cross wins."
+  },
+  {
+    "objectID": "eam-intro.html#section",
+    "href": "eam-intro.html#section",
+    "title": "Intro to EAM",
+    "section": "",
+    "text": "Tillman, G., Van Zandt, T., & Logan, G. D. (2020). Sequential sampling models without random between-trial variability: The racing diffusion model of speeded decision making. Psychonomic Bulletin & Review, 27(5), 911-936."
+  },
+  {
+    "objectID": "eam-intro.html#rdm-characteristics",
+    "href": "eam-intro.html#rdm-characteristics",
+    "title": "Intro to EAM",
+    "section": "RDM Characteristics",
+    "text": "RDM Characteristics\n\nEach response has its own drift rate vkv{_k}\nThreshold aa is typically shared\nStart point z=0z = 0 is often assumed\nNoise ss is usually constant\n\n fi(t|b,v)=b(2πt3)−12exp[−12t(vt−b)2]\nf_{i}(t|b,v) = b(2 \\pi t^{3})^{-\\frac{1}{2}} \\exp\\left[-\\frac{1}{2t}(v t-b)^{2}\\right]\n  The winner is the first process to reach threshold:\n\ngi(t)=fi(t)∏j≠i(1−Fj(t)),\ng_{i}(t) = f_{i}(t) \\prod\\limits_{j \\neq i} (1 - F_{j}(t)),"
+  },
+  {
+    "objectID": "eam-intro.html#summary",
+    "href": "eam-intro.html#summary",
+    "title": "Intro to EAM",
+    "section": "Summary",
+    "text": "Summary\n\n\n\n\n\n\n\n\nModel\nCore Mechanism\nKey Strengths\n\n\n\n\nWiener\nStochastic accumulation\nSimple FPT, binary outcomes\n\n\nFull DDM\nAccumulation + param variability\nRealistic RTs, error patterns\n\n\nRacing DDM\nMultiple accumulators\nHandles multi-alternative decisions\n\n\n\n\nEvidence accumulates noisily over time until a decision threshold is reached."
+  },
+  {
+    "objectID": "eam-intro.html#all-models-are-wrong-but-some-are-useful-g.-box",
+    "href": "eam-intro.html#all-models-are-wrong-but-some-are-useful-g.-box",
+    "title": "Intro to EAM",
+    "section": "“All Models Are Wrong, but Some Are Useful” — G. Box",
+    "text": "“All Models Are Wrong, but Some Are Useful” — G. Box\n\nPromotes understanding of behavior\n\n🪒 Occam’s Razor: Avoid unnecessary complexity \nAccurately predicts new (out-of-sample) data\n\n📏 Captures uncertainty, variability, and structure"
+  },
+  {
+    "objectID": "eam-intro.html#bayesian-inference",
+    "href": "eam-intro.html#bayesian-inference",
+    "title": "Intro to EAM",
+    "section": "Bayesian Inference",
+    "text": "Bayesian Inference\n\nData are fixed, but parameters are uncertain.\n\nBayes’ Rule: \nPosterior∝Likelihood×Prior\n\\text{Posterior} \\propto \\text{Likelihood} \\times \\text{Prior}\n \n\nInference produces posterior distributions over parameters\nCaptures uncertainty and incorporates prior knowledge"
+  },
+  {
+    "objectID": "eam-intro.html#hierarchical-modeling",
+    "href": "eam-intro.html#hierarchical-modeling",
+    "title": "Intro to EAM",
+    "section": "Hierarchical Modeling",
+    "text": "Hierarchical Modeling\nAre participants identical or fully independent?\n\n\nModels group-level structure\neach participant’s parameters ∼ drawn from a population distribution \nIndividual-level inference\n\nGroup-level generalization"
+  },
+  {
+    "objectID": "eam-intro.html#why-hierarchical-models",
+    "href": "eam-intro.html#why-hierarchical-models",
+    "title": "Intro to EAM",
+    "section": "Why Hierarchical Models?",
+    "text": "Why Hierarchical Models?\n\n\nReduces bias from unmodeled individual variability\n\nPrevents overfitting and underfitting\n\nShrinkage: pulls extreme or low-quality estimates toward the group mean\n\n\nBoehm et al. (2018), Behavior Research Methods\n\n\nHierarchical models aim to strike a balance between two extremes:\n\nOverfitting: Fitting each subject completely independently\n\nUnderfitting: Pooling across subjects and fitting only the average"
+  },
+  {
+    "objectID": "eam-intro.html#what-are-we-trying-to-infer",
+    "href": "eam-intro.html#what-are-we-trying-to-infer",
+    "title": "Intro to EAM",
+    "section": "What Are We Trying to Infer?",
+    "text": "What Are We Trying to Infer?\nWe want to estimate:\n\nIndividual-level parameters: α1,α2,…,αN\\alpha_1, \\alpha_2, \\dots, \\alpha_N\nGroup-level structure:\nA shared population distribution αi∼𝒩(μ,Σ)\\alpha_i \\sim \\mathcal{N}(\\mu, \\Sigma)\n\nThis enables both individual and population inference."
+  },
+  {
+    "objectID": "eam-intro.html#model-structure",
+    "href": "eam-intro.html#model-structure",
+    "title": "Intro to EAM",
+    "section": "Model Structure",
+    "text": "Model Structure\nThe hierarchical model defines a joint posterior over all unknowns:\np(αi,μ,Σ∣data)∝p(data∣αi)⋅p(αi∣μ,Σ)⋅p(μ,Σ)\np(\\alpha_i, \\mu, \\Sigma \\mid \\text{data}) \\propto \np(\\text{data} \\mid \\alpha_i) \\cdot \np(\\alpha_i \\mid \\mu, \\Sigma) \\cdot \np(\\mu, \\Sigma)\n\n\nLikelihood:\np(data∣αi)p(\\text{data} \\mid \\alpha_i)\n— How well each participant’s data is explained by their parameters\nGroup-level model:\np(αi∣μ,Σ)p(\\alpha_i \\mid \\mu, \\Sigma) — Individual parameters drawn from population distribution\nHyperprior:\np(μ,Σ)p(\\mu, \\Sigma) — Prior beliefs over the group-level structure"
+  },
+  {
+    "objectID": "eam-intro.html#group-level-parameters",
+    "href": "eam-intro.html#group-level-parameters",
+    "title": "Intro to EAM",
+    "section": "Group-Level Parameters",
+    "text": "Group-Level Parameters\nLet nn = number of individual parameters per subject:\n\nμ\\mu: vector of population means\n\nΣ\\Sigma: symmetric covariance matrix, including:\n\nDiagonal: Variances (σ2\\sigma^2)\nOff-diagonal: Covariances\nn(n−1)2\\frac{n(n-1)}{2} elements total\n\n\nThese hyperparameters are learned from the data."
+  },
+  {
+    "objectID": "eam-intro.html#final-thoughts",
+    "href": "eam-intro.html#final-thoughts",
+    "title": "Intro to EAM",
+    "section": "Final Thoughts",
+    "text": "Final Thoughts\n\n🧠 Evidence Accumulation Models (EAMs) are foundational to modeling cognitive decisions\n\n📈 Bayesian hierarchical inference improves parameter recovery and interpretability\n\n⚖ Seek a balance:\n\nExpressive but not too complex\n\nFlexible yet constrained"
+  },
+  {
     "objectID": "eam-credits.html",
     "href": "eam-credits.html",
     "title": "",
@@ -32,7 +165,7 @@
     "href": "eam-workshop.html#design-specification",
     "title": "",
     "section": "Design specification",
-    "text": "Design specification\nSpecify how model parameters map to experimental conditions using linear model formulas. The design function creates a design object that specifies:\n• The model type (e.g., DDM)\n• Linear models for estimated parameter types (omitted types are set to default values)\n• Parameters to fix as constants (optional)\n• Functions to create custom factors (optional)\n• Custom contrast coding for factors (optional)"
+    "text": "Design specification\nSpecify how model parameters map to experimental conditions using linear model formulas. The design function creates a design object that specifies:\n\nThe model type\nLinear models for estimated parameter types (omitted types are set to default values)\nParameters to fix as constants (optional)\nFunctions to create custom factors (optional)\nCustom contrast coding for factors (optional)"
   },
   {
     "objectID": "eam-home.html",

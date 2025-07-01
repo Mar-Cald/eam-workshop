@@ -19,5 +19,11 @@
   },
   "eam-intro.qmd": {
     "eam-intro.html": "3711c616"
+  },
+  "eam-workshop.knit.md": {
+    "eam-workshop.knit.html": "457a3438"
+  },
+  "eam-intro.knit.md": {
+    "eam-intro.knit.html": "f0c26dfa"
   }
 }

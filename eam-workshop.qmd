@@ -14,12 +14,12 @@ library(EMC2)
 
 Specify how model parameters map to experimental conditions using linear model formulas. The design function creates a design object that specifies:
 
-• The model type (e.g., DDM)
+-   The model type
 
-• Linear models for estimated parameter types (omitted types are set to default values)
+-   Linear models for estimated parameter types (omitted types are set to default values)
 
-• Parameters to fix as constants (optional)
+-   Parameters to fix as constants (optional)
 
-• Functions to create custom factors (optional)
+-   Functions to create custom factors (optional)
 
-• Custom contrast coding for factors (optional)
+-   Custom contrast coding for factors (optional)

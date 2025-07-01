@@ -1,3 +1,5 @@
+
+
 /* ---------- Navbar Styling ---------- */
 .navbar {
   background-color: #0d3f70 !important;
@@ -31,4 +33,27 @@
   padding: 0.2rem 0.2rem;
   box-sizing: border-box;
 }
+
+/* ---------- Slide Styling ---------- */
+.small-text {
+  font-size: 0.8em;
+}
+
+.small-small-text {
+  font-size: 0.7em;
+}
+
+.vcenter {
+  vertical-align: middle;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left { text-align: left; }
+.align-center { text-align: center; }
+.align-right { text-align: right; }
 
