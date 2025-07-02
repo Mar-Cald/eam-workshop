@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>quarto-inputd76e3be46e1a7611</title>
+<title>quarto-inputccd8da6112ae15e8</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -101,6 +101,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -149,7 +178,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#set-up" id="toc-set-up" class="nav-link active" data-scroll-target="#set-up">Set up</a></li>
+  <li><a href="#bayesian-inference" id="toc-bayesian-inference" class="nav-link active" data-scroll-target="#bayesian-inference">Bayesian Inference</a></li>
+  <li><a href="#hierarchical-modeling" id="toc-hierarchical-modeling" class="nav-link" data-scroll-target="#hierarchical-modeling">Hierarchical Modeling</a></li>
+  <li><a href="#why-hierarchical-models" id="toc-why-hierarchical-models" class="nav-link" data-scroll-target="#why-hierarchical-models">Why Hierarchical Models?</a></li>
+  <li><a href="#what-are-we-trying-to-infer" id="toc-what-are-we-trying-to-infer" class="nav-link" data-scroll-target="#what-are-we-trying-to-infer">What Are We Trying to Infer?</a></li>
+  <li><a href="#model-structure" id="toc-model-structure" class="nav-link" data-scroll-target="#model-structure">Model Structure</a></li>
+  <li><a href="#group-level-parameters" id="toc-group-level-parameters" class="nav-link" data-scroll-target="#group-level-parameters">Group-Level Parameters</a></li>
+  <li><a href="#priors" id="toc-priors" class="nav-link" data-scroll-target="#priors">Priors</a></li>
+  <li><a href="#set-up---emc2" id="toc-set-up---emc2" class="nav-link" data-scroll-target="#set-up---emc2">Set up - EMC2</a></li>
   <li><a href="#design-specification" id="toc-design-specification" class="nav-link" data-scroll-target="#design-specification">Design specification</a></li>
   </ul>
 </nav>
@@ -160,8 +196,109 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="set-up" class="level2">
-<h2 class="anchored" data-anchor-id="set-up">Set up</h2>
+<section id="bayesian-inference" class="level2">
+<h2 class="anchored" data-anchor-id="bayesian-inference">Bayesian Inference</h2>
+<p><strong>Data are fixed</strong>, but <strong>parameters are uncertain</strong>.</p>
+<p><br> <strong>Bayes’ Rule</strong>: <br></p>
+<p><span class="math display">\[
+\text{Posterior} \propto \text{Likelihood} \times \text{Prior}
+\]</span> <br></p>
+<ul>
+<li><p>Inference produces <strong>posterior distributions</strong> over parameters</p></li>
+<li><p>Captures uncertainty and incorporates prior knowledge</p></li>
+</ul>
+</section>
+<section id="hierarchical-modeling" class="level2 align-center">
+<h2 class="align-center anchored" data-anchor-id="hierarchical-modeling">Hierarchical Modeling</h2>
+<p><em>Are participants identical or fully independent?</em></p>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p>Models <strong>group-level structure</strong></p>
+<p>each participant’s parameters ∼ drawn from a population distribution <br><br></p>
+<p><strong>Group-level</strong> generalization <br></p>
+<p><strong>Individual-level</strong> inference<br>
+<br></p>
+</div><div class="column" style="width:55%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="eam-workshop_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="why-hierarchical-models" class="level2">
+<h2 class="anchored" data-anchor-id="why-hierarchical-models">Why Hierarchical Models?</h2>
+<ul>
+<li>Reduces bias from unmodeled individual variability<br>
+</li>
+<li>Prevents overfitting <em>and</em> underfitting<br>
+</li>
+<li><strong>Shrinkage</strong>: pulls extreme or low-quality estimates toward the group mean</li>
+</ul>
+<blockquote class="blockquote">
+<p><a href="https://doi.org/10.3758/s13428-018-1054-3">Boehm et al.&nbsp;(2018), <em>Behavior Research Methods</em></a></p>
+</blockquote>
+</section>
+<section id="what-are-we-trying-to-infer" class="level2">
+<h2 class="anchored" data-anchor-id="what-are-we-trying-to-infer">What Are We Trying to Infer?</h2>
+<p>We want to estimate:</p>
+<ul>
+<li><p><strong>Individual-level parameters</strong>: <span class="math inline">\(\alpha_1, \alpha_2, \dots, \alpha_N\)</span></p></li>
+<li><p><strong>Group-level structure</strong>:<br>
+A shared population distribution <span class="math inline">\(\alpha_i \sim \mathcal{N}(\mu, \Sigma)\)</span></p></li>
+</ul>
+<p>This enables both <strong>individual</strong> and <strong>population</strong> inference.</p>
+</section>
+<section id="model-structure" class="level2">
+<h2 class="anchored" data-anchor-id="model-structure">Model Structure</h2>
+<p>The hierarchical model defines a <strong>joint posterior</strong> over all unknowns:</p>
+<p><span class="math display">\[
+p(\alpha_i, \mu, \Sigma \mid \text{data}) \propto
+p(\text{data} \mid \alpha_i) \cdot
+p(\alpha_i \mid \mu, \Sigma) \cdot
+p(\mu, \Sigma)
+\]</span></p>
+<ul>
+<li><p><strong>Likelihood</strong>:<br>
+<span class="math inline">\(p(\text{data} \mid \alpha_i)\)</span><br>
+— How well each participant’s data is explained by their parameters</p></li>
+<li><p><strong>Group-level model</strong>:<br>
+<span class="math inline">\(p(\alpha_i \mid \mu, \Sigma)\)</span> — Individual parameters drawn from population distribution</p></li>
+<li><p><strong>Hyperprior</strong>:<br>
+<span class="math inline">\(p(\mu, \Sigma)\)</span> — Prior beliefs over the group-level structure</p></li>
+</ul>
+</section>
+<section id="group-level-parameters" class="level2">
+<h2 class="anchored" data-anchor-id="group-level-parameters">Group-Level Parameters</h2>
+<p>Let <span class="math inline">\(n\)</span> = number of individual parameters per subject:</p>
+<ul>
+<li><p><span class="math inline">\(\mu\)</span>: vector of <strong>population means</strong><br>
+</p></li>
+<li><p><span class="math inline">\(\Sigma\)</span>: symmetric <strong>covariance matrix</strong>, including:</p>
+<ul>
+<li>Diagonal: <strong>Variances</strong> (<span class="math inline">\(\sigma^2\)</span>)</li>
+<li>Off-diagonal: <strong>Covariances</strong><br>
+<span class="math inline">\(\frac{n(n-1)}{2}\)</span> elements total</li>
+</ul></li>
+</ul>
+<p>These hyperparameters are <strong>learned from the data</strong>.</p>
+</section>
+<section id="priors" class="level2">
+<h2 class="anchored" data-anchor-id="priors">Priors</h2>
+<p>Cognitive-model parameters must be transformed to have support on the real line. This transformation is necessary to meet the assumption of the normal group-level distribution.</p>
+<ul>
+<li><strong>Log</strong> transform: Applied to parameters with a lower bound (e.g., non-decision time, which cannot be negative)</li>
+<li><strong>Probit</strong> transform: Applied to parameters with both lower and upper bounds (e.g., the starting point parameter in the Drift Diffusion Model, which must lie between two response boundaries)</li>
+</ul>
+<p>As a result, priors are specified on these transformed parameters rather than on the original scales.</p>
+</section>
+<section id="set-up---emc2" class="level2">
+<h2 class="anchored" data-anchor-id="set-up---emc2">Set up - EMC2</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># # If not already done, install the EMC2 package</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># remotes::install_github("ampl-psych/EMC2",ref="dev")</span></span>
@@ -170,14 +307,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="design-specification" class="level2">
 <h2 class="anchored" data-anchor-id="design-specification">Design specification</h2>
-<p>Specify how model parameters map to experimental conditions using linear model formulas. The design function creates a design object that specifies:</p>
-<ul>
-<li><p>The model type</p></li>
-<li><p>Linear models for estimated parameter types (omitted types are set to default values)</p></li>
-<li><p>Parameters to fix as constants (optional)</p></li>
-<li><p>Functions to create custom factors (optional)</p></li>
-<li><p>Custom contrast coding for factors (optional)</p></li>
-</ul>
+<p>The design function creates a design object that maps model parameters to experimental conditions using linear model formulas. This object specifies:</p>
+<ol type="1">
+<li>Model type</li>
+<li>Linear models for estimated parameter types (default values are used for omitted types)</li>
+<li>Parameters to be fixed as constants (optional)</li>
+<li>Functions for creating custom factors (optional)</li>
+<li>Custom contrast coding for factors (optional)</li>
+</ol>
+<p>The simulation procedure</p>
 
 
 </section>

@@ -2,6 +2,10 @@
 title: " "
 ---
 
+## Expert Guide
+
+[Boag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling.](https://doi.org/10.31234/osf.io/snqgp)
+
 ## EMC2 Resources
 ### 📘 Tutorial
 [Model Based Sampling with EMC2 - Extended Models of Choice](https://bookdown.org/reilly_innes/EMC_bookdown/){target="_blank"}.
@@ -12,3 +16,4 @@ Provides theoretical background, methodology, and applications of EMC2.
 
 ### 🧠 Summer School Materials
 From the [Model Based Neuroscience Summer School](https://modelbasedneurosci.com/){target="_blank"} — highly recommended for those interested in hands-on training in cognitive modeling and Bayesian inference.
+

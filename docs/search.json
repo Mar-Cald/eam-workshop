@@ -11,7 +11,42 @@
     "href": "eam-intro.html#sequential-sampling-models",
     "title": "Intro to EAM",
     "section": "Sequential Sampling Models",
-    "text": "Sequential Sampling Models\nMany models assume accumulation of noisy evidence to thresholds. Can vary in:\n\nNumber of accumulators\nRelative vs absolute decision rules\nConstant vs time-varying drift rate\nStochastic vs deterministic noise\nWith/without inhibition or decay"
+    "text": "Sequential Sampling Models\nMany EAMs are sequential sampling models that assume accumulation of noisy evidence toward thresholds.\nThey differ on key dimensions:\n\nNumber of accumulators (e.g., single vs multiple)\nDecision rules (relative vs absolute)\nDrift rate: constant or time-varying\nNoise: stochastic vs deterministic\nWith or without inhibition or decay"
+  },
+  {
+    "objectID": "eam-intro.html#all-evidence-accumulation-models",
+    "href": "eam-intro.html#all-evidence-accumulation-models",
+    "title": "Intro to EAM",
+    "section": "All Evidence Accumulation Models",
+    "text": "All Evidence Accumulation Models\nEAMs assume that, upon stimulus presentation (e.g., left- or right-facing arrow), the decision maker:\n\nSamples noisy evidence for available options (e.g., “Should I press left or right?”)\nAccumulates that evidence until a threshold is crossed"
+  },
+  {
+    "objectID": "eam-intro.html#sequential-processing-assumption",
+    "href": "eam-intro.html#sequential-processing-assumption",
+    "title": "Intro to EAM",
+    "section": "Sequential Processing Assumption",
+    "text": "Sequential Processing Assumption\nTotal Response Time (RT) is modeled as the sum of three sequential stages:\n\nStimulus encoding\nEvidence accumulation (decision-making)\nMotor response execution\n\nStages (1) and (3) are captured in the nondecision time (Ter) parameter."
+  },
+  {
+    "objectID": "eam-intro.html#relative-vs.-absolute",
+    "href": "eam-intro.html#relative-vs.-absolute",
+    "title": "Intro to EAM",
+    "section": "Relative vs. Absolute",
+    "text": "Relative vs. Absolute\n\n\nBoag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling. https://doi.org/10.31234/osf.io/snqgp\n\n\nthe models contain parameters controlling the evidence starJng point (allowing for a priori biases), accumulaJon rate (controlling the speed of processing), threshold/boundary separaJon (controlling the amount of evidence required to make a response), and nondecision Jme (the sum of Jme taken for sJmulus encoding and motor response production)."
+  },
+  {
+    "objectID": "eam-intro.html#relative-evidence-models",
+    "href": "eam-intro.html#relative-evidence-models",
+    "title": "Intro to EAM",
+    "section": "Relative Evidence Models",
+    "text": "Relative Evidence Models\nIn relative evidence models (e.g., Wiener process, Diffusion Decision Model):\n\nDecision is based on the difference in accumulated evidence between two options.\nSuitable for binary choices."
+  },
+  {
+    "objectID": "eam-intro.html#absolute-evidence-models",
+    "href": "eam-intro.html#absolute-evidence-models",
+    "title": "Intro to EAM",
+    "section": "Absolute Evidence Models",
+    "text": "Absolute Evidence Models\nIn racing accumulator models (e.g., LBA, RDM):\n\nEach option has its own accumulator tracking absolute evidence.\nDecision is made by the first accumulator to reach threshold.\nCan handle multiple alternatives (not just binary choices).\n\n\nAlthough relative and absolute evidence models differ in how they conceptualize evidence, they:\n\nShare similar assumptions about trial structure and data quality\nUse overlapping parameters (drift rate, threshold, bias, nondecision time)\nOften reach the same substantive conclusions\nProvide convergent results when applied to the same data"
   },
   {
     "objectID": "eam-intro.html#wiener-process",
@@ -63,11 +98,11 @@
     "text": "Tillman, G., Van Zandt, T., & Logan, G. D. (2020). Sequential sampling models without random between-trial variability: The racing diffusion model of speeded decision making. Psychonomic Bulletin & Review, 27(5), 911-936."
   },
   {
-    "objectID": "eam-intro.html#rdm-characteristics",
-    "href": "eam-intro.html#rdm-characteristics",
+    "objectID": "eam-intro.html#rdm",
+    "href": "eam-intro.html#rdm",
     "title": "Intro to EAM",
-    "section": "RDM Characteristics",
-    "text": "RDM Characteristics\n\nEach response has its own drift rate vkv{_k}\nThreshold aa is typically shared\nStart point z=0z = 0 is often assumed\nNoise ss is usually constant\n\n fi(t|b,v)=b(2πt3)−12exp[−12t(vt−b)2]\nf_{i}(t|b,v) = b(2 \\pi t^{3})^{-\\frac{1}{2}} \\exp\\left[-\\frac{1}{2t}(v t-b)^{2}\\right]\n  The winner is the first process to reach threshold:\n\ngi(t)=fi(t)∏j≠i(1−Fj(t)),\ng_{i}(t) = f_{i}(t) \\prod\\limits_{j \\neq i} (1 - F_{j}(t)),"
+    "section": "RDM",
+    "text": "RDM\n fi(t|b,v)=b(2πt3)−12exp[−12t(vt−b)2]\nf_{i}(t|b,v) = b(2 \\pi t^{3})^{-\\frac{1}{2}} \\exp\\left[-\\frac{1}{2t}(v t-b)^{2}\\right]\n  The winner is the first process to reach threshold:\n\ngi(t)=fi(t)∏j≠i(1−Fj(t)),\ng_{i}(t) = f_{i}(t) \\prod\\limits_{j \\neq i} (1 - F_{j}(t)),"
   },
   {
     "objectID": "eam-intro.html#summary",
@@ -77,6 +112,188 @@
     "text": "Summary\n\n\n\n\n\n\n\n\nModel\nCore Mechanism\nKey Strengths\n\n\n\n\nWiener\nStochastic accumulation\nSimple FPT, binary outcomes\n\n\nFull DDM\nAccumulation + param variability\nRealistic RTs, error patterns\n\n\nRacing DDM\nMultiple accumulators\nHandles multi-alternative decisions\n\n\n\n\nEvidence accumulates noisily over time until a decision threshold is reached."
   },
   {
+    "objectID": "eam-intro.html#core-assumptions-of-the-basic-eam",
+    "href": "eam-intro.html#core-assumptions-of-the-basic-eam",
+    "title": "Intro to EAM",
+    "section": "Core Assumptions of the Basic EAM",
+    "text": "Core Assumptions of the Basic EAM\n\nEach decision = a single, continuous accumulation of evidence\nCulminates in a discrete response\nEvidence accumulates from stimulus onset to response"
+  },
+  {
+    "objectID": "eam-intro.html#eam-suitable-tasks-should",
+    "href": "eam-intro.html#eam-suitable-tasks-should",
+    "title": "Intro to EAM",
+    "section": "EAM-suitable tasks should",
+    "text": "EAM-suitable tasks should\n\nClearly define stimulus and response onset\nPresent static, constant stimuli\nAvoid overlapping cognitive processes"
+  },
+  {
+    "objectID": "eam-intro.html#within-trial-stationarity",
+    "href": "eam-intro.html#within-trial-stationarity",
+    "title": "Intro to EAM",
+    "section": "Within-Trial Stationarity",
+    "text": "Within-Trial Stationarity\n\nModel parameters are fixed within a trial\nEvidence accumulation:\n\nConstant mean rate, though noisy\nNo changes in stimulus evidence mid-trial\n\nDecision thresholds:\n\nSet before stimulus onset\nDo not change during the trial"
+  },
+  {
+    "objectID": "eam-intro.html#within-condition-stationarity",
+    "href": "eam-intro.html#within-condition-stationarity",
+    "title": "Intro to EAM",
+    "section": "Within-Condition Stationarity",
+    "text": "Within-Condition Stationarity\n\nParameters are constant across same-type trials\nNeeded for model fitting and averaging\nAssumes:\n\nTrials of same condition reflect same cognitive settings\nParticipant behavior is stable\n\n\n\nExample: Don’t change stimulus brightness mid-trial."
+  },
+  {
+    "objectID": "eam-intro.html#positively-skewed-rt-distributions",
+    "href": "eam-intro.html#positively-skewed-rt-distributions",
+    "title": "Intro to EAM",
+    "section": "Positively Skewed RT Distributions",
+    "text": "Positively Skewed RT Distributions\nEAMs naturally produce positively skewed RTs."
+  },
+  {
+    "objectID": "eam-intro.html#free-of-contaminant-processes",
+    "href": "eam-intro.html#free-of-contaminant-processes",
+    "title": "Intro to EAM",
+    "section": "Free of Contaminant Processes",
+    "text": "Free of Contaminant Processes\nData should reflect evidence accumulation!\nAvoid:\n\nRandom guessing\nFast guesses\nAttention lapses or missing responses\n\n\nClean data = better model fit and interpretability."
+  },
+  {
+    "objectID": "eam-intro.html#latent-cognitive-parameters",
+    "href": "eam-intro.html#latent-cognitive-parameters",
+    "title": "Intro to EAM",
+    "section": "Latent Cognitive Parameters",
+    "text": "Latent Cognitive Parameters\nEAMs decompose decisions into:\n\nDrift rate (v)\nThreshold (a)\nBias (z)\nNondecision time (Ter)"
+  },
+  {
+    "objectID": "eam-intro.html#use-of-parameters",
+    "href": "eam-intro.html#use-of-parameters",
+    "title": "Intro to EAM",
+    "section": "Use of Parameters",
+    "text": "Use of Parameters\nCompare parameters:\n\nAcross individuals (e.g., young vs. older adults)\nWithin individuals (e.g., easy vs. hard conditions)\nWith covariates (e.g., BOLD activity, IQ)"
+  },
+  {
+    "objectID": "eam-intro.html#stimulus-design",
+    "href": "eam-intro.html#stimulus-design",
+    "title": "Intro to EAM",
+    "section": "Stimulus Design",
+    "text": "Stimulus Design\nManipulate difficulty to modulate:\n\nDrift rate\nError rates (target: 5–35%)\n\nAvoid:\n\nFloor effects → guessing\nCeiling effects → no errors to fit"
+  },
+  {
+    "objectID": "eam-intro.html#response-modality",
+    "href": "eam-intro.html#response-modality",
+    "title": "Intro to EAM",
+    "section": "Response Modality",
+    "text": "Response Modality\nEAMs assume the response begins after the decision ends.\nBest modalities:\n\nManual keypresses\nSaccades\n\nAvoid imprecise, slow, or delayed responses."
+  },
+  {
+    "objectID": "eam-intro.html#drift-rate-v",
+    "href": "eam-intro.html#drift-rate-v",
+    "title": "Intro to EAM",
+    "section": "Drift Rate (v)",
+    "text": "Drift Rate (v)\n\nReflects evidence strength\n⬆ Drift → fast & accurate decisions\n⬇ Drift → slow, error-prone\n\nManipulated by:\n\nStimulus discriminability\nAttention/task difficulty"
+  },
+  {
+    "objectID": "eam-intro.html#thresholds-a",
+    "href": "eam-intro.html#thresholds-a",
+    "title": "Intro to EAM",
+    "section": "Thresholds (a)",
+    "text": "Thresholds (a)\n\nSet before stimulus onset\nReflect response caution/cognitive control/bias/preference\n\n⬆ Threshold:\n\nSlower but more accurate\n\n⬇ Threshold:\n\nFaster but error-prone\n\n\nManipulate via pre-trial cues or instructions."
+  },
+  {
+    "objectID": "eam-intro.html#starting-point-z",
+    "href": "eam-intro.html#starting-point-z",
+    "title": "Intro to EAM",
+    "section": "Starting Point (z)",
+    "text": "Starting Point (z)\n\nReflects response bias\nMidpoint = no bias\n\nDeviating from midpoint:\n\nFavors one response:\n\nFaster/more accurate for favored\nSlower/less accurate for disfavored\n\n\nSet before stimulus onset."
+  },
+  {
+    "objectID": "eam-intro.html#nondecision-time-ter",
+    "href": "eam-intro.html#nondecision-time-ter",
+    "title": "Intro to EAM",
+    "section": "Nondecision Time (Ter)",
+    "text": "Nondecision Time (Ter)\n\nTime to encode stimulus + execute response\nShifts RT distribution without changing shape/accuracy\n\nSensitive to:\n\nVisual complexity\nMotor demands\n\n\nHard to estimate precisely — often noisy across individuals."
+  },
+  {
+    "objectID": "eam-intro.html#trial-structure-and-event-timing",
+    "href": "eam-intro.html#trial-structure-and-event-timing",
+    "title": "Intro to EAM",
+    "section": "Trial Structure and Event Timing",
+    "text": "Trial Structure and Event Timing\nEAM tasks follow a structured sequence of events:\n\nCue (optional)\nFixation\nStimulus onset\nResponse window\nIntertrial interval\n\nEach component affects the integrity of evidence accumulation."
+  },
+  {
+    "objectID": "eam-intro.html#cue",
+    "href": "eam-intro.html#cue",
+    "title": "Intro to EAM",
+    "section": "Cue",
+    "text": "Cue\n\nOptional cue presented before stimulus onset.\nInforms participants how to respond (e.g., emphasis on speed or accuracy).\nMay set cognitive control parameters:\n\nThresholds\nBiases\n\nCan direct gaze or attention to a spatial location.\n\n\nMust occur before evidence accumulation begins."
+  },
+  {
+    "objectID": "eam-intro.html#fixation-interval",
+    "href": "eam-intro.html#fixation-interval",
+    "title": "Intro to EAM",
+    "section": "Fixation Interval",
+    "text": "Fixation Interval\n\nEnsures eyes and attention are centered.\nAllows previous trial’s processes to return to baseline.\nReduces overlap across trials.\n\n💡 Best practice: Use variable durations, e.g.:\n\nSample from exponential or pseudo-exponential distribution\nMean ≈ 0.7 s; range = 0.2–5 s"
+  },
+  {
+    "objectID": "eam-intro.html#stimulus-onset",
+    "href": "eam-intro.html#stimulus-onset",
+    "title": "Intro to EAM",
+    "section": "Stimulus Onset",
+    "text": "Stimulus Onset\n\nMarks the start of evidence accumulation.\nAssumes constant signal strength from onset to response.\n\n\nAny variability or delay in onset weakens the assumption of continuous accumulation."
+  },
+  {
+    "objectID": "eam-intro.html#response-window",
+    "href": "eam-intro.html#response-window",
+    "title": "Intro to EAM",
+    "section": "Response Window",
+    "text": "Response Window\n\nStarts with stimulus onset.\nEnds with:\n\nA response\nOr a deadline\n\n\n💡 Calibrate response window:\n\nLong enough to allow natural responding\nShort enough to avoid strategy shifts\nTypical EAM use: mean RT &lt; 1.5 s"
+  },
+  {
+    "objectID": "eam-intro.html#but-eams-can-handle-longer-rts",
+    "href": "eam-intro.html#but-eams-can-handle-longer-rts",
+    "title": "Intro to EAM",
+    "section": "But… EAMs Can Handle Longer RTs",
+    "text": "But… EAMs Can Handle Longer RTs\n\nLerche & Voss (2019): Simulated fits with mean RT ≈ 7.4 s\nAschenbrenner et al. (2016); Glickman & Usher (2019): Empirical fits to long RTs\nBoag et al. (2023): EAMs used in:\n\nAir-traffic control\nMaritime surveillance\nForensic decision making\n\n\n🧠 Effects on parameters were consistent across short/long RT tasks."
+  },
+  {
+    "objectID": "eam-intro.html#intertrial-interval",
+    "href": "eam-intro.html#intertrial-interval",
+    "title": "Intro to EAM",
+    "section": "Intertrial Interval",
+    "text": "Intertrial Interval\n\nTime between trials\nPurpose:\n\nAllow participant to reset\nPrevent proactive interference\nAvoid sequential effects"
+  },
+  {
+    "objectID": "eam-intro.html#sample-size-planning",
+    "href": "eam-intro.html#sample-size-planning",
+    "title": "Intro to EAM",
+    "section": "Sample Size Planning",
+    "text": "Sample Size Planning\n\nCritical for parameter recovery and error trials\nKey question:\n\nWill you have enough rare trial types (e.g., errors on easy trials)?\n\n\n\nExample:\n200 trials × 5% error rate = 10 error trials — often the minimum for fitting."
+  },
+  {
+    "objectID": "eam-intro.html#collecting-data",
+    "href": "eam-intro.html#collecting-data",
+    "title": "Intro to EAM",
+    "section": "Collecting Data",
+    "text": "Collecting Data\nEAM modeling requires detailed per-trial data:\nEach trial (row) should include:\n\nParticipant ID\nCondition\nStimulus presented\nResponse submitted\nRT\n\nOptional but recommended: - Session/trial number\n\nEvent timings: cue, stimulus, response, feedback, intertrial interval\n\n💾 Stored as .csv or similar — allows model software to reconstruct the timeline."
+  },
+  {
+    "objectID": "eam-intro.html#outliers",
+    "href": "eam-intro.html#outliers",
+    "title": "Intro to EAM",
+    "section": "Outliers",
+    "text": "Outliers\nOutliers distort model fits.\n\n\nFast outliers:\n\nMay reflect:\n\nPremature guesses\nTrigger failures\n\nTypically: RT &lt; 150–300 ms (depending on response modality)\n\n\nSlow outliers:\n\nLess common to censor unless clearly implausible\nMay reflect:\n\nLapses\nMultiple evidence accumulation attempts"
+  },
+  {
+    "objectID": "eam-intro.html#identifying-fast-guessing",
+    "href": "eam-intro.html#identifying-fast-guessing",
+    "title": "Intro to EAM",
+    "section": "Identifying Fast Guessing",
+    "text": "Identifying Fast Guessing\nA principled method:\n\nSort RTs from fastest to slowest\nPlot accuracy as a function of RT\nFind the “chance-performance boundary”\nDiscard all RTs below that point\n\n\nBetter than arbitrary 200–300 ms cutoff"
+  },
+  {
+    "objectID": "eam-intro.html#detecting-nonstationarity",
+    "href": "eam-intro.html#detecting-nonstationarity",
+    "title": "Intro to EAM",
+    "section": "Detecting Nonstationarity",
+    "text": "Detecting Nonstationarity\n\n\nCheck for drift across trials:\n\nCorrelate RT with trial number\nLook for trends suggesting:\n\nFatigue\nLearning\nStrategic shifts\n\n\n\nUse this to:\n\nExclude sessions\nModel time-on-task effects"
+  },
+  {
     "objectID": "eam-intro.html#all-models-are-wrong-but-some-are-useful-g.-box",
     "href": "eam-intro.html#all-models-are-wrong-but-some-are-useful-g.-box",
     "title": "Intro to EAM",
@@ -84,88 +301,95 @@
     "text": "“All Models Are Wrong, but Some Are Useful” — G. Box\n\nPromotes understanding of behavior\n\n🪒 Occam’s Razor: Avoid unnecessary complexity \nAccurately predicts new (out-of-sample) data\n\n📏 Captures uncertainty, variability, and structure"
   },
   {
-    "objectID": "eam-intro.html#bayesian-inference",
-    "href": "eam-intro.html#bayesian-inference",
-    "title": "Intro to EAM",
-    "section": "Bayesian Inference",
-    "text": "Bayesian Inference\n\nData are fixed, but parameters are uncertain.\n\nBayes’ Rule: \nPosterior∝Likelihood×Prior\n\\text{Posterior} \\propto \\text{Likelihood} \\times \\text{Prior}\n \n\nInference produces posterior distributions over parameters\nCaptures uncertainty and incorporates prior knowledge"
-  },
-  {
-    "objectID": "eam-intro.html#hierarchical-modeling",
-    "href": "eam-intro.html#hierarchical-modeling",
-    "title": "Intro to EAM",
-    "section": "Hierarchical Modeling",
-    "text": "Hierarchical Modeling\nAre participants identical or fully independent?\n\n\nModels group-level structure\neach participant’s parameters ∼ drawn from a population distribution \nIndividual-level inference\n\nGroup-level generalization"
-  },
-  {
-    "objectID": "eam-intro.html#why-hierarchical-models",
-    "href": "eam-intro.html#why-hierarchical-models",
-    "title": "Intro to EAM",
-    "section": "Why Hierarchical Models?",
-    "text": "Why Hierarchical Models?\n\n\nReduces bias from unmodeled individual variability\n\nPrevents overfitting and underfitting\n\nShrinkage: pulls extreme or low-quality estimates toward the group mean\n\n\nBoehm et al. (2018), Behavior Research Methods\n\n\nHierarchical models aim to strike a balance between two extremes:\n\nOverfitting: Fitting each subject completely independently\n\nUnderfitting: Pooling across subjects and fitting only the average"
-  },
-  {
-    "objectID": "eam-intro.html#what-are-we-trying-to-infer",
-    "href": "eam-intro.html#what-are-we-trying-to-infer",
-    "title": "Intro to EAM",
-    "section": "What Are We Trying to Infer?",
-    "text": "What Are We Trying to Infer?\nWe want to estimate:\n\nIndividual-level parameters: α1,α2,…,αN\\alpha_1, \\alpha_2, \\dots, \\alpha_N\nGroup-level structure:\nA shared population distribution αi∼𝒩(μ,Σ)\\alpha_i \\sim \\mathcal{N}(\\mu, \\Sigma)\n\nThis enables both individual and population inference."
-  },
-  {
-    "objectID": "eam-intro.html#model-structure",
-    "href": "eam-intro.html#model-structure",
-    "title": "Intro to EAM",
-    "section": "Model Structure",
-    "text": "Model Structure\nThe hierarchical model defines a joint posterior over all unknowns:\np(αi,μ,Σ∣data)∝p(data∣αi)⋅p(αi∣μ,Σ)⋅p(μ,Σ)\np(\\alpha_i, \\mu, \\Sigma \\mid \\text{data}) \\propto \np(\\text{data} \\mid \\alpha_i) \\cdot \np(\\alpha_i \\mid \\mu, \\Sigma) \\cdot \np(\\mu, \\Sigma)\n\n\nLikelihood:\np(data∣αi)p(\\text{data} \\mid \\alpha_i)\n— How well each participant’s data is explained by their parameters\nGroup-level model:\np(αi∣μ,Σ)p(\\alpha_i \\mid \\mu, \\Sigma) — Individual parameters drawn from population distribution\nHyperprior:\np(μ,Σ)p(\\mu, \\Sigma) — Prior beliefs over the group-level structure"
-  },
-  {
-    "objectID": "eam-intro.html#group-level-parameters",
-    "href": "eam-intro.html#group-level-parameters",
-    "title": "Intro to EAM",
-    "section": "Group-Level Parameters",
-    "text": "Group-Level Parameters\nLet nn = number of individual parameters per subject:\n\nμ\\mu: vector of population means\n\nΣ\\Sigma: symmetric covariance matrix, including:\n\nDiagonal: Variances (σ2\\sigma^2)\nOff-diagonal: Covariances\nn(n−1)2\\frac{n(n-1)}{2} elements total\n\n\nThese hyperparameters are learned from the data."
-  },
-  {
-    "objectID": "eam-intro.html#final-thoughts",
-    "href": "eam-intro.html#final-thoughts",
-    "title": "Intro to EAM",
-    "section": "Final Thoughts",
-    "text": "Final Thoughts\n\n🧠 Evidence Accumulation Models (EAMs) are foundational to modeling cognitive decisions\n\n📈 Bayesian hierarchical inference improves parameter recovery and interpretability\n\n⚖ Seek a balance:\n\nExpressive but not too complex\n\nFlexible yet constrained"
-  },
-  {
     "objectID": "eam-credits.html",
     "href": "eam-credits.html",
     "title": "",
     "section": "",
-    "text": "Model Based Sampling with EMC2 - Extended Models of Choice. A comprehensive, step-by-step guide covering model structure, inference, and visualization using EMC2.\n\n\n\nProvides theoretical background, methodology, and applications of EMC2.\n\n\n\nFrom the Model Based Neuroscience Summer School — highly recommended for those interested in hands-on training in cognitive modeling and Bayesian inference."
+    "text": "Boag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling."
+  },
+  {
+    "objectID": "eam-credits.html#expert-guide",
+    "href": "eam-credits.html#expert-guide",
+    "title": "",
+    "section": "",
+    "text": "Boag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling."
   },
   {
     "objectID": "eam-credits.html#emc2-resources",
     "href": "eam-credits.html#emc2-resources",
     "title": "",
-    "section": "",
-    "text": "Model Based Sampling with EMC2 - Extended Models of Choice. A comprehensive, step-by-step guide covering model structure, inference, and visualization using EMC2.\n\n\n\nProvides theoretical background, methodology, and applications of EMC2.\n\n\n\nFrom the Model Based Neuroscience Summer School — highly recommended for those interested in hands-on training in cognitive modeling and Bayesian inference."
+    "section": "EMC2 Resources",
+    "text": "EMC2 Resources\n\n📘 Tutorial\nModel Based Sampling with EMC2 - Extended Models of Choice. A comprehensive, step-by-step guide covering model structure, inference, and visualization using EMC2.\n\n\n📄 Preprint\nProvides theoretical background, methodology, and applications of EMC2.\n\n\n🧠 Summer School Materials\nFrom the Model Based Neuroscience Summer School — highly recommended for those interested in hands-on training in cognitive modeling and Bayesian inference."
   },
   {
     "objectID": "eam-workshop.html",
     "href": "eam-workshop.html",
     "title": "",
     "section": "",
-    "text": "# # If not already done, install the EMC2 package\n# remotes::install_github(\"ampl-psych/EMC2\",ref=\"dev\")\nlibrary(EMC2)"
+    "text": "Data are fixed, but parameters are uncertain.\n Bayes’ Rule: \n\\[\n\\text{Posterior} \\propto \\text{Likelihood} \\times \\text{Prior}\n\\] \n\nInference produces posterior distributions over parameters\nCaptures uncertainty and incorporates prior knowledge"
   },
   {
-    "objectID": "eam-workshop.html#set-up",
-    "href": "eam-workshop.html#set-up",
+    "objectID": "eam-workshop.html#bayesian-inference",
+    "href": "eam-workshop.html#bayesian-inference",
     "title": "",
     "section": "",
-    "text": "# # If not already done, install the EMC2 package\n# remotes::install_github(\"ampl-psych/EMC2\",ref=\"dev\")\nlibrary(EMC2)"
+    "text": "Data are fixed, but parameters are uncertain.\n Bayes’ Rule: \n\\[\n\\text{Posterior} \\propto \\text{Likelihood} \\times \\text{Prior}\n\\] \n\nInference produces posterior distributions over parameters\nCaptures uncertainty and incorporates prior knowledge"
+  },
+  {
+    "objectID": "eam-workshop.html#hierarchical-modeling",
+    "href": "eam-workshop.html#hierarchical-modeling",
+    "title": "",
+    "section": "Hierarchical Modeling",
+    "text": "Hierarchical Modeling\nAre participants identical or fully independent?\n\n\nModels group-level structure\neach participant’s parameters ∼ drawn from a population distribution \nGroup-level generalization \nIndividual-level inference"
+  },
+  {
+    "objectID": "eam-workshop.html#why-hierarchical-models",
+    "href": "eam-workshop.html#why-hierarchical-models",
+    "title": "",
+    "section": "Why Hierarchical Models?",
+    "text": "Why Hierarchical Models?\n\nReduces bias from unmodeled individual variability\n\nPrevents overfitting and underfitting\n\nShrinkage: pulls extreme or low-quality estimates toward the group mean\n\n\nBoehm et al. (2018), Behavior Research Methods"
+  },
+  {
+    "objectID": "eam-workshop.html#what-are-we-trying-to-infer",
+    "href": "eam-workshop.html#what-are-we-trying-to-infer",
+    "title": "",
+    "section": "What Are We Trying to Infer?",
+    "text": "What Are We Trying to Infer?\nWe want to estimate:\n\nIndividual-level parameters: \\(\\alpha_1, \\alpha_2, \\dots, \\alpha_N\\)\nGroup-level structure:\nA shared population distribution \\(\\alpha_i \\sim \\mathcal{N}(\\mu, \\Sigma)\\)\n\nThis enables both individual and population inference."
+  },
+  {
+    "objectID": "eam-workshop.html#model-structure",
+    "href": "eam-workshop.html#model-structure",
+    "title": "",
+    "section": "Model Structure",
+    "text": "Model Structure\nThe hierarchical model defines a joint posterior over all unknowns:\n\\[\np(\\alpha_i, \\mu, \\Sigma \\mid \\text{data}) \\propto\np(\\text{data} \\mid \\alpha_i) \\cdot\np(\\alpha_i \\mid \\mu, \\Sigma) \\cdot\np(\\mu, \\Sigma)\n\\]\n\nLikelihood:\n\\(p(\\text{data} \\mid \\alpha_i)\\)\n— How well each participant’s data is explained by their parameters\nGroup-level model:\n\\(p(\\alpha_i \\mid \\mu, \\Sigma)\\) — Individual parameters drawn from population distribution\nHyperprior:\n\\(p(\\mu, \\Sigma)\\) — Prior beliefs over the group-level structure"
+  },
+  {
+    "objectID": "eam-workshop.html#group-level-parameters",
+    "href": "eam-workshop.html#group-level-parameters",
+    "title": "",
+    "section": "Group-Level Parameters",
+    "text": "Group-Level Parameters\nLet \\(n\\) = number of individual parameters per subject:\n\n\\(\\mu\\): vector of population means\n\n\\(\\Sigma\\): symmetric covariance matrix, including:\n\nDiagonal: Variances (\\(\\sigma^2\\))\nOff-diagonal: Covariances\n\\(\\frac{n(n-1)}{2}\\) elements total\n\n\nThese hyperparameters are learned from the data."
+  },
+  {
+    "objectID": "eam-workshop.html#priors",
+    "href": "eam-workshop.html#priors",
+    "title": "",
+    "section": "Priors",
+    "text": "Priors\nCognitive-model parameters must be transformed to have support on the real line. This transformation is necessary to meet the assumption of the normal group-level distribution.\n\nLog transform: Applied to parameters with a lower bound (e.g., non-decision time, which cannot be negative)\nProbit transform: Applied to parameters with both lower and upper bounds (e.g., the starting point parameter in the Drift Diffusion Model, which must lie between two response boundaries)\n\nAs a result, priors are specified on these transformed parameters rather than on the original scales."
+  },
+  {
+    "objectID": "eam-workshop.html#set-up---emc2",
+    "href": "eam-workshop.html#set-up---emc2",
+    "title": "",
+    "section": "Set up - EMC2",
+    "text": "Set up - EMC2\n\n# # If not already done, install the EMC2 package\n# remotes::install_github(\"ampl-psych/EMC2\",ref=\"dev\")\nlibrary(EMC2)"
   },
   {
     "objectID": "eam-workshop.html#design-specification",
     "href": "eam-workshop.html#design-specification",
     "title": "",
     "section": "Design specification",
-    "text": "Design specification\nSpecify how model parameters map to experimental conditions using linear model formulas. The design function creates a design object that specifies:\n\nThe model type\nLinear models for estimated parameter types (omitted types are set to default values)\nParameters to fix as constants (optional)\nFunctions to create custom factors (optional)\nCustom contrast coding for factors (optional)"
+    "text": "Design specification\nThe design function creates a design object that maps model parameters to experimental conditions using linear model formulas. This object specifies:\n\nModel type\nLinear models for estimated parameter types (default values are used for omitted types)\nParameters to be fixed as constants (optional)\nFunctions for creating custom factors (optional)\nCustom contrast coding for factors (optional)\n\nThe simulation procedure"
   },
   {
     "objectID": "eam-home.html",

@@ -55,15 +55,76 @@ library(dplyr)
 :::
 :::::
 
-## Sequential Sampling Models  
+## Sequential Sampling Models
 
-Many models assume **accumulation of noisy evidence** to thresholds. Can vary in:
+Many EAMs are **sequential sampling models** that assume accumulation of **noisy evidence** toward thresholds.
 
--   Number of accumulators
--   Relative vs absolute decision rules
--   Constant vs time-varying drift rate
--   Stochastic vs deterministic noise
--   With/without inhibition or decay
+They differ on key dimensions:
+
+- Number of **accumulators** (e.g., single vs multiple)
+- **Decision rules** (relative vs absolute)
+- **Drift rate**: constant or time-varying
+- **Noise**: stochastic vs deterministic
+- With or without **inhibition** or **decay**
+
+
+## All Evidence Accumulation Models
+
+EAMs assume that, upon stimulus presentation (e.g., left- or right-facing arrow), the decision maker:
+
+- Samples noisy evidence for available options (e.g., "Should I press left or right?")
+- Accumulates that evidence until a **threshold** is crossed
+
+
+## Sequential Processing Assumption
+
+Total **Response Time (RT)** is modeled as the sum of **three sequential stages**:
+
+1. **Stimulus encoding**
+2. **Evidence accumulation** (decision-making)
+3. **Motor response execution**
+
+Stages (1) and (3) are captured in the **nondecision time (Ter)** parameter.
+
+
+## Relative vs. Absolute {.small-text .align-center}
+
+![](img/guide-eam.png){width="1000" height="400"}
+
+> Boag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling. https://doi.org/10.31234/osf.io/snqgp
+
+::: notes
+the models contain parameters controlling the evidence starJng point (allowing for a priori biases), accumulaJon rate (controlling the speed of processing), threshold/boundary separaJon (controlling the amount of evidence required to make a response), and nondecision Jme (the sum of Jme taken for sJmulus encoding and motor response production).
+:::
+
+## Relative Evidence Models
+
+In **relative evidence models** (e.g., Wiener process, Diffusion Decision Model):
+
+- Decision is based on the **difference** in accumulated evidence between two options.
+- Suitable for **binary choices**.
+
+
+## Absolute Evidence Models
+
+In **racing accumulator models** (e.g., LBA, RDM):
+
+- Each option has its own **accumulator** tracking **absolute evidence**.
+- Decision is made by the **first accumulator to reach threshold**.
+- Can handle **multiple alternatives** (not just binary choices).
+
+
+::: notes
+
+Although relative and absolute evidence models differ in how they conceptualize evidence, they:
+
+- Share similar assumptions about trial structure and data quality
+- Use overlapping parameters (drift rate, threshold, bias, nondecision time)
+- Often reach the **same substantive conclusions**
+- Provide convergent results when applied to the same data
+
+:::
+
 
 ## Wiener Process {.small-text .align-center}
 
@@ -220,12 +281,7 @@ Each accumulator races toward its threshold. The first to cross **wins**.
 
 > [Tillman, G., Van Zandt, T., & Logan, G. D. (2020). Sequential sampling models without random between-trial variability: The racing diffusion model of speeded decision making. Psychonomic Bulletin & Review, 27(5), 911-936.](https://link.springer.com/content/pdf/10.3758/s13423-020-01719-6.pdf)
 
-## RDM Characteristics {.small-text}
-
--   Each response has its own drift rate $v{_k}$
--   Threshold $a$ is typically shared
--   Start point $z = 0$ is often assumed
--   Noise $s$ is usually constant
+## RDM
 
 <br/>
 $$
@@ -250,7 +306,386 @@ $$
 
 > **Evidence accumulates noisily over time until a decision threshold is reached.**
 
----
+
+## Core Assumptions of the Basic EAM
+
+- Each decision = a **single, continuous accumulation** of evidence
+
+- Culminates in a **discrete response**
+
+- Evidence accumulates from **stimulus onset to response**
+
+## EAM-suitable tasks should
+
+- Clearly define **stimulus and response onset**
+
+- Present **static, constant stimuli**
+
+- Avoid overlapping cognitive processes
+
+
+## Within-Trial Stationarity
+
+- Model parameters are **fixed within a trial**
+- Evidence accumulation:
+  - Constant **mean rate**, though noisy
+  - No changes in stimulus evidence mid-trial
+
+- Decision thresholds:
+  - Set **before** stimulus onset
+  - **Do not change** during the trial
+
+
+## Within-Condition Stationarity
+
+- Parameters are constant **across same-type trials**
+- Needed for **model fitting and averaging**
+- Assumes:
+  - Trials of same condition reflect **same cognitive settings**
+  - Participant behavior is stable
+
+> Example: Don't change stimulus brightness mid-trial.
+
+
+## Positively Skewed RT Distributions
+
+EAMs naturally produce **positively skewed** RTs.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+dat = data.frame(rt = brms::rinv_gaussian(10000, mu = .3,shape = 1.3)+.2)
+ggplot(data = dat, aes(x = rt))+
+  geom_density(fill = "orange", size = 2)+xlab("RT")+
+  theme_classic()
+```
+
+
+## Free of Contaminant Processes
+
+Data should reflect **evidence accumulation**!
+
+Avoid:
+
+- Random guessing
+
+- Fast guesses
+
+- Attention lapses or missing responses
+
+> Clean data = better model fit and interpretability.
+
+
+## Latent Cognitive Parameters
+
+EAMs decompose decisions into:
+
+- **Drift rate (v)** 
+
+- **Threshold (a)** 
+
+- **Bias (z)** 
+
+- **Nondecision time (Ter)** 
+
+
+## Use of Parameters
+
+Compare parameters:
+
+- **Across individuals** (e.g., young vs. older adults)
+
+- **Within individuals** (e.g., easy vs. hard conditions)
+
+- **With covariates** (e.g., BOLD activity, IQ)
+
+
+## Stimulus Design
+
+Manipulate difficulty to modulate:
+
+- Drift rate
+
+- Error rates (target: **5–35%**)
+
+Avoid:
+
+- **Floor effects** → guessing
+
+- **Ceiling effects** → no errors to fit
+
+
+## Response Modality
+
+EAMs assume the response begins **after the decision ends**.
+
+Best modalities:
+
+- **Manual keypresses** 
+
+- **Saccades** 
+
+Avoid imprecise, slow, or delayed responses.
+
+
+## Drift Rate (v)
+
+- Reflects **evidence strength**
+
+- ⬆ Drift → fast & accurate decisions
+
+- ⬇ Drift → slow, error-prone
+
+Manipulated by:
+
+- Stimulus discriminability
+
+- Attention/task difficulty
+
+
+## Thresholds (a)
+
+- Set before stimulus onset
+
+- Reflect **response caution/cognitive control/bias/preference**
+
+⬆ Threshold:
+
+- Slower but more accurate
+
+⬇ Threshold:
+
+- Faster but error-prone
+
+> Manipulate via pre-trial cues or instructions.
+
+
+## Starting Point (z)
+
+- Reflects **response bias**
+
+- Midpoint = no bias
+
+Deviating from midpoint:
+
+- Favors one response:
+  - Faster/more accurate for favored
+  - Slower/less accurate for disfavored
+
+Set **before** stimulus onset.
+
+
+## Nondecision Time (Ter)
+
+- Time to encode stimulus + execute response
+
+- Shifts RT distribution **without** changing shape/accuracy
+
+Sensitive to:
+
+- Visual complexity
+
+- Motor demands
+
+> Hard to estimate precisely — often noisy across individuals.
+
+
+## Trial Structure and Event Timing
+
+EAM tasks follow a structured sequence of events:
+
+1.    **Cue** (optional)
+
+2.    **Fixation**
+
+3.    **Stimulus onset**
+
+4.    **Response window**
+
+5.    **Intertrial interval**
+
+Each component affects the integrity of evidence accumulation.
+
+
+## Cue
+
+- Optional cue presented **before** stimulus onset.
+- Informs participants **how** to respond (e.g., emphasis on speed or accuracy).
+- May set cognitive control parameters:
+  - **Thresholds**
+  - **Biases**
+- Can direct **gaze or attention** to a spatial location.
+
+> Must occur **before** evidence accumulation begins.
+
+
+## Fixation Interval
+
+- Ensures eyes and attention are centered.
+- Allows previous trial’s processes to return to **baseline**.
+- Reduces overlap across trials.
+
+💡 **Best practice:** Use **variable durations**, e.g.:
+
+- Sample from exponential or pseudo-exponential distribution
+
+- Mean ≈ 0.7 s; range = 0.2–5 s
+
+
+## Stimulus Onset
+
+- Marks the **start** of evidence accumulation.
+- Assumes **constant signal strength** from onset to response.
+
+> Any variability or delay in onset weakens the assumption of continuous accumulation.
+
+
+## Response Window
+
+- Starts with stimulus onset.
+- Ends with:
+  - A **response**
+  - Or a **deadline**
+
+💡 Calibrate response window:
+
+- Long enough to allow natural responding
+
+- Short enough to avoid strategy shifts
+
+- Typical EAM use: **mean RT < 1.5 s**
+
+
+## But… EAMs Can Handle Longer RTs
+
+- **Lerche & Voss (2019):** Simulated fits with mean RT ≈ 7.4 s
+- **Aschenbrenner et al. (2016); Glickman & Usher (2019):** Empirical fits to long RTs
+- **Boag et al. (2023):** EAMs used in:
+  - Air-traffic control
+  - Maritime surveillance
+  - Forensic decision making
+
+🧠 Effects on parameters were **consistent** across short/long RT tasks.
+
+
+## Intertrial Interval
+
+- Time between trials
+- Purpose:
+  - Allow participant to **reset**
+  - Prevent **proactive interference**
+  - Avoid **sequential effects**
+
+
+## Sample Size Planning
+
+- Critical for **parameter recovery** and **error trials**
+- Key question:
+  - Will you have enough **rare trial types** (e.g., errors on easy trials)?
+
+> Example:  
+200 trials × 5% error rate = **10 error trials** — often the **minimum** for fitting.
+
+
+## Collecting Data
+
+EAM modeling requires detailed per-trial data:
+
+Each trial (row) should include:
+
+- Participant ID
+
+- Condition
+
+- Stimulus presented
+
+- Response submitted
+
+- **RT**
+
+Optional but recommended:
+- Session/trial number
+
+- Event timings: cue, stimulus, response, feedback, intertrial interval
+
+💾 Stored as `.csv` or similar — allows model software to reconstruct the timeline.
+
+
+## Outliers
+
+Outliers distort model fits.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+**Fast outliers:**
+
+- May reflect:
+  - Premature guesses
+  - Trigger failures
+  
+- Typically: **RT < 150–300 ms** (depending on response modality)
+:::
+
+::: {.column width="50%"}
+
+**Slow outliers:**
+
+- Less common to censor unless clearly implausible
+
+- May reflect:
+  - Lapses
+  - Multiple evidence accumulation attempts
+
+:::
+:::::
+
+
+## Identifying Fast Guessing
+
+A principled method:
+
+1. Sort RTs from fastest to slowest
+
+2. Plot accuracy as a function of RT
+
+3. Find the **"chance-performance boundary"**
+
+4. Discard all RTs **below that point**
+
+> Better than arbitrary 200–300 ms cutoff
+
+
+## Detecting Nonstationarity
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+Check for **drift** across trials:
+
+- Correlate **RT with trial number**
+
+- Look for trends suggesting:
+
+  - Fatigue
+  - Learning
+  - Strategic shifts
+  
+:::
+::: {.column width="50%"}
+Use this to:
+
+- Exclude sessions
+
+- Model time-on-task effects
+::: 
+:::::
+
 
 ## "All Models Are Wrong, but Some Are Useful"  — G. Box {.align-center}
 
@@ -267,197 +702,5 @@ Accurately predicts new (**out-of-sample**) data
 
 📏 Captures **uncertainty**, **variability**, and **structure**
 
----
-
-## Bayesian Inference
-
-<br/>
-
-**Data are fixed**, but **parameters are uncertain**.
-
-<br/>
-
-**Bayes’ Rule**:
-<br/>
-
-$$
-\text{Posterior} \propto \text{Likelihood} \times \text{Prior}
-$$
-<br/>
-
-- Inference produces **posterior distributions** over parameters  
-
-- Captures uncertainty and incorporates prior knowledge  
-
----
-
-## Hierarchical Modeling {.align-center}
-
-*Are participants identical or fully independent?*
-
-:::: {.columns}
-::: {.column width="45%"}
-
-Models **group-level structure**
-
-each participant’s parameters ∼ drawn from a population distribution
-<br/><br/>
-
-**Individual-level** inference  
-<br/>
-
-**Group-level** generalization
-<br/>
-
-:::
-
-::: {.column width="55%"}
-
-
-```{r}
-#| echo: false
-#| fig-width: 8
-#| fig-asp: .7
-
-# Function to create a normal distribution curve
-normal_curve <- function(mean, sd, n = 200, range_mult = 3) {
-  x <- seq(mean - range_mult*sd, mean + range_mult*sd, length.out = n)
-  y <- dnorm(x, mean, sd)
-  data.frame(x = x, y = y)
-}
-
-# Create data for the plots
-hyper_curve <- normal_curve(0.5, 0.05)
-individual_curves <- rbind(
-  normal_curve(0.35, 0.06) %>% mutate(subj = "1"),
-  normal_curve(0.5, 0.03) %>% mutate(subj = "2"),
-  normal_curve(0.7, 0.04) %>% mutate(subj = "3")
-)
-
-# Normalize y values
-max_y <- max(c(hyper_curve$y, individual_curves$y))
-hyper_curve$y <- hyper_curve$y / max_y
-individual_curves$y <- individual_curves$y / max_y
-
-# Create the main plot
-p1 <- ggplot() +
-  # Hyper-distribution curve
-  geom_line(data = hyper_curve, aes(x, y + 1.6), size = 2.5, color = "black") +
-  # Individual curves
-  geom_line(data = individual_curves, aes(x, y - .1, 
-                                          group = subj, color = subj,
-                                          fill = subj), 
-            size = 2.5, show.legend = FALSE) +  # X marks
-  geom_point(aes(x = c(0.38, 0.5, 0.65), y = rep(1.12, 3)), 
-             shape = 21, size = 8, fill = c("cyan4", "green2", "purple2")) +
-  # Labels
-  annotate("text", x = 0.5, y = 1.8, label = "μ,σ", color = "red", size = 10) +
-  # Customize the plot
-  theme_void() +
-  coord_cartesian(xlim = c(0.1, 0.9), ylim = c(-0.2, 2.3), expand = FALSE) +
-  # Add arrows top-down
-  geom_segment(aes(x = 0.45, y = 1.6, xend = 0.39, yend = 1.2), size = 1.5,
-               arrow = arrow(length = unit(0.2, "cm")), color = "gray50") +
-  geom_segment(aes(x = 0.5, y = 1.6, xend = 0.5, yend = 1.2), size = 1.5,
-               arrow = arrow(length = unit(0.2, "cm")), color = "gray50") +
-  geom_segment(aes(x = 0.55, y = 1.6, xend = 0.64, yend = 1.2), size = 1.5,
-               arrow = arrow(length = unit(0.2, "cm")), color = "gray50") +
-  # Add arrows bottom-up
-  geom_segment(aes(x = 0.35, y = 0.7, xend = 0.37, yend = 1.02), size = 1,
-               arrow = arrow(length = unit(0.2, "cm")), color = "gray50") +
-  geom_segment(aes(x = 0.5, y = 0.95, xend = 0.5, yend = 1.02), size = 1,
-               arrow = arrow(length = unit(0.2, "cm")), color = "gray50") +
-  geom_segment(aes(x = 0.69, y = 0.8, xend = 0.66, yend = 1.02), size = 1,
-               arrow = arrow(length = unit(0.2, "cm")), color = "gray50") +
-  scale_color_manual(values = c("1" = "cyan4", "2" = "green2", "3" = "purple2"))+
-  geom_point(aes(x = c(0.35, 0.5, 0.7), y = rep(-0.1, 3)), 
-             shape = 21, size = 8, fill = c("cyan4", "green2", "purple2"))
-
-
-# Display the plot
-print(p1)
-
-
-```
-:::
-:::::
-
-
-## Why Hierarchical Models?
-<br/>
-
--   Reduces bias from unmodeled individual variability  
--   Prevents overfitting *and* underfitting  
--   **Shrinkage**: pulls extreme or low-quality estimates toward the group mean  
-
-> [Boehm et al. (2018), *Behavior Research Methods*](https://doi.org/10.3758/s13428-018-1054-3)
-
-::: notes
-Hierarchical models aim to strike a balance between two extremes:
-
-- **Overfitting**: Fitting each subject completely independently  
-- **Underfitting**: Pooling across subjects and fitting only the average  
-:::
-
-
-## What Are We Trying to Infer?
-
-We want to estimate:
-
-- **Individual-level parameters**:  $\alpha_1, \alpha_2, \dots, \alpha_N$
-
-
-- **Group-level structure**:  
-  A shared population distribution  $\alpha_i \sim \mathcal{N}(\mu, \Sigma)$
-
-This enables both **individual** and **population** inference.
-
-
-## Model Structure
-
-The hierarchical model defines a **joint posterior** over all unknowns:
-
-$$
-p(\alpha_i, \mu, \Sigma \mid \text{data}) \propto 
-p(\text{data} \mid \alpha_i) \cdot 
-p(\alpha_i \mid \mu, \Sigma) \cdot 
-p(\mu, \Sigma)
-$$
-
-- **Likelihood**:  
-  $p(\text{data} \mid \alpha_i)$  
-  — How well each participant's data is explained by their parameters
-
-- **Group-level model**:  
-  $p(\alpha_i \mid \mu, \Sigma)$  — Individual parameters drawn from population distribution
-
-- **Hyperprior**:  
-  $p(\mu, \Sigma)$  — Prior beliefs over the group-level structure
-
-
-## Group-Level Parameters
-
-Let $n$ = number of individual parameters per subject:
-
-- $\mu$: vector of **population means**  
-- $\Sigma$: symmetric **covariance matrix**, including:
-
-  - Diagonal: **Variances** ($\sigma^2$)
-  - Off-diagonal: **Covariances**  
-    $\frac{n(n-1)}{2}$ elements total
-
-These hyperparameters are **learned from the data**.
-
-
-
-## Final Thoughts
-
-- 🧠 Evidence Accumulation Models (EAMs) are foundational to modeling cognitive decisions  
-- 📈 Bayesian hierarchical inference improves parameter recovery and interpretability  
-- ⚖ Seek a balance:
-  - Expressive but not too complex  
-  - Flexible yet constrained  
-
-
-# Thank You!
+# Thank you!
 
