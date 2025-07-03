@@ -1,17 +1,10 @@
 [
   {
-    "objectID": "eam-intro.html#decision-making",
-    "href": "eam-intro.html#decision-making",
+    "objectID": "eam-intro.html#decision-making---perception-into-action",
+    "href": "eam-intro.html#decision-making---perception-into-action",
     "title": "Intro to EAM",
-    "section": "Decision Making",
-    "text": "Decision Making\n\nMany decisions are made rapidly and at a low cognitive level.\nTranslate perception into action\nPerception triggers stored knowledge → triggers action.\nThis process matches perception to known representations and selects a response."
-  },
-  {
-    "objectID": "eam-intro.html#sequential-sampling-models",
-    "href": "eam-intro.html#sequential-sampling-models",
-    "title": "Intro to EAM",
-    "section": "Sequential Sampling Models",
-    "text": "Sequential Sampling Models\nCould differ:\n\nNumber of accumulators (e.g., single vs multiple)\nDecision rules (relative vs absolute)\nDrift rate: constant or time-varying\nNoise: stochastic vs deterministic\nWith or without inhibition or decay"
+    "section": "Decision Making - Perception into Action",
+    "text": "Decision Making - Perception into Action\n\nMany decisions are made rapidly and at a low cognitive level.\nPerception triggers stored knowledge → triggers action.\nThis process matches perception to known representations and selects a response."
   },
   {
     "objectID": "eam-intro.html#all-evidence-accumulation-models",
@@ -21,18 +14,18 @@
     "text": "All Evidence Accumulation Models\nEAMs assume that, upon stimulus presentation (e.g., left- or right-facing arrow), the decision maker:\n\nSamples noisy evidence for available options (e.g., “Should I press left or right?”)\nAccumulates that evidence until a threshold is crossed\n\n\n\n\n\n\n\nMulder, M. J., Wagenmakers, E. J., Ratcliff, R., Boekel, W., & Forstmann, B. U. (2012). Bias in the brain: a diffusion model analysis of prior probability and potential payoff. Journal of Neuroscience, 32(7), 2335–2343."
   },
   {
+    "objectID": "eam-intro.html#sequential-sampling-models",
+    "href": "eam-intro.html#sequential-sampling-models",
+    "title": "Intro to EAM",
+    "section": "Sequential Sampling Models",
+    "text": "Sequential Sampling Models\nCould differ:\n\nNumber of accumulators (e.g., single vs multiple)\nDecision rules (relative vs absolute)\nDrift rate: constant or time-varying\nNoise: stochastic vs deterministic\nWith or without inhibition or decay"
+  },
+  {
     "objectID": "eam-intro.html#sequential-processing-assumption",
     "href": "eam-intro.html#sequential-processing-assumption",
     "title": "Intro to EAM",
     "section": "Sequential Processing Assumption",
     "text": "Sequential Processing Assumption\nTotal Response Time (RT) is modeled as the sum of three sequential stages:\n\nStimulus encoding\nEvidence accumulation (decision-making)\nMotor response execution\n\nStages (1) and (3) are captured in the nondecision time (Ter) parameter.\n\nthe models contain parameters controlling the evidence starJng point (allowing for a priori biases), accumulaJon rate (controlling the speed of processing), threshold/boundary separaJon (controlling the amount of evidence required to make a response), and nondecision Jme (the sum of Jme taken for sJmulus encoding and motor response production)."
-  },
-  {
-    "objectID": "eam-intro.html#relative-vs.-absolute",
-    "href": "eam-intro.html#relative-vs.-absolute",
-    "title": "Intro to EAM",
-    "section": "Relative vs. Absolute",
-    "text": "Relative vs. Absolute\n\n\nBoag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling. https://doi.org/10.31234/osf.io/snqgp\n\n\nthe models contain parameters controlling the evidence starJng point (allowing for a priori biases), accumulaJon rate (controlling the speed of processing), threshold/boundary separaJon (controlling the amount of evidence required to make a response), and nondecision Jme (the sum of Jme taken for sJmulus encoding and motor response production)."
   },
   {
     "objectID": "eam-intro.html#relative-evidence-models",
@@ -112,6 +105,48 @@
     "text": "Summary\n\n\n\n\n\n\n\n\nModel\nCore Mechanism\nKey Strengths\n\n\n\n\nWiener\nStochastic accumulation\nSimple FPT, binary outcomes\n\n\nFull DDM\nAccumulation + param variability\nRealistic RTs, error patterns\n\n\nRacing DDM\nMultiple accumulators\nHandles multi-alternative decisions\n\n\n\n\nEvidence accumulates noisily over time until a decision threshold is reached."
   },
   {
+    "objectID": "eam-intro.html#latent-cognitive-parameters",
+    "href": "eam-intro.html#latent-cognitive-parameters",
+    "title": "Intro to EAM",
+    "section": "Latent Cognitive Parameters",
+    "text": "Latent Cognitive Parameters\nEAMs decompose decisions into:\n\nDrift rate (v)\nThreshold (a)\nBias (z)\nNondecision time (Ter)"
+  },
+  {
+    "objectID": "eam-intro.html#drift-rate-v",
+    "href": "eam-intro.html#drift-rate-v",
+    "title": "Intro to EAM",
+    "section": "Drift Rate (v)",
+    "text": "Drift Rate (v)\n\nReflects evidence strength\n⬆ Drift → fast & accurate decisions\n⬇ Drift → slow, error-prone\n\nManipulated by:\n\nStimulus discriminability\nAttention/task difficulty"
+  },
+  {
+    "objectID": "eam-intro.html#thresholds-a",
+    "href": "eam-intro.html#thresholds-a",
+    "title": "Intro to EAM",
+    "section": "Thresholds (a)",
+    "text": "Thresholds (a)\n\nSet before stimulus onset\nReflect response caution/cognitive control/bias/preference\n\n⬆ Threshold:\n\nSlower but more accurate\n\n⬇ Threshold:\n\nFaster but error-prone\n\n\nManipulate via pre-trial cues or instructions."
+  },
+  {
+    "objectID": "eam-intro.html#starting-point-z",
+    "href": "eam-intro.html#starting-point-z",
+    "title": "Intro to EAM",
+    "section": "Starting Point (z)",
+    "text": "Starting Point (z)\n\nReflects response bias\nMidpoint = no bias\n\nDeviating from midpoint:\n\nFavors one response:\n\nFaster/more accurate for favored\nSlower/less accurate for disfavored\n\n\nSet before stimulus onset."
+  },
+  {
+    "objectID": "eam-intro.html#nondecision-time-ter",
+    "href": "eam-intro.html#nondecision-time-ter",
+    "title": "Intro to EAM",
+    "section": "Nondecision Time (Ter)",
+    "text": "Nondecision Time (Ter)\n\nTime to encode stimulus + execute response\nShifts RT distribution without changing shape/accuracy\n\nSensitive to:\n\nVisual complexity\nMotor demands\n\n\nHard to estimate precisely — often noisy across individuals."
+  },
+  {
+    "objectID": "eam-intro.html#use-of-parameters",
+    "href": "eam-intro.html#use-of-parameters",
+    "title": "Intro to EAM",
+    "section": "Use of Parameters",
+    "text": "Use of Parameters\nCompare parameters:\n\nAcross individuals (e.g., young vs. older adults)\nWithin individuals (e.g., easy vs. hard conditions)\nWith covariates (e.g., BOLD activity, IQ)"
+  },
+  {
     "objectID": "eam-intro.html#core-assumptions-of-the-basic-eam",
     "href": "eam-intro.html#core-assumptions-of-the-basic-eam",
     "title": "Intro to EAM",
@@ -154,20 +189,6 @@
     "text": "Free of Contaminant Processes\nData should reflect evidence accumulation!\nAvoid:\n\nRandom guessing\nFast guesses\nAttention lapses or missing responses\n\n\nClean data = better model fit and interpretability."
   },
   {
-    "objectID": "eam-intro.html#latent-cognitive-parameters",
-    "href": "eam-intro.html#latent-cognitive-parameters",
-    "title": "Intro to EAM",
-    "section": "Latent Cognitive Parameters",
-    "text": "Latent Cognitive Parameters\nEAMs decompose decisions into:\n\nDrift rate (v)\nThreshold (a)\nBias (z)\nNondecision time (Ter)"
-  },
-  {
-    "objectID": "eam-intro.html#use-of-parameters",
-    "href": "eam-intro.html#use-of-parameters",
-    "title": "Intro to EAM",
-    "section": "Use of Parameters",
-    "text": "Use of Parameters\nCompare parameters:\n\nAcross individuals (e.g., young vs. older adults)\nWithin individuals (e.g., easy vs. hard conditions)\nWith covariates (e.g., BOLD activity, IQ)"
-  },
-  {
     "objectID": "eam-intro.html#stimulus-design",
     "href": "eam-intro.html#stimulus-design",
     "title": "Intro to EAM",
@@ -180,34 +201,6 @@
     "title": "Intro to EAM",
     "section": "Response Modality",
     "text": "Response Modality\nEAMs assume the response begins after the decision ends.\nBest modalities:\n\nManual keypresses\nSaccades\n\nAvoid imprecise, slow, or delayed responses."
-  },
-  {
-    "objectID": "eam-intro.html#drift-rate-v",
-    "href": "eam-intro.html#drift-rate-v",
-    "title": "Intro to EAM",
-    "section": "Drift Rate (v)",
-    "text": "Drift Rate (v)\n\nReflects evidence strength\n⬆ Drift → fast & accurate decisions\n⬇ Drift → slow, error-prone\n\nManipulated by:\n\nStimulus discriminability\nAttention/task difficulty"
-  },
-  {
-    "objectID": "eam-intro.html#thresholds-a",
-    "href": "eam-intro.html#thresholds-a",
-    "title": "Intro to EAM",
-    "section": "Thresholds (a)",
-    "text": "Thresholds (a)\n\nSet before stimulus onset\nReflect response caution/cognitive control/bias/preference\n\n⬆ Threshold:\n\nSlower but more accurate\n\n⬇ Threshold:\n\nFaster but error-prone\n\n\nManipulate via pre-trial cues or instructions."
-  },
-  {
-    "objectID": "eam-intro.html#starting-point-z",
-    "href": "eam-intro.html#starting-point-z",
-    "title": "Intro to EAM",
-    "section": "Starting Point (z)",
-    "text": "Starting Point (z)\n\nReflects response bias\nMidpoint = no bias\n\nDeviating from midpoint:\n\nFavors one response:\n\nFaster/more accurate for favored\nSlower/less accurate for disfavored\n\n\nSet before stimulus onset."
-  },
-  {
-    "objectID": "eam-intro.html#nondecision-time-ter",
-    "href": "eam-intro.html#nondecision-time-ter",
-    "title": "Intro to EAM",
-    "section": "Nondecision Time (Ter)",
-    "text": "Nondecision Time (Ter)\n\nTime to encode stimulus + execute response\nShifts RT distribution without changing shape/accuracy\n\nSensitive to:\n\nVisual complexity\nMotor demands\n\n\nHard to estimate precisely — often noisy across individuals."
   },
   {
     "objectID": "eam-intro.html#trial-structure-and-event-timing",
@@ -418,19 +411,5 @@
     "title": "",
     "section": "EAM in Visual Perception Research",
     "text": "EAM in Visual Perception Research\n[PDF version]\nHTML version"
-  },
-  {
-    "objectID": "eam-intro.html#decision-making---translate-perception-into-action",
-    "href": "eam-intro.html#decision-making---translate-perception-into-action",
-    "title": "Intro to EAM",
-    "section": "Decision Making - Translate Perception into Action",
-    "text": "Decision Making - Translate Perception into Action\n\nMany decisions are made rapidly and at a low cognitive level.\nPerception triggers stored knowledge → triggers action.\nThis process matches perception to known representations and selects a response."
-  },
-  {
-    "objectID": "eam-intro.html#decision-making---perception-into-action",
-    "href": "eam-intro.html#decision-making---perception-into-action",
-    "title": "Intro to EAM",
-    "section": "Decision Making - Perception into Action",
-    "text": "Decision Making - Perception into Action\n\nMany decisions are made rapidly and at a low cognitive level.\nPerception triggers stored knowledge → triggers action.\nThis process matches perception to known representations and selects a response."
   }
 ]
