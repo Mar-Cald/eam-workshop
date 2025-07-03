@@ -3,8 +3,10 @@ set.seed(123)
 n <- 1000
 data <- data.frame(
   RT = sort(runif(n, 200, 2000)),  # RTs from 200 ms to 2000 ms
-  correct = rbinom(n, 1, prob = pmin(0.5 + (1:n)/n * 0.5, 0.95))  # Accuracy improves with RT
-)
+  correct = rbinom(n, 1, prob = pmin(0.5 + (1:n)/n * 0.5, 0.95)),  # Accuracy improves with RT
+  ntrial = 1:n
+  )
+
 
 # Bin RTs (e.g., 50 ms bins)
 library(dplyr)

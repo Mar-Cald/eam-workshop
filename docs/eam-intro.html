@@ -346,12 +346,20 @@ Margherita Calderan
 
   <p class="date">August 24, 2025</p>
 </section>
-<section id="decision-making" class="slide level2 small-text">
-<h2>Decision Making</h2>
+<section id="decision-making---perception-into-action" class="slide level2">
+<h2>Decision Making - Perception into Action</h2>
 <ul>
 <li>Many decisions are made rapidly and at a low cognitive level.</li>
 <li>Perception triggers stored knowledge → triggers action.</li>
 <li>This process matches perception to known representations and selects a response.</li>
+</ul>
+</section>
+<section id="all-evidence-accumulation-models" class="slide level2 small-text">
+<h2>All Evidence Accumulation Models</h2>
+<p>EAMs assume that, upon stimulus presentation (e.g., left- or right-facing arrow), the decision maker:</p>
+<ul>
+<li>Samples noisy evidence for available options (e.g., “Should I press left or right?”)</li>
+<li>Accumulates that evidence until a <strong>threshold</strong> is crossed</li>
 </ul>
 <div class="columns">
 <div class="column" style="width:70%;">
@@ -365,22 +373,13 @@ Margherita Calderan
 </section>
 <section id="sequential-sampling-models" class="slide level2">
 <h2>Sequential Sampling Models</h2>
-<p>Many EAMs are <strong>sequential sampling models</strong> that assume accumulation of <strong>noisy evidence</strong> toward thresholds.</p>
-<p>They differ on key dimensions:</p>
+<p>Could differ:</p>
 <ul>
 <li>Number of <strong>accumulators</strong> (e.g., single vs multiple)</li>
 <li><strong>Decision rules</strong> (relative vs absolute)</li>
 <li><strong>Drift rate</strong>: constant or time-varying</li>
 <li><strong>Noise</strong>: stochastic vs deterministic</li>
 <li>With or without <strong>inhibition</strong> or <strong>decay</strong></li>
-</ul>
-</section>
-<section id="all-evidence-accumulation-models" class="slide level2">
-<h2>All Evidence Accumulation Models</h2>
-<p>EAMs assume that, upon stimulus presentation (e.g., left- or right-facing arrow), the decision maker:</p>
-<ul>
-<li>Samples noisy evidence for available options (e.g., “Should I press left or right?”)</li>
-<li>Accumulates that evidence until a <strong>threshold</strong> is crossed</li>
 </ul>
 </section>
 <section id="sequential-processing-assumption" class="slide level2">
@@ -392,13 +391,6 @@ Margherita Calderan
 <li><strong>Motor response execution</strong></li>
 </ol>
 <p>Stages (1) and (3) are captured in the <strong>nondecision time (Ter)</strong> parameter.</p>
-</section>
-<section id="relative-vs.-absolute" class="slide level2 small-text align-center">
-<h2>Relative vs.&nbsp;Absolute</h2>
-<p><img data-src="img/guide-eam.png" width="1000" height="400"></p>
-<blockquote>
-<p>Boag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling. https://doi.org/10.31234/osf.io/snqgp</p>
-</blockquote>
 <aside class="notes">
 <p>the models contain parameters controlling the evidence starJng point (allowing for a priori biases), accumulaJon rate (controlling the speed of processing), threshold/boundary separaJon (controlling the amount of evidence required to make a response), and nondecision Jme (the sum of Jme taken for sJmulus encoding and motor response production).</p>
 <style type="text/css">
@@ -413,22 +405,42 @@ Margherita Calderan
           display:block!important;
       }</style></aside>
 </section>
-<section id="relative-evidence-models" class="slide level2">
+<section id="relative-evidence-models" class="slide level2 small-text">
 <h2>Relative Evidence Models</h2>
 <p>In <strong>relative evidence models</strong> (e.g., Wiener process, Diffusion Decision Model):</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><br></p>
 <ul>
 <li>Decision is based on the <strong>difference</strong> in accumulated evidence between two options.</li>
+</ul>
+<p><br></p>
+<ul>
 <li>Suitable for <strong>binary choices</strong>.</li>
 </ul>
+</div><div class="column" style="width:60%;">
+<p><img data-src="img/eam-relative.png" class="align-center" width="550" height="350"></p>
+</div></div>
+<blockquote>
+<p>Boag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling. https://doi.org/10.31234/osf.io/snqgp</p>
+</blockquote>
 </section>
-<section id="absolute-evidence-models" class="slide level2">
+<section id="absolute-evidence-models" class="slide level2 small-text">
 <h2>Absolute Evidence Models</h2>
 <p>In <strong>racing accumulator models</strong> (e.g., LBA, RDM):</p>
+<div class="columns">
+<div class="column" style="width:40%;">
 <ul>
-<li>Each option has its own <strong>accumulator</strong> tracking <strong>absolute evidence</strong>.</li>
-<li>Decision is made by the <strong>first accumulator to reach threshold</strong>.</li>
-<li>Can handle <strong>multiple alternatives</strong> (not just binary choices).</li>
+<li><p>Each option has its own <strong>accumulator</strong> tracking <strong>absolute evidence</strong>.</p></li>
+<li><p>Decision is made by the <strong>first accumulator to reach threshold</strong>.</p></li>
+<li><p>Can handle <strong>multiple alternatives</strong> (not just binary choices).</p></li>
 </ul>
+</div><div class="column small-small-text align-center" style="width:60%;">
+<p><img data-src="img/eam-absolute.png" width="550" height="350"></p>
+</div></div>
+<blockquote>
+<p>Boag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling. https://doi.org/10.31234/osf.io/snqgp</p>
+</blockquote>
 <aside class="notes">
 <p>Although relative and absolute evidence models differ in how they conceptualize evidence, they:</p>
 <ul>
@@ -448,6 +460,13 @@ Margherita Calderan
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section>
+<section>
+<section id="noisy-evidence" class="title-slide slide level1 center">
+<h1>Noisy evidence</h1>
+<p><br></p>
+<p>A random walk is the cumulative sum of independent random variables, which in decision-making models represent the sequential evidence gathered from discrete observations of a stimulus.</p>
+<p><br> <a href="https://doi.org/10.1007/978-3-031-45271-0_4" class="small-small-text">Smith, P.L., Ratcliff, R. (2024). An Introduction to the Diffusion Model of Decision-Making. In: Forstmann, B.U., Turner, B.M. (eds) An Introduction to Model-Based Cognitive Neuroscience. Springer, Cham.</a></p>
 </section>
 <section id="wiener-process" class="slide level2 small-text align-center">
 <h2>Wiener Process</h2>
@@ -504,7 +523,7 @@ d(t,x=0|\alpha,\tau,\beta,\delta) = \frac{1}{\alpha^2} \exp\left[-\alpha\beta\de
 <section id="full-ddm-parameters" class="slide level2 small-text align-center">
 <h2>Full DDM Parameters</h2>
 <div class="columns">
-<div class="column" style="width:40%;">
+<div class="column align-left" style="width:40%;">
 <p><strong>a</strong>: decision boundary</p>
 <p><strong>z</strong>: starting point</p>
 <p><strong>v</strong>: drift rate</p>
@@ -553,6 +572,7 @@ dx_k(t) = v_k \, dt + s \, dW_k(t) \quad \text{for } k = 1,\dots,K
 </section>
 <section id="rdm" class="slide level2">
 <h2>RDM</h2>
+<p>Without starting point variability…</p>
 <p><br> <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>i</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="prefix">|</mo><mi>b</mi><mo>,</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>b</mi><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>π</mi><msup><mi>t</mi><mn>3</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>−</mi><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></msup><mo>exp</mo><mrow><mo stretchy="true" form="prefix">[</mo><mi>−</mi><mfrac><mn>1</mn><mrow><mn>2</mn><mi>t</mi></mrow></mfrac><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>v</mi><mi>t</mi><mo>−</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">
 f_{i}(t|b,v) = b(2 \pi t^{3})^{-\frac{1}{2}} \exp\left[-\frac{1}{2t}(v t-b)^{2}\right]
 </annotation></semantics></math> <br> The winner is the first process to reach threshold:</p>
@@ -598,71 +618,6 @@ g_{i}(t) = f_{i}(t) \prod\limits_{j \neq i} (1 - F_{j}(t)),
 <p><strong>Evidence accumulates noisily over time until a decision threshold is reached.</strong></p>
 </blockquote>
 </section>
-<section id="core-assumptions-of-the-basic-eam" class="slide level2">
-<h2>Core Assumptions of the Basic EAM</h2>
-<ul>
-<li><p>Each decision = a <strong>single, continuous accumulation</strong> of evidence</p></li>
-<li><p>Culminates in a <strong>discrete response</strong></p></li>
-<li><p>Evidence accumulates from <strong>stimulus onset to response</strong></p></li>
-</ul>
-</section>
-<section id="eam-suitable-tasks-should" class="slide level2">
-<h2>EAM-suitable tasks should</h2>
-<ul>
-<li><p>Clearly define <strong>stimulus and response onset</strong></p></li>
-<li><p>Present <strong>static, constant stimuli</strong></p></li>
-<li><p>Avoid overlapping cognitive processes</p></li>
-</ul>
-</section>
-<section id="within-trial-stationarity" class="slide level2">
-<h2>Within-Trial Stationarity</h2>
-<ul>
-<li>Model parameters are <strong>fixed within a trial</strong></li>
-<li>Evidence accumulation:
-<ul>
-<li>Constant <strong>mean rate</strong>, though noisy</li>
-<li>No changes in stimulus evidence mid-trial</li>
-</ul></li>
-<li>Decision thresholds:
-<ul>
-<li>Set <strong>before</strong> stimulus onset</li>
-<li><strong>Do not change</strong> during the trial</li>
-</ul></li>
-</ul>
-</section>
-<section id="within-condition-stationarity" class="slide level2">
-<h2>Within-Condition Stationarity</h2>
-<ul>
-<li>Parameters are constant <strong>across same-type trials</strong></li>
-<li>Needed for <strong>model fitting and averaging</strong></li>
-<li>Assumes:
-<ul>
-<li>Trials of same condition reflect <strong>same cognitive settings</strong></li>
-<li>Participant behavior is stable</li>
-</ul></li>
-</ul>
-<blockquote>
-<p>Example: Don’t change stimulus brightness mid-trial.</p>
-</blockquote>
-</section>
-<section id="positively-skewed-rt-distributions" class="slide level2">
-<h2>Positively Skewed RT Distributions</h2>
-<p>EAMs naturally produce <strong>positively skewed</strong> RTs.</p>
-
-<img data-src="eam-intro_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
-<section id="free-of-contaminant-processes" class="slide level2">
-<h2>Free of Contaminant Processes</h2>
-<p>Data should reflect <strong>evidence accumulation</strong>!</p>
-<p>Avoid:</p>
-<ul>
-<li><p>Random guessing</p></li>
-<li><p>Fast guesses</p></li>
-<li><p>Attention lapses or missing responses</p></li>
-</ul>
-<blockquote>
-<p>Clean data = better model fit and interpretability.</p>
-</blockquote>
-</section>
 <section id="latent-cognitive-parameters" class="slide level2">
 <h2>Latent Cognitive Parameters</h2>
 <p>EAMs decompose decisions into:</p>
@@ -672,38 +627,6 @@ g_{i}(t) = f_{i}(t) \prod\limits_{j \neq i} (1 - F_{j}(t)),
 <li><p><strong>Bias (z)</strong></p></li>
 <li><p><strong>Nondecision time (Ter)</strong></p></li>
 </ul>
-</section>
-<section id="use-of-parameters" class="slide level2">
-<h2>Use of Parameters</h2>
-<p>Compare parameters:</p>
-<ul>
-<li><p><strong>Across individuals</strong> (e.g., young vs.&nbsp;older adults)</p></li>
-<li><p><strong>Within individuals</strong> (e.g., easy vs.&nbsp;hard conditions)</p></li>
-<li><p><strong>With covariates</strong> (e.g., BOLD activity, IQ)</p></li>
-</ul>
-</section>
-<section id="stimulus-design" class="slide level2">
-<h2>Stimulus Design</h2>
-<p>Manipulate difficulty to modulate:</p>
-<ul>
-<li><p>Drift rate</p></li>
-<li><p>Error rates (target: <strong>5–35%</strong>)</p></li>
-</ul>
-<p>Avoid:</p>
-<ul>
-<li><p><strong>Floor effects</strong> → guessing</p></li>
-<li><p><strong>Ceiling effects</strong> → no errors to fit</p></li>
-</ul>
-</section>
-<section id="response-modality" class="slide level2">
-<h2>Response Modality</h2>
-<p>EAMs assume the response begins <strong>after the decision ends</strong>.</p>
-<p>Best modalities:</p>
-<ul>
-<li><p><strong>Manual keypresses</strong></p></li>
-<li><p><strong>Saccades</strong></p></li>
-</ul>
-<p>Avoid imprecise, slow, or delayed responses.</p>
 </section>
 <section id="drift-rate-v" class="slide level2">
 <h2>Drift Rate (v)</h2>
@@ -766,6 +689,110 @@ g_{i}(t) = f_{i}(t) \prod\limits_{j \neq i} (1 - F_{j}(t)),
 <blockquote>
 <p>Hard to estimate precisely — often noisy across individuals.</p>
 </blockquote>
+</section>
+<section id="use-of-parameters" class="slide level2">
+<h2>Use of Parameters</h2>
+<p>Compare parameters:</p>
+<ul>
+<li><p><strong>Across individuals</strong> (e.g., young vs.&nbsp;older adults)</p></li>
+<li><p><strong>Within individuals</strong> (e.g., easy vs.&nbsp;hard conditions)</p></li>
+<li><p><strong>With covariates</strong> (e.g., BOLD activity, IQ)</p></li>
+</ul>
+</section>
+<section id="core-assumptions-of-the-basic-eam" class="slide level2">
+<h2>Core Assumptions of the Basic EAM</h2>
+<p><br></p>
+<ul>
+<li>Each decision = a <strong>single, continuous accumulation</strong> of evidence</li>
+</ul>
+<p><br></p>
+<ul>
+<li>Culminates in a <strong>discrete response</strong></li>
+</ul>
+<p><br></p>
+<ul>
+<li>Evidence accumulates from <strong>stimulus onset to response</strong></li>
+</ul>
+</section>
+<section id="eam-suitable-tasks-should" class="slide level2">
+<h2>EAM-suitable tasks should</h2>
+<ul>
+<li><p>Clearly define <strong>stimulus and response onset</strong></p></li>
+<li><p>Present <strong>static, constant stimuli</strong></p></li>
+<li><p>Avoid overlapping cognitive processes</p></li>
+</ul>
+</section>
+<section id="within-trial-stationarity" class="slide level2">
+<h2>Within-Trial Stationarity</h2>
+<ul>
+<li>Model parameters are <strong>fixed within a trial</strong></li>
+<li>Evidence accumulation:
+<ul>
+<li>Constant <strong>mean rate</strong>, though noisy</li>
+<li>No changes in stimulus evidence mid-trial</li>
+</ul></li>
+<li>Decision thresholds:
+<ul>
+<li>Set <strong>before</strong> stimulus onset</li>
+<li><strong>Do not change</strong> during the trial</li>
+</ul></li>
+</ul>
+</section>
+<section id="within-condition-stationarity" class="slide level2">
+<h2>Within-Condition Stationarity</h2>
+<ul>
+<li>Parameters are constant <strong>across same-type trials</strong></li>
+<li>Needed for <strong>model fitting and averaging</strong></li>
+<li>Assumes:
+<ul>
+<li>Trials of same condition reflect <strong>same cognitive settings</strong></li>
+<li>Participant behavior is stable</li>
+</ul></li>
+</ul>
+<blockquote>
+<p>Example: Don’t change stimulus brightness mid-trial.</p>
+</blockquote>
+</section>
+<section id="positively-skewed-rt-distributions" class="slide level2">
+<h2>Positively Skewed RT Distributions</h2>
+<p>EAMs naturally produce <strong>positively skewed</strong> RTs.</p>
+
+<img data-src="eam-intro_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
+<section id="free-of-contaminant-processes" class="slide level2">
+<h2>Free of Contaminant Processes</h2>
+<p>Data should reflect <strong>evidence accumulation</strong>!</p>
+<p>Avoid:</p>
+<ul>
+<li><p>Random guessing</p></li>
+<li><p>Fast guesses</p></li>
+<li><p>Attention lapses or missing responses</p></li>
+</ul>
+<blockquote>
+<p>Clean data = better model fit and interpretability.</p>
+</blockquote>
+</section>
+<section id="stimulus-design" class="slide level2">
+<h2>Stimulus Design</h2>
+<p>Manipulate difficulty to modulate:</p>
+<ul>
+<li><p>Drift rate</p></li>
+<li><p>Error rates (target: <strong>5–35%</strong>)</p></li>
+</ul>
+<p>Avoid:</p>
+<ul>
+<li><p><strong>Floor effects</strong> → guessing</p></li>
+<li><p><strong>Ceiling effects</strong> → no errors to fit</p></li>
+</ul>
+</section>
+<section id="response-modality" class="slide level2">
+<h2>Response Modality</h2>
+<p>EAMs assume the response begins <strong>after the decision ends</strong>.</p>
+<p>Best modalities:</p>
+<ul>
+<li><p><strong>Manual keypresses</strong></p></li>
+<li><p><strong>Saccades</strong></p></li>
+</ul>
+<p>Avoid imprecise, slow, or delayed responses.</p>
 </section>
 <section id="trial-structure-and-event-timing" class="slide level2">
 <h2>Trial Structure and Event Timing</h2>
@@ -838,16 +865,14 @@ g_{i}(t) = f_{i}(t) \prod\limits_{j \neq i} (1 - F_{j}(t)),
 <section id="but-eams-can-handle-longer-rts" class="slide level2">
 <h2>But… EAMs Can Handle Longer RTs</h2>
 <ul>
-<li><strong>Lerche &amp; Voss (2019):</strong> Simulated fits with mean RT ≈ 7.4 s</li>
-<li><strong>Aschenbrenner et al.&nbsp;(2016); Glickman &amp; Usher (2019):</strong> Empirical fits to long RTs</li>
-<li><strong>Boag et al.&nbsp;(2023):</strong> EAMs used in:
+<li><p><a href="https://doi.org/10.1037/xge0000774"><strong>Lerche, et al.&nbsp;(2020)</strong></a>. Drift rate and General Intelligence: fast tasks 0.655<em>s</em> and slow tasks 3,319<em>s</em> ms.</p></li>
+<li><p><a href="https://doi.org/10.1016/j.tics.2022.11.009"><strong>Boag et al.&nbsp;(2023)</strong></a>: EAMs used in:</p>
 <ul>
 <li>Air-traffic control</li>
 <li>Maritime surveillance</li>
 <li>Forensic decision making</li>
 </ul></li>
 </ul>
-<p>🧠 Effects on parameters were <strong>consistent</strong> across short/long RT tasks.</p>
 </section>
 <section id="intertrial-interval" class="slide level2">
 <h2>Intertrial Interval</h2>
@@ -962,7 +987,7 @@ g_{i}(t) = f_{i}(t) \prod\limits_{j \neq i} (1 - F_{j}(t)),
 <p>Accurately predicts new (<strong>out-of-sample</strong>) data<br>
 <br></p>
 <p>📏 Captures <strong>uncertainty</strong>, <strong>variability</strong>, and <strong>structure</strong></p>
-</section>
+</section></section>
 <section id="thank-you" class="title-slide slide level1 center">
 <h1>Thank you!</h1>
 

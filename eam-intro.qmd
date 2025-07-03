@@ -32,16 +32,23 @@ library(dplyr)
 
 
 
-## Decision Making {.small-text}
+## Decision Making - Perception into Action
 
 -   Many decisions are made rapidly and at a low cognitive level.
 -   Perception triggers stored knowledge → triggers action.
 -   This process matches perception to known representations and selects a response.
 
+
+
+## All Evidence Accumulation Models {.small-text}
+
+EAMs assume that, upon stimulus presentation (e.g., left- or right-facing arrow), the decision maker:
+
+- Samples noisy evidence for available options (e.g., "Should I press left or right?")
+- Accumulates that evidence until a **threshold** is crossed
+
 :::: {.columns}
-
 ::: {.column width="70%"}
-
 ![](img/dotmot.jpg){width="700" height="400"}
 
 :::
@@ -57,24 +64,13 @@ library(dplyr)
 
 ## Sequential Sampling Models
 
-Many EAMs are **sequential sampling models** that assume accumulation of **noisy evidence** toward thresholds.
-
-They differ on key dimensions:
+Could differ:
 
 - Number of **accumulators** (e.g., single vs multiple)
 - **Decision rules** (relative vs absolute)
 - **Drift rate**: constant or time-varying
 - **Noise**: stochastic vs deterministic
 - With or without **inhibition** or **decay**
-
-
-## All Evidence Accumulation Models
-
-EAMs assume that, upon stimulus presentation (e.g., left- or right-facing arrow), the decision maker:
-
-- Samples noisy evidence for available options (e.g., "Should I press left or right?")
-- Accumulates that evidence until a **threshold** is crossed
-
 
 ## Sequential Processing Assumption
 
@@ -87,31 +83,56 @@ Total **Response Time (RT)** is modeled as the sum of **three sequential stages*
 Stages (1) and (3) are captured in the **nondecision time (Ter)** parameter.
 
 
-## Relative vs. Absolute {.small-text .align-center}
-
-![](img/guide-eam.png){width="1000" height="400"}
-
-> Boag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling. https://doi.org/10.31234/osf.io/snqgp
-
 ::: notes
 the models contain parameters controlling the evidence starJng point (allowing for a priori biases), accumulaJon rate (controlling the speed of processing), threshold/boundary separaJon (controlling the amount of evidence required to make a response), and nondecision Jme (the sum of Jme taken for sJmulus encoding and motor response production).
 :::
 
-## Relative Evidence Models
+## Relative Evidence Models {.small-text}
 
 In **relative evidence models** (e.g., Wiener process, Diffusion Decision Model):
 
+:::: {.columns}
+::: {.column width="40%"}
+<br/>
+
 - Decision is based on the **difference** in accumulated evidence between two options.
+
+<br/>
+
 - Suitable for **binary choices**.
+:::
 
+::: {.column width="60%"}
 
-## Absolute Evidence Models
+![](img/eam-relative.png){width="550" height="350" .align-center}
+
+:::
+:::::
+
+> Boag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling. https://doi.org/10.31234/osf.io/snqgp
+
+## Absolute Evidence Models {.small-text}
 
 In **racing accumulator models** (e.g., LBA, RDM):
 
+::: {.columns}
+::: {.column width="40%"}
+
 - Each option has its own **accumulator** tracking **absolute evidence**.
+
 - Decision is made by the **first accumulator to reach threshold**.
+
 - Can handle **multiple alternatives** (not just binary choices).
+
+:::
+::: {.column width="60%" .small-small-text .align-center}
+
+![](img/eam-absolute.png){width="550" height="350"}
+
+:::
+:::::
+
+> Boag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling. https://doi.org/10.31234/osf.io/snqgp
 
 
 ::: notes
@@ -124,6 +145,14 @@ Although relative and absolute evidence models differ in how they conceptualize 
 - Provide convergent results when applied to the same data
 
 :::
+
+# Noisy evidence
+<br/>
+
+A random walk is the cumulative sum of independent random variables, which in decision-making models represent the sequential evidence gathered from discrete observations of a stimulus.
+
+<br/>
+[Smith, P.L., Ratcliff, R. (2024). An Introduction to the Diffusion Model of Decision-Making. In: Forstmann, B.U., Turner, B.M. (eds) An Introduction to Model-Based Cognitive Neuroscience. Springer, Cham.](https://doi.org/10.1007/978-3-031-45271-0_4){.small-small-text}
 
 
 ## Wiener Process {.small-text .align-center}
@@ -155,26 +184,26 @@ $$
 #| fig-width: 7
 
 set.seed(11)
-path = function(drift, threshold, ndt, sp1=0,  noise_constant=1, dt=0.0001, max_rt=2) {
+path = function(drift, sp1=0,  noise_constant=1, dt=0.0001, max_rt=2) {
   max_tsteps = max_rt/dt
   
   # initialize the diffusion process
   tstep = 0
-  x1 = c(sp1*threshold) # vector of accumulated evidence at t=tstep
-  time = c(ndt)
+  x1 = sp1 # vector of accumulated evidence at t=tstep
+  time = 0
   
   # start accumulating
-  while (x1[tstep+1] < threshold  & tstep < max_tsteps) {
+  while (tstep < max_tsteps) {
     x1 = c(x1, x1[tstep+1] + rnorm(mean=drift*dt, sd=noise_constant*sqrt(dt), n=1))
-    time = c(time, dt*tstep + ndt)
+    time = c(time, dt*tstep)
     tstep = tstep + 1
   }
   return (data.frame(time=time, x=x1, accumulator=rep(1, length(x1))))
 }
 
-drift = 1;threshold = 2.4; ndt = 0
+drift = -0.5
 
-sim_path = path(drift = drift,threshold = threshold, ndt = .1)
+sim_path = path(drift = drift)
 
 ggplot(data = sim_path, aes(x = time, y = x))+
   geom_line(size = 1, color = "blue4") +
@@ -223,7 +252,7 @@ The **Full DDM** accounts for more behavioral phenomena by allowing **trial-to-t
 ## Full DDM Parameters {.small-text .align-center}
 
 :::: {.columns}
-::: {.column width="40%"}
+::: {.column width="40%" .align-left}
 **a**: decision boundary
 
 **z**: starting point
@@ -283,6 +312,8 @@ Each accumulator races toward its threshold. The first to cross **wins**.
 
 ## RDM
 
+Without starting point variability...
+
 <br/>
 $$
 f_{i}(t|b,v) = b(2 \pi t^{3})^{-\frac{1}{2}} \exp\left[-\frac{1}{2t}(v t-b)^{2}\right]
@@ -306,78 +337,6 @@ $$
 
 > **Evidence accumulates noisily over time until a decision threshold is reached.**
 
-
-## Core Assumptions of the Basic EAM
-
-- Each decision = a **single, continuous accumulation** of evidence
-
-- Culminates in a **discrete response**
-
-- Evidence accumulates from **stimulus onset to response**
-
-## EAM-suitable tasks should
-
-- Clearly define **stimulus and response onset**
-
-- Present **static, constant stimuli**
-
-- Avoid overlapping cognitive processes
-
-
-## Within-Trial Stationarity
-
-- Model parameters are **fixed within a trial**
-- Evidence accumulation:
-  - Constant **mean rate**, though noisy
-  - No changes in stimulus evidence mid-trial
-
-- Decision thresholds:
-  - Set **before** stimulus onset
-  - **Do not change** during the trial
-
-
-## Within-Condition Stationarity
-
-- Parameters are constant **across same-type trials**
-- Needed for **model fitting and averaging**
-- Assumes:
-  - Trials of same condition reflect **same cognitive settings**
-  - Participant behavior is stable
-
-> Example: Don't change stimulus brightness mid-trial.
-
-
-## Positively Skewed RT Distributions
-
-EAMs naturally produce **positively skewed** RTs.
-
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
-
-dat = data.frame(rt = brms::rinv_gaussian(10000, mu = .3,shape = 1.3)+.2)
-ggplot(data = dat, aes(x = rt))+
-  geom_density(fill = "orange", size = 2)+xlab("RT")+
-  theme_classic()
-```
-
-
-## Free of Contaminant Processes
-
-Data should reflect **evidence accumulation**!
-
-Avoid:
-
-- Random guessing
-
-- Fast guesses
-
-- Attention lapses or missing responses
-
-> Clean data = better model fit and interpretability.
-
-
 ## Latent Cognitive Parameters
 
 EAMs decompose decisions into:
@@ -389,45 +348,6 @@ EAMs decompose decisions into:
 - **Bias (z)** 
 
 - **Nondecision time (Ter)** 
-
-
-## Use of Parameters
-
-Compare parameters:
-
-- **Across individuals** (e.g., young vs. older adults)
-
-- **Within individuals** (e.g., easy vs. hard conditions)
-
-- **With covariates** (e.g., BOLD activity, IQ)
-
-
-## Stimulus Design
-
-Manipulate difficulty to modulate:
-
-- Drift rate
-
-- Error rates (target: **5–35%**)
-
-Avoid:
-
-- **Floor effects** → guessing
-
-- **Ceiling effects** → no errors to fit
-
-
-## Response Modality
-
-EAMs assume the response begins **after the decision ends**.
-
-Best modalities:
-
-- **Manual keypresses** 
-
-- **Saccades** 
-
-Avoid imprecise, slow, or delayed responses.
 
 
 ## Drift Rate (v)
@@ -490,6 +410,122 @@ Sensitive to:
 - Motor demands
 
 > Hard to estimate precisely — often noisy across individuals.
+
+## Use of Parameters
+
+Compare parameters:
+
+- **Across individuals** (e.g., young vs. older adults)
+
+- **Within individuals** (e.g., easy vs. hard conditions)
+
+- **With covariates** (e.g., BOLD activity, IQ)
+
+
+## Core Assumptions of the Basic EAM
+
+<br/>
+
+- Each decision = a **single, continuous accumulation** of evidence
+
+<br/>
+
+- Culminates in a **discrete response**
+
+<br/>
+
+- Evidence accumulates from **stimulus onset to response**
+
+## EAM-suitable tasks should
+
+- Clearly define **stimulus and response onset**
+
+- Present **static, constant stimuli**
+
+- Avoid overlapping cognitive processes
+
+
+## Within-Trial Stationarity
+
+- Model parameters are **fixed within a trial**
+- Evidence accumulation:
+  - Constant **mean rate**, though noisy
+  - No changes in stimulus evidence mid-trial
+
+- Decision thresholds:
+  - Set **before** stimulus onset
+  - **Do not change** during the trial
+
+
+## Within-Condition Stationarity
+
+- Parameters are constant **across same-type trials**
+- Needed for **model fitting and averaging**
+- Assumes:
+  - Trials of same condition reflect **same cognitive settings**
+  - Participant behavior is stable
+
+> Example: Don't change stimulus brightness mid-trial.
+
+
+## Positively Skewed RT Distributions
+
+EAMs naturally produce **positively skewed** RTs.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+dat = data.frame(rt = brms::rinv_gaussian(100000, mu = .5,shape = .8)+.2)
+ggplot(data = dat, aes(x = rt))+
+  geom_density(fill = "orange", size = 2)+xlab("RT")+
+  theme_classic()+
+  xlim(0,2)
+```
+
+
+## Free of Contaminant Processes
+
+Data should reflect **evidence accumulation**!
+
+Avoid:
+
+- Random guessing
+
+- Fast guesses
+
+- Attention lapses or missing responses
+
+> Clean data = better model fit and interpretability.
+
+
+## Stimulus Design
+
+Manipulate difficulty to modulate:
+
+- Drift rate
+
+- Error rates (target: **5–35%**)
+
+Avoid:
+
+- **Floor effects** → guessing
+
+- **Ceiling effects** → no errors to fit
+
+
+## Response Modality
+
+EAMs assume the response begins **after the decision ends**.
+
+Best modalities:
+
+- **Manual keypresses** 
+
+- **Saccades** 
+
+Avoid imprecise, slow, or delayed responses.
 
 
 ## Trial Structure and Event Timing
@@ -560,14 +596,12 @@ Each component affects the integrity of evidence accumulation.
 
 ## But… EAMs Can Handle Longer RTs
 
-- **Lerche & Voss (2019):** Simulated fits with mean RT ≈ 7.4 s
-- **Aschenbrenner et al. (2016); Glickman & Usher (2019):** Empirical fits to long RTs
-- **Boag et al. (2023):** EAMs used in:
+- [**Lerche, et al. (2020)**](https://doi.org/10.1037/xge0000774). Drift rate and General Intelligence: fast tasks 0.655*s* and slow tasks 3,319*s* ms.
+
+- [**Boag et al. (2023)**](https://doi.org/10.1016/j.tics.2022.11.009): EAMs used in:
   - Air-traffic control
   - Maritime surveillance
   - Forensic decision making
-
-🧠 Effects on parameters were **consistent** across short/long RT tasks.
 
 
 ## Intertrial Interval
@@ -683,6 +717,7 @@ Use this to:
 - Exclude sessions
 
 - Model time-on-task effects
+
 ::: 
 :::::
 

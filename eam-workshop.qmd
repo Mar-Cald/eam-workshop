@@ -14,11 +14,9 @@ library(dplyr)
 **Data are fixed**, but **parameters are uncertain**.
 
 <br/>
-**Bayes’ Rule**:
-<br/>
 
 $$
-\text{Posterior} \propto \text{Likelihood} \times \text{Prior}
+p(\boldsymbol{\theta}|\boldsymbol{D}) = \frac{p(\boldsymbol{D}|\boldsymbol{\theta})p(\boldsymbol{\theta})}{p({\boldsymbol D})}
 $$
 <br/>
 

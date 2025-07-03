@@ -4,28 +4,28 @@
     "href": "eam-intro.html#decision-making",
     "title": "Intro to EAM",
     "section": "Decision Making",
-    "text": "Decision Making\n\nMany decisions are made rapidly and at a low cognitive level.\nPerception triggers stored knowledge → triggers action.\nThis process matches perception to known representations and selects a response.\n\n\n\n\n\n\n\nMulder, M. J., Wagenmakers, E. J., Ratcliff, R., Boekel, W., & Forstmann, B. U. (2012). Bias in the brain: a diffusion model analysis of prior probability and potential payoff. Journal of Neuroscience, 32(7), 2335–2343."
+    "text": "Decision Making\n\nMany decisions are made rapidly and at a low cognitive level.\nTranslate perception into action\nPerception triggers stored knowledge → triggers action.\nThis process matches perception to known representations and selects a response."
   },
   {
     "objectID": "eam-intro.html#sequential-sampling-models",
     "href": "eam-intro.html#sequential-sampling-models",
     "title": "Intro to EAM",
     "section": "Sequential Sampling Models",
-    "text": "Sequential Sampling Models\nMany EAMs are sequential sampling models that assume accumulation of noisy evidence toward thresholds.\nThey differ on key dimensions:\n\nNumber of accumulators (e.g., single vs multiple)\nDecision rules (relative vs absolute)\nDrift rate: constant or time-varying\nNoise: stochastic vs deterministic\nWith or without inhibition or decay"
+    "text": "Sequential Sampling Models\nCould differ:\n\nNumber of accumulators (e.g., single vs multiple)\nDecision rules (relative vs absolute)\nDrift rate: constant or time-varying\nNoise: stochastic vs deterministic\nWith or without inhibition or decay"
   },
   {
     "objectID": "eam-intro.html#all-evidence-accumulation-models",
     "href": "eam-intro.html#all-evidence-accumulation-models",
     "title": "Intro to EAM",
     "section": "All Evidence Accumulation Models",
-    "text": "All Evidence Accumulation Models\nEAMs assume that, upon stimulus presentation (e.g., left- or right-facing arrow), the decision maker:\n\nSamples noisy evidence for available options (e.g., “Should I press left or right?”)\nAccumulates that evidence until a threshold is crossed"
+    "text": "All Evidence Accumulation Models\nEAMs assume that, upon stimulus presentation (e.g., left- or right-facing arrow), the decision maker:\n\nSamples noisy evidence for available options (e.g., “Should I press left or right?”)\nAccumulates that evidence until a threshold is crossed\n\n\n\n\n\n\n\nMulder, M. J., Wagenmakers, E. J., Ratcliff, R., Boekel, W., & Forstmann, B. U. (2012). Bias in the brain: a diffusion model analysis of prior probability and potential payoff. Journal of Neuroscience, 32(7), 2335–2343."
   },
   {
     "objectID": "eam-intro.html#sequential-processing-assumption",
     "href": "eam-intro.html#sequential-processing-assumption",
     "title": "Intro to EAM",
     "section": "Sequential Processing Assumption",
-    "text": "Sequential Processing Assumption\nTotal Response Time (RT) is modeled as the sum of three sequential stages:\n\nStimulus encoding\nEvidence accumulation (decision-making)\nMotor response execution\n\nStages (1) and (3) are captured in the nondecision time (Ter) parameter."
+    "text": "Sequential Processing Assumption\nTotal Response Time (RT) is modeled as the sum of three sequential stages:\n\nStimulus encoding\nEvidence accumulation (decision-making)\nMotor response execution\n\nStages (1) and (3) are captured in the nondecision time (Ter) parameter.\n\nthe models contain parameters controlling the evidence starJng point (allowing for a priori biases), accumulaJon rate (controlling the speed of processing), threshold/boundary separaJon (controlling the amount of evidence required to make a response), and nondecision Jme (the sum of Jme taken for sJmulus encoding and motor response production)."
   },
   {
     "objectID": "eam-intro.html#relative-vs.-absolute",
@@ -39,14 +39,14 @@
     "href": "eam-intro.html#relative-evidence-models",
     "title": "Intro to EAM",
     "section": "Relative Evidence Models",
-    "text": "Relative Evidence Models\nIn relative evidence models (e.g., Wiener process, Diffusion Decision Model):\n\nDecision is based on the difference in accumulated evidence between two options.\nSuitable for binary choices."
+    "text": "Relative Evidence Models\nIn relative evidence models (e.g., Wiener process, Diffusion Decision Model):\n\n\n\n\nDecision is based on the difference in accumulated evidence between two options.\n\n\n\nSuitable for binary choices.\n\n\n\n\n\nBoag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling. https://doi.org/10.31234/osf.io/snqgp"
   },
   {
     "objectID": "eam-intro.html#absolute-evidence-models",
     "href": "eam-intro.html#absolute-evidence-models",
     "title": "Intro to EAM",
     "section": "Absolute Evidence Models",
-    "text": "Absolute Evidence Models\nIn racing accumulator models (e.g., LBA, RDM):\n\nEach option has its own accumulator tracking absolute evidence.\nDecision is made by the first accumulator to reach threshold.\nCan handle multiple alternatives (not just binary choices).\n\n\nAlthough relative and absolute evidence models differ in how they conceptualize evidence, they:\n\nShare similar assumptions about trial structure and data quality\nUse overlapping parameters (drift rate, threshold, bias, nondecision time)\nOften reach the same substantive conclusions\nProvide convergent results when applied to the same data"
+    "text": "Absolute Evidence Models\nIn racing accumulator models (e.g., LBA, RDM):\n\n\n\nEach option has its own accumulator tracking absolute evidence.\nDecision is made by the first accumulator to reach threshold.\nCan handle multiple alternatives (not just binary choices).\n\n\n\n\n\nBoag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling. https://doi.org/10.31234/osf.io/snqgp\n\n\nAlthough relative and absolute evidence models differ in how they conceptualize evidence, they:\n\nShare similar assumptions about trial structure and data quality\nUse overlapping parameters (drift rate, threshold, bias, nondecision time)\nOften reach the same substantive conclusions\nProvide convergent results when applied to the same data"
   },
   {
     "objectID": "eam-intro.html#wiener-process",
@@ -102,7 +102,7 @@
     "href": "eam-intro.html#rdm",
     "title": "Intro to EAM",
     "section": "RDM",
-    "text": "RDM\n fi(t|b,v)=b(2πt3)−12exp[−12t(vt−b)2]\nf_{i}(t|b,v) = b(2 \\pi t^{3})^{-\\frac{1}{2}} \\exp\\left[-\\frac{1}{2t}(v t-b)^{2}\\right]\n  The winner is the first process to reach threshold:\n\ngi(t)=fi(t)∏j≠i(1−Fj(t)),\ng_{i}(t) = f_{i}(t) \\prod\\limits_{j \\neq i} (1 - F_{j}(t)),"
+    "text": "RDM\nWithout starting point variability…\n fi(t|b,v)=b(2πt3)−12exp[−12t(vt−b)2]\nf_{i}(t|b,v) = b(2 \\pi t^{3})^{-\\frac{1}{2}} \\exp\\left[-\\frac{1}{2t}(v t-b)^{2}\\right]\n  The winner is the first process to reach threshold:\n\ngi(t)=fi(t)∏j≠i(1−Fj(t)),\ng_{i}(t) = f_{i}(t) \\prod\\limits_{j \\neq i} (1 - F_{j}(t)),"
   },
   {
     "objectID": "eam-intro.html#summary",
@@ -116,7 +116,7 @@
     "href": "eam-intro.html#core-assumptions-of-the-basic-eam",
     "title": "Intro to EAM",
     "section": "Core Assumptions of the Basic EAM",
-    "text": "Core Assumptions of the Basic EAM\n\nEach decision = a single, continuous accumulation of evidence\nCulminates in a discrete response\nEvidence accumulates from stimulus onset to response"
+    "text": "Core Assumptions of the Basic EAM\n\n\nEach decision = a single, continuous accumulation of evidence\n\n\n\nCulminates in a discrete response\n\n\n\nEvidence accumulates from stimulus onset to response"
   },
   {
     "objectID": "eam-intro.html#eam-suitable-tasks-should",
@@ -249,7 +249,7 @@
     "href": "eam-intro.html#but-eams-can-handle-longer-rts",
     "title": "Intro to EAM",
     "section": "But… EAMs Can Handle Longer RTs",
-    "text": "But… EAMs Can Handle Longer RTs\n\nLerche & Voss (2019): Simulated fits with mean RT ≈ 7.4 s\nAschenbrenner et al. (2016); Glickman & Usher (2019): Empirical fits to long RTs\nBoag et al. (2023): EAMs used in:\n\nAir-traffic control\nMaritime surveillance\nForensic decision making\n\n\n🧠 Effects on parameters were consistent across short/long RT tasks."
+    "text": "But… EAMs Can Handle Longer RTs\n\nLerche, et al. (2020). Drift rate and General Intelligence: fast tasks 0.655s and slow tasks 3,319s ms.\nBoag et al. (2023): EAMs used in:\n\nAir-traffic control\nMaritime surveillance\nForensic decision making"
   },
   {
     "objectID": "eam-intro.html#intertrial-interval",
@@ -326,14 +326,14 @@
     "href": "eam-workshop.html",
     "title": "",
     "section": "",
-    "text": "Data are fixed, but parameters are uncertain.\n Bayes’ Rule: \n\\[\n\\text{Posterior} \\propto \\text{Likelihood} \\times \\text{Prior}\n\\] \n\nInference produces posterior distributions over parameters\nCaptures uncertainty and incorporates prior knowledge"
+    "text": "Data are fixed, but parameters are uncertain.\n\n\\[\np(\\boldsymbol{\\theta}|\\boldsymbol{D}) = \\frac{p(\\boldsymbol{D}|\\boldsymbol{\\theta})p(\\boldsymbol{\\theta})}{p({\\boldsymbol D})}\n\\] \n\nInference produces posterior distributions over parameters\nCaptures uncertainty and incorporates prior knowledge"
   },
   {
     "objectID": "eam-workshop.html#bayesian-inference",
     "href": "eam-workshop.html#bayesian-inference",
     "title": "",
     "section": "",
-    "text": "Data are fixed, but parameters are uncertain.\n Bayes’ Rule: \n\\[\n\\text{Posterior} \\propto \\text{Likelihood} \\times \\text{Prior}\n\\] \n\nInference produces posterior distributions over parameters\nCaptures uncertainty and incorporates prior knowledge"
+    "text": "Data are fixed, but parameters are uncertain.\n\n\\[\np(\\boldsymbol{\\theta}|\\boldsymbol{D}) = \\frac{p(\\boldsymbol{D}|\\boldsymbol{\\theta})p(\\boldsymbol{\\theta})}{p({\\boldsymbol D})}\n\\] \n\nInference produces posterior distributions over parameters\nCaptures uncertainty and incorporates prior knowledge"
   },
   {
     "objectID": "eam-workshop.html#hierarchical-modeling",
@@ -418,5 +418,19 @@
     "title": "",
     "section": "EAM in Visual Perception Research",
     "text": "EAM in Visual Perception Research\n[PDF version]\nHTML version"
+  },
+  {
+    "objectID": "eam-intro.html#decision-making---translate-perception-into-action",
+    "href": "eam-intro.html#decision-making---translate-perception-into-action",
+    "title": "Intro to EAM",
+    "section": "Decision Making - Translate Perception into Action",
+    "text": "Decision Making - Translate Perception into Action\n\nMany decisions are made rapidly and at a low cognitive level.\nPerception triggers stored knowledge → triggers action.\nThis process matches perception to known representations and selects a response."
+  },
+  {
+    "objectID": "eam-intro.html#decision-making---perception-into-action",
+    "href": "eam-intro.html#decision-making---perception-into-action",
+    "title": "Intro to EAM",
+    "section": "Decision Making - Perception into Action",
+    "text": "Decision Making - Perception into Action\n\nMany decisions are made rapidly and at a low cognitive level.\nPerception triggers stored knowledge → triggers action.\nThis process matches perception to known representations and selects a response."
   }
 ]
