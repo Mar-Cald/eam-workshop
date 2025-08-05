@@ -1,24 +1,45 @@
 [
   {
-    "objectID": "eam-intro.html#decision-making---perception-into-action",
-    "href": "eam-intro.html#decision-making---perception-into-action",
+    "objectID": "eam-intro.html#perception-into-action",
+    "href": "eam-intro.html#perception-into-action",
     "title": "Intro to EAM",
-    "section": "Decision Making - Perception into Action",
-    "text": "Decision Making - Perception into Action\n\nMany decisions are made rapidly and at a low cognitive level.\nPerception triggers stored knowledge → triggers action.\nThis process matches perception to known representations and selects a response."
+    "section": "Perception into Action",
+    "text": "Perception into Action\nEvidence Accumulation Models assume that, upon stimulus presentation (e.g., left- or right-facing arrow), the decision maker:\n\nSamples noisy evidence for available options (e.g., “Should I press left or right?”)\nAccumulates that evidence until a threshold is crossed\n\n\n\n\n\n\n\nMulder, M. J., Wagenmakers, E. J., Ratcliff, R., Boekel, W., & Forstmann, B. U. (2012). Bias in the brain: a diffusion model analysis of prior probability and potential payoff. Journal of Neuroscience, 32(7), 2335–2343."
   },
   {
-    "objectID": "eam-intro.html#all-evidence-accumulation-models",
-    "href": "eam-intro.html#all-evidence-accumulation-models",
+    "objectID": "eam-intro.html#what-is-evidence",
+    "href": "eam-intro.html#what-is-evidence",
     "title": "Intro to EAM",
-    "section": "All Evidence Accumulation Models",
-    "text": "All Evidence Accumulation Models\nEAMs assume that, upon stimulus presentation (e.g., left- or right-facing arrow), the decision maker:\n\nSamples noisy evidence for available options (e.g., “Should I press left or right?”)\nAccumulates that evidence until a threshold is crossed\n\n\n\n\n\n\n\nMulder, M. J., Wagenmakers, E. J., Ratcliff, R., Boekel, W., & Forstmann, B. U. (2012). Bias in the brain: a diffusion model analysis of prior probability and potential payoff. Journal of Neuroscience, 32(7), 2335–2343."
+    "section": "What is “evidence”?",
+    "text": "What is “evidence”?\nNeural signals reflecting sensory or internal information relevant to a choice.\n“Are dots moving to the right or to the left?”\n\nNeurons fire in proportion to motion direction & strength.\nThese firing rates = momentary evidence."
   },
   {
-    "objectID": "eam-intro.html#sequential-sampling-models",
-    "href": "eam-intro.html#sequential-sampling-models",
+    "objectID": "eam-intro.html#sensory-neurons-encode-momentary-evidence",
+    "href": "eam-intro.html#sensory-neurons-encode-momentary-evidence",
     "title": "Intro to EAM",
-    "section": "Sequential Sampling Models",
-    "text": "Sequential Sampling Models\nCould differ:\n\nNumber of accumulators (e.g., single vs multiple)\nDecision rules (relative vs absolute)\nDrift rate: constant or time-varying\nNoise: stochastic vs deterministic\nWith or without inhibition or decay"
+    "section": "1. Sensory neurons encode momentary evidence",
+    "text": "1. Sensory neurons encode momentary evidence\n\n\nSpiking in sensory cortex represents stimulus features.\nNoisy and varies trial-to-trial."
+  },
+  {
+    "objectID": "eam-intro.html#integrator-neurons-receive-this-input",
+    "href": "eam-intro.html#integrator-neurons-receive-this-input",
+    "title": "Intro to EAM",
+    "section": "2. Integrator neurons receive this input",
+    "text": "2. Integrator neurons receive this input\n\n\nNeurons in LIP, dlPFC, or striatum ramp up/down over time.\nReflects accumulated evidence."
+  },
+  {
+    "objectID": "eam-intro.html#threshold-crossing-triggers-a-decision",
+    "href": "eam-intro.html#threshold-crossing-triggers-a-decision",
+    "title": "Intro to EAM",
+    "section": "3. Threshold crossing triggers a decision",
+    "text": "3. Threshold crossing triggers a decision\n\n\n\n\n\n\nZylberberg,& Shadlen, 2025\n\n\n\n\nNeurons in the lateral intraparietal (LIP) area with response fields overlapping the choice-target contralateral to the recording site (Tin neurons) represent the accumulation of evidence in favor of contralateral target selection. The monkey reports its decision via a saccadic eye movement to one of the targets and is rewarded for correct choices. In trials where the monkey chooses the contralateral target (i.e., the one within the neurons’ response field), the Tin neurons represent the winning race, whereas on ipsilateral choices, they represent the losing race."
+  },
+  {
+    "objectID": "eam-intro.html#brain-computation-of-decisions",
+    "href": "eam-intro.html#brain-computation-of-decisions",
+    "title": "Intro to EAM",
+    "section": "Brain computation of decisions",
+    "text": "Brain computation of decisions\n\n\n\n\nCognitive Term\nNeural Interpretation\n\n\n\n\nEvidence\nSensory neuron firing rates\n\n\nAccumulation\nIntegration in parietal/frontal areas\n\n\nNoise\nTrial-to-trial neural variability\n\n\nBound\nDecision threshold in firing/activity"
   },
   {
     "objectID": "eam-intro.html#sequential-processing-assumption",
@@ -28,18 +49,25 @@
     "text": "Sequential Processing Assumption\nTotal Response Time (RT) is modeled as the sum of three sequential stages:\n\nStimulus encoding\nEvidence accumulation (decision-making)\nMotor response execution\n\nStages (1) and (3) are captured in the nondecision time (Ter) parameter.\n\nthe models contain parameters controlling the evidence starJng point (allowing for a priori biases), accumulaJon rate (controlling the speed of processing), threshold/boundary separaJon (controlling the amount of evidence required to make a response), and nondecision Jme (the sum of Jme taken for sJmulus encoding and motor response production)."
   },
   {
+    "objectID": "eam-intro.html#sequential-sampling-models",
+    "href": "eam-intro.html#sequential-sampling-models",
+    "title": "Intro to EAM",
+    "section": "Sequential Sampling Models",
+    "text": "Sequential Sampling Models\nCould differ:\n\nNumber of accumulators (e.g., single vs multiple)\nDecision rules (relative vs absolute)\nDrift rate: constant or time-varying\nNoise: stochastic vs deterministic\nWith or without inhibition or decay"
+  },
+  {
     "objectID": "eam-intro.html#relative-evidence-models",
     "href": "eam-intro.html#relative-evidence-models",
     "title": "Intro to EAM",
     "section": "Relative Evidence Models",
-    "text": "Relative Evidence Models\nIn relative evidence models (e.g., Wiener process, Diffusion Decision Model):\n\n\n\n\nDecision is based on the difference in accumulated evidence between two options.\n\n\n\nSuitable for binary choices.\n\n\n\n\n\nBoag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling. https://doi.org/10.31234/osf.io/snqgp"
+    "text": "Relative Evidence Models\nIn relative evidence models (e.g., Wiener process, Diffusion Decision Model):\n\n\n\n\nDecision is based on the difference in accumulated evidence between two options.\n\n\n\nSuitable for binary choices.\n\n\n\n\n\nBoag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling."
   },
   {
     "objectID": "eam-intro.html#absolute-evidence-models",
     "href": "eam-intro.html#absolute-evidence-models",
     "title": "Intro to EAM",
     "section": "Absolute Evidence Models",
-    "text": "Absolute Evidence Models\nIn racing accumulator models (e.g., LBA, RDM):\n\n\n\nEach option has its own accumulator tracking absolute evidence.\nDecision is made by the first accumulator to reach threshold.\nCan handle multiple alternatives (not just binary choices).\n\n\n\n\n\nBoag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling. https://doi.org/10.31234/osf.io/snqgp\n\n\nAlthough relative and absolute evidence models differ in how they conceptualize evidence, they:\n\nShare similar assumptions about trial structure and data quality\nUse overlapping parameters (drift rate, threshold, bias, nondecision time)\nOften reach the same substantive conclusions\nProvide convergent results when applied to the same data"
+    "text": "Absolute Evidence Models\nIn racing accumulator models (e.g., LBA, RDM):\n\n\n\nEach option has its own accumulator tracking absolute evidence.\nDecision is made by the first accumulator to reach threshold.\nCan handle multiple alternatives (not just binary choices).\n\n\n\n\n\nBoag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling.\n\n\nAlthough relative and absolute evidence models differ in how they conceptualize evidence, they:\n\nShare similar assumptions about trial structure and data quality\nUse overlapping parameters (drift rate, threshold, bias, nondecision time)\nOften reach the same substantive conclusions\nProvide convergent results when applied to the same data"
   },
   {
     "objectID": "eam-intro.html#wiener-process",
@@ -263,7 +291,7 @@
     "href": "eam-intro.html#collecting-data",
     "title": "Intro to EAM",
     "section": "Collecting Data",
-    "text": "Collecting Data\nEAM modeling requires detailed per-trial data:\nEach trial (row) should include:\n\nParticipant ID\nCondition\nStimulus presented\nResponse submitted\nRT\n\nOptional but recommended: - Session/trial number\n\nEvent timings: cue, stimulus, response, feedback, intertrial interval\n\n💾 Stored as .csv or similar — allows model software to reconstruct the timeline."
+    "text": "Collecting Data\n\nParticipant ID\nCondition\nStimulus presented\nResponse submitted\nRT\nSession/trial number\nEvent timings: cue, stimulus, response, feedback, intertrial interval"
   },
   {
     "objectID": "eam-intro.html#outliers",
@@ -319,21 +347,21 @@
     "href": "eam-workshop.html",
     "title": "",
     "section": "",
-    "text": "Data are fixed, but parameters are uncertain.\n\n\\[\np(\\boldsymbol{\\theta}|\\boldsymbol{D}) = \\frac{p(\\boldsymbol{D}|\\boldsymbol{\\theta})p(\\boldsymbol{\\theta})}{p({\\boldsymbol D})}\n\\] \n\nInference produces posterior distributions over parameters\nCaptures uncertainty and incorporates prior knowledge"
+    "text": "Data are fixed, but parameters are uncertain.\n\n\\[\np(\\theta \\mid y) = \\frac{\\mathcal{L}(\\theta \\mid y) \\, p(\\theta)}{p(y)}\n\\] \n\n\\(p(\\theta)\\): Prior distribution\n\\(\\mathcal{L}(\\theta \\mid y)\\): Likelihood\n\\(p(\\theta \\mid y)\\): Posterior distribution"
   },
   {
     "objectID": "eam-workshop.html#bayesian-inference",
     "href": "eam-workshop.html#bayesian-inference",
     "title": "",
     "section": "",
-    "text": "Data are fixed, but parameters are uncertain.\n\n\\[\np(\\boldsymbol{\\theta}|\\boldsymbol{D}) = \\frac{p(\\boldsymbol{D}|\\boldsymbol{\\theta})p(\\boldsymbol{\\theta})}{p({\\boldsymbol D})}\n\\] \n\nInference produces posterior distributions over parameters\nCaptures uncertainty and incorporates prior knowledge"
+    "text": "Data are fixed, but parameters are uncertain.\n\n\\[\np(\\theta \\mid y) = \\frac{\\mathcal{L}(\\theta \\mid y) \\, p(\\theta)}{p(y)}\n\\] \n\n\\(p(\\theta)\\): Prior distribution\n\\(\\mathcal{L}(\\theta \\mid y)\\): Likelihood\n\\(p(\\theta \\mid y)\\): Posterior distribution"
   },
   {
     "objectID": "eam-workshop.html#hierarchical-modeling",
     "href": "eam-workshop.html#hierarchical-modeling",
     "title": "",
     "section": "Hierarchical Modeling",
-    "text": "Hierarchical Modeling\nAre participants identical or fully independent?\n\n\nModels group-level structure\neach participant’s parameters ∼ drawn from a population distribution \nGroup-level generalization \nIndividual-level inference"
+    "text": "Hierarchical Modeling\nAre participants identical or fully independent?\n\n\n\nModels group-level structure \neach participant’s parameters ∼ drawn from a population distribution"
   },
   {
     "objectID": "eam-workshop.html#why-hierarchical-models",
@@ -341,13 +369,6 @@
     "title": "",
     "section": "Why Hierarchical Models?",
     "text": "Why Hierarchical Models?\n\nReduces bias from unmodeled individual variability\n\nPrevents overfitting and underfitting\n\nShrinkage: pulls extreme or low-quality estimates toward the group mean\n\n\nBoehm et al. (2018), Behavior Research Methods"
-  },
-  {
-    "objectID": "eam-workshop.html#what-are-we-trying-to-infer",
-    "href": "eam-workshop.html#what-are-we-trying-to-infer",
-    "title": "",
-    "section": "What Are We Trying to Infer?",
-    "text": "What Are We Trying to Infer?\nWe want to estimate:\n\nIndividual-level parameters: \\(\\alpha_1, \\alpha_2, \\dots, \\alpha_N\\)\nGroup-level structure:\nA shared population distribution \\(\\alpha_i \\sim \\mathcal{N}(\\mu, \\Sigma)\\)\n\nThis enables both individual and population inference."
   },
   {
     "objectID": "eam-workshop.html#model-structure",
@@ -361,7 +382,7 @@
     "href": "eam-workshop.html#group-level-parameters",
     "title": "",
     "section": "Group-Level Parameters",
-    "text": "Group-Level Parameters\nLet \\(n\\) = number of individual parameters per subject:\n\n\\(\\mu\\): vector of population means\n\n\\(\\Sigma\\): symmetric covariance matrix, including:\n\nDiagonal: Variances (\\(\\sigma^2\\))\nOff-diagonal: Covariances\n\\(\\frac{n(n-1)}{2}\\) elements total\n\n\nThese hyperparameters are learned from the data."
+    "text": "Group-Level Parameters\nLet \\(n\\) = number of individual parameters per subject:\n\n\\(\\mu\\): vector of population means\n\n\\(\\Sigma\\): symmetric covariance matrix, including:\n\nDiagonal: Variances (\\(\\sigma^2\\))\nOff-diagonal: Covariances\n\\(\\frac{n(n-1)}{2}\\) elements total"
   },
   {
     "objectID": "eam-workshop.html#priors",

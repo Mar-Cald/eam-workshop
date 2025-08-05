@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>quarto-inputbb91fa6bb6c56c7b</title>
+<title>quarto-inputb27d5e4e34729633</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -181,7 +181,6 @@ window.Quarto = {
   <li><a href="#bayesian-inference" id="toc-bayesian-inference" class="nav-link active" data-scroll-target="#bayesian-inference">Bayesian Inference</a></li>
   <li><a href="#hierarchical-modeling" id="toc-hierarchical-modeling" class="nav-link" data-scroll-target="#hierarchical-modeling">Hierarchical Modeling</a></li>
   <li><a href="#why-hierarchical-models" id="toc-why-hierarchical-models" class="nav-link" data-scroll-target="#why-hierarchical-models">Why Hierarchical Models?</a></li>
-  <li><a href="#what-are-we-trying-to-infer" id="toc-what-are-we-trying-to-infer" class="nav-link" data-scroll-target="#what-are-we-trying-to-infer">What Are We Trying to Infer?</a></li>
   <li><a href="#model-structure" id="toc-model-structure" class="nav-link" data-scroll-target="#model-structure">Model Structure</a></li>
   <li><a href="#group-level-parameters" id="toc-group-level-parameters" class="nav-link" data-scroll-target="#group-level-parameters">Group-Level Parameters</a></li>
   <li><a href="#priors" id="toc-priors" class="nav-link" data-scroll-target="#priors">Priors</a></li>
@@ -201,11 +200,12 @@ window.Quarto = {
 <p><strong>Data are fixed</strong>, but <strong>parameters are uncertain</strong>.</p>
 <p><br></p>
 <p><span class="math display">\[
-p(\boldsymbol{\theta}|\boldsymbol{D}) = \frac{p(\boldsymbol{D}|\boldsymbol{\theta})p(\boldsymbol{\theta})}{p({\boldsymbol D})}
+p(\theta \mid y) = \frac{\mathcal{L}(\theta \mid y) \, p(\theta)}{p(y)}
 \]</span> <br></p>
 <ul>
-<li><p>Inference produces <strong>posterior distributions</strong> over parameters</p></li>
-<li><p>Captures uncertainty and incorporates prior knowledge</p></li>
+<li><span class="math inline">\(p(\theta)\)</span>: Prior distribution</li>
+<li><span class="math inline">\(\mathcal{L}(\theta \mid y)\)</span>: Likelihood</li>
+<li><span class="math inline">\(p(\theta \mid y)\)</span>: Posterior distribution</li>
 </ul>
 </section>
 <section id="hierarchical-modeling" class="level2 align-center">
@@ -213,11 +213,9 @@ p(\boldsymbol{\theta}|\boldsymbol{D}) = \frac{p(\boldsymbol{D}|\boldsymbol{\thet
 <p><em>Are participants identical or fully independent?</em></p>
 <div class="columns">
 <div class="column" style="width:45%;">
-<p>Models <strong>group-level structure</strong></p>
+<p><br><br></p>
+<p>Models <strong>group-level structure</strong> <br><br></p>
 <p>each participant’s parameters ∼ drawn from a population distribution <br><br></p>
-<p><strong>Group-level</strong> generalization <br></p>
-<p><strong>Individual-level</strong> inference<br>
-<br></p>
 </div><div class="column" style="width:55%;">
 <div class="cell">
 <div class="cell-output-display">
@@ -241,18 +239,8 @@ p(\boldsymbol{\theta}|\boldsymbol{D}) = \frac{p(\boldsymbol{D}|\boldsymbol{\thet
 <li><strong>Shrinkage</strong>: pulls extreme or low-quality estimates toward the group mean</li>
 </ul>
 <blockquote class="blockquote">
-<p><a href="https://doi.org/10.3758/s13428-018-1054-3">Boehm et al.&nbsp;(2018), <em>Behavior Research Methods</em></a></p>
+<p><a href="https://doi.org/10.3758/s13428-018-1054-3" target="_blank">Boehm et al.&nbsp;(2018), <em>Behavior Research Methods</em></a></p>
 </blockquote>
-</section>
-<section id="what-are-we-trying-to-infer" class="level2">
-<h2 class="anchored" data-anchor-id="what-are-we-trying-to-infer">What Are We Trying to Infer?</h2>
-<p>We want to estimate:</p>
-<ul>
-<li><p><strong>Individual-level parameters</strong>: <span class="math inline">\(\alpha_1, \alpha_2, \dots, \alpha_N\)</span></p></li>
-<li><p><strong>Group-level structure</strong>:<br>
-A shared population distribution <span class="math inline">\(\alpha_i \sim \mathcal{N}(\mu, \Sigma)\)</span></p></li>
-</ul>
-<p>This enables both <strong>individual</strong> and <strong>population</strong> inference.</p>
 </section>
 <section id="model-structure" class="level2">
 <h2 class="anchored" data-anchor-id="model-structure">Model Structure</h2>
@@ -286,7 +274,6 @@ p(\mu, \Sigma)
 <span class="math inline">\(\frac{n(n-1)}{2}\)</span> elements total</li>
 </ul></li>
 </ul>
-<p>These hyperparameters are <strong>learned from the data</strong>.</p>
 </section>
 <section id="priors" class="level2">
 <h2 class="anchored" data-anchor-id="priors">Priors</h2>

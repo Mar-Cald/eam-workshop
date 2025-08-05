@@ -8,13 +8,13 @@ You can access the slides in both PDF and HTML formats:
 
 [PDF version]
 
-[HTML version](eam-intro.qmd)
+[HTML version](eam-intro.qmd){target="_blank"}
 
 ## EAM in Visual Perception Research
 
 [PDF version]
 
-[HTML version](eam-karim.qmd)
+[HTML version](eam-karim.qmd){target="_blank"}
 
 
 

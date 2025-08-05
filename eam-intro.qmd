@@ -30,19 +30,10 @@ library(ggplot2)
 library(dplyr)
 ```
 
+ 
+## Perception into Action {.small-text}
 
-
-## Decision Making - Perception into Action
-
--   Many decisions are made rapidly and at a low cognitive level.
--   Perception triggers stored knowledge → triggers action.
--   This process matches perception to known representations and selects a response.
-
-
-
-## All Evidence Accumulation Models {.small-text}
-
-EAMs assume that, upon stimulus presentation (e.g., left- or right-facing arrow), the decision maker:
+Evidence Accumulation Models assume that, upon stimulus presentation (e.g., left- or right-facing arrow), the decision maker:
 
 - Samples noisy evidence for available options (e.g., "Should I press left or right?")
 - Accumulates that evidence until a **threshold** is crossed
@@ -57,20 +48,74 @@ EAMs assume that, upon stimulus presentation (e.g., left- or right-facing arrow)
 
 <br/>
 
-> [Mulder, M. J., Wagenmakers, E. J., Ratcliff, R., Boekel, W., & Forstmann, B. U. (2012). Bias in the brain: a diffusion model analysis of prior probability and potential payoff. Journal of Neuroscience, 32(7), 2335–2343.](https://doi.org/10.1523/JNEUROSCI.4156-11.2012)
+> [Mulder, M. J., Wagenmakers, E. J., Ratcliff, R., Boekel, W., & Forstmann, B. U. (2012). Bias in the brain: a diffusion model analysis of prior probability and potential payoff. Journal of Neuroscience, 32(7), 2335–2343.](https://doi.org/10.1523/JNEUROSCI.4156-11.2012){target="_blank"}
 
 :::
 :::::
 
-## Sequential Sampling Models
+## What is “evidence”?
 
-Could differ:
+Neural signals reflecting sensory or internal information relevant to a choice.
 
-- Number of **accumulators** (e.g., single vs multiple)
-- **Decision rules** (relative vs absolute)
-- **Drift rate**: constant or time-varying
-- **Noise**: stochastic vs deterministic
-- With or without **inhibition** or **decay**
+***"Are dots moving to the right or to the left?"***
+
+- Neurons fire in proportion to motion direction & strength.
+- These firing rates = **momentary evidence**.
+
+
+
+# How does the brain accumulate evidence?
+
+## 1. Sensory neurons encode momentary evidence
+<br/>
+
+- Spiking in **sensory cortex** represents stimulus features.
+- Noisy and varies trial-to-trial.
+
+## 2. Integrator neurons receive this input
+<br/>
+
+- Neurons in **LIP**, **dlPFC**, or **striatum** ramp up/down over time.
+- Reflects **accumulated evidence**.
+<br/>
+
+
+
+
+## 3. Threshold crossing triggers a decision
+
+:::: {.columns}
+::: {.column width="60%"}
+
+![](img/ramp.jpg){width="600" height=800"}
+
+:::
+
+::: {.column width="40%"}
+![](img/ramp2.png){width="400" height=500"}
+
+> [Zylberberg,& Shadlen, 2025](https://doi.org/10.1523/JNEUROSCI.4156-11.2012){target="_blank"}
+
+<br/>
+:::
+:::::
+
+::: notes
+Neurons in the lateral intraparietal (LIP) area with response fields overlapping the choice-target contralateral to the recording site (Tin neurons) represent the accumulation of evidence in favor of contralateral target selection. The monkey reports its decision via a saccadic eye movement to one of the targets and is rewarded for correct choices. In trials where the monkey chooses the contralateral target (i.e., the one within the neurons’ response field), the Tin neurons represent the winning race, whereas on ipsilateral choices, they represent the losing race.
+:::
+
+## Brain computation of decisions
+<br/>
+
+| Cognitive Term   | Neural Interpretation                 |
+|------------------|----------------------------------------|
+| *Evidence*    | Sensory neuron firing rates            |
+| *Accumulation* | Integration in parietal/frontal areas  |
+| *Noise*        | Trial-to-trial neural variability      |
+| *Bound*        | Decision threshold in firing/activity  |
+
+
+
 
 ## Sequential Processing Assumption
 
@@ -86,6 +131,16 @@ Stages (1) and (3) are captured in the **nondecision time (Ter)** parameter.
 ::: notes
 the models contain parameters controlling the evidence starJng point (allowing for a priori biases), accumulaJon rate (controlling the speed of processing), threshold/boundary separaJon (controlling the amount of evidence required to make a response), and nondecision Jme (the sum of Jme taken for sJmulus encoding and motor response production).
 :::
+
+## Sequential Sampling Models
+
+Could differ:
+
+- Number of **accumulators** (e.g., single vs multiple)
+- **Decision rules** (relative vs absolute)
+- **Drift rate**: constant or time-varying
+- **Noise**: stochastic vs deterministic
+- With or without **inhibition** or **decay**
 
 ## Relative Evidence Models {.small-text}
 
@@ -109,7 +164,7 @@ In **relative evidence models** (e.g., Wiener process, Diffusion Decision Model)
 :::
 :::::
 
-> Boag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling. https://doi.org/10.31234/osf.io/snqgp
+> [Boag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling.](https://doi.org/10.31234/osf.io/snqgp){target="_blank"}
 
 ## Absolute Evidence Models {.small-text}
 
@@ -132,7 +187,7 @@ In **racing accumulator models** (e.g., LBA, RDM):
 :::
 :::::
 
-> Boag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling. https://doi.org/10.31234/osf.io/snqgp
+> [Boag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling.](https://doi.org/10.31234/osf.io/snqgp){target="_blank"}
 
 
 ::: notes
@@ -234,7 +289,7 @@ $$
 :::
 ::::
 
-[Wabersich and Vandekerckhove (2014), *The R Journal*]((https://journal.r-project.org/archive/2014/RJ-2014-005/index.html))
+[Wabersich and Vandekerckhove (2014), *The R Journal*](https://journal.r-project.org/archive/2014/RJ-2014-005/index.html){target="_blank"}
 
 ## Full Diffusion Decision Model {.align-center}
 <br/>
@@ -308,7 +363,7 @@ Each accumulator races toward its threshold. The first to cross **wins**.
 
 ![](img/rdm.webp){width="800" height="500" fig-align="center"}
 
-> [Tillman, G., Van Zandt, T., & Logan, G. D. (2020). Sequential sampling models without random between-trial variability: The racing diffusion model of speeded decision making. Psychonomic Bulletin & Review, 27(5), 911-936.](https://link.springer.com/content/pdf/10.3758/s13423-020-01719-6.pdf)
+> [Tillman, G., Van Zandt, T., & Logan, G. D. (2020). Sequential sampling models without random between-trial variability: The racing diffusion model of speeded decision making. Psychonomic Bulletin & Review, 27(5), 911-936.](https://link.springer.com/content/pdf/10.3758/s13423-020-01719-6.pdf){target="_blank"}
 
 ## RDM
 
@@ -596,9 +651,9 @@ Each component affects the integrity of evidence accumulation.
 
 ## But… EAMs Can Handle Longer RTs
 
-- [**Lerche, et al. (2020)**](https://doi.org/10.1037/xge0000774). Drift rate and General Intelligence: fast tasks 0.655*s* and slow tasks 3,319*s* ms.
+- [**Lerche, et al. (2020)**](https://doi.org/10.1037/xge0000774){target="_blank"}. Drift rate and General Intelligence: fast tasks 0.655*s* and slow tasks 3,319*s* ms.
 
-- [**Boag et al. (2023)**](https://doi.org/10.1016/j.tics.2022.11.009): EAMs used in:
+- [**Boag et al. (2023)**](https://doi.org/10.1016/j.tics.2022.11.009){target="_blank"}: EAMs used in:
   - Air-traffic control
   - Maritime surveillance
   - Forensic decision making
@@ -625,9 +680,6 @@ Each component affects the integrity of evidence accumulation.
 
 ## Collecting Data
 
-EAM modeling requires detailed per-trial data:
-
-Each trial (row) should include:
 
 - Participant ID
 
@@ -639,12 +691,9 @@ Each trial (row) should include:
 
 - **RT**
 
-Optional but recommended:
 - Session/trial number
 
 - Event timings: cue, stimulus, response, feedback, intertrial interval
-
-💾 Stored as `.csv` or similar — allows model software to reconstruct the timeline.
 
 
 ## Outliers

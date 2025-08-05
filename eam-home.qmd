@@ -5,7 +5,7 @@ about:
   id: hero-heading
   template: jolla
   image-shape: round
-  image-width: 50%
+  image-width: 40%
 markdown:
   extensions: [link_attributes]
 engine: knitr

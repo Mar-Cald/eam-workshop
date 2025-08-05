@@ -346,17 +346,9 @@ Margherita Calderan
 
   <p class="date">August 24, 2025</p>
 </section>
-<section id="decision-making---perception-into-action" class="slide level2">
-<h2>Decision Making - Perception into Action</h2>
-<ul>
-<li>Many decisions are made rapidly and at a low cognitive level.</li>
-<li>Perception triggers stored knowledge → triggers action.</li>
-<li>This process matches perception to known representations and selects a response.</li>
-</ul>
-</section>
-<section id="all-evidence-accumulation-models" class="slide level2 small-text">
-<h2>All Evidence Accumulation Models</h2>
-<p>EAMs assume that, upon stimulus presentation (e.g., left- or right-facing arrow), the decision maker:</p>
+<section id="perception-into-action" class="slide level2 small-text">
+<h2>Perception into Action</h2>
+<p>Evidence Accumulation Models assume that, upon stimulus presentation (e.g., left- or right-facing arrow), the decision maker:</p>
 <ul>
 <li>Samples noisy evidence for available options (e.g., “Should I press left or right?”)</li>
 <li>Accumulates that evidence until a <strong>threshold</strong> is crossed</li>
@@ -367,20 +359,95 @@ Margherita Calderan
 </div><div class="column small-small-text center" style="width:30%;">
 <p><br></p>
 <blockquote>
-<p><a href="https://doi.org/10.1523/JNEUROSCI.4156-11.2012">Mulder, M. J., Wagenmakers, E. J., Ratcliff, R., Boekel, W., &amp; Forstmann, B. U. (2012). Bias in the brain: a diffusion model analysis of prior probability and potential payoff. Journal of Neuroscience, 32(7), 2335–2343.</a></p>
+<p><a href="https://doi.org/10.1523/JNEUROSCI.4156-11.2012" target="_blank">Mulder, M. J., Wagenmakers, E. J., Ratcliff, R., Boekel, W., &amp; Forstmann, B. U. (2012). Bias in the brain: a diffusion model analysis of prior probability and potential payoff. Journal of Neuroscience, 32(7), 2335–2343.</a></p>
 </blockquote>
 </div></div>
 </section>
-<section id="sequential-sampling-models" class="slide level2">
-<h2>Sequential Sampling Models</h2>
-<p>Could differ:</p>
+<section id="what-is-evidence" class="slide level2">
+<h2>What is “evidence”?</h2>
+<p>Neural signals reflecting sensory or internal information relevant to a choice.</p>
+<p><strong><em>“Are dots moving to the right or to the left?”</em></strong></p>
 <ul>
-<li>Number of <strong>accumulators</strong> (e.g., single vs multiple)</li>
-<li><strong>Decision rules</strong> (relative vs absolute)</li>
-<li><strong>Drift rate</strong>: constant or time-varying</li>
-<li><strong>Noise</strong>: stochastic vs deterministic</li>
-<li>With or without <strong>inhibition</strong> or <strong>decay</strong></li>
+<li>Neurons fire in proportion to motion direction &amp; strength.</li>
+<li>These firing rates = <strong>momentary evidence</strong>.</li>
 </ul>
+</section>
+<section>
+<section id="how-does-the-brain-accumulate-evidence" class="title-slide slide level1 center">
+<h1>How does the brain accumulate evidence?</h1>
+
+</section>
+<section id="sensory-neurons-encode-momentary-evidence" class="slide level2">
+<h2>1. Sensory neurons encode momentary evidence</h2>
+<p><br></p>
+<ul>
+<li>Spiking in <strong>sensory cortex</strong> represents stimulus features.</li>
+<li>Noisy and varies trial-to-trial.</li>
+</ul>
+</section>
+<section id="integrator-neurons-receive-this-input" class="slide level2">
+<h2>2. Integrator neurons receive this input</h2>
+<p><br></p>
+<ul>
+<li>Neurons in <strong>LIP</strong>, <strong>dlPFC</strong>, or <strong>striatum</strong> ramp up/down over time.</li>
+<li>Reflects <strong>accumulated evidence</strong>. <br></li>
+</ul>
+</section>
+<section id="threshold-crossing-triggers-a-decision" class="slide level2">
+<h2>3. Threshold crossing triggers a decision</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><img data-src="img/ramp.jpg" width="600"></p>
+</div><div class="column" style="width:40%;">
+<p><img data-src="img/ramp2.png" width="400"></p>
+<blockquote>
+<p><a href="https://doi.org/10.1523/JNEUROSCI.4156-11.2012" target="_blank">Zylberberg,&amp; Shadlen, 2025</a></p>
+</blockquote>
+<p><br></p>
+</div></div>
+<aside class="notes">
+<p>Neurons in the lateral intraparietal (LIP) area with response fields overlapping the choice-target contralateral to the recording site (Tin neurons) represent the accumulation of evidence in favor of contralateral target selection. The monkey reports its decision via a saccadic eye movement to one of the targets and is rewarded for correct choices. In trials where the monkey chooses the contralateral target (i.e., the one within the neurons’ response field), the Tin neurons represent the winning race, whereas on ipsilateral choices, they represent the losing race.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="brain-computation-of-decisions" class="slide level2">
+<h2>Brain computation of decisions</h2>
+<p><br></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Cognitive Term</th>
+<th>Neural Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>Evidence</em></td>
+<td>Sensory neuron firing rates</td>
+</tr>
+<tr class="even">
+<td><em>Accumulation</em></td>
+<td>Integration in parietal/frontal areas</td>
+</tr>
+<tr class="odd">
+<td><em>Noise</em></td>
+<td>Trial-to-trial neural variability</td>
+</tr>
+<tr class="even">
+<td><em>Bound</em></td>
+<td>Decision threshold in firing/activity</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="sequential-processing-assumption" class="slide level2">
 <h2>Sequential Processing Assumption</h2>
@@ -405,6 +472,17 @@ Margherita Calderan
           display:block!important;
       }</style></aside>
 </section>
+<section id="sequential-sampling-models" class="slide level2">
+<h2>Sequential Sampling Models</h2>
+<p>Could differ:</p>
+<ul>
+<li>Number of <strong>accumulators</strong> (e.g., single vs multiple)</li>
+<li><strong>Decision rules</strong> (relative vs absolute)</li>
+<li><strong>Drift rate</strong>: constant or time-varying</li>
+<li><strong>Noise</strong>: stochastic vs deterministic</li>
+<li>With or without <strong>inhibition</strong> or <strong>decay</strong></li>
+</ul>
+</section>
 <section id="relative-evidence-models" class="slide level2 small-text">
 <h2>Relative Evidence Models</h2>
 <p>In <strong>relative evidence models</strong> (e.g., Wiener process, Diffusion Decision Model):</p>
@@ -422,7 +500,7 @@ Margherita Calderan
 <p><img data-src="img/eam-relative.png" class="align-center" width="550" height="350"></p>
 </div></div>
 <blockquote>
-<p>Boag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling. https://doi.org/10.31234/osf.io/snqgp</p>
+<p><a href="https://doi.org/10.31234/osf.io/snqgp" target="_blank">Boag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling.</a></p>
 </blockquote>
 </section>
 <section id="absolute-evidence-models" class="slide level2 small-text">
@@ -439,7 +517,7 @@ Margherita Calderan
 <p><img data-src="img/eam-absolute.png" width="550" height="350"></p>
 </div></div>
 <blockquote>
-<p>Boag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling. https://doi.org/10.31234/osf.io/snqgp</p>
+<p><a href="https://doi.org/10.31234/osf.io/snqgp" target="_blank">Boag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling.</a></p>
 </blockquote>
 <aside class="notes">
 <p>Although relative and absolute evidence models differ in how they conceptualize evidence, they:</p>
@@ -460,7 +538,7 @@ Margherita Calderan
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</section>
+</section></section>
 <section>
 <section id="noisy-evidence" class="title-slide slide level1 center">
 <h1>Noisy evidence</h1>
@@ -509,7 +587,7 @@ d(t,x=0|\alpha,\tau,\beta,\delta) = \frac{1}{\alpha^2} \exp\left[-\alpha\beta\de
 </blockquote>
 <p><br></p>
 </div></div>
-<p><a href="(https://journal.r-project.org/archive/2014/RJ-2014-005/index.html)">Wabersich and Vandekerckhove (2014), <em>The R Journal</em></a></p>
+<p><a href="https://journal.r-project.org/archive/2014/RJ-2014-005/index.html" target="_blank">Wabersich and Vandekerckhove (2014), <em>The R Journal</em></a></p>
 </section>
 <section id="full-diffusion-decision-model" class="slide level2 align-center">
 <h2>Full Diffusion Decision Model</h2>
@@ -567,7 +645,7 @@ dx_k(t) = v_k \, dt + s \, dW_k(t) \quad \text{for } k = 1,\dots,K
 </figure>
 </div>
 <blockquote>
-<p><a href="https://link.springer.com/content/pdf/10.3758/s13423-020-01719-6.pdf">Tillman, G., Van Zandt, T., &amp; Logan, G. D. (2020). Sequential sampling models without random between-trial variability: The racing diffusion model of speeded decision making. Psychonomic Bulletin &amp; Review, 27(5), 911-936.</a></p>
+<p><a href="https://link.springer.com/content/pdf/10.3758/s13423-020-01719-6.pdf" target="_blank">Tillman, G., Van Zandt, T., &amp; Logan, G. D. (2020). Sequential sampling models without random between-trial variability: The racing diffusion model of speeded decision making. Psychonomic Bulletin &amp; Review, 27(5), 911-936.</a></p>
 </blockquote>
 </section>
 <section id="rdm" class="slide level2">
@@ -865,8 +943,8 @@ g_{i}(t) = f_{i}(t) \prod\limits_{j \neq i} (1 - F_{j}(t)),
 <section id="but-eams-can-handle-longer-rts" class="slide level2">
 <h2>But… EAMs Can Handle Longer RTs</h2>
 <ul>
-<li><p><a href="https://doi.org/10.1037/xge0000774"><strong>Lerche, et al.&nbsp;(2020)</strong></a>. Drift rate and General Intelligence: fast tasks 0.655<em>s</em> and slow tasks 3,319<em>s</em> ms.</p></li>
-<li><p><a href="https://doi.org/10.1016/j.tics.2022.11.009"><strong>Boag et al.&nbsp;(2023)</strong></a>: EAMs used in:</p>
+<li><p><a href="https://doi.org/10.1037/xge0000774" target="_blank"><strong>Lerche, et al.&nbsp;(2020)</strong></a>. Drift rate and General Intelligence: fast tasks 0.655<em>s</em> and slow tasks 3,319<em>s</em> ms.</p></li>
+<li><p><a href="https://doi.org/10.1016/j.tics.2022.11.009" target="_blank"><strong>Boag et al.&nbsp;(2023)</strong></a>: EAMs used in:</p>
 <ul>
 <li>Air-traffic control</li>
 <li>Maritime surveillance</li>
@@ -902,20 +980,15 @@ g_{i}(t) = f_{i}(t) \prod\limits_{j \neq i} (1 - F_{j}(t)),
 </section>
 <section id="collecting-data" class="slide level2">
 <h2>Collecting Data</h2>
-<p>EAM modeling requires detailed per-trial data:</p>
-<p>Each trial (row) should include:</p>
 <ul>
 <li><p>Participant ID</p></li>
 <li><p>Condition</p></li>
 <li><p>Stimulus presented</p></li>
 <li><p>Response submitted</p></li>
 <li><p><strong>RT</strong></p></li>
+<li><p>Session/trial number</p></li>
+<li><p>Event timings: cue, stimulus, response, feedback, intertrial interval</p></li>
 </ul>
-<p>Optional but recommended: - Session/trial number</p>
-<ul>
-<li>Event timings: cue, stimulus, response, feedback, intertrial interval</li>
-</ul>
-<p>💾 Stored as <code>.csv</code> or similar — allows model software to reconstruct the timeline.</p>
 </section>
 <section id="outliers" class="slide level2">
 <h2>Outliers</h2>
