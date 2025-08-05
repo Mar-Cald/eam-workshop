@@ -347,7 +347,7 @@ Margherita Calderan
   <p class="date">August 24, 2025</p>
 </section>
 <section id="perception-into-action" class="slide level2 small-text">
-<h2>Perception into Action</h2>
+<h2>Perception into action</h2>
 <p>Evidence Accumulation Models assume that, upon stimulus presentation (e.g., left- or right-facing arrow), the decision maker:</p>
 <ul>
 <li>Samples noisy evidence for available options (e.g., “Should I press left or right?”)</li>
@@ -450,7 +450,7 @@ Margherita Calderan
 </table>
 </section>
 <section id="sequential-processing-assumption" class="slide level2">
-<h2>Sequential Processing Assumption</h2>
+<h2>Sequential processing assumption</h2>
 <p>Total <strong>Response Time (RT)</strong> is modeled as the sum of <strong>three sequential stages</strong>:</p>
 <ol type="1">
 <li><strong>Stimulus encoding</strong></li>
@@ -1263,80 +1263,42 @@ g_{i}(t) = f_{i}(t) \prod\limits_{j \neq i} (1 - F_{j}(t)),
       });
     </script>
     
-
     <script>
-
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-
       // slide changes (different for each slide format).
-
       (function () {
-
         // dispatch for htmlwidgets
-
         function fireSlideEnter() {
-
           const event = window.document.createEvent("Event");
-
           event.initEvent("slideenter", true, true);
-
           window.document.dispatchEvent(event);
-
         }
-
-    
 
         function fireSlideChanged(previousSlide, currentSlide) {
-
           fireSlideEnter();
 
-    
-
           // dispatch for shiny
-
           if (window.jQuery) {
-
             if (previousSlide) {
-
               window.jQuery(previousSlide).trigger("hidden");
-
             }
-
             if (currentSlide) {
-
               window.jQuery(currentSlide).trigger("shown");
-
             }
-
           }
-
         }
-
-    
 
         // hookup for slidy
-
         if (window.w3c_slidy) {
-
           window.w3c_slidy.add_observer(function (slide_num) {
-
             // slide_num starts at position 1
-
             fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-
           });
-
         }
 
-    
-
       })();
-
     </script>
-
-    
 
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
