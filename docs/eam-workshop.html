@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>quarto-inputa57f50a2934cca3a</title>
+<title>quarto-inputf72d6113713f7cd0</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -179,7 +179,10 @@ window.Quarto = {
    
   <ul>
   <li><a href="#bayesian-inference" id="toc-bayesian-inference" class="nav-link active" data-scroll-target="#bayesian-inference">Bayesian Inference</a></li>
-  <li><a href="#hierarchical-modeling" id="toc-hierarchical-modeling" class="nav-link" data-scroll-target="#hierarchical-modeling">Hierarchical Modeling</a></li>
+  <li><a href="#hierarchical-modeling" id="toc-hierarchical-modeling" class="nav-link" data-scroll-target="#hierarchical-modeling">Hierarchical Modeling</a>
+  <ul class="collapse">
+  <li><a href="#are-participants-identical-or-fully-independent" id="toc-are-participants-identical-or-fully-independent" class="nav-link" data-scroll-target="#are-participants-identical-or-fully-independent">Are participants identical or fully independent?</a></li>
+  </ul></li>
   <li><a href="#why-hierarchical-models" id="toc-why-hierarchical-models" class="nav-link" data-scroll-target="#why-hierarchical-models">Why Hierarchical Models?</a></li>
   <li><a href="#model-structure" id="toc-model-structure" class="nav-link" data-scroll-target="#model-structure">Model Structure</a></li>
   <li><a href="#group-level-parameters" id="toc-group-level-parameters" class="nav-link" data-scroll-target="#group-level-parameters">Group-Level Parameters</a></li>
@@ -197,7 +200,6 @@ window.Quarto = {
 
 <section id="bayesian-inference" class="level2">
 <h2 class="anchored" data-anchor-id="bayesian-inference">Bayesian Inference</h2>
-<p><strong>Data are fixed</strong>, but <strong>parameters are uncertain</strong>.</p>
 <p><br></p>
 <p><span class="math display">\[
 p(\theta \mid y) = \frac{\mathcal{L}(\theta \mid y) \, p(\theta)}{p(y)}
@@ -208,10 +210,11 @@ p(\theta \mid y) = \frac{\mathcal{L}(\theta \mid y) \, p(\theta)}{p(y)}
 <li><span class="math inline">\(p(\theta \mid y)\)</span>: Posterior distribution</li>
 </ul>
 </section>
-<section id="hierarchical-modeling" class="level2 align-center">
-<h2 class="align-center anchored" data-anchor-id="hierarchical-modeling">Hierarchical Modeling</h2>
-<p><em>Are participants identical or fully independent?</em></p>
-<div class="columns">
+<section id="hierarchical-modeling" class="level2">
+<h2 class="anchored" data-anchor-id="hierarchical-modeling">Hierarchical Modeling</h2>
+<section id="are-participants-identical-or-fully-independent" class="level3 align-center">
+<h3 class="align-center anchored" data-anchor-id="are-participants-identical-or-fully-independent">Are participants identical or fully independent?</h3>
+<div class="columns align-center">
 <div class="column" style="width:45%;">
 <p><br><br></p>
 <p>Models <strong>group-level structure</strong> <br><br></p>
@@ -228,6 +231,7 @@ p(\theta \mid y) = \frac{\mathcal{L}(\theta \mid y) \, p(\theta)}{p(y)}
 </div>
 </div>
 </div>
+</section>
 </section>
 <section id="why-hierarchical-models" class="level2">
 <h2 class="anchored" data-anchor-id="why-hierarchical-models">Why Hierarchical Models?</h2>

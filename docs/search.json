@@ -347,21 +347,21 @@
     "href": "eam-workshop.html",
     "title": "",
     "section": "",
-    "text": "Data are fixed, but parameters are uncertain.\n\n\\[\np(\\theta \\mid y) = \\frac{\\mathcal{L}(\\theta \\mid y) \\, p(\\theta)}{p(y)}\n\\] \n\n\\(p(\\theta)\\): Prior distribution\n\\(\\mathcal{L}(\\theta \\mid y)\\): Likelihood\n\\(p(\\theta \\mid y)\\): Posterior distribution"
+    "text": "\\[\np(\\theta \\mid y) = \\frac{\\mathcal{L}(\\theta \\mid y) \\, p(\\theta)}{p(y)}\n\\] \n\n\\(p(\\theta)\\): Prior distribution\n\\(\\mathcal{L}(\\theta \\mid y)\\): Likelihood\n\\(p(\\theta \\mid y)\\): Posterior distribution"
   },
   {
     "objectID": "eam-workshop.html#bayesian-inference",
     "href": "eam-workshop.html#bayesian-inference",
     "title": "",
     "section": "",
-    "text": "Data are fixed, but parameters are uncertain.\n\n\\[\np(\\theta \\mid y) = \\frac{\\mathcal{L}(\\theta \\mid y) \\, p(\\theta)}{p(y)}\n\\] \n\n\\(p(\\theta)\\): Prior distribution\n\\(\\mathcal{L}(\\theta \\mid y)\\): Likelihood\n\\(p(\\theta \\mid y)\\): Posterior distribution"
+    "text": "\\[\np(\\theta \\mid y) = \\frac{\\mathcal{L}(\\theta \\mid y) \\, p(\\theta)}{p(y)}\n\\] \n\n\\(p(\\theta)\\): Prior distribution\n\\(\\mathcal{L}(\\theta \\mid y)\\): Likelihood\n\\(p(\\theta \\mid y)\\): Posterior distribution"
   },
   {
     "objectID": "eam-workshop.html#hierarchical-modeling",
     "href": "eam-workshop.html#hierarchical-modeling",
     "title": "",
     "section": "Hierarchical Modeling",
-    "text": "Hierarchical Modeling\nAre participants identical or fully independent?\n\n\n\nModels group-level structure \neach participant’s parameters ∼ drawn from a population distribution"
+    "text": "Hierarchical Modeling\n\nAre participants identical or fully independent?\n\n\n\nModels group-level structure \neach participant’s parameters ∼ drawn from a population distribution"
   },
   {
     "objectID": "eam-workshop.html#why-hierarchical-models",
