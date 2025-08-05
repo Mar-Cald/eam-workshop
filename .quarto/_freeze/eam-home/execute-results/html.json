@@ -1,8 +1,8 @@
 {
-  "hash": "83c622e361c2e81ee057ee678ac7e3a5",
+  "hash": "2a50195d7c2b32212365c56ff4beb01b",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"Evidence Accumulation Models\"\nimage: img/logo.png\nabout:\n  id: hero-heading\n  template: jolla\n  image-shape: round\n  image-width: 40%\nmarkdown:\n  extensions: [link_attributes]\nengine: knitr\n---\n\n\n\n\n::: {#hero-heading}\nThis tutorial is designed to provide the foundations for using evidence accumulation models on experiments involving perceptual judgements. Evidence accumulation models offer a comprehensive approach by jointly considering participants’ choices and response times. These models can also handle multiple-choice scenarios (two or more), allowing the analysis of responses in a broad range of tasks. This tutorial will introduce the rationale for using evidence accumulation models in visual perception research. \n:::\n",
+    "markdown": "---\ntitle: \"Evidence Accumulation Models\"\nimage: img/logo.png\nabout:\n  id: hero-heading\n  template: jolla\n  image-shape: round\n  image-width: 40%\nmarkdown:\n  extensions: [link_attributes]\nengine: knitr\n---\n\n\n\n\n::: {#hero-heading}\nThis tutorial is designed to provide the rationale for using evidence accumulation models on experiments involving perceptual judgements. Evidence accumulation models offer a comprehensive approach by jointly considering participants’ choices and response times. These models can also handle multiple-choice scenarios (two or more), allowing the analysis of responses in a broad range of tasks.\n:::\n",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"
