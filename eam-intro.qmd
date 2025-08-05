@@ -31,7 +31,7 @@ library(dplyr)
 ```
 
  
-## Perception into Action {.small-text}
+## Perception into action {.small-text}
 
 Evidence Accumulation Models assume that, upon stimulus presentation (e.g., left- or right-facing arrow), the decision maker:
 
@@ -116,8 +116,7 @@ Neurons in the lateral intraparietal (LIP) area with response fields overlapping
 
 
 
-
-## Sequential Processing Assumption
+## Sequential processing assumption
 
 Total **Response Time (RT)** is modeled as the sum of **three sequential stages**:
 

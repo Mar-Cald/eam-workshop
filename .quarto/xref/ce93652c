@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"headings":["bayesian-inference","hierarchical-modeling","why-hierarchical-models","model-structure","group-level-parameters","priors","set-up---emc2","design-specification"],"entries":[]}
+=======
+{"headings":["bayesian-inference","hierarchical-modeling","why-hierarchical-models","what-are-we-trying-to-infer","model-structure","group-level-parameters","priors","set-up---emc2","design-specification"],"entries":[]}
+>>>>>>> c445cad4663538287db9cc0dca85774991fa1c8f

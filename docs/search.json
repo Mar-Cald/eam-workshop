@@ -1,7 +1,110 @@
 [
   {
+<<<<<<< HEAD
     "objectID": "eam-intro.html#perception-into-action",
     "href": "eam-intro.html#perception-into-action",
+=======
+    "objectID": "eam-workshop.html",
+    "href": "eam-workshop.html",
+    "title": "",
+    "section": "",
+    "text": "Data are fixed, but parameters are uncertain.\n\n\\[\np(\\boldsymbol{\\theta}|\\boldsymbol{D}) = \\frac{p(\\boldsymbol{D}|\\boldsymbol{\\theta})p(\\boldsymbol{\\theta})}{p({\\boldsymbol D})}\n\\] \n\nInference produces posterior distributions over parameters\nCaptures uncertainty and incorporates prior knowledge"
+  },
+  {
+    "objectID": "eam-workshop.html#bayesian-inference",
+    "href": "eam-workshop.html#bayesian-inference",
+    "title": "",
+    "section": "",
+    "text": "Data are fixed, but parameters are uncertain.\n\n\\[\np(\\boldsymbol{\\theta}|\\boldsymbol{D}) = \\frac{p(\\boldsymbol{D}|\\boldsymbol{\\theta})p(\\boldsymbol{\\theta})}{p({\\boldsymbol D})}\n\\] \n\nInference produces posterior distributions over parameters\nCaptures uncertainty and incorporates prior knowledge"
+  },
+  {
+    "objectID": "eam-workshop.html#hierarchical-modeling",
+    "href": "eam-workshop.html#hierarchical-modeling",
+    "title": "",
+    "section": "Hierarchical Modeling",
+    "text": "Hierarchical Modeling\nAre participants identical or fully independent?\n\n\nModels group-level structure\neach participant’s parameters ∼ drawn from a population distribution \nGroup-level generalization \nIndividual-level inference"
+  },
+  {
+    "objectID": "eam-workshop.html#why-hierarchical-models",
+    "href": "eam-workshop.html#why-hierarchical-models",
+    "title": "",
+    "section": "Why Hierarchical Models?",
+    "text": "Why Hierarchical Models?\n\nReduces bias from unmodeled individual variability\n\nPrevents overfitting and underfitting\n\nShrinkage: pulls extreme or low-quality estimates toward the group mean\n\n\nBoehm et al. (2018), Behavior Research Methods"
+  },
+  {
+    "objectID": "eam-workshop.html#what-are-we-trying-to-infer",
+    "href": "eam-workshop.html#what-are-we-trying-to-infer",
+    "title": "",
+    "section": "What Are We Trying to Infer?",
+    "text": "What Are We Trying to Infer?\nWe want to estimate:\n\nIndividual-level parameters: \\(\\alpha_1, \\alpha_2, \\dots, \\alpha_N\\)\nGroup-level structure:\nA shared population distribution \\(\\alpha_i \\sim \\mathcal{N}(\\mu, \\Sigma)\\)\n\nThis enables both individual and population inference."
+  },
+  {
+    "objectID": "eam-workshop.html#model-structure",
+    "href": "eam-workshop.html#model-structure",
+    "title": "",
+    "section": "Model Structure",
+    "text": "Model Structure\nThe hierarchical model defines a joint posterior over all unknowns:\n\\[\np(\\alpha_i, \\mu, \\Sigma \\mid \\text{data}) \\propto\np(\\text{data} \\mid \\alpha_i) \\cdot\np(\\alpha_i \\mid \\mu, \\Sigma) \\cdot\np(\\mu, \\Sigma)\n\\]\n\nLikelihood:\n\\(p(\\text{data} \\mid \\alpha_i)\\)\n— How well each participant’s data is explained by their parameters\nGroup-level model:\n\\(p(\\alpha_i \\mid \\mu, \\Sigma)\\) — Individual parameters drawn from population distribution\nHyperprior:\n\\(p(\\mu, \\Sigma)\\) — Prior beliefs over the group-level structure"
+  },
+  {
+    "objectID": "eam-workshop.html#group-level-parameters",
+    "href": "eam-workshop.html#group-level-parameters",
+    "title": "",
+    "section": "Group-Level Parameters",
+    "text": "Group-Level Parameters\nLet \\(n\\) = number of individual parameters per subject:\n\n\\(\\mu\\): vector of population means\n\n\\(\\Sigma\\): symmetric covariance matrix, including:\n\nDiagonal: Variances (\\(\\sigma^2\\))\nOff-diagonal: Covariances\n\\(\\frac{n(n-1)}{2}\\) elements total\n\n\nThese hyperparameters are learned from the data."
+  },
+  {
+    "objectID": "eam-workshop.html#priors",
+    "href": "eam-workshop.html#priors",
+    "title": "",
+    "section": "Priors",
+    "text": "Priors\nCognitive-model parameters must be transformed to have support on the real line. This transformation is necessary to meet the assumption of the normal group-level distribution.\n\nLog transform: Applied to parameters with a lower bound (e.g., non-decision time, which cannot be negative)\nProbit transform: Applied to parameters with both lower and upper bounds (e.g., the starting point parameter in the Drift Diffusion Model, which must lie between two response boundaries)\n\nAs a result, priors are specified on these transformed parameters rather than on the original scales."
+  },
+  {
+    "objectID": "eam-workshop.html#set-up---emc2",
+    "href": "eam-workshop.html#set-up---emc2",
+    "title": "",
+    "section": "Set up - EMC2",
+    "text": "Set up - EMC2\n\n# # If not already done, install the EMC2 package\n# remotes::install_github(\"ampl-psych/EMC2\",ref=\"dev\")\nlibrary(EMC2)\n\nWarning: package 'EMC2' was built under R version 4.4.3"
+  },
+  {
+    "objectID": "eam-workshop.html#design-specification",
+    "href": "eam-workshop.html#design-specification",
+    "title": "",
+    "section": "Design specification",
+    "text": "Design specification\nThe design function creates a design object that maps model parameters to experimental conditions using linear model formulas. This object specifies:\n\nModel type\nLinear models for estimated parameter types (default values are used for omitted types)\nParameters to be fixed as constants (optional)\nFunctions for creating custom factors (optional)\nCustom contrast coding for factors (optional)\n\nThe simulation procedure"
+  },
+  {
+    "objectID": "eam-home.html",
+    "href": "eam-home.html",
+    "title": "Evidence Accumulation Models",
+    "section": "",
+    "text": "This tutorial is designed to provide the foundations for using evidence accumulation models on experiments involving perceptual judgements. Evidence accumulation models offer a comprehensive approach by jointly considering participants’ choices and response times. These models can also handle multiple-choice scenarios (two or more), allowing the analysis of responses in a broad range of tasks. This tutorial will introduce the rationale for using evidence accumulation models in visual perception research."
+  },
+  {
+    "objectID": "eam-credits.html",
+    "href": "eam-credits.html",
+    "title": "",
+    "section": "",
+    "text": "Boag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling."
+  },
+  {
+    "objectID": "eam-credits.html#expert-guide",
+    "href": "eam-credits.html#expert-guide",
+    "title": "",
+    "section": "",
+    "text": "Boag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling."
+  },
+  {
+    "objectID": "eam-credits.html#emc2-resources",
+    "href": "eam-credits.html#emc2-resources",
+    "title": "",
+    "section": "EMC2 Resources",
+    "text": "EMC2 Resources\n\n📘 Tutorial\nModel Based Sampling with EMC2 - Extended Models of Choice. A comprehensive, step-by-step guide covering model structure, inference, and visualization using EMC2.\n\n\n📄 Preprint\nProvides theoretical background, methodology, and applications of EMC2.\n\n\n🧠 Summer School Materials\nFrom the Model Based Neuroscience Summer School — highly recommended for those interested in hands-on training in cognitive modeling and Bayesian inference."
+  },
+  {
+    "objectID": "eam-intro.html#decision-making---perception-into-action",
+    "href": "eam-intro.html#decision-making---perception-into-action",
+>>>>>>> c445cad4663538287db9cc0dca85774991fa1c8f
     "title": "Intro to EAM",
     "section": "Perception into Action",
     "text": "Perception into Action\nEvidence Accumulation Models assume that, upon stimulus presentation (e.g., left- or right-facing arrow), the decision maker:\n\nSamples noisy evidence for available options (e.g., “Should I press left or right?”)\nAccumulates that evidence until a threshold is crossed\n\n\n\n\n\n\n\nMulder, M. J., Wagenmakers, E. J., Ratcliff, R., Boekel, W., & Forstmann, B. U. (2012). Bias in the brain: a diffusion model analysis of prior probability and potential payoff. Journal of Neuroscience, 32(7), 2335–2343."
@@ -322,6 +425,7 @@
     "text": "“All Models Are Wrong, but Some Are Useful” — G. Box\n\nPromotes understanding of behavior\n\n🪒 Occam’s Razor: Avoid unnecessary complexity \nAccurately predicts new (out-of-sample) data\n\n📏 Captures uncertainty, variability, and structure"
   },
   {
+<<<<<<< HEAD
     "objectID": "eam-credits.html",
     "href": "eam-credits.html",
     "title": "",
@@ -413,6 +517,8 @@
     "text": "This tutorial is designed to provide the foundations for using evidence accumulation models on experiments involving perceptual judgements. Evidence accumulation models offer a comprehensive approach by jointly considering participants’ choices and response times. These models can also handle multiple-choice scenarios (two or more), allowing the analysis of responses in a broad range of tasks. This tutorial will introduce the rationale for using evidence accumulation models in visual perception research."
   },
   {
+=======
+>>>>>>> c445cad4663538287db9cc0dca85774991fa1c8f
     "objectID": "eam-slide.html",
     "href": "eam-slide.html",
     "title": "",
