@@ -471,6 +471,83 @@ Margherita Calderan
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section></section>
+<section>
+<section id="latent-cognitive-parameters" class="title-slide slide level1 center">
+<h1>Latent Cognitive Parameters</h1>
+
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p>EAMs decompose decisions into:</p>
+<ul>
+<li><p><strong>Drift rate (v)</strong></p></li>
+<li><p><strong>Threshold (a)</strong></p></li>
+<li><p><strong>Bias (z)</strong></p></li>
+<li><p><strong>Nondecision time (Ter)</strong></p></li>
+</ul>
+</section>
+<section id="drift-rate-v" class="slide level2">
+<h2>Drift Rate (v)</h2>
+<ul>
+<li><p>Reflects <strong>evidence strength</strong></p></li>
+<li><p>⬆ Drift → fast &amp; accurate decisions</p></li>
+<li><p>⬇ Drift → slow, error-prone</p></li>
+</ul>
+<p>Manipulated by:</p>
+<ul>
+<li><p>Stimulus discriminability</p></li>
+<li><p>Attention/task difficulty</p></li>
+</ul>
+</section>
+<section id="thresholds-a" class="slide level2">
+<h2>Thresholds (a)</h2>
+<ul>
+<li><p>Set before stimulus onset</p></li>
+<li><p>Reflect <strong>response caution/cognitive control/bias/preference</strong></p></li>
+</ul>
+<p>⬆ Threshold:</p>
+<ul>
+<li>Slower but more accurate</li>
+</ul>
+<p>⬇ Threshold:</p>
+<ul>
+<li>Faster but error-prone</li>
+</ul>
+<blockquote>
+<p>Manipulate via pre-trial cues or instructions.</p>
+</blockquote>
+</section>
+<section id="starting-point-z" class="slide level2">
+<h2>Starting Point (z)</h2>
+<ul>
+<li><p>Reflects <strong>response bias</strong></p></li>
+<li><p>Midpoint = no bias</p></li>
+</ul>
+<p>Deviating from midpoint:</p>
+<ul>
+<li>Favors one response:
+<ul>
+<li>Faster/more accurate for favored</li>
+<li>Slower/less accurate for disfavored</li>
+</ul></li>
+</ul>
+<p>Set <strong>before</strong> stimulus onset.</p>
+</section>
+<section id="nondecision-time-ter" class="slide level2">
+<h2>Nondecision Time (Ter)</h2>
+<ul>
+<li><p>Time to encode stimulus + execute response</p></li>
+<li><p>Shifts RT distribution <strong>without</strong> changing shape/accuracy</p></li>
+</ul>
+<p>Sensitive to:</p>
+<ul>
+<li><p>Visual complexity</p></li>
+<li><p>Motor demands</p></li>
+</ul>
+<blockquote>
+<p>Hard to estimate precisely — often noisy across individuals.</p>
+</blockquote>
 </section>
 <section id="relative-evidence-models" class="slide level2 small-text">
 <h2>Relative Evidence Models</h2>
@@ -621,7 +698,7 @@ dx_k(t) = v_k \, dt + s \, dW_k(t) \quad \text{for } k = 1,\dots,K
 </annotation></semantics></math> <br></p>
 <p>Each accumulator races toward its threshold. The first to cross <strong>wins</strong>.</p>
 </section>
-<section id="section" class="slide level2 small-small-text align-center">
+<section id="section-1" class="slide level2 small-small-text align-center">
 <h2></h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -665,92 +742,6 @@ dx_k(t) = v_k \, dt + s \, dW_k(t) \quad \text{for } k = 1,\dots,K
 </tr>
 </tbody>
 </table>
-</section></section>
-<section>
-<section id="latent-cognitive-parameters" class="title-slide slide level1 center">
-<h1>Latent Cognitive Parameters</h1>
-
-</section>
-<section id="section-1" class="slide level2">
-<h2></h2>
-<p>EAMs decompose decisions into:</p>
-<ul>
-<li><p><strong>Drift rate (v)</strong></p></li>
-<li><p><strong>Threshold (a)</strong></p></li>
-<li><p><strong>Bias (z)</strong></p></li>
-<li><p><strong>Nondecision time (Ter)</strong></p></li>
-</ul>
-</section>
-<section id="drift-rate-v" class="slide level2">
-<h2>Drift Rate (v)</h2>
-<ul>
-<li><p>Reflects <strong>evidence strength</strong></p></li>
-<li><p>⬆ Drift → fast &amp; accurate decisions</p></li>
-<li><p>⬇ Drift → slow, error-prone</p></li>
-</ul>
-<p>Manipulated by:</p>
-<ul>
-<li><p>Stimulus discriminability</p></li>
-<li><p>Attention/task difficulty</p></li>
-</ul>
-</section>
-<section id="thresholds-a" class="slide level2">
-<h2>Thresholds (a)</h2>
-<ul>
-<li><p>Set before stimulus onset</p></li>
-<li><p>Reflect <strong>response caution/cognitive control/bias/preference</strong></p></li>
-</ul>
-<p>⬆ Threshold:</p>
-<ul>
-<li>Slower but more accurate</li>
-</ul>
-<p>⬇ Threshold:</p>
-<ul>
-<li>Faster but error-prone</li>
-</ul>
-<blockquote>
-<p>Manipulate via pre-trial cues or instructions.</p>
-</blockquote>
-</section>
-<section id="starting-point-z" class="slide level2">
-<h2>Starting Point (z)</h2>
-<ul>
-<li><p>Reflects <strong>response bias</strong></p></li>
-<li><p>Midpoint = no bias</p></li>
-</ul>
-<p>Deviating from midpoint:</p>
-<ul>
-<li>Favors one response:
-<ul>
-<li>Faster/more accurate for favored</li>
-<li>Slower/less accurate for disfavored</li>
-</ul></li>
-</ul>
-<p>Set <strong>before</strong> stimulus onset.</p>
-</section>
-<section id="nondecision-time-ter" class="slide level2">
-<h2>Nondecision Time (Ter)</h2>
-<ul>
-<li><p>Time to encode stimulus + execute response</p></li>
-<li><p>Shifts RT distribution <strong>without</strong> changing shape/accuracy</p></li>
-</ul>
-<p>Sensitive to:</p>
-<ul>
-<li><p>Visual complexity</p></li>
-<li><p>Motor demands</p></li>
-</ul>
-<blockquote>
-<p>Hard to estimate precisely — often noisy across individuals.</p>
-</blockquote>
-</section>
-<section id="use-of-parameters" class="slide level2">
-<h2>Use of Parameters</h2>
-<p>Compare parameters:</p>
-<ul>
-<li><p><strong>Across individuals</strong> (e.g., young vs.&nbsp;older adults)</p></li>
-<li><p><strong>Within individuals</strong> (e.g., easy vs.&nbsp;hard conditions)</p></li>
-<li><p><strong>With covariates</strong> (e.g., BOLD activity, IQ)</p></li>
-</ul>
 </section>
 <section id="core-assumptions-of-the-basic-eam" class="slide level2">
 <h2>Core Assumptions of the Basic EAM</h2>

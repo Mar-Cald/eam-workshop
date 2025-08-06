@@ -110,7 +110,6 @@ Neurons in the lateral intraparietal (LIP) area with response fields overlapping
 | *Noise*        | Trial-to-trial neural variability     |
 | *Bound*        | Decision threshold in firing/activity |
 
-
 ## Sequential processing assumption
 
 Total **Response Time (RT)** is modeled as the sum of **three sequential stages**:
@@ -124,6 +123,79 @@ Stages (1) and (3) are captured in the **nondecision time (Ter)** parameter.
 ::: notes
 the models contain parameters controlling the evidence starJng point (allowing for a priori biases), accumulaJon rate (controlling the speed of processing), threshold/boundary separaJon (controlling the amount of evidence required to make a response), and nondecision Jme (the sum of Jme taken for sJmulus encoding and motor response production).
 :::
+
+# Latent Cognitive Parameters
+
+##
+
+EAMs decompose decisions into:
+
+-   **Drift rate (v)**
+
+-   **Threshold (a)**
+
+-   **Bias (z)**
+
+-   **Nondecision time (Ter)**
+
+## Drift Rate (v)
+
+-   Reflects **evidence strength**
+
+-   ⬆ Drift → fast & accurate decisions
+
+-   ⬇ Drift → slow, error-prone
+
+Manipulated by:
+
+-   Stimulus discriminability
+
+-   Attention/task difficulty
+
+## Thresholds (a)
+
+-   Set before stimulus onset
+
+-   Reflect **response caution/cognitive control/bias/preference**
+
+⬆ Threshold:
+
+-   Slower but more accurate
+
+⬇ Threshold:
+
+-   Faster but error-prone
+
+> Manipulate via pre-trial cues or instructions.
+
+## Starting Point (z)
+
+-   Reflects **response bias**
+
+-   Midpoint = no bias
+
+Deviating from midpoint:
+
+-   Favors one response:
+    -   Faster/more accurate for favored
+    -   Slower/less accurate for disfavored
+
+Set **before** stimulus onset.
+
+## Nondecision Time (Ter)
+
+-   Time to encode stimulus + execute response
+
+-   Shifts RT distribution **without** changing shape/accuracy
+
+Sensitive to:
+
+-   Visual complexity
+
+-   Motor demands
+
+> Hard to estimate precisely — often noisy across individuals.
+
 
 
 ## Relative Evidence Models {.small-text}
@@ -334,88 +406,6 @@ Each accumulator races toward its threshold. The first to cross **wins**.
 | **Full DDM** | Accumulation + param variability | Realistic RTs, error patterns |
 | **Racing DDM** | Multiple accumulators | Handles multi-alternative decisions |
 
-
-# Latent Cognitive Parameters
-
-##
-
-EAMs decompose decisions into:
-
--   **Drift rate (v)**
-
--   **Threshold (a)**
-
--   **Bias (z)**
-
--   **Nondecision time (Ter)**
-
-## Drift Rate (v)
-
--   Reflects **evidence strength**
-
--   ⬆ Drift → fast & accurate decisions
-
--   ⬇ Drift → slow, error-prone
-
-Manipulated by:
-
--   Stimulus discriminability
-
--   Attention/task difficulty
-
-## Thresholds (a)
-
--   Set before stimulus onset
-
--   Reflect **response caution/cognitive control/bias/preference**
-
-⬆ Threshold:
-
--   Slower but more accurate
-
-⬇ Threshold:
-
--   Faster but error-prone
-
-> Manipulate via pre-trial cues or instructions.
-
-## Starting Point (z)
-
--   Reflects **response bias**
-
--   Midpoint = no bias
-
-Deviating from midpoint:
-
--   Favors one response:
-    -   Faster/more accurate for favored
-    -   Slower/less accurate for disfavored
-
-Set **before** stimulus onset.
-
-## Nondecision Time (Ter)
-
--   Time to encode stimulus + execute response
-
--   Shifts RT distribution **without** changing shape/accuracy
-
-Sensitive to:
-
--   Visual complexity
-
--   Motor demands
-
-> Hard to estimate precisely — often noisy across individuals.
-
-## Use of Parameters
-
-Compare parameters:
-
--   **Across individuals** (e.g., young vs. older adults)
-
--   **Within individuals** (e.g., easy vs. hard conditions)
-
--   **With covariates** (e.g., BOLD activity, IQ)
 
 ## Core Assumptions of the Basic EAM
 <br/>
