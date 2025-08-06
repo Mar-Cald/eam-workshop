@@ -348,7 +348,7 @@ Margherita Calderan
 </section>
 <section id="perception-into-action" class="slide level2 small-text">
 <h2>Perception into action</h2>
-<p>Evidence Accumulation Models assume that, upon stimulus presentation (e.g., left- or right-facing arrow), the decision maker:</p>
+<p>Evidence Accumulation Models assume that, upon stimulus presentation, the decision maker:</p>
 <ul>
 <li>Samples noisy evidence for available options (e.g., “Should I press left or right?”)</li>
 <li>Accumulates that evidence until a <strong>threshold</strong> is crossed</li>
@@ -387,23 +387,16 @@ Margherita Calderan
 </section>
 <section id="integrator-neurons-receive-this-input" class="slide level2">
 <h2>2. Integrator neurons receive this input</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <p><br></p>
 <ul>
-<li>Neurons in <strong>LIP</strong>, <strong>dlPFC</strong>, or <strong>striatum</strong> ramp up/down over time.</li>
-<li>Reflects <strong>accumulated evidence</strong>. <br></li>
+<li><p>Neurons in <strong>LIP</strong>, <strong>dlPFC</strong>, or <strong>striatum</strong> ramp up/down over time.</p></li>
+<li><p>Reflects <strong>accumulated evidence</strong></p></li>
 </ul>
-</section>
-<section id="threshold-crossing-triggers-a-decision" class="slide level2">
-<h2>3. Threshold crossing triggers a decision</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p><img data-src="img/ramp.jpg" width="600"></p>
-</div><div class="column" style="width:40%;">
-<p><img data-src="img/ramp2.png" width="400"></p>
-<blockquote>
-<p><a href="https://doi.org/10.1523/JNEUROSCI.4156-11.2012" target="_blank">Zylberberg,&amp; Shadlen, 2025</a></p>
-</blockquote>
-<p><br></p>
+<p><img data-src="img/LIP.jpg" class="quarto-figure quarto-figure-center" width="150"> <a href="10.1016/j.celrep.2025.115526" class="small-text" target="_blank">Zylberberg &amp; Shadlen, 2025</a></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="img/ramp2.png" width="600"></p>
 </div></div>
 <aside class="notes">
 <p>Neurons in the lateral intraparietal (LIP) area with response fields overlapping the choice-target contralateral to the recording site (Tin neurons) represent the accumulation of evidence in favor of contralateral target selection. The monkey reports its decision via a saccadic eye movement to one of the targets and is rewarded for correct choices. In trials where the monkey chooses the contralateral target (i.e., the one within the neurons’ response field), the Tin neurons represent the winning race, whereas on ipsilateral choices, they represent the losing race.</p>
@@ -418,6 +411,13 @@ Margherita Calderan
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section>
+<section id="threshold-crossing-triggers-a-decision" class="slide level2">
+<h2>3. Threshold crossing triggers a decision</h2>
+<p><br></p>
+
+<img data-src="img/ramp.jpg" class="quarto-figure quarto-figure-center r-stretch" width="800"><p><a href="10.1016/j.celrep.2025.115526" class="small-text" target="_blank">Zylberberg &amp; Shadlen, 2025</a></p>
+<p><br></p>
 </section>
 <section id="brain-computation-of-decisions" class="slide level2">
 <h2>Brain computation of decisions</h2>
@@ -471,17 +471,6 @@ Margherita Calderan
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</section>
-<section id="sequential-sampling-models" class="slide level2">
-<h2>Sequential Sampling Models</h2>
-<p>Could differ:</p>
-<ul>
-<li>Number of <strong>accumulators</strong> (e.g., single vs multiple)</li>
-<li><strong>Decision rules</strong> (relative vs absolute)</li>
-<li><strong>Drift rate</strong>: constant or time-varying</li>
-<li><strong>Noise</strong>: stochastic vs deterministic</li>
-<li>With or without <strong>inhibition</strong> or <strong>decay</strong></li>
-</ul>
 </section>
 <section id="relative-evidence-models" class="slide level2 small-text">
 <h2>Relative Evidence Models</h2>
@@ -538,17 +527,10 @@ Margherita Calderan
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</section></section>
-<section>
-<section id="noisy-evidence" class="title-slide slide level1 center">
-<h1>Noisy evidence</h1>
-<p><br></p>
-<p>A random walk is the cumulative sum of independent random variables, which in decision-making models represent the sequential evidence gathered from discrete observations of a stimulus.</p>
-<p><br> <a href="https://doi.org/10.1007/978-3-031-45271-0_4" class="small-small-text">Smith, P.L., Ratcliff, R. (2024). An Introduction to the Diffusion Model of Decision-Making. In: Forstmann, B.U., Turner, B.M. (eds) An Introduction to Model-Based Cognitive Neuroscience. Springer, Cham.</a></p>
 </section>
 <section id="wiener-process" class="slide level2 small-text align-center">
 <h2>Wiener Process</h2>
-<p>The <strong>Wiener process</strong> (Brownian motion) is the foundation of many decision models. It models the accumulation of evidence as a noisy process:</p>
+<p>The <strong>Wiener process</strong> (Brownian motion) is the foundation of many decision models <a href="https://doi.org/10.1007/978-3-031-45271-0_4" class="small-small-text">(Smith &amp; Ratcliff, 2024)</a>. It models the accumulation of evidence as a noisy process:</p>
 <p><br> <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>z</mi><mo>+</mo><mi>v</mi><mi>t</mi><mo>+</mo><mi>s</mi><mi>W</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
 x(t) = z + vt + sW(t)
 </annotation></semantics></math> <br></p>
@@ -575,19 +557,21 @@ x(t) = z + vt + sW(t)
 </section>
 <section id="wiener-first-passage-time-fpt" class="slide level2 small-text align-center">
 <h2>Wiener First Passage Time (FPT)</h2>
-<p><br> <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>,</mo><mi>x</mi><mo>=</mo><mn>0</mn><mo stretchy="false" form="prefix">|</mo><mi>α</mi><mo>,</mo><mi>τ</mi><mo>,</mo><mi>β</mi><mo>,</mo><mi>δ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><msup><mi>α</mi><mn>2</mn></msup></mfrac><mo>exp</mo><mrow><mo stretchy="true" form="prefix">[</mo><mi>−</mi><mi>α</mi><mi>β</mi><mi>δ</mi><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><msup><mi>δ</mi><mn>2</mn></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mi>τ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">]</mo></mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mrow><mo stretchy="true" form="prefix">|</mo><mi>t</mi><mo>−</mo><mi>τ</mi><mo stretchy="true" form="postfix">|</mo></mrow><msup><mi>α</mi><mn>2</mn></msup></mfrac><mo minsize="2.4" maxsize="2.4" stretchy="false" form="prefix">|</mo><mi>β</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
-d(t,x=0|\alpha,\tau,\beta,\delta) = \frac{1}{\alpha^2} \exp\left[-\alpha\beta\delta - \frac{1}{2}\delta^2(t-\tau)\right] f\left(\frac{|t-\tau|}{\alpha^2}\bigg|\beta\right)
-</annotation></semantics></math> <br></p>
+<blockquote>
+<p>It is the expected distribution of the time until the process first hits or crosses one or the other boundary. This results in a bivariate distribution, over responses <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math> and hitting times <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>.</p>
+</blockquote>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img data-src="img/wiener.png"></p>
 </div><div class="column" style="width:50%;">
-<blockquote>
-<p>It is the expected distribution of the time until the process first hits or crosses one or the other boundary. This results in a bivariate distribution, over responses <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math> and hitting times <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>.</p>
-</blockquote>
-<p><br></p>
+<ul>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math> : threshold</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math> : initial bias</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math>: quality of the stimulus (often <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>)</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math>: non-decision time</li>
+</ul>
 </div></div>
-<p><a href="https://journal.r-project.org/archive/2014/RJ-2014-005/index.html" target="_blank">Wabersich and Vandekerckhove (2014), <em>The R Journal</em></a></p>
+<p><a href="https://papers.djnavarro.net/2009_firstpassage.pdf" class="small-small-text" target="_blank">Navarro &amp; Fuss, 2009</a><a href="https://journal.r-project.org/archive/2014/RJ-2014-005/index.html" class="small-small-text" target="_blank">; Wabersich &amp; Vandekerckhov, 2014. Copyright 2009, Joachim Vandekerckhove and Department of Psychology and Educational Sciences, University of Leuven, Belgium</a></p>
 </section>
 <section id="full-diffusion-decision-model" class="slide level2 align-center">
 <h2>Full Diffusion Decision Model</h2>
@@ -602,14 +586,14 @@ d(t,x=0|\alpha,\tau,\beta,\delta) = \frac{1}{\alpha^2} \exp\left[-\alpha\beta\de
 <h2>Full DDM Parameters</h2>
 <div class="columns">
 <div class="column align-left" style="width:40%;">
-<p><strong>a</strong>: decision boundary</p>
-<p><strong>z</strong>: starting point</p>
-<p><strong>v</strong>: drift rate</p>
-<p><strong>t_0</strong>: non-decision time</p>
-<p><strong>s</strong>: noise scale (usually fixed)</p>
-<p><strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>η</mi><annotation encoding="application/x-tex">\eta</annotation></semantics></math></strong>: SD of drift rate across trials</p>
-<p><strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><mi>z</mi></msub><annotation encoding="application/x-tex">s_{z}</annotation></semantics></math></strong>: variability in start point</p>
-<p><strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><msub><mi>t</mi><mn>0</mn></msub></msub><annotation encoding="application/x-tex">s_{t_0}</annotation></semantics></math></strong>: variability in non-decision time</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>: decision boundary</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>: starting point</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>: drift rate</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>t</mi><mn>0</mn></msub><annotation encoding="application/x-tex">t_0</annotation></semantics></math>: non-decision time</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>: noise scale (usually fixed to 1)</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>η</mi><annotation encoding="application/x-tex">\eta</annotation></semantics></math>: SD of drift rate across trials</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><mi>z</mi></msub><annotation encoding="application/x-tex">s_{z}</annotation></semantics></math>: variability in start point</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><msub><mi>t</mi><mn>0</mn></msub></msub><annotation encoding="application/x-tex">s_{t_0}</annotation></semantics></math>: variability in non-decision time</p>
 </div><div class="column" style="width:60%;">
 <p><img data-src="img/fullDDM.jpg"></p>
 </div></div>
@@ -648,24 +632,13 @@ dx_k(t) = v_k \, dt + s \, dW_k(t) \quad \text{for } k = 1,\dots,K
 <p><a href="https://link.springer.com/content/pdf/10.3758/s13423-020-01719-6.pdf" target="_blank">Tillman, G., Van Zandt, T., &amp; Logan, G. D. (2020). Sequential sampling models without random between-trial variability: The racing diffusion model of speeded decision making. Psychonomic Bulletin &amp; Review, 27(5), 911-936.</a></p>
 </blockquote>
 </section>
-<section id="rdm" class="slide level2">
-<h2>RDM</h2>
-<p>Without starting point variability…</p>
-<p><br> <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>i</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="prefix">|</mo><mi>b</mi><mo>,</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>b</mi><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>π</mi><msup><mi>t</mi><mn>3</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>−</mi><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></msup><mo>exp</mo><mrow><mo stretchy="true" form="prefix">[</mo><mi>−</mi><mfrac><mn>1</mn><mrow><mn>2</mn><mi>t</mi></mrow></mfrac><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>v</mi><mi>t</mi><mo>−</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">
-f_{i}(t|b,v) = b(2 \pi t^{3})^{-\frac{1}{2}} \exp\left[-\frac{1}{2t}(v t-b)^{2}\right]
-</annotation></semantics></math> <br> The winner is the first process to reach threshold:</p>
-<p><br></p>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mi>i</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>f</mi><mi>i</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><munder><mo>∏</mo><mrow><mi>j</mi><mo>≠</mo><mi>i</mi></mrow></munder><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msub><mi>F</mi><mi>j</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">
-g_{i}(t) = f_{i}(t) \prod\limits_{j \neq i} (1 - F_{j}(t)),
-</annotation></semantics></math></p>
-</section>
 <section id="summary" class="slide level2">
 <h2>Summary</h2>
 <table class="caption-top">
 <colgroup>
-<col style="width: 14%">
-<col style="width: 36%">
-<col style="width: 48%">
+<col style="width: 22%">
+<col style="width: 33%">
+<col style="width: 44%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -692,12 +665,14 @@ g_{i}(t) = f_{i}(t) \prod\limits_{j \neq i} (1 - F_{j}(t)),
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p><strong>Evidence accumulates noisily over time until a decision threshold is reached.</strong></p>
-</blockquote>
+</section></section>
+<section>
+<section id="latent-cognitive-parameters" class="title-slide slide level1 center">
+<h1>Latent Cognitive Parameters</h1>
+
 </section>
-<section id="latent-cognitive-parameters" class="slide level2">
-<h2>Latent Cognitive Parameters</h2>
+<section id="section-1" class="slide level2">
+<h2></h2>
 <p>EAMs decompose decisions into:</p>
 <ul>
 <li><p><strong>Drift rate (v)</strong></p></li>
@@ -780,17 +755,26 @@ g_{i}(t) = f_{i}(t) \prod\limits_{j \neq i} (1 - F_{j}(t)),
 <section id="core-assumptions-of-the-basic-eam" class="slide level2">
 <h2>Core Assumptions of the Basic EAM</h2>
 <p><br></p>
+<div class="fragment">
 <ul>
 <li>Each decision = a <strong>single, continuous accumulation</strong> of evidence</li>
 </ul>
-<p><br></p>
+</div>
+<div class="fragment">
 <ul>
 <li>Culminates in a <strong>discrete response</strong></li>
 </ul>
-<p><br></p>
+</div>
+<div class="fragment">
 <ul>
 <li>Evidence accumulates from <strong>stimulus onset to response</strong></li>
 </ul>
+</div>
+</section></section>
+<section>
+<section id="guidelines" class="title-slide slide level1 center">
+<h1>Guidelines</h1>
+<p><a href="https://osf.io/snqgp_v1">Boag et al.&nbsp;2025</a></p>
 </section>
 <section id="eam-suitable-tasks-should" class="slide level2">
 <h2>EAM-suitable tasks should</h2>
@@ -907,7 +891,7 @@ g_{i}(t) = f_{i}(t) \prod\limits_{j \neq i} (1 - F_{j}(t)),
 <li>Allows previous trial’s processes to return to <strong>baseline</strong>.</li>
 <li>Reduces overlap across trials.</li>
 </ul>
-<p>💡 <strong>Best practice:</strong> Use <strong>variable durations</strong>, e.g.:</p>
+<p><span class="emoji" data-emoji="bulb">💡</span> <strong>Best practice:</strong> Use <strong>variable durations</strong>, e.g.:</p>
 <ul>
 <li><p>Sample from exponential or pseudo-exponential distribution</p></li>
 <li><p>Mean ≈ 0.7 s; range = 0.2–5 s</p></li>
@@ -933,7 +917,7 @@ g_{i}(t) = f_{i}(t) \prod\limits_{j \neq i} (1 - F_{j}(t)),
 <li>Or a <strong>deadline</strong></li>
 </ul></li>
 </ul>
-<p>💡 Calibrate response window:</p>
+<p><span class="emoji" data-emoji="bulb">💡</span> Calibrate response window:</p>
 <ul>
 <li><p>Long enough to allow natural responding</p></li>
 <li><p>Short enough to avoid strategy shifts</p></li>
@@ -1035,7 +1019,6 @@ g_{i}(t) = f_{i}(t) \prod\limits_{j \neq i} (1 - F_{j}(t)),
 <div class="column" style="width:50%;">
 <p>Check for <strong>drift</strong> across trials:</p>
 <ul>
-<li><p>Correlate <strong>RT with trial number</strong></p></li>
 <li><p>Look for trends suggesting:</p>
 <ul>
 <li>Fatigue</li>
@@ -1050,17 +1033,17 @@ g_{i}(t) = f_{i}(t) \prod\limits_{j \neq i} (1 - F_{j}(t)),
 <li><p>Model time-on-task effects</p></li>
 </ul>
 </div></div>
-</section>
-<section id="all-models-are-wrong-but-some-are-useful-g.-box" class="slide level2 align-center">
-<h2>“All Models Are Wrong, but Some Are Useful” — G. Box</h2>
-<p><br></p>
-<p>Promotes understanding of behavior<br>
-<br></p>
-<p>🪒 <strong>Occam’s Razor</strong>: Avoid unnecessary complexity <br><br></p>
-<p>Accurately predicts new (<strong>out-of-sample</strong>) data<br>
-<br></p>
-<p>📏 Captures <strong>uncertainty</strong>, <strong>variability</strong>, and <strong>structure</strong></p>
 </section></section>
+<section id="all-models-are-wrong-but-some-are-useful---g.-box" class="title-slide slide level1 align-center center">
+<h1>“All Models Are Wrong, but Some Are Useful” - G. Box</h1>
+<p>Promotes understanding of behavior.<br>
+</p>
+<p>Accurately predicts new (<strong>out-of-sample</strong>) data.<br>
+</p>
+<p>Captures <strong>uncertainty</strong>, <strong>variability</strong>, and <strong>structure</strong>.<br>
+</p>
+</section>
+
 <section id="thank-you" class="title-slide slide level1 center">
 <h1>Thank you!</h1>
 

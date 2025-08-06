@@ -4,7 +4,7 @@
     "href": "eam-intro.html#perception-into-action",
     "title": "Intro to EAM",
     "section": "Perception into action",
-    "text": "Perception into action\nEvidence Accumulation Models assume that, upon stimulus presentation (e.g., left- or right-facing arrow), the decision maker:\n\nSamples noisy evidence for available options (e.g., “Should I press left or right?”)\nAccumulates that evidence until a threshold is crossed\n\n\n\n\n\n\n\nMulder, M. J., Wagenmakers, E. J., Ratcliff, R., Boekel, W., & Forstmann, B. U. (2012). Bias in the brain: a diffusion model analysis of prior probability and potential payoff. Journal of Neuroscience, 32(7), 2335–2343."
+    "text": "Perception into action\nEvidence Accumulation Models assume that, upon stimulus presentation, the decision maker:\n\nSamples noisy evidence for available options (e.g., “Should I press left or right?”)\nAccumulates that evidence until a threshold is crossed\n\n\n\n\n\n\n\nMulder, M. J., Wagenmakers, E. J., Ratcliff, R., Boekel, W., & Forstmann, B. U. (2012). Bias in the brain: a diffusion model analysis of prior probability and potential payoff. Journal of Neuroscience, 32(7), 2335–2343."
   },
   {
     "objectID": "eam-intro.html#what-is-evidence",
@@ -25,14 +25,14 @@
     "href": "eam-intro.html#integrator-neurons-receive-this-input",
     "title": "Intro to EAM",
     "section": "2. Integrator neurons receive this input",
-    "text": "2. Integrator neurons receive this input\n\n\nNeurons in LIP, dlPFC, or striatum ramp up/down over time.\nReflects accumulated evidence."
+    "text": "2. Integrator neurons receive this input\n\n\n\n\nNeurons in LIP, dlPFC, or striatum ramp up/down over time.\nReflects accumulated evidence\n\n Zylberberg & Shadlen, 2025\n\n\n\n\nNeurons in the lateral intraparietal (LIP) area with response fields overlapping the choice-target contralateral to the recording site (Tin neurons) represent the accumulation of evidence in favor of contralateral target selection. The monkey reports its decision via a saccadic eye movement to one of the targets and is rewarded for correct choices. In trials where the monkey chooses the contralateral target (i.e., the one within the neurons’ response field), the Tin neurons represent the winning race, whereas on ipsilateral choices, they represent the losing race."
   },
   {
     "objectID": "eam-intro.html#threshold-crossing-triggers-a-decision",
     "href": "eam-intro.html#threshold-crossing-triggers-a-decision",
     "title": "Intro to EAM",
     "section": "3. Threshold crossing triggers a decision",
-    "text": "3. Threshold crossing triggers a decision\n\n\n\n\n\n\nZylberberg,& Shadlen, 2025\n\n\n\n\nNeurons in the lateral intraparietal (LIP) area with response fields overlapping the choice-target contralateral to the recording site (Tin neurons) represent the accumulation of evidence in favor of contralateral target selection. The monkey reports its decision via a saccadic eye movement to one of the targets and is rewarded for correct choices. In trials where the monkey chooses the contralateral target (i.e., the one within the neurons’ response field), the Tin neurons represent the winning race, whereas on ipsilateral choices, they represent the losing race."
+    "text": "3. Threshold crossing triggers a decision\n\n\nZylberberg & Shadlen, 2025"
   },
   {
     "objectID": "eam-intro.html#brain-computation-of-decisions",
@@ -47,13 +47,6 @@
     "title": "Intro to EAM",
     "section": "Sequential processing assumption",
     "text": "Sequential processing assumption\nTotal Response Time (RT) is modeled as the sum of three sequential stages:\n\nStimulus encoding\nEvidence accumulation (decision-making)\nMotor response execution\n\nStages (1) and (3) are captured in the nondecision time (Ter) parameter.\n\nthe models contain parameters controlling the evidence starJng point (allowing for a priori biases), accumulaJon rate (controlling the speed of processing), threshold/boundary separaJon (controlling the amount of evidence required to make a response), and nondecision Jme (the sum of Jme taken for sJmulus encoding and motor response production)."
-  },
-  {
-    "objectID": "eam-intro.html#sequential-sampling-models",
-    "href": "eam-intro.html#sequential-sampling-models",
-    "title": "Intro to EAM",
-    "section": "Sequential Sampling Models",
-    "text": "Sequential Sampling Models\nCould differ:\n\nNumber of accumulators (e.g., single vs multiple)\nDecision rules (relative vs absolute)\nDrift rate: constant or time-varying\nNoise: stochastic vs deterministic\nWith or without inhibition or decay"
   },
   {
     "objectID": "eam-intro.html#relative-evidence-models",
@@ -74,14 +67,14 @@
     "href": "eam-intro.html#wiener-process",
     "title": "Intro to EAM",
     "section": "Wiener Process",
-    "text": "Wiener Process\nThe Wiener process (Brownian motion) is the foundation of many decision models. It models the accumulation of evidence as a noisy process:\n x(t)=z+vt+sW(t)\nx(t) = z + vt + sW(t)\n \n\n\n\nx(t)x(t): accumulated evidence at time tt\nz: starting point\nv: drift rate (signal strength)\ns: noise (standard deviation of the increments)\nW(t)W(t): standard Wiener process (Gaussian increments)"
+    "text": "Wiener Process\nThe Wiener process (Brownian motion) is the foundation of many decision models (Smith & Ratcliff, 2024). It models the accumulation of evidence as a noisy process:\n x(t)=z+vt+sW(t)\nx(t) = z + vt + sW(t)\n \n\n\n\nx(t)x(t): accumulated evidence at time tt\nz: starting point\nv: drift rate (signal strength)\ns: noise (standard deviation of the increments)\nW(t)W(t): standard Wiener process (Gaussian increments)"
   },
   {
     "objectID": "eam-intro.html#wiener-first-passage-time-fpt",
     "href": "eam-intro.html#wiener-first-passage-time-fpt",
     "title": "Intro to EAM",
     "section": "Wiener First Passage Time (FPT)",
-    "text": "Wiener First Passage Time (FPT)\n d(t,x=0|α,τ,β,δ)=1α2exp[−αβδ−12δ2(t−τ)]f(|t−τ|α2|β)\nd(t,x=0|\\alpha,\\tau,\\beta,\\delta) = \\frac{1}{\\alpha^2} \\exp\\left[-\\alpha\\beta\\delta - \\frac{1}{2}\\delta^2(t-\\tau)\\right] f\\left(\\frac{|t-\\tau|}{\\alpha^2}\\bigg|\\beta\\right)\n \n\n\n\n\n\nIt is the expected distribution of the time until the process first hits or crosses one or the other boundary. This results in a bivariate distribution, over responses xx and hitting times tt.\n\n\n\nWabersich and Vandekerckhove (2014), The R Journal"
+    "text": "Wiener First Passage Time (FPT)\n\nIt is the expected distribution of the time until the process first hits or crosses one or the other boundary. This results in a bivariate distribution, over responses xx and hitting times tt.\n\n\n\n\n\n\nα\\alpha : threshold\nβ\\beta : initial bias\nδ\\delta: quality of the stimulus (often vv)\nτ\\tau: non-decision time\n\n\nNavarro & Fuss, 2009; Wabersich & Vandekerckhov, 2014. Copyright 2009, Joachim Vandekerckhove and Department of Psychology and Educational Sciences, University of Leuven, Belgium"
   },
   {
     "objectID": "eam-intro.html#full-diffusion-decision-model",
@@ -95,7 +88,7 @@
     "href": "eam-intro.html#full-ddm-parameters",
     "title": "Intro to EAM",
     "section": "Full DDM Parameters",
-    "text": "Full DDM Parameters\n\n\na: decision boundary\nz: starting point\nv: drift rate\nt_0: non-decision time\ns: noise scale (usually fixed)\nη\\eta: SD of drift rate across trials\nszs_{z}: variability in start point\nst0s_{t_0}: variability in non-decision time\n\n\n\n\nBoehm, U., Annis, J., Frank, … & Wagenmakers, E. J. (2018). Estimating across-trial variability parameters of the Diffusion Decision Model: Expert advice and recommendations. Journal of Mathematical Psychology, 87, 46-75. Ratcliff, R., & Rouder, J. N. (1998). Modeling Response Times for Two-Choice Decisions. Psychological Science, 9(5), 347-356."
+    "text": "Full DDM Parameters\n\n\naa: decision boundary\nzz: starting point\nvv: drift rate\nt0t_0: non-decision time\nss: noise scale (usually fixed to 1)\nη\\eta: SD of drift rate across trials\nszs_{z}: variability in start point\nst0s_{t_0}: variability in non-decision time\n\n\n\n\nBoehm, U., Annis, J., Frank, … & Wagenmakers, E. J. (2018). Estimating across-trial variability parameters of the Diffusion Decision Model: Expert advice and recommendations. Journal of Mathematical Psychology, 87, 46-75. Ratcliff, R., & Rouder, J. N. (1998). Modeling Response Times for Two-Choice Decisions. Psychological Science, 9(5), 347-356."
   },
   {
     "objectID": "eam-intro.html#purpose-of-variability",
@@ -119,25 +112,18 @@
     "text": "Tillman, G., Van Zandt, T., & Logan, G. D. (2020). Sequential sampling models without random between-trial variability: The racing diffusion model of speeded decision making. Psychonomic Bulletin & Review, 27(5), 911-936."
   },
   {
-    "objectID": "eam-intro.html#rdm",
-    "href": "eam-intro.html#rdm",
-    "title": "Intro to EAM",
-    "section": "RDM",
-    "text": "RDM\nWithout starting point variability…\n fi(t|b,v)=b(2πt3)−12exp[−12t(vt−b)2]\nf_{i}(t|b,v) = b(2 \\pi t^{3})^{-\\frac{1}{2}} \\exp\\left[-\\frac{1}{2t}(v t-b)^{2}\\right]\n  The winner is the first process to reach threshold:\n\ngi(t)=fi(t)∏j≠i(1−Fj(t)),\ng_{i}(t) = f_{i}(t) \\prod\\limits_{j \\neq i} (1 - F_{j}(t)),"
-  },
-  {
     "objectID": "eam-intro.html#summary",
     "href": "eam-intro.html#summary",
     "title": "Intro to EAM",
     "section": "Summary",
-    "text": "Summary\n\n\n\n\n\n\n\n\nModel\nCore Mechanism\nKey Strengths\n\n\n\n\nWiener\nStochastic accumulation\nSimple FPT, binary outcomes\n\n\nFull DDM\nAccumulation + param variability\nRealistic RTs, error patterns\n\n\nRacing DDM\nMultiple accumulators\nHandles multi-alternative decisions\n\n\n\n\nEvidence accumulates noisily over time until a decision threshold is reached."
+    "text": "Summary\n\n\n\n\n\n\n\n\nModel\nCore Mechanism\nKey Strengths\n\n\n\n\nWiener\nStochastic accumulation\nSimple FPT, binary outcomes\n\n\nFull DDM\nAccumulation + param variability\nRealistic RTs, error patterns\n\n\nRacing DDM\nMultiple accumulators\nHandles multi-alternative decisions"
   },
   {
-    "objectID": "eam-intro.html#latent-cognitive-parameters",
-    "href": "eam-intro.html#latent-cognitive-parameters",
+    "objectID": "eam-intro.html#section-1",
+    "href": "eam-intro.html#section-1",
     "title": "Intro to EAM",
-    "section": "Latent Cognitive Parameters",
-    "text": "Latent Cognitive Parameters\nEAMs decompose decisions into:\n\nDrift rate (v)\nThreshold (a)\nBias (z)\nNondecision time (Ter)"
+    "section": "",
+    "text": "EAMs decompose decisions into:\n\nDrift rate (v)\nThreshold (a)\nBias (z)\nNondecision time (Ter)"
   },
   {
     "objectID": "eam-intro.html#drift-rate-v",
@@ -179,7 +165,7 @@
     "href": "eam-intro.html#core-assumptions-of-the-basic-eam",
     "title": "Intro to EAM",
     "section": "Core Assumptions of the Basic EAM",
-    "text": "Core Assumptions of the Basic EAM\n\n\nEach decision = a single, continuous accumulation of evidence\n\n\n\nCulminates in a discrete response\n\n\n\nEvidence accumulates from stimulus onset to response"
+    "text": "Core Assumptions of the Basic EAM\n\n\n\nEach decision = a single, continuous accumulation of evidence\n\n\n\n\nCulminates in a discrete response\n\n\n\n\nEvidence accumulates from stimulus onset to response"
   },
   {
     "objectID": "eam-intro.html#eam-suitable-tasks-should",
@@ -312,14 +298,7 @@
     "href": "eam-intro.html#detecting-nonstationarity",
     "title": "Intro to EAM",
     "section": "Detecting Nonstationarity",
-    "text": "Detecting Nonstationarity\n\n\nCheck for drift across trials:\n\nCorrelate RT with trial number\nLook for trends suggesting:\n\nFatigue\nLearning\nStrategic shifts\n\n\n\nUse this to:\n\nExclude sessions\nModel time-on-task effects"
-  },
-  {
-    "objectID": "eam-intro.html#all-models-are-wrong-but-some-are-useful-g.-box",
-    "href": "eam-intro.html#all-models-are-wrong-but-some-are-useful-g.-box",
-    "title": "Intro to EAM",
-    "section": "“All Models Are Wrong, but Some Are Useful” — G. Box",
-    "text": "“All Models Are Wrong, but Some Are Useful” — G. Box\n\nPromotes understanding of behavior\n\n🪒 Occam’s Razor: Avoid unnecessary complexity \nAccurately predicts new (out-of-sample) data\n\n📏 Captures uncertainty, variability, and structure"
+    "text": "Detecting Nonstationarity\n\n\nCheck for drift across trials:\n\nLook for trends suggesting:\n\nFatigue\nLearning\nStrategic shifts\n\n\n\nUse this to:\n\nExclude sessions\nModel time-on-task effects"
   },
   {
     "objectID": "eam-credits.html",

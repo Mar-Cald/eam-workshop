@@ -30,26 +30,22 @@ library(ggplot2)
 library(dplyr)
 ```
 
- 
 ## Perception into action {.small-text}
 
-Evidence Accumulation Models assume that, upon stimulus presentation (e.g., left- or right-facing arrow), the decision maker:
+Evidence Accumulation Models assume that, upon stimulus presentation, the decision maker:
 
-- Samples noisy evidence for available options (e.g., "Should I press left or right?")
-- Accumulates that evidence until a **threshold** is crossed
+-   Samples noisy evidence for available options (e.g., "Should I press left or right?")
+-   Accumulates that evidence until a **threshold** is crossed
 
-:::: {.columns}
+::::: columns
 ::: {.column width="70%"}
 ![](img/dotmot.jpg){width="700" height="400"}
-
 :::
 
-::: {.column width="30%" .small-small-text .center}
-
+::: {.column .small-small-text .center width="30%"}
 <br/>
 
 > [Mulder, M. J., Wagenmakers, E. J., Ratcliff, R., Boekel, W., & Forstmann, B. U. (2012). Bias in the brain: a diffusion model analysis of prior probability and potential payoff. Journal of Neuroscience, 32(7), 2335–2343.](https://doi.org/10.1523/JNEUROSCI.4156-11.2012){target="_blank"}
-
 :::
 :::::
 
@@ -59,44 +55,33 @@ Neural signals reflecting sensory or internal information relevant to a choice.
 
 ***"Are dots moving to the right or to the left?"***
 
-- Neurons fire in proportion to motion direction & strength.
-- These firing rates = **momentary evidence**.
-
-
+-   Neurons fire in proportion to motion direction & strength.
+-   These firing rates = **momentary evidence**.
 
 # How does the brain accumulate evidence?
 
 ## 1. Sensory neurons encode momentary evidence
+
 <br/>
 
-- Spiking in **sensory cortex** represents stimulus features.
-- Noisy and varies trial-to-trial.
+-   Spiking in **sensory cortex** represents stimulus features.
+-   Noisy and varies trial-to-trial.
 
 ## 2. Integrator neurons receive this input
+
+::::: columns
+::: {.column width="50%"}
 <br/>
 
-- Neurons in **LIP**, **dlPFC**, or **striatum** ramp up/down over time.
-- Reflects **accumulated evidence**.
-<br/>
+-   Neurons in **LIP**, **dlPFC**, or **striatum** ramp up/down over time.
 
+-   Reflects **accumulated evidence**
 
-
-
-## 3. Threshold crossing triggers a decision
-
-:::: {.columns}
-::: {.column width="60%"}
-
-![](img/ramp.jpg){width="600" height=800"}
-
+![](img/LIP.jpg){width="150" height="150\"" fig-align="center"} [Zylberberg & Shadlen, 2025](10.1016/j.celrep.2025.115526){.small-text target="_blank"}
 :::
 
-::: {.column width="40%"}
-![](img/ramp2.png){width="400" height=500"}
-
-> [Zylberberg,& Shadlen, 2025](https://doi.org/10.1523/JNEUROSCI.4156-11.2012){target="_blank"}
-
-<br/>
+::: {.column width="50%"}
+![](img/ramp2.png){width="600" height="800\""}
 :::
 :::::
 
@@ -104,62 +89,60 @@ Neural signals reflecting sensory or internal information relevant to a choice.
 Neurons in the lateral intraparietal (LIP) area with response fields overlapping the choice-target contralateral to the recording site (Tin neurons) represent the accumulation of evidence in favor of contralateral target selection. The monkey reports its decision via a saccadic eye movement to one of the targets and is rewarded for correct choices. In trials where the monkey chooses the contralateral target (i.e., the one within the neurons’ response field), the Tin neurons represent the winning race, whereas on ipsilateral choices, they represent the losing race.
 :::
 
-## Brain computation of decisions
+## 3. Threshold crossing triggers a decision
+
 <br/>
 
-| Cognitive Term   | Neural Interpretation                 |
-|------------------|----------------------------------------|
-| *Evidence*    | Sensory neuron firing rates            |
-| *Accumulation* | Integration in parietal/frontal areas  |
-| *Noise*        | Trial-to-trial neural variability      |
-| *Bound*        | Decision threshold in firing/activity  |
+![](img/ramp.jpg){width="800" height="900\"" fig-align="center"}
 
+[Zylberberg & Shadlen, 2025](10.1016/j.celrep.2025.115526){.small-text target="_blank"}
+
+<br/>
+
+## Brain computation of decisions
+
+<br/>
+
+| Cognitive Term | Neural Interpretation                 |
+|----------------|---------------------------------------|
+| *Evidence*     | Sensory neuron firing rates           |
+| *Accumulation* | Integration in parietal/frontal areas |
+| *Noise*        | Trial-to-trial neural variability     |
+| *Bound*        | Decision threshold in firing/activity |
 
 
 ## Sequential processing assumption
 
 Total **Response Time (RT)** is modeled as the sum of **three sequential stages**:
 
-1. **Stimulus encoding**
-2. **Evidence accumulation** (decision-making)
-3. **Motor response execution**
+1.  **Stimulus encoding**
+2.  **Evidence accumulation** (decision-making)
+3.  **Motor response execution**
 
 Stages (1) and (3) are captured in the **nondecision time (Ter)** parameter.
-
 
 ::: notes
 the models contain parameters controlling the evidence starJng point (allowing for a priori biases), accumulaJon rate (controlling the speed of processing), threshold/boundary separaJon (controlling the amount of evidence required to make a response), and nondecision Jme (the sum of Jme taken for sJmulus encoding and motor response production).
 :::
 
-## Sequential Sampling Models
-
-Could differ:
-
-- Number of **accumulators** (e.g., single vs multiple)
-- **Decision rules** (relative vs absolute)
-- **Drift rate**: constant or time-varying
-- **Noise**: stochastic vs deterministic
-- With or without **inhibition** or **decay**
 
 ## Relative Evidence Models {.small-text}
 
 In **relative evidence models** (e.g., Wiener process, Diffusion Decision Model):
 
-:::: {.columns}
+::::: columns
 ::: {.column width="40%"}
 <br/>
 
-- Decision is based on the **difference** in accumulated evidence between two options.
+-   Decision is based on the **difference** in accumulated evidence between two options.
 
 <br/>
 
-- Suitable for **binary choices**.
+-   Suitable for **binary choices**.
 :::
 
 ::: {.column width="60%"}
-
-![](img/eam-relative.png){width="550" height="350" .align-center}
-
+![](img/eam-relative.png){.align-center width="550" height="350"}
 :::
 :::::
 
@@ -169,55 +152,39 @@ In **relative evidence models** (e.g., Wiener process, Diffusion Decision Model)
 
 In **racing accumulator models** (e.g., LBA, RDM):
 
-::: {.columns}
+::::: columns
 ::: {.column width="40%"}
+-   Each option has its own **accumulator** tracking **absolute evidence**.
 
-- Each option has its own **accumulator** tracking **absolute evidence**.
+-   Decision is made by the **first accumulator to reach threshold**.
 
-- Decision is made by the **first accumulator to reach threshold**.
-
-- Can handle **multiple alternatives** (not just binary choices).
-
+-   Can handle **multiple alternatives** (not just binary choices).
 :::
-::: {.column width="60%" .small-small-text .align-center}
 
+::: {.column .small-small-text .align-center width="60%"}
 ![](img/eam-absolute.png){width="550" height="350"}
-
 :::
 :::::
 
 > [Boag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling.](https://doi.org/10.31234/osf.io/snqgp){target="_blank"}
 
-
 ::: notes
-
 Although relative and absolute evidence models differ in how they conceptualize evidence, they:
 
-- Share similar assumptions about trial structure and data quality
-- Use overlapping parameters (drift rate, threshold, bias, nondecision time)
-- Often reach the **same substantive conclusions**
-- Provide convergent results when applied to the same data
-
+-   Share similar assumptions about trial structure and data quality
+-   Use overlapping parameters (drift rate, threshold, bias, nondecision time)
+-   Often reach the **same substantive conclusions**
+-   Provide convergent results when applied to the same data
 :::
-
-# Noisy evidence
-<br/>
-
-A random walk is the cumulative sum of independent random variables, which in decision-making models represent the sequential evidence gathered from discrete observations of a stimulus.
-
-<br/>
-[Smith, P.L., Ratcliff, R. (2024). An Introduction to the Diffusion Model of Decision-Making. In: Forstmann, B.U., Turner, B.M. (eds) An Introduction to Model-Based Cognitive Neuroscience. Springer, Cham.](https://doi.org/10.1007/978-3-031-45271-0_4){.small-small-text}
 
 
 ## Wiener Process {.small-text .align-center}
 
-The **Wiener process** (Brownian motion) is the foundation of many decision models. It models the accumulation of evidence as a noisy process:
+The **Wiener process** (Brownian motion) is the foundation of many decision models [(Smith & Ratcliff, 2024)](https://doi.org/10.1007/978-3-031-45271-0_4){.small-small-text}. It models the accumulation of evidence as a noisy process:
 
-<br/>
-$$
+<br/> $$
 x(t) = z + vt + sW(t)
-$$
-<br/>
+$$ <br/>
 
 ::::: columns
 ::: {.column width="40%"}
@@ -226,11 +193,9 @@ $$
 -   v: drift rate (signal strength)
 -   s: noise (standard deviation of the increments)
 -   $W(t)$: standard Wiener process (Gaussian increments)
-
 :::
 
 ::: {.column width="60%"}
-
 ```{r}
 #| echo: false
 #| fig-asp: .6
@@ -267,37 +232,35 @@ ggplot(data = sim_path, aes(x = time, y = x))+
 :::
 :::::
 
+
 ## Wiener First Passage Time (FPT) {.small-text .align-center}
-<br/> 
-$$
-d(t,x=0|\alpha,\tau,\beta,\delta) = \frac{1}{\alpha^2} \exp\left[-\alpha\beta\delta - \frac{1}{2}\delta^2(t-\tau)\right] f\left(\frac{|t-\tau|}{\alpha^2}\bigg|\beta\right)
-$$ 
-<br/> 
 
-:::: {.columns}
+> It is the expected distribution of the time until the process first hits or crosses one or the other boundary. This results in a bivariate distribution, over responses $x$ and hitting times $t$.
+
+::::: columns
 ::: {.column width="50%"}
-
 ![](img/wiener.png)
-
 :::
+
 ::: {.column width="50%"}
-
->It is the expected distribution of the time until the process first hits or crosses one or the other boundary. This results in a bivariate distribution, over responses $x$ and hitting times $t$.
-
-<br/> 
+-   $\alpha$ : threshold
+-   $\beta$ : initial bias
+-   $\delta$: quality of the stimulus (often $v$)
+-   $\tau$: non-decision time
 :::
-::::
+:::::
 
-[Wabersich and Vandekerckhove (2014), *The R Journal*](https://journal.r-project.org/archive/2014/RJ-2014-005/index.html){target="_blank"}
+[Navarro & Fuss, 2009](https://papers.djnavarro.net/2009_firstpassage.pdf){.small-small-text target="_blank"}[; Wabersich & Vandekerckhov, 2014. Copyright 2009, Joachim Vandekerckhove and Department of Psychology and Educational Sciences, University of Leuven, Belgium](https://journal.r-project.org/archive/2014/RJ-2014-005/index.html){.small-small-text target="_blank"}
 
 ## Full Diffusion Decision Model {.align-center}
+
 <br/>
 
 The **Full DDM** accounts for more behavioral phenomena by allowing **trial-to-trial variability** in key parameters:
 
 <br/>
 
-**Drift rate**:  $v \sim \mathcal{N}(\mu_v, \eta^2)$
+**Drift rate**: $v \sim \mathcal{N}(\mu_v, \eta^2)$
 
 **Starting point**: $z \sim \text{Uniform}(z - s_z/2, z + s_z/2)$
 
@@ -305,47 +268,45 @@ The **Full DDM** accounts for more behavioral phenomena by allowing **trial-to-t
 
 ## Full DDM Parameters {.small-text .align-center}
 
-:::: {.columns}
-::: {.column width="40%" .align-left}
-**a**: decision boundary
+::::: columns
+::: {.column .align-left width="40%"}
+$a$: decision boundary
 
-**z**: starting point
+$z$: starting point
 
-**v**: drift rate
+$v$: drift rate
 
-**t_0**: non-decision time
+$t_0$: non-decision time
 
-**s**: noise scale (usually fixed)
+$s$: noise scale (usually fixed to 1)
 
-**$\eta$**: SD of drift rate across trials
+$\eta$: SD of drift rate across trials
 
-**$s_{z}$**: variability in start point
+$s_{z}$: variability in start point
 
-**$s_{t_0}$**: variability in non-decision time
+$s_{t_0}$: variability in non-decision time
 :::
+
 ::: {.column width="60%"}
 ![](img/fullDDM.jpg)
-
 :::
 :::::
 
-> [Boehm, U., Annis, J., Frank, ... & Wagenmakers, E. J. (2018). Estimating across-trial variability parameters of the Diffusion Decision Model: Expert advice and recommendations. *Journal of Mathematical Psychology*, 87, 46-75.](https://www.sciencedirect.com/science/article/pii/S002224961830021X){.small-small-text}
-[Ratcliff, R., & Rouder, J. N. (1998). Modeling Response Times for Two-Choice Decisions. Psychological Science, 9(5), 347-356.](https://doi.org/10.1111/1467-9280.00067){.small-small-text}
-
-
+> [Boehm, U., Annis, J., Frank, ... & Wagenmakers, E. J. (2018). Estimating across-trial variability parameters of the Diffusion Decision Model: Expert advice and recommendations. *Journal of Mathematical Psychology*, 87, 46-75.](https://www.sciencedirect.com/science/article/pii/S002224961830021X){.small-small-text} [Ratcliff, R., & Rouder, J. N. (1998). Modeling Response Times for Two-Choice Decisions. Psychological Science, 9(5), 347-356.](https://doi.org/10.1111/1467-9280.00067){.small-small-text}
 
 ## Purpose of Variability
+
 <br/>
 
 Adding variability improves the model's ability to:
 
 -   Capture **error RT differences**
--   Reflect **trial-to-trial attention or difficulty changes**
-<br/>
+-   Reflect **trial-to-trial attention or difficulty changes** <br/>
 
 However, it increases computational demands.
 
 ## Racing Diffusion Model {.align-center}
+
 <br/>
 
 Instead of a single process choosing between boundaries, the **Racing Diffusion Model** (RDM) uses **multiple independent diffusion processes**, one per option:
@@ -364,104 +325,85 @@ Each accumulator races toward its threshold. The first to cross **wins**.
 
 > [Tillman, G., Van Zandt, T., & Logan, G. D. (2020). Sequential sampling models without random between-trial variability: The racing diffusion model of speeded decision making. Psychonomic Bulletin & Review, 27(5), 911-936.](https://link.springer.com/content/pdf/10.3758/s13423-020-01719-6.pdf){target="_blank"}
 
-## RDM
-
-Without starting point variability...
-
-<br/>
-$$
-f_{i}(t|b,v) = b(2 \pi t^{3})^{-\frac{1}{2}} \exp\left[-\frac{1}{2t}(v t-b)^{2}\right]
-$$
-<br/>
-The winner is the first process to reach threshold:
-
-<br/>
-
-$$
-g_{i}(t) = f_{i}(t) \prod\limits_{j \neq i} (1 - F_{j}(t)),
-$$
 
 ## Summary
 
-| Model        | Core Mechanism                  | Key Strengths                              |
-|-------------|----------------------------------|---------------------------------------------|
-| **Wiener**   | Stochastic accumulation          | Simple FPT, binary outcomes                 |
-| **Full DDM** | Accumulation + param variability | Realistic RTs, error patterns               |
-| **Racing DDM** | Multiple accumulators         | Handles multi-alternative decisions         |
+| Model | Core Mechanism | Key Strengths |
+|----------------|------------------------|--------------------------------|
+| **Wiener** | Stochastic accumulation | Simple FPT, binary outcomes |
+| **Full DDM** | Accumulation + param variability | Realistic RTs, error patterns |
+| **Racing DDM** | Multiple accumulators | Handles multi-alternative decisions |
 
-> **Evidence accumulates noisily over time until a decision threshold is reached.**
 
-## Latent Cognitive Parameters
+# Latent Cognitive Parameters
+
+##
 
 EAMs decompose decisions into:
 
-- **Drift rate (v)** 
+-   **Drift rate (v)**
 
-- **Threshold (a)** 
+-   **Threshold (a)**
 
-- **Bias (z)** 
+-   **Bias (z)**
 
-- **Nondecision time (Ter)** 
-
+-   **Nondecision time (Ter)**
 
 ## Drift Rate (v)
 
-- Reflects **evidence strength**
+-   Reflects **evidence strength**
 
-- ⬆ Drift → fast & accurate decisions
+-   ⬆ Drift → fast & accurate decisions
 
-- ⬇ Drift → slow, error-prone
+-   ⬇ Drift → slow, error-prone
 
 Manipulated by:
 
-- Stimulus discriminability
+-   Stimulus discriminability
 
-- Attention/task difficulty
-
+-   Attention/task difficulty
 
 ## Thresholds (a)
 
-- Set before stimulus onset
+-   Set before stimulus onset
 
-- Reflect **response caution/cognitive control/bias/preference**
+-   Reflect **response caution/cognitive control/bias/preference**
 
 ⬆ Threshold:
 
-- Slower but more accurate
+-   Slower but more accurate
 
 ⬇ Threshold:
 
-- Faster but error-prone
+-   Faster but error-prone
 
 > Manipulate via pre-trial cues or instructions.
 
-
 ## Starting Point (z)
 
-- Reflects **response bias**
+-   Reflects **response bias**
 
-- Midpoint = no bias
+-   Midpoint = no bias
 
 Deviating from midpoint:
 
-- Favors one response:
-  - Faster/more accurate for favored
-  - Slower/less accurate for disfavored
+-   Favors one response:
+    -   Faster/more accurate for favored
+    -   Slower/less accurate for disfavored
 
 Set **before** stimulus onset.
 
-
 ## Nondecision Time (Ter)
 
-- Time to encode stimulus + execute response
+-   Time to encode stimulus + execute response
 
-- Shifts RT distribution **without** changing shape/accuracy
+-   Shifts RT distribution **without** changing shape/accuracy
 
 Sensitive to:
 
-- Visual complexity
+-   Visual complexity
 
-- Motor demands
+-   Motor demands
 
 > Hard to estimate precisely — often noisy across individuals.
 
@@ -469,58 +411,60 @@ Sensitive to:
 
 Compare parameters:
 
-- **Across individuals** (e.g., young vs. older adults)
+-   **Across individuals** (e.g., young vs. older adults)
 
-- **Within individuals** (e.g., easy vs. hard conditions)
+-   **Within individuals** (e.g., easy vs. hard conditions)
 
-- **With covariates** (e.g., BOLD activity, IQ)
-
+-   **With covariates** (e.g., BOLD activity, IQ)
 
 ## Core Assumptions of the Basic EAM
-
 <br/>
 
-- Each decision = a **single, continuous accumulation** of evidence
+. . . 
 
-<br/>
+-   Each decision = a **single, continuous accumulation** of evidence
 
-- Culminates in a **discrete response**
+. . . 
 
-<br/>
 
-- Evidence accumulates from **stimulus onset to response**
+-   Culminates in a **discrete response**
+
+. . . 
+
+-   Evidence accumulates from **stimulus onset to response**
+
+. . . 
+
+# Guidelines
+[Boag et al. 2025](https://osf.io/snqgp_v1)
 
 ## EAM-suitable tasks should
 
-- Clearly define **stimulus and response onset**
+-   Clearly define **stimulus and response onset**
 
-- Present **static, constant stimuli**
+-   Present **static, constant stimuli**
 
-- Avoid overlapping cognitive processes
-
+-   Avoid overlapping cognitive processes
 
 ## Within-Trial Stationarity
 
-- Model parameters are **fixed within a trial**
-- Evidence accumulation:
-  - Constant **mean rate**, though noisy
-  - No changes in stimulus evidence mid-trial
-
-- Decision thresholds:
-  - Set **before** stimulus onset
-  - **Do not change** during the trial
-
+-   Model parameters are **fixed within a trial**
+-   Evidence accumulation:
+    -   Constant **mean rate**, though noisy
+    -   No changes in stimulus evidence mid-trial
+-   Decision thresholds:
+    -   Set **before** stimulus onset
+    -   **Do not change** during the trial
 
 ## Within-Condition Stationarity
 
-- Parameters are constant **across same-type trials**
-- Needed for **model fitting and averaging**
-- Assumes:
-  - Trials of same condition reflect **same cognitive settings**
-  - Participant behavior is stable
+-   Parameters are constant **across same-type trials**
+-   Needed for **model fitting and averaging**
+-   Assumes:
+    -   Trials of same condition reflect **same cognitive settings**
+    -   Participant behavior is stable
 
 > Example: Don't change stimulus brightness mid-trial.
-
 
 ## Positively Skewed RT Distributions
 
@@ -538,36 +482,33 @@ ggplot(data = dat, aes(x = rt))+
   xlim(0,2)
 ```
 
-
 ## Free of Contaminant Processes
 
 Data should reflect **evidence accumulation**!
 
 Avoid:
 
-- Random guessing
+-   Random guessing
 
-- Fast guesses
+-   Fast guesses
 
-- Attention lapses or missing responses
+-   Attention lapses or missing responses
 
 > Clean data = better model fit and interpretability.
-
 
 ## Stimulus Design
 
 Manipulate difficulty to modulate:
 
-- Drift rate
+-   Drift rate
 
-- Error rates (target: **5–35%**)
+-   Error rates (target: **5–35%**)
 
 Avoid:
 
-- **Floor effects** → guessing
+-   **Floor effects** → guessing
 
-- **Ceiling effects** → no errors to fit
-
+-   **Ceiling effects** → no errors to fit
 
 ## Response Modality
 
@@ -575,215 +516,184 @@ EAMs assume the response begins **after the decision ends**.
 
 Best modalities:
 
-- **Manual keypresses** 
+-   **Manual keypresses**
 
-- **Saccades** 
+-   **Saccades**
 
 Avoid imprecise, slow, or delayed responses.
-
 
 ## Trial Structure and Event Timing
 
 EAM tasks follow a structured sequence of events:
 
-1.    **Cue** (optional)
+1.  **Cue** (optional)
 
-2.    **Fixation**
+2.  **Fixation**
 
-3.    **Stimulus onset**
+3.  **Stimulus onset**
 
-4.    **Response window**
+4.  **Response window**
 
-5.    **Intertrial interval**
+5.  **Intertrial interval**
 
 Each component affects the integrity of evidence accumulation.
 
-
 ## Cue
 
-- Optional cue presented **before** stimulus onset.
-- Informs participants **how** to respond (e.g., emphasis on speed or accuracy).
-- May set cognitive control parameters:
-  - **Thresholds**
-  - **Biases**
-- Can direct **gaze or attention** to a spatial location.
+-   Optional cue presented **before** stimulus onset.
+-   Informs participants **how** to respond (e.g., emphasis on speed or accuracy).
+-   May set cognitive control parameters:
+    -   **Thresholds**
+    -   **Biases**
+-   Can direct **gaze or attention** to a spatial location.
 
 > Must occur **before** evidence accumulation begins.
 
-
 ## Fixation Interval
 
-- Ensures eyes and attention are centered.
-- Allows previous trial’s processes to return to **baseline**.
-- Reduces overlap across trials.
+-   Ensures eyes and attention are centered.
+-   Allows previous trial’s processes to return to **baseline**.
+-   Reduces overlap across trials.
 
-💡 **Best practice:** Use **variable durations**, e.g.:
+:bulb: **Best practice:** Use **variable durations**, e.g.:
 
-- Sample from exponential or pseudo-exponential distribution
+-   Sample from exponential or pseudo-exponential distribution
 
-- Mean ≈ 0.7 s; range = 0.2–5 s
-
+-   Mean ≈ 0.7 s; range = 0.2–5 s
 
 ## Stimulus Onset
 
-- Marks the **start** of evidence accumulation.
-- Assumes **constant signal strength** from onset to response.
+-   Marks the **start** of evidence accumulation.
+-   Assumes **constant signal strength** from onset to response.
 
 > Any variability or delay in onset weakens the assumption of continuous accumulation.
 
-
 ## Response Window
 
-- Starts with stimulus onset.
-- Ends with:
-  - A **response**
-  - Or a **deadline**
+-   Starts with stimulus onset.
+-   Ends with:
+    -   A **response**
+    -   Or a **deadline**
 
-💡 Calibrate response window:
+:bulb: Calibrate response window:
 
-- Long enough to allow natural responding
+-   Long enough to allow natural responding
 
-- Short enough to avoid strategy shifts
+-   Short enough to avoid strategy shifts
 
-- Typical EAM use: **mean RT < 1.5 s**
-
+-   Typical EAM use: **mean RT \< 1.5 s**
 
 ## But… EAMs Can Handle Longer RTs
 
-- [**Lerche, et al. (2020)**](https://doi.org/10.1037/xge0000774){target="_blank"}. Drift rate and General Intelligence: fast tasks 0.655*s* and slow tasks 3,319*s* ms.
+-   [**Lerche, et al. (2020)**](https://doi.org/10.1037/xge0000774){target="_blank"}. Drift rate and General Intelligence: fast tasks 0.655*s* and slow tasks 3,319*s* ms.
 
-- [**Boag et al. (2023)**](https://doi.org/10.1016/j.tics.2022.11.009){target="_blank"}: EAMs used in:
-  - Air-traffic control
-  - Maritime surveillance
-  - Forensic decision making
+-   [**Boag et al. (2023)**](https://doi.org/10.1016/j.tics.2022.11.009){target="_blank"}: EAMs used in:
 
+    -   Air-traffic control
+    -   Maritime surveillance
+    -   Forensic decision making
 
 ## Intertrial Interval
 
-- Time between trials
-- Purpose:
-  - Allow participant to **reset**
-  - Prevent **proactive interference**
-  - Avoid **sequential effects**
-
+-   Time between trials
+-   Purpose:
+    -   Allow participant to **reset**
+    -   Prevent **proactive interference**
+    -   Avoid **sequential effects**
 
 ## Sample Size Planning
 
-- Critical for **parameter recovery** and **error trials**
-- Key question:
-  - Will you have enough **rare trial types** (e.g., errors on easy trials)?
+-   Critical for **parameter recovery** and **error trials**
+-   Key question:
+    -   Will you have enough **rare trial types** (e.g., errors on easy trials)?
 
-> Example:  
-200 trials × 5% error rate = **10 error trials** — often the **minimum** for fitting.
-
+> Example:\
+> 200 trials × 5% error rate = **10 error trials** — often the **minimum** for fitting.
 
 ## Collecting Data
 
+-   Participant ID
 
-- Participant ID
+-   Condition
 
-- Condition
+-   Stimulus presented
 
-- Stimulus presented
+-   Response submitted
 
-- Response submitted
+-   **RT**
 
-- **RT**
+-   Session/trial number
 
-- Session/trial number
-
-- Event timings: cue, stimulus, response, feedback, intertrial interval
-
+-   Event timings: cue, stimulus, response, feedback, intertrial interval
 
 ## Outliers
 
 Outliers distort model fits.
 
-:::: {.columns}
-
+::::: columns
 ::: {.column width="50%"}
-
 **Fast outliers:**
 
-- May reflect:
-  - Premature guesses
-  - Trigger failures
-  
-- Typically: **RT < 150–300 ms** (depending on response modality)
+-   May reflect:
+    -   Premature guesses
+    -   Trigger failures
+-   Typically: **RT \< 150–300 ms** (depending on response modality)
 :::
 
 ::: {.column width="50%"}
-
 **Slow outliers:**
 
-- Less common to censor unless clearly implausible
+-   Less common to censor unless clearly implausible
 
-- May reflect:
-  - Lapses
-  - Multiple evidence accumulation attempts
+-   May reflect:
 
+    -   Lapses
+    -   Multiple evidence accumulation attempts
 :::
 :::::
-
 
 ## Identifying Fast Guessing
 
 A principled method:
 
-1. Sort RTs from fastest to slowest
+1.  Sort RTs from fastest to slowest
 
-2. Plot accuracy as a function of RT
+2.  Plot accuracy as a function of RT
 
-3. Find the **"chance-performance boundary"**
+3.  Find the **"chance-performance boundary"**
 
-4. Discard all RTs **below that point**
+4.  Discard all RTs **below that point**
 
 > Better than arbitrary 200–300 ms cutoff
 
-
 ## Detecting Nonstationarity
 
-
-:::: {.columns}
-
+::::: columns
 ::: {.column width="50%"}
-
 Check for **drift** across trials:
 
-- Correlate **RT with trial number**
+-   Look for trends suggesting:
 
-- Look for trends suggesting:
-
-  - Fatigue
-  - Learning
-  - Strategic shifts
-  
+    -   Fatigue
+    -   Learning
+    -   Strategic shifts
 :::
+
 ::: {.column width="50%"}
 Use this to:
 
-- Exclude sessions
+-   Exclude sessions
 
-- Model time-on-task effects
-
-::: 
+-   Model time-on-task effects
+:::
 :::::
 
+# "All Models Are Wrong, but Some Are Useful" - G. Box {.align-center}
 
-## "All Models Are Wrong, but Some Are Useful"  — G. Box {.align-center}
+Promotes understanding of behavior.\
 
-<br/>
+Accurately predicts new (**out-of-sample**) data.\
 
-Promotes understanding of behavior  
-<br/>
-
-🪒 **Occam’s Razor**: Avoid unnecessary complexity 
-<br/><br/>
-
-Accurately predicts new (**out-of-sample**) data  
-<br/>
-
-📏 Captures **uncertainty**, **variability**, and **structure**
+Captures **uncertainty**, **variability**, and **structure**.\
 
 # Thank you!
-
