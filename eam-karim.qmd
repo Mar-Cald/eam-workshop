@@ -4,11 +4,33 @@ author: Carolina Maria Oletto
 format:  
   revealjs:  
     width: 1200
+    slide-number: true
+    toc: false
+    incremental: false
+html-math-method:
+  method: mathml
 date: 2025/08/24
 date-format: long  
 from: markdown+emoji  
 logo: img/logo.png
+include-in-header:
+  - text: |
+      <style>
+      .reveal .slide-logo {
+        max-height: unset;
+        height:80px;
+      }
+      </style>
+css: styles.css
 ---
 
+```{r}
+#| echo: false
+library(ggplot2)
+library(dplyr)
+```
 
-prova
+## Visual Perception
+
+
+
