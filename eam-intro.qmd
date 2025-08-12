@@ -131,21 +131,19 @@ the models contain parameters controlling the evidence starJng point (allowing f
 
 EAMs decompose decisions into:
 
--   **Drift rate (v)**
+-   **Drift rate**
 
--   **Threshold (a)**
+-   **Threshold**
 
--   **Bias (z)**
+-   **Nondecision time**
 
--   **Nondecision time (Ter)**
+## Drift Rate 
 
-## Drift Rate (v)
+Reflects **evidence strength**
 
--   Reflects **evidence strength**
+-   ⬆ Drift: fast and accurate decisions
 
--   ⬆ Drift → fast & accurate decisions
-
--   ⬇ Drift → slow, error-prone
+-   ⬇ Drift: slow, error-prone
 
 Manipulated by:
 
@@ -153,47 +151,23 @@ Manipulated by:
 
 -   Attention/task difficulty
 
-## Thresholds (a)
+## Thresholds
 
 -   Set before stimulus onset
 
 -   Reflect **response caution/cognitive control/bias/preference**
 
-⬆ Threshold:
+⬆ Threshold: Slower but more accurate
 
--   Slower but more accurate
-
-⬇ Threshold:
-
--   Faster but error-prone
+⬇ Threshold: Faster but error-prone
 
 > Manipulate via pre-trial cues or instructions.
 
-## Starting Point (z)
-
--   Reflects **response bias**
-
--   Midpoint = no bias
-
-Deviating from midpoint:
-
--   Favors one response:
-    -   Faster/more accurate for favored
-    -   Slower/less accurate for disfavored
-
-Set **before** stimulus onset.
-
-## Nondecision Time (Ter)
+## Nondecision Time 
 
 -   Time to encode stimulus + execute response
 
 -   Shifts RT distribution **without** changing shape/accuracy
-
-Sensitive to:
-
--   Visual complexity
-
--   Motor demands
 
 > Hard to estimate precisely — often noisy across individuals.
 
@@ -367,7 +341,7 @@ $s_{t_0}$: variability in non-decision time
 
 > [Boehm, U., Annis, J., Frank, ... & Wagenmakers, E. J. (2018). Estimating across-trial variability parameters of the Diffusion Decision Model: Expert advice and recommendations. *Journal of Mathematical Psychology*, 87, 46-75.](https://www.sciencedirect.com/science/article/pii/S002224961830021X){.small-small-text} [Ratcliff, R., & Rouder, J. N. (1998). Modeling Response Times for Two-Choice Decisions. Psychological Science, 9(5), 347-356.](https://doi.org/10.1111/1467-9280.00067){.small-small-text}
 
-## Purpose of Variability
+## Purpose of variability
 
 <br/>
 
@@ -408,7 +382,7 @@ Each accumulator races toward its threshold. The first to cross **wins**.
 | **Racing DDM** | Multiple accumulators | Handles multi-alternative decisions |
 
 
-## Core Assumptions of the Basic EAM
+## Core assumptions of the basic EAM
 <br/>
 
 . . . 
@@ -439,25 +413,32 @@ Each accumulator races toward its threshold. The first to cross **wins**.
 
 ## Within-Trial Stationarity
 
--   Model parameters are **fixed within a trial**
--   Evidence accumulation:
-    -   Constant **mean rate**, though noisy
-    -   No changes in stimulus evidence mid-trial
--   Decision thresholds:
-    -   Set **before** stimulus onset
-    -   **Do not change** during the trial
+Model parameters are **fixed within a trial**
+
+Evidence accumulation:
+
+-   Constant **mean rate**, though noisy
+-   No changes in stimulus evidence mid-trial
+
+Decision thresholds:
+
+-   Set **before** stimulus onset
+-   **Do not change** during the trial
 
 ## Within-Condition Stationarity
 
--   Parameters are constant **across same-type trials**
--   Needed for **model fitting and averaging**
--   Assumes:
-    -   Trials of same condition reflect **same cognitive settings**
-    -   Participant behavior is stable
+Parameters are constant **across same-type trials**
+
+Needed for **model fitting and averaging**
+
+Assumes:
+
+-   Trials of same condition reflect **same cognitive settings**
+-   Participant behavior is stable
 
 > Example: Don't change stimulus brightness mid-trial.
 
-## Positively Skewed RT Distributions
+## Positively skewed RT distributions
 
 EAMs naturally produce **positively skewed** RTs.
 
@@ -473,7 +454,7 @@ ggplot(data = dat, aes(x = rt))+
   xlim(0,2)
 ```
 
-## Free of Contaminant Processes
+## Free of contaminant processes
 
 Data should reflect **evidence accumulation**!
 
@@ -487,7 +468,7 @@ Avoid:
 
 > Clean data = better model fit and interpretability.
 
-## Stimulus Design
+## Stimulus design
 
 Manipulate difficulty to modulate:
 
@@ -501,7 +482,7 @@ Avoid:
 
 -   **Ceiling effects** → no errors to fit
 
-## Response Modality
+## Response modality
 
 EAMs assume the response begins **after the decision ends**.
 
@@ -513,7 +494,7 @@ Best modalities:
 
 Avoid imprecise, slow, or delayed responses.
 
-## Trial Structure and Event Timing
+## Trial structure and event timing
 
 EAM tasks follow a structured sequence of events:
 
@@ -531,40 +512,41 @@ Each component affects the integrity of evidence accumulation.
 
 ## Cue
 
--   Optional cue presented **before** stimulus onset.
--   Informs participants **how** to respond (e.g., emphasis on speed or accuracy).
--   May set cognitive control parameters:
-    -   **Thresholds**
-    -   **Biases**
--   Can direct **gaze or attention** to a spatial location.
+Optional cue presented **before** stimulus onset.
+
+Informs participants **how** to respond (e.g., emphasis on speed or accuracy).
+
+May set cognitive control parameters:
+
+-   **Thresholds**
+-   **Biases**
+
+Can direct **gaze or attention** to a spatial location.
 
 > Must occur **before** evidence accumulation begins.
 
-## Fixation Interval
+## Fixation interval
 
 -   Ensures eyes and attention are centered.
 -   Allows previous trial’s processes to return to **baseline**.
 -   Reduces overlap across trials.
 
-:bulb: **Best practice:** Use **variable durations**, e.g.:
+:bulb: **Best practice:** Use **variable durations**
 
--   Sample from exponential or pseudo-exponential distribution
-
--   Mean ≈ 0.7 s; range = 0.2–5 s
-
-## Stimulus Onset
+## Stimulus onset
 
 -   Marks the **start** of evidence accumulation.
 -   Assumes **constant signal strength** from onset to response.
 
 > Any variability or delay in onset weakens the assumption of continuous accumulation.
 
-## Response Window
+## Response window
 
--   Starts with stimulus onset.
--   Ends with:
-    -   A **response**
-    -   Or a **deadline**
+Starts with stimulus onset.
+
+Ends with:
+-   A **response**
+-   Or a **deadline**
 
 :bulb: Calibrate response window:
 
@@ -574,7 +556,7 @@ Each component affects the integrity of evidence accumulation.
 
 -   Typical EAM use: **mean RT \< 1.5 s**
 
-## But… EAMs Can Handle Longer RTs
+## But… EAMs can handle longer RTs
 
 -   [**Lerche, et al. (2020)**](https://doi.org/10.1037/xge0000774){target="_blank"}. Drift rate and General Intelligence: fast tasks 0.655*s* and slow tasks 3,319*s* ms.
 
@@ -584,7 +566,7 @@ Each component affects the integrity of evidence accumulation.
     -   Maritime surveillance
     -   Forensic decision making
 
-## Intertrial Interval
+## Intertrial interval
 
 -   Time between trials
 -   Purpose:
@@ -592,7 +574,7 @@ Each component affects the integrity of evidence accumulation.
     -   Prevent **proactive interference**
     -   Avoid **sequential effects**
 
-## Sample Size Planning
+## Sample size planning
 
 -   Critical for **parameter recovery** and **error trials**
 -   Key question:
@@ -601,7 +583,7 @@ Each component affects the integrity of evidence accumulation.
 > Example:\
 > 200 trials × 5% error rate = **10 error trials** — often the **minimum** for fitting.
 
-## Collecting Data
+## Collecting data
 
 -   Participant ID
 
