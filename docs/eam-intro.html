@@ -335,6 +335,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Intro to EAM</h1>
+  <p class="subtitle"><span class="citation" data-cites="47th">@47th</span> ECVP 2025 Mainz</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -346,17 +347,9 @@ Margherita Calderan
 
   <p class="date">August 24, 2025</p>
 </section>
-<section id="decision-making---perception-into-action" class="slide level2">
-<h2>Decision Making - Perception into Action</h2>
-<ul>
-<li>Many decisions are made rapidly and at a low cognitive level.</li>
-<li>Perception triggers stored knowledge → triggers action.</li>
-<li>This process matches perception to known representations and selects a response.</li>
-</ul>
-</section>
-<section id="all-evidence-accumulation-models" class="slide level2 small-text">
-<h2>All Evidence Accumulation Models</h2>
-<p>EAMs assume that, upon stimulus presentation (e.g., left- or right-facing arrow), the decision maker:</p>
+<section id="perception-into-action" class="slide level2 small-text">
+<h2>Perception into action</h2>
+<p>Evidence Accumulation Models assume that, upon stimulus presentation, the decision maker:</p>
 <ul>
 <li>Samples noisy evidence for available options (e.g., “Should I press left or right?”)</li>
 <li>Accumulates that evidence until a <strong>threshold</strong> is crossed</li>
@@ -367,23 +360,98 @@ Margherita Calderan
 </div><div class="column small-small-text center" style="width:30%;">
 <p><br></p>
 <blockquote>
-<p><a href="https://doi.org/10.1523/JNEUROSCI.4156-11.2012">Mulder, M. J., Wagenmakers, E. J., Ratcliff, R., Boekel, W., &amp; Forstmann, B. U. (2012). Bias in the brain: a diffusion model analysis of prior probability and potential payoff. Journal of Neuroscience, 32(7), 2335–2343.</a></p>
+<p><a href="https://doi.org/10.1523/JNEUROSCI.4156-11.2012" target="_blank">Mulder, M. J., Wagenmakers, E. J., Ratcliff, R., Boekel, W., &amp; Forstmann, B. U. (2012). Bias in the brain: a diffusion model analysis of prior probability and potential payoff. Journal of Neuroscience, 32(7), 2335–2343.</a></p>
 </blockquote>
 </div></div>
 </section>
-<section id="sequential-sampling-models" class="slide level2">
-<h2>Sequential Sampling Models</h2>
-<p>Could differ:</p>
+<section id="what-is-evidence" class="slide level2">
+<h2>What is “evidence”?</h2>
+<p>Neural signals reflecting sensory or internal information relevant to a choice.</p>
+<p><strong><em>“Are dots moving to the right or to the left?”</em></strong></p>
 <ul>
-<li>Number of <strong>accumulators</strong> (e.g., single vs multiple)</li>
-<li><strong>Decision rules</strong> (relative vs absolute)</li>
-<li><strong>Drift rate</strong>: constant or time-varying</li>
-<li><strong>Noise</strong>: stochastic vs deterministic</li>
-<li>With or without <strong>inhibition</strong> or <strong>decay</strong></li>
+<li>Neurons fire in proportion to motion direction &amp; strength.</li>
+<li>These firing rates = <strong>momentary evidence</strong>.</li>
 </ul>
 </section>
+<section>
+<section id="how-does-the-brain-accumulate-evidence" class="title-slide slide level1 center">
+<h1>How does the brain accumulate evidence?</h1>
+
+</section>
+<section id="sensory-neurons-encode-momentary-evidence" class="slide level2">
+<h2>1. Sensory neurons encode momentary evidence</h2>
+<p><br></p>
+<ul>
+<li>Spiking in <strong>sensory cortex</strong> represents stimulus features.</li>
+<li>Noisy and varies trial-to-trial.</li>
+</ul>
+</section>
+<section id="integrator-neurons-receive-this-input" class="slide level2">
+<h2>2. Integrator neurons receive this input</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br></p>
+<ul>
+<li><p>Neurons in <strong>LIP</strong>, <strong>dlPFC</strong>, or <strong>striatum</strong> ramp up/down over time.</p></li>
+<li><p>Reflects <strong>accumulated evidence</strong></p></li>
+</ul>
+<p><img data-src="img/LIP.jpg" class="quarto-figure quarto-figure-center" width="150"> <a href="10.1016/j.celrep.2025.115526" class="small-text" target="_blank">Zylberberg &amp; Shadlen, 2025</a></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="img/ramp2.png" width="600"></p>
+</div></div>
+<aside class="notes">
+<p>Neurons in the lateral intraparietal (LIP) area with response fields overlapping the choice-target contralateral to the recording site (Tin neurons) represent the accumulation of evidence in favor of contralateral target selection. The monkey reports its decision via a saccadic eye movement to one of the targets and is rewarded for correct choices. In trials where the monkey chooses the contralateral target (i.e., the one within the neurons’ response field), the Tin neurons represent the winning race, whereas on ipsilateral choices, they represent the losing race.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="threshold-crossing-triggers-a-decision" class="slide level2">
+<h2>3. Threshold crossing triggers a decision</h2>
+<p><br></p>
+
+<img data-src="img/ramp.jpg" class="quarto-figure quarto-figure-center r-stretch" width="800"><p><a href="10.1016/j.celrep.2025.115526" class="small-text" target="_blank">Zylberberg &amp; Shadlen, 2025</a></p>
+<p><br></p>
+</section>
+<section id="brain-computation-of-decisions" class="slide level2">
+<h2>Brain computation of decisions</h2>
+<p><br></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Cognitive Term</th>
+<th>Neural Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>Evidence</em></td>
+<td>Sensory neuron firing rates</td>
+</tr>
+<tr class="even">
+<td><em>Accumulation</em></td>
+<td>Integration in parietal/frontal areas</td>
+</tr>
+<tr class="odd">
+<td><em>Noise</em></td>
+<td>Trial-to-trial neural variability</td>
+</tr>
+<tr class="even">
+<td><em>Bound</em></td>
+<td>Decision threshold in firing/activity</td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="sequential-processing-assumption" class="slide level2">
-<h2>Sequential Processing Assumption</h2>
+<h2>Sequential processing assumption</h2>
 <p>Total <strong>Response Time (RT)</strong> is modeled as the sum of <strong>three sequential stages</strong>:</p>
 <ol type="1">
 <li><strong>Stimulus encoding</strong></li>
@@ -404,222 +472,14 @@ Margherita Calderan
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</section>
-<section id="relative-evidence-models" class="slide level2 small-text">
-<h2>Relative Evidence Models</h2>
-<p>In <strong>relative evidence models</strong> (e.g., Wiener process, Diffusion Decision Model):</p>
-<div class="columns">
-<div class="column" style="width:40%;">
-<p><br></p>
-<ul>
-<li>Decision is based on the <strong>difference</strong> in accumulated evidence between two options.</li>
-</ul>
-<p><br></p>
-<ul>
-<li>Suitable for <strong>binary choices</strong>.</li>
-</ul>
-</div><div class="column" style="width:60%;">
-<p><img data-src="img/eam-relative.png" class="align-center" width="550" height="350"></p>
-</div></div>
-<blockquote>
-<p>Boag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling. https://doi.org/10.31234/osf.io/snqgp</p>
-</blockquote>
-</section>
-<section id="absolute-evidence-models" class="slide level2 small-text">
-<h2>Absolute Evidence Models</h2>
-<p>In <strong>racing accumulator models</strong> (e.g., LBA, RDM):</p>
-<div class="columns">
-<div class="column" style="width:40%;">
-<ul>
-<li><p>Each option has its own <strong>accumulator</strong> tracking <strong>absolute evidence</strong>.</p></li>
-<li><p>Decision is made by the <strong>first accumulator to reach threshold</strong>.</p></li>
-<li><p>Can handle <strong>multiple alternatives</strong> (not just binary choices).</p></li>
-</ul>
-</div><div class="column small-small-text align-center" style="width:60%;">
-<p><img data-src="img/eam-absolute.png" width="550" height="350"></p>
-</div></div>
-<blockquote>
-<p>Boag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling. https://doi.org/10.31234/osf.io/snqgp</p>
-</blockquote>
-<aside class="notes">
-<p>Although relative and absolute evidence models differ in how they conceptualize evidence, they:</p>
-<ul>
-<li>Share similar assumptions about trial structure and data quality</li>
-<li>Use overlapping parameters (drift rate, threshold, bias, nondecision time)</li>
-<li>Often reach the <strong>same substantive conclusions</strong></li>
-<li>Provide convergent results when applied to the same data</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
+</section></section>
 <section>
-<section id="noisy-evidence" class="title-slide slide level1 center">
-<h1>Noisy evidence</h1>
-<p><br></p>
-<p>A random walk is the cumulative sum of independent random variables, which in decision-making models represent the sequential evidence gathered from discrete observations of a stimulus.</p>
-<p><br> <a href="https://doi.org/10.1007/978-3-031-45271-0_4" class="small-small-text">Smith, P.L., Ratcliff, R. (2024). An Introduction to the Diffusion Model of Decision-Making. In: Forstmann, B.U., Turner, B.M. (eds) An Introduction to Model-Based Cognitive Neuroscience. Springer, Cham.</a></p>
+<section id="latent-cognitive-parameters" class="title-slide slide level1 center">
+<h1>Latent Cognitive Parameters</h1>
+
 </section>
-<section id="wiener-process" class="slide level2 small-text align-center">
-<h2>Wiener Process</h2>
-<p>The <strong>Wiener process</strong> (Brownian motion) is the foundation of many decision models. It models the accumulation of evidence as a noisy process:</p>
-<p><br> <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>z</mi><mo>+</mo><mi>v</mi><mi>t</mi><mo>+</mo><mi>s</mi><mi>W</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
-x(t) = z + vt + sW(t)
-</annotation></semantics></math> <br></p>
-<div class="columns">
-<div class="column" style="width:40%;">
-<ul>
-<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">x(t)</annotation></semantics></math>: accumulated evidence at time <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math></li>
-<li>z: starting point</li>
-<li>v: drift rate (signal strength)</li>
-<li>s: noise (standard deviation of the increments)</li>
-<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">W(t)</annotation></semantics></math>: standard Wiener process (Gaussian increments)</li>
-</ul>
-</div><div class="column" style="width:60%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="eam-intro_files/figure-revealjs/unnamed-chunk-2-1.png" style="width:95.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div></div>
-</section>
-<section id="wiener-first-passage-time-fpt" class="slide level2 small-text align-center">
-<h2>Wiener First Passage Time (FPT)</h2>
-<p><br> <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>,</mo><mi>x</mi><mo>=</mo><mn>0</mn><mo stretchy="false" form="prefix">|</mo><mi>α</mi><mo>,</mo><mi>τ</mi><mo>,</mo><mi>β</mi><mo>,</mo><mi>δ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><msup><mi>α</mi><mn>2</mn></msup></mfrac><mo>exp</mo><mrow><mo stretchy="true" form="prefix">[</mo><mi>−</mi><mi>α</mi><mi>β</mi><mi>δ</mi><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><msup><mi>δ</mi><mn>2</mn></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mi>τ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">]</mo></mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mrow><mo stretchy="true" form="prefix">|</mo><mi>t</mi><mo>−</mo><mi>τ</mi><mo stretchy="true" form="postfix">|</mo></mrow><msup><mi>α</mi><mn>2</mn></msup></mfrac><mo minsize="2.4" maxsize="2.4" stretchy="false" form="prefix">|</mo><mi>β</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
-d(t,x=0|\alpha,\tau,\beta,\delta) = \frac{1}{\alpha^2} \exp\left[-\alpha\beta\delta - \frac{1}{2}\delta^2(t-\tau)\right] f\left(\frac{|t-\tau|}{\alpha^2}\bigg|\beta\right)
-</annotation></semantics></math> <br></p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><img data-src="img/wiener.png"></p>
-</div><div class="column" style="width:50%;">
-<blockquote>
-<p>It is the expected distribution of the time until the process first hits or crosses one or the other boundary. This results in a bivariate distribution, over responses <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math> and hitting times <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>.</p>
-</blockquote>
-<p><br></p>
-</div></div>
-<p><a href="(https://journal.r-project.org/archive/2014/RJ-2014-005/index.html)">Wabersich and Vandekerckhove (2014), <em>The R Journal</em></a></p>
-</section>
-<section id="full-diffusion-decision-model" class="slide level2 align-center">
-<h2>Full Diffusion Decision Model</h2>
-<p><br></p>
-<p>The <strong>Full DDM</strong> accounts for more behavioral phenomena by allowing <strong>trial-to-trial variability</strong> in key parameters:</p>
-<p><br></p>
-<p><strong>Drift rate</strong>: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>∼</mo><mi>𝒩</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>μ</mi><mi>v</mi></msub><mo>,</mo><msup><mi>η</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">v \sim \mathcal{N}(\mu_v, \eta^2)</annotation></semantics></math></p>
-<p><strong>Starting point</strong>: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>∼</mo><mtext mathvariant="normal">Uniform</mtext><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>−</mo><msub><mi>s</mi><mi>z</mi></msub><mi>/</mi><mn>2</mn><mo>,</mo><mi>z</mi><mo>+</mo><msub><mi>s</mi><mi>z</mi></msub><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">z \sim \text{Uniform}(z - s_z/2, z + s_z/2)</annotation></semantics></math></p>
-<p><strong>Non-decision time</strong>: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mn>0</mn></msub><mo>∼</mo><mtext mathvariant="normal">Uniform</mtext><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>t</mi><mn>0</mn></msub><mo>−</mo><msub><mi>s</mi><msub><mi>t</mi><mn>0</mn></msub></msub><mi>/</mi><mn>2</mn><mo>,</mo><msub><mi>t</mi><mn>0</mn></msub><mo>+</mo><msub><mi>s</mi><msub><mi>t</mi><mn>0</mn></msub></msub><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">t_0 \sim \text{Uniform}(t_0 - s_{t_0}/2, t_0 + s_{t_0}/2)</annotation></semantics></math></p>
-</section>
-<section id="full-ddm-parameters" class="slide level2 small-text align-center">
-<h2>Full DDM Parameters</h2>
-<div class="columns">
-<div class="column align-left" style="width:40%;">
-<p><strong>a</strong>: decision boundary</p>
-<p><strong>z</strong>: starting point</p>
-<p><strong>v</strong>: drift rate</p>
-<p><strong>t_0</strong>: non-decision time</p>
-<p><strong>s</strong>: noise scale (usually fixed)</p>
-<p><strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>η</mi><annotation encoding="application/x-tex">\eta</annotation></semantics></math></strong>: SD of drift rate across trials</p>
-<p><strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><mi>z</mi></msub><annotation encoding="application/x-tex">s_{z}</annotation></semantics></math></strong>: variability in start point</p>
-<p><strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><msub><mi>t</mi><mn>0</mn></msub></msub><annotation encoding="application/x-tex">s_{t_0}</annotation></semantics></math></strong>: variability in non-decision time</p>
-</div><div class="column" style="width:60%;">
-<p><img data-src="img/fullDDM.jpg"></p>
-</div></div>
-<blockquote>
-<p><a href="https://www.sciencedirect.com/science/article/pii/S002224961830021X" class="small-small-text">Boehm, U., Annis, J., Frank, … &amp; Wagenmakers, E. J. (2018). Estimating across-trial variability parameters of the Diffusion Decision Model: Expert advice and recommendations. <em>Journal of Mathematical Psychology</em>, 87, 46-75.</a> <a href="https://doi.org/10.1111/1467-9280.00067" class="small-small-text">Ratcliff, R., &amp; Rouder, J. N. (1998). Modeling Response Times for Two-Choice Decisions. Psychological Science, 9(5), 347-356.</a></p>
-</blockquote>
-</section>
-<section id="purpose-of-variability" class="slide level2">
-<h2>Purpose of Variability</h2>
-<p><br></p>
-<p>Adding variability improves the model’s ability to:</p>
-<ul>
-<li>Capture <strong>error RT differences</strong></li>
-<li>Reflect <strong>trial-to-trial attention or difficulty changes</strong> <br></li>
-</ul>
-<p>However, it increases computational demands.</p>
-</section>
-<section id="racing-diffusion-model" class="slide level2 align-center">
-<h2>Racing Diffusion Model</h2>
-<p><br></p>
-<p>Instead of a single process choosing between boundaries, the <strong>Racing Diffusion Model</strong> (RDM) uses <strong>multiple independent diffusion processes</strong>, one per option:</p>
-<p><br></p>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><msub><mi>x</mi><mi>k</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>v</mi><mi>k</mi></msub><mspace width="0.167em"></mspace><mi>d</mi><mi>t</mi><mo>+</mo><mi>s</mi><mspace width="0.167em"></mspace><mi>d</mi><msub><mi>W</mi><mi>k</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="1.0em"></mspace><mrow><mtext mathvariant="normal">for </mtext><mspace width="0.333em"></mspace></mrow><mi>k</mi><mo>=</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>K</mi></mrow><annotation encoding="application/x-tex">
-dx_k(t) = v_k \, dt + s \, dW_k(t) \quad \text{for } k = 1,\dots,K
-</annotation></semantics></math> <br></p>
-<p>Each accumulator races toward its threshold. The first to cross <strong>wins</strong>.</p>
-</section>
-<section id="section" class="slide level2 small-small-text align-center">
+<section id="section" class="slide level2">
 <h2></h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/rdm.webp" class="quarto-figure quarto-figure-center" width="800" height="500"></p>
-</figure>
-</div>
-<blockquote>
-<p><a href="https://link.springer.com/content/pdf/10.3758/s13423-020-01719-6.pdf">Tillman, G., Van Zandt, T., &amp; Logan, G. D. (2020). Sequential sampling models without random between-trial variability: The racing diffusion model of speeded decision making. Psychonomic Bulletin &amp; Review, 27(5), 911-936.</a></p>
-</blockquote>
-</section>
-<section id="rdm" class="slide level2">
-<h2>RDM</h2>
-<p>Without starting point variability…</p>
-<p><br> <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>i</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="prefix">|</mo><mi>b</mi><mo>,</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>b</mi><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>π</mi><msup><mi>t</mi><mn>3</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>−</mi><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></msup><mo>exp</mo><mrow><mo stretchy="true" form="prefix">[</mo><mi>−</mi><mfrac><mn>1</mn><mrow><mn>2</mn><mi>t</mi></mrow></mfrac><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>v</mi><mi>t</mi><mo>−</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">
-f_{i}(t|b,v) = b(2 \pi t^{3})^{-\frac{1}{2}} \exp\left[-\frac{1}{2t}(v t-b)^{2}\right]
-</annotation></semantics></math> <br> The winner is the first process to reach threshold:</p>
-<p><br></p>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mi>i</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>f</mi><mi>i</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><munder><mo>∏</mo><mrow><mi>j</mi><mo>≠</mo><mi>i</mi></mrow></munder><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msub><mi>F</mi><mi>j</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">
-g_{i}(t) = f_{i}(t) \prod\limits_{j \neq i} (1 - F_{j}(t)),
-</annotation></semantics></math></p>
-</section>
-<section id="summary" class="slide level2">
-<h2>Summary</h2>
-<table class="caption-top">
-<colgroup>
-<col style="width: 14%">
-<col style="width: 36%">
-<col style="width: 48%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Model</th>
-<th>Core Mechanism</th>
-<th>Key Strengths</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Wiener</strong></td>
-<td>Stochastic accumulation</td>
-<td>Simple FPT, binary outcomes</td>
-</tr>
-<tr class="even">
-<td><strong>Full DDM</strong></td>
-<td>Accumulation + param variability</td>
-<td>Realistic RTs, error patterns</td>
-</tr>
-<tr class="odd">
-<td><strong>Racing DDM</strong></td>
-<td>Multiple accumulators</td>
-<td>Handles multi-alternative decisions</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p><strong>Evidence accumulates noisily over time until a decision threshold is reached.</strong></p>
-</blockquote>
-</section>
-<section id="latent-cognitive-parameters" class="slide level2">
-<h2>Latent Cognitive Parameters</h2>
 <p>EAMs decompose decisions into:</p>
 <ul>
 <li><p><strong>Drift rate (v)</strong></p></li>
@@ -690,29 +550,223 @@ g_{i}(t) = f_{i}(t) \prod\limits_{j \neq i} (1 - F_{j}(t)),
 <p>Hard to estimate precisely — often noisy across individuals.</p>
 </blockquote>
 </section>
-<section id="use-of-parameters" class="slide level2">
-<h2>Use of Parameters</h2>
-<p>Compare parameters:</p>
+<section id="relative-evidence-models" class="slide level2 small-text">
+<h2>Relative Evidence Models</h2>
+<p>In <strong>relative evidence models</strong> (e.g., Wiener process, Diffusion Decision Model):</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><br></p>
 <ul>
-<li><p><strong>Across individuals</strong> (e.g., young vs.&nbsp;older adults)</p></li>
-<li><p><strong>Within individuals</strong> (e.g., easy vs.&nbsp;hard conditions)</p></li>
-<li><p><strong>With covariates</strong> (e.g., BOLD activity, IQ)</p></li>
+<li>Decision is based on the <strong>difference</strong> in accumulated evidence between two options.</li>
 </ul>
+<p><br></p>
+<ul>
+<li>Suitable for <strong>binary choices</strong>.</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<p><img data-src="img/eam-relative.png" class="align-center" width="550" height="350"></p>
+</div></div>
+<blockquote>
+<p><a href="https://doi.org/10.31234/osf.io/snqgp" target="_blank">Boag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling.</a></p>
+</blockquote>
+</section>
+<section id="absolute-evidence-models" class="slide level2 small-text">
+<h2>Absolute Evidence Models</h2>
+<p>In <strong>racing accumulator models</strong> (e.g., LBA, RDM):</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li><p>Each option has its own <strong>accumulator</strong> tracking <strong>absolute evidence</strong>.</p></li>
+<li><p>Decision is made by the <strong>first accumulator to reach threshold</strong>.</p></li>
+<li><p>Can handle <strong>multiple alternatives</strong> (not just binary choices).</p></li>
+</ul>
+</div><div class="column small-small-text align-center" style="width:60%;">
+<p><img data-src="img/eam-absolute.png" width="550" height="350"></p>
+</div></div>
+<blockquote>
+<p><a href="https://doi.org/10.31234/osf.io/snqgp" target="_blank">Boag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling.</a></p>
+</blockquote>
+<aside class="notes">
+<p>Although relative and absolute evidence models differ in how they conceptualize evidence, they:</p>
+<ul>
+<li>Share similar assumptions about trial structure and data quality</li>
+<li>Use overlapping parameters (drift rate, threshold, bias, nondecision time)</li>
+<li>Often reach the <strong>same substantive conclusions</strong></li>
+<li>Provide convergent results when applied to the same data</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="wiener-process" class="slide level2 small-text align-center">
+<h2>Wiener Process</h2>
+<p>The <strong>Wiener process</strong> (Brownian motion) is the foundation of many decision models <a href="https://doi.org/10.1007/978-3-031-45271-0_4" class="small-small-text">(Smith &amp; Ratcliff, 2024)</a>. It models the accumulation of evidence as a noisy process:</p>
+<p><br> <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>z</mi><mo>+</mo><mi>v</mi><mi>t</mi><mo>+</mo><mi>s</mi><mi>W</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
+x(t) = z + vt + sW(t)
+</annotation></semantics></math> <br></p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">x(t)</annotation></semantics></math>: accumulated evidence at time <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math></li>
+<li>z: starting point</li>
+<li>v: drift rate (signal strength)</li>
+<li>s: noise (standard deviation of the increments)</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">W(t)</annotation></semantics></math>: standard Wiener process (Gaussian increments)</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="eam-intro_files/figure-revealjs/unnamed-chunk-2-1.png" style="width:95.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="wiener-first-passage-time-fpt" class="slide level2 small-text align-center">
+<h2>Wiener First Passage Time (FPT)</h2>
+<blockquote>
+<p>It is the expected distribution of the time until the process first hits or crosses one or the other boundary. This results in a bivariate distribution, over responses <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math> and hitting times <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>.</p>
+</blockquote>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="img/wiener.png"></p>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math> : threshold</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math> : initial bias</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math>: quality of the stimulus (often <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>)</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math>: non-decision time</li>
+</ul>
+</div></div>
+<p><a href="https://papers.djnavarro.net/2009_firstpassage.pdf" class="small-small-text" target="_blank">Navarro &amp; Fuss, 2009</a><a href="https://journal.r-project.org/archive/2014/RJ-2014-005/index.html" class="small-small-text" target="_blank">; Wabersich &amp; Vandekerckhov, 2014. Copyright 2009, Joachim Vandekerckhove and Department of Psychology and Educational Sciences, University of Leuven, Belgium</a></p>
+</section>
+<section id="full-diffusion-decision-model" class="slide level2 align-center">
+<h2>Full Diffusion Decision Model</h2>
+<p><br></p>
+<p>The <strong>Full DDM</strong> accounts for more behavioral phenomena by allowing <strong>trial-to-trial variability</strong> in key parameters:</p>
+<p><br></p>
+<p><strong>Drift rate</strong>: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>∼</mo><mi>𝒩</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>μ</mi><mi>v</mi></msub><mo>,</mo><msup><mi>η</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">v \sim \mathcal{N}(\mu_v, \eta^2)</annotation></semantics></math></p>
+<p><strong>Starting point</strong>: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>∼</mo><mtext mathvariant="normal">Uniform</mtext><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>−</mo><msub><mi>s</mi><mi>z</mi></msub><mi>/</mi><mn>2</mn><mo>,</mo><mi>z</mi><mo>+</mo><msub><mi>s</mi><mi>z</mi></msub><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">z \sim \text{Uniform}(z - s_z/2, z + s_z/2)</annotation></semantics></math></p>
+<p><strong>Non-decision time</strong>: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mn>0</mn></msub><mo>∼</mo><mtext mathvariant="normal">Uniform</mtext><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>t</mi><mn>0</mn></msub><mo>−</mo><msub><mi>s</mi><msub><mi>t</mi><mn>0</mn></msub></msub><mi>/</mi><mn>2</mn><mo>,</mo><msub><mi>t</mi><mn>0</mn></msub><mo>+</mo><msub><mi>s</mi><msub><mi>t</mi><mn>0</mn></msub></msub><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">t_0 \sim \text{Uniform}(t_0 - s_{t_0}/2, t_0 + s_{t_0}/2)</annotation></semantics></math></p>
+</section>
+<section id="full-ddm-parameters" class="slide level2 small-text align-center">
+<h2>Full DDM Parameters</h2>
+<div class="columns">
+<div class="column align-left" style="width:40%;">
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>: decision boundary</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>: starting point</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>: drift rate</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>t</mi><mn>0</mn></msub><annotation encoding="application/x-tex">t_0</annotation></semantics></math>: non-decision time</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>: noise scale (usually fixed to 1)</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>η</mi><annotation encoding="application/x-tex">\eta</annotation></semantics></math>: SD of drift rate across trials</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><mi>z</mi></msub><annotation encoding="application/x-tex">s_{z}</annotation></semantics></math>: variability in start point</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><msub><mi>t</mi><mn>0</mn></msub></msub><annotation encoding="application/x-tex">s_{t_0}</annotation></semantics></math>: variability in non-decision time</p>
+</div><div class="column" style="width:60%;">
+<p><img data-src="img/fullDDM.jpg"></p>
+</div></div>
+<blockquote>
+<p><a href="https://www.sciencedirect.com/science/article/pii/S002224961830021X" class="small-small-text">Boehm, U., Annis, J., Frank, … &amp; Wagenmakers, E. J. (2018). Estimating across-trial variability parameters of the Diffusion Decision Model: Expert advice and recommendations. <em>Journal of Mathematical Psychology</em>, 87, 46-75.</a> <a href="https://doi.org/10.1111/1467-9280.00067" class="small-small-text">Ratcliff, R., &amp; Rouder, J. N. (1998). Modeling Response Times for Two-Choice Decisions. Psychological Science, 9(5), 347-356.</a></p>
+</blockquote>
+</section>
+<section id="purpose-of-variability" class="slide level2">
+<h2>Purpose of Variability</h2>
+<p><br></p>
+<p>Adding variability improves the model’s ability to:</p>
+<ul>
+<li>Capture <strong>error RT differences</strong></li>
+<li>Reflect <strong>trial-to-trial attention or difficulty changes</strong> <br></li>
+</ul>
+<p>However, it increases computational demands.</p>
+</section>
+<section id="racing-diffusion-model" class="slide level2 align-center">
+<h2>Racing Diffusion Model</h2>
+<p><br></p>
+<p>Instead of a single process choosing between boundaries, the <strong>Racing Diffusion Model</strong> (RDM) uses <strong>multiple independent diffusion processes</strong>, one per option:</p>
+<p><br></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><msub><mi>x</mi><mi>k</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>v</mi><mi>k</mi></msub><mspace width="0.167em"></mspace><mi>d</mi><mi>t</mi><mo>+</mo><mi>s</mi><mspace width="0.167em"></mspace><mi>d</mi><msub><mi>W</mi><mi>k</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="1.0em"></mspace><mrow><mtext mathvariant="normal">for </mtext><mspace width="0.333em"></mspace></mrow><mi>k</mi><mo>=</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>K</mi></mrow><annotation encoding="application/x-tex">
+dx_k(t) = v_k \, dt + s \, dW_k(t) \quad \text{for } k = 1,\dots,K
+</annotation></semantics></math> <br></p>
+<p>Each accumulator races toward its threshold. The first to cross <strong>wins</strong>.</p>
+</section>
+<section id="section-1" class="slide level2 small-small-text align-center">
+<h2></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/rdm.webp" class="quarto-figure quarto-figure-center" width="800" height="500"></p>
+</figure>
+</div>
+<blockquote>
+<p><a href="https://link.springer.com/content/pdf/10.3758/s13423-020-01719-6.pdf" target="_blank">Tillman, G., Van Zandt, T., &amp; Logan, G. D. (2020). Sequential sampling models without random between-trial variability: The racing diffusion model of speeded decision making. Psychonomic Bulletin &amp; Review, 27(5), 911-936.</a></p>
+</blockquote>
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 33%">
+<col style="width: 44%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Model</th>
+<th>Core Mechanism</th>
+<th>Key Strengths</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Wiener</strong></td>
+<td>Stochastic accumulation</td>
+<td>Simple FPT, binary outcomes</td>
+</tr>
+<tr class="even">
+<td><strong>Full DDM</strong></td>
+<td>Accumulation + param variability</td>
+<td>Realistic RTs, error patterns</td>
+</tr>
+<tr class="odd">
+<td><strong>Racing DDM</strong></td>
+<td>Multiple accumulators</td>
+<td>Handles multi-alternative decisions</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="core-assumptions-of-the-basic-eam" class="slide level2">
 <h2>Core Assumptions of the Basic EAM</h2>
 <p><br></p>
+<div class="fragment">
 <ul>
 <li>Each decision = a <strong>single, continuous accumulation</strong> of evidence</li>
 </ul>
-<p><br></p>
+</div>
+<div class="fragment">
 <ul>
 <li>Culminates in a <strong>discrete response</strong></li>
 </ul>
-<p><br></p>
+</div>
+<div class="fragment">
 <ul>
 <li>Evidence accumulates from <strong>stimulus onset to response</strong></li>
 </ul>
+</div>
+</section></section>
+<section>
+<section id="guidelines" class="title-slide slide level1 center">
+<h1>Guidelines</h1>
+<p><a href="https://osf.io/snqgp_v1">Boag et al.&nbsp;2025</a></p>
 </section>
 <section id="eam-suitable-tasks-should" class="slide level2">
 <h2>EAM-suitable tasks should</h2>
@@ -829,7 +883,7 @@ g_{i}(t) = f_{i}(t) \prod\limits_{j \neq i} (1 - F_{j}(t)),
 <li>Allows previous trial’s processes to return to <strong>baseline</strong>.</li>
 <li>Reduces overlap across trials.</li>
 </ul>
-<p>💡 <strong>Best practice:</strong> Use <strong>variable durations</strong>, e.g.:</p>
+<p><span class="emoji" data-emoji="bulb">💡</span> <strong>Best practice:</strong> Use <strong>variable durations</strong>, e.g.:</p>
 <ul>
 <li><p>Sample from exponential or pseudo-exponential distribution</p></li>
 <li><p>Mean ≈ 0.7 s; range = 0.2–5 s</p></li>
@@ -855,7 +909,7 @@ g_{i}(t) = f_{i}(t) \prod\limits_{j \neq i} (1 - F_{j}(t)),
 <li>Or a <strong>deadline</strong></li>
 </ul></li>
 </ul>
-<p>💡 Calibrate response window:</p>
+<p><span class="emoji" data-emoji="bulb">💡</span> Calibrate response window:</p>
 <ul>
 <li><p>Long enough to allow natural responding</p></li>
 <li><p>Short enough to avoid strategy shifts</p></li>
@@ -865,8 +919,8 @@ g_{i}(t) = f_{i}(t) \prod\limits_{j \neq i} (1 - F_{j}(t)),
 <section id="but-eams-can-handle-longer-rts" class="slide level2">
 <h2>But… EAMs Can Handle Longer RTs</h2>
 <ul>
-<li><p><a href="https://doi.org/10.1037/xge0000774"><strong>Lerche, et al.&nbsp;(2020)</strong></a>. Drift rate and General Intelligence: fast tasks 0.655<em>s</em> and slow tasks 3,319<em>s</em> ms.</p></li>
-<li><p><a href="https://doi.org/10.1016/j.tics.2022.11.009"><strong>Boag et al.&nbsp;(2023)</strong></a>: EAMs used in:</p>
+<li><p><a href="https://doi.org/10.1037/xge0000774" target="_blank"><strong>Lerche, et al.&nbsp;(2020)</strong></a>. Drift rate and General Intelligence: fast tasks 0.655<em>s</em> and slow tasks 3,319<em>s</em> ms.</p></li>
+<li><p><a href="https://doi.org/10.1016/j.tics.2022.11.009" target="_blank"><strong>Boag et al.&nbsp;(2023)</strong></a>: EAMs used in:</p>
 <ul>
 <li>Air-traffic control</li>
 <li>Maritime surveillance</li>
@@ -902,20 +956,15 @@ g_{i}(t) = f_{i}(t) \prod\limits_{j \neq i} (1 - F_{j}(t)),
 </section>
 <section id="collecting-data" class="slide level2">
 <h2>Collecting Data</h2>
-<p>EAM modeling requires detailed per-trial data:</p>
-<p>Each trial (row) should include:</p>
 <ul>
 <li><p>Participant ID</p></li>
 <li><p>Condition</p></li>
 <li><p>Stimulus presented</p></li>
 <li><p>Response submitted</p></li>
 <li><p><strong>RT</strong></p></li>
+<li><p>Session/trial number</p></li>
+<li><p>Event timings: cue, stimulus, response, feedback, intertrial interval</p></li>
 </ul>
-<p>Optional but recommended: - Session/trial number</p>
-<ul>
-<li>Event timings: cue, stimulus, response, feedback, intertrial interval</li>
-</ul>
-<p>💾 Stored as <code>.csv</code> or similar — allows model software to reconstruct the timeline.</p>
 </section>
 <section id="outliers" class="slide level2">
 <h2>Outliers</h2>
@@ -942,52 +991,17 @@ g_{i}(t) = f_{i}(t) \prod\limits_{j \neq i} (1 - F_{j}(t)),
 </ul></li>
 </ul>
 </div></div>
-</section>
-<section id="identifying-fast-guessing" class="slide level2">
-<h2>Identifying Fast Guessing</h2>
-<p>A principled method:</p>
-<ol type="1">
-<li><p>Sort RTs from fastest to slowest</p></li>
-<li><p>Plot accuracy as a function of RT</p></li>
-<li><p>Find the <strong>“chance-performance boundary”</strong></p></li>
-<li><p>Discard all RTs <strong>below that point</strong></p></li>
-</ol>
-<blockquote>
-<p>Better than arbitrary 200–300 ms cutoff</p>
-</blockquote>
-</section>
-<section id="detecting-nonstationarity" class="slide level2">
-<h2>Detecting Nonstationarity</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Check for <strong>drift</strong> across trials:</p>
-<ul>
-<li><p>Correlate <strong>RT with trial number</strong></p></li>
-<li><p>Look for trends suggesting:</p>
-<ul>
-<li>Fatigue</li>
-<li>Learning</li>
-<li>Strategic shifts</li>
-</ul></li>
-</ul>
-</div><div class="column" style="width:50%;">
-<p>Use this to:</p>
-<ul>
-<li><p>Exclude sessions</p></li>
-<li><p>Model time-on-task effects</p></li>
-</ul>
-</div></div>
-</section>
-<section id="all-models-are-wrong-but-some-are-useful-g.-box" class="slide level2 align-center">
-<h2>“All Models Are Wrong, but Some Are Useful” — G. Box</h2>
-<p><br></p>
-<p>Promotes understanding of behavior<br>
-<br></p>
-<p>🪒 <strong>Occam’s Razor</strong>: Avoid unnecessary complexity <br><br></p>
-<p>Accurately predicts new (<strong>out-of-sample</strong>) data<br>
-<br></p>
-<p>📏 Captures <strong>uncertainty</strong>, <strong>variability</strong>, and <strong>structure</strong></p>
 </section></section>
+<section id="all-models-are-wrong-but-some-are-useful---g.-box" class="title-slide slide level1 align-center center">
+<h1>“All Models Are Wrong, but Some Are Useful” - G. Box</h1>
+<p>Promotes understanding of behavior.<br>
+</p>
+<p>Accurately predicts new (<strong>out-of-sample</strong>) data.<br>
+</p>
+<p>Captures <strong>uncertainty</strong>, <strong>variability</strong>, and <strong>structure</strong>.<br>
+</p>
+</section>
+
 <section id="thank-you" class="title-slide slide level1 center">
 <h1>Thank you!</h1>
 
@@ -1190,80 +1204,42 @@ g_{i}(t) = f_{i}(t) \prod\limits_{j \neq i} (1 - F_{j}(t)),
       });
     </script>
     
-
     <script>
-
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-
       // slide changes (different for each slide format).
-
       (function () {
-
         // dispatch for htmlwidgets
-
         function fireSlideEnter() {
-
           const event = window.document.createEvent("Event");
-
           event.initEvent("slideenter", true, true);
-
           window.document.dispatchEvent(event);
-
         }
-
-    
 
         function fireSlideChanged(previousSlide, currentSlide) {
-
           fireSlideEnter();
 
-    
-
           // dispatch for shiny
-
           if (window.jQuery) {
-
             if (previousSlide) {
-
               window.jQuery(previousSlide).trigger("hidden");
-
             }
-
             if (currentSlide) {
-
               window.jQuery(currentSlide).trigger("shown");
-
             }
-
           }
-
         }
-
-    
 
         // hookup for slidy
-
         if (window.w3c_slidy) {
-
           window.w3c_slidy.add_observer(function (slide_num) {
-
             // slide_num starts at position 1
-
             fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-
           });
-
         }
 
-    
-
       })();
-
     </script>
-
-    
 
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {

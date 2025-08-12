@@ -1,16 +1,16 @@
 ---
-title: "Evidence Accumulation Models"
+title: "A practical introduction to EAMs"
 image: img/logo.png
 about:
   id: hero-heading
   template: jolla
   image-shape: round
-  image-width: 50%
+  image-width: 40%
 markdown:
   extensions: [link_attributes]
 engine: knitr
 ---
 
 ::: {#hero-heading}
-This tutorial is designed to provide the foundations for using evidence accumulation models on experiments involving perceptual judgements. Evidence accumulation models offer a comprehensive approach by jointly considering participants’ choices and response times. These models can also handle multiple-choice scenarios (two or more), allowing the analysis of responses in a broad range of tasks. This tutorial will introduce the rationale for using evidence accumulation models in visual perception research. 
+This workshop is designed to provide the rationale for using evidence accumulation models on experiments involving perceptual judgements. Evidence accumulation models offer a comprehensive approach by jointly considering participants’ choices and response times. These models can also handle multiple-choice scenarios (two or more), allowing the analysis of responses in a broad range of tasks.
 :::

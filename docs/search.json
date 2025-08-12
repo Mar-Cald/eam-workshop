@@ -1,213 +1,59 @@
 [
   {
-    "objectID": "eam-workshop.html",
-    "href": "eam-workshop.html",
-    "title": "",
-    "section": "",
-    "text": "Data are fixed, but parameters are uncertain.\n\n\\[\np(\\boldsymbol{\\theta}|\\boldsymbol{D}) = \\frac{p(\\boldsymbol{D}|\\boldsymbol{\\theta})p(\\boldsymbol{\\theta})}{p({\\boldsymbol D})}\n\\] \n\nInference produces posterior distributions over parameters\nCaptures uncertainty and incorporates prior knowledge"
-  },
-  {
-    "objectID": "eam-workshop.html#bayesian-inference",
-    "href": "eam-workshop.html#bayesian-inference",
-    "title": "",
-    "section": "",
-    "text": "Data are fixed, but parameters are uncertain.\n\n\\[\np(\\boldsymbol{\\theta}|\\boldsymbol{D}) = \\frac{p(\\boldsymbol{D}|\\boldsymbol{\\theta})p(\\boldsymbol{\\theta})}{p({\\boldsymbol D})}\n\\] \n\nInference produces posterior distributions over parameters\nCaptures uncertainty and incorporates prior knowledge"
-  },
-  {
-    "objectID": "eam-workshop.html#hierarchical-modeling",
-    "href": "eam-workshop.html#hierarchical-modeling",
-    "title": "",
-    "section": "Hierarchical Modeling",
-    "text": "Hierarchical Modeling\nAre participants identical or fully independent?\n\n\nModels group-level structure\neach participant’s parameters ∼ drawn from a population distribution \nGroup-level generalization \nIndividual-level inference"
-  },
-  {
-    "objectID": "eam-workshop.html#why-hierarchical-models",
-    "href": "eam-workshop.html#why-hierarchical-models",
-    "title": "",
-    "section": "Why Hierarchical Models?",
-    "text": "Why Hierarchical Models?\n\nReduces bias from unmodeled individual variability\n\nPrevents overfitting and underfitting\n\nShrinkage: pulls extreme or low-quality estimates toward the group mean\n\n\nBoehm et al. (2018), Behavior Research Methods"
-  },
-  {
-    "objectID": "eam-workshop.html#what-are-we-trying-to-infer",
-    "href": "eam-workshop.html#what-are-we-trying-to-infer",
-    "title": "",
-    "section": "What Are We Trying to Infer?",
-    "text": "What Are We Trying to Infer?\nWe want to estimate:\n\nIndividual-level parameters: \\(\\alpha_1, \\alpha_2, \\dots, \\alpha_N\\)\nGroup-level structure:\nA shared population distribution \\(\\alpha_i \\sim \\mathcal{N}(\\mu, \\Sigma)\\)\n\nThis enables both individual and population inference."
-  },
-  {
-    "objectID": "eam-workshop.html#model-structure",
-    "href": "eam-workshop.html#model-structure",
-    "title": "",
-    "section": "Model Structure",
-    "text": "Model Structure\nThe hierarchical model defines a joint posterior over all unknowns:\n\\[\np(\\alpha_i, \\mu, \\Sigma \\mid \\text{data}) \\propto\np(\\text{data} \\mid \\alpha_i) \\cdot\np(\\alpha_i \\mid \\mu, \\Sigma) \\cdot\np(\\mu, \\Sigma)\n\\]\n\nLikelihood:\n\\(p(\\text{data} \\mid \\alpha_i)\\)\n— How well each participant’s data is explained by their parameters\nGroup-level model:\n\\(p(\\alpha_i \\mid \\mu, \\Sigma)\\) — Individual parameters drawn from population distribution\nHyperprior:\n\\(p(\\mu, \\Sigma)\\) — Prior beliefs over the group-level structure"
-  },
-  {
-    "objectID": "eam-workshop.html#group-level-parameters",
-    "href": "eam-workshop.html#group-level-parameters",
-    "title": "",
-    "section": "Group-Level Parameters",
-    "text": "Group-Level Parameters\nLet \\(n\\) = number of individual parameters per subject:\n\n\\(\\mu\\): vector of population means\n\n\\(\\Sigma\\): symmetric covariance matrix, including:\n\nDiagonal: Variances (\\(\\sigma^2\\))\nOff-diagonal: Covariances\n\\(\\frac{n(n-1)}{2}\\) elements total\n\n\nThese hyperparameters are learned from the data."
-  },
-  {
-    "objectID": "eam-workshop.html#priors",
-    "href": "eam-workshop.html#priors",
-    "title": "",
-    "section": "Priors",
-    "text": "Priors\nCognitive-model parameters must be transformed to have support on the real line. This transformation is necessary to meet the assumption of the normal group-level distribution.\n\nLog transform: Applied to parameters with a lower bound (e.g., non-decision time, which cannot be negative)\nProbit transform: Applied to parameters with both lower and upper bounds (e.g., the starting point parameter in the Drift Diffusion Model, which must lie between two response boundaries)\n\nAs a result, priors are specified on these transformed parameters rather than on the original scales."
-  },
-  {
-    "objectID": "eam-workshop.html#set-up---emc2",
-    "href": "eam-workshop.html#set-up---emc2",
-    "title": "",
-    "section": "Set up - EMC2",
-    "text": "Set up - EMC2\n\n# # If not already done, install the EMC2 package\n# remotes::install_github(\"ampl-psych/EMC2\",ref=\"dev\")\nlibrary(EMC2)\n\nWarning: package 'EMC2' was built under R version 4.4.3"
-  },
-  {
-    "objectID": "eam-workshop.html#design-specification",
-    "href": "eam-workshop.html#design-specification",
-    "title": "",
-    "section": "Design specification",
-    "text": "Design specification\nThe design function creates a design object that maps model parameters to experimental conditions using linear model formulas. This object specifies:\n\nModel type\nLinear models for estimated parameter types (default values are used for omitted types)\nParameters to be fixed as constants (optional)\nFunctions for creating custom factors (optional)\nCustom contrast coding for factors (optional)\n\nThe simulation procedure"
-  },
-  {
-    "objectID": "eam-home.html",
-    "href": "eam-home.html",
-    "title": "Evidence Accumulation Models",
-    "section": "",
-    "text": "This tutorial is designed to provide the foundations for using evidence accumulation models on experiments involving perceptual judgements. Evidence accumulation models offer a comprehensive approach by jointly considering participants’ choices and response times. These models can also handle multiple-choice scenarios (two or more), allowing the analysis of responses in a broad range of tasks. This tutorial will introduce the rationale for using evidence accumulation models in visual perception research."
-  },
-  {
-    "objectID": "eam-credits.html",
-    "href": "eam-credits.html",
-    "title": "",
-    "section": "",
-    "text": "Boag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling."
-  },
-  {
-    "objectID": "eam-credits.html#expert-guide",
-    "href": "eam-credits.html#expert-guide",
-    "title": "",
-    "section": "",
-    "text": "Boag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling."
-  },
-  {
-    "objectID": "eam-credits.html#emc2-resources",
-    "href": "eam-credits.html#emc2-resources",
-    "title": "",
-    "section": "EMC2 Resources",
-    "text": "EMC2 Resources\n\n📘 Tutorial\nModel Based Sampling with EMC2 - Extended Models of Choice. A comprehensive, step-by-step guide covering model structure, inference, and visualization using EMC2.\n\n\n📄 Preprint\nProvides theoretical background, methodology, and applications of EMC2.\n\n\n🧠 Summer School Materials\nFrom the Model Based Neuroscience Summer School — highly recommended for those interested in hands-on training in cognitive modeling and Bayesian inference."
-  },
-  {
-    "objectID": "eam-intro.html#decision-making---perception-into-action",
-    "href": "eam-intro.html#decision-making---perception-into-action",
+    "objectID": "eam-intro.html#perception-into-action",
+    "href": "eam-intro.html#perception-into-action",
     "title": "Intro to EAM",
-    "section": "Decision Making - Perception into Action",
-    "text": "Decision Making - Perception into Action\n\nMany decisions are made rapidly and at a low cognitive level.\nPerception triggers stored knowledge → triggers action.\nThis process matches perception to known representations and selects a response."
+    "section": "Perception into action",
+    "text": "Perception into action\nEvidence Accumulation Models assume that, upon stimulus presentation, the decision maker:\n\nSamples noisy evidence for available options (e.g., “Should I press left or right?”)\nAccumulates that evidence until a threshold is crossed\n\n\n\n\n\n\n\nMulder, M. J., Wagenmakers, E. J., Ratcliff, R., Boekel, W., & Forstmann, B. U. (2012). Bias in the brain: a diffusion model analysis of prior probability and potential payoff. Journal of Neuroscience, 32(7), 2335–2343."
   },
   {
-    "objectID": "eam-intro.html#all-evidence-accumulation-models",
-    "href": "eam-intro.html#all-evidence-accumulation-models",
+    "objectID": "eam-intro.html#what-is-evidence",
+    "href": "eam-intro.html#what-is-evidence",
     "title": "Intro to EAM",
-    "section": "All Evidence Accumulation Models",
-    "text": "All Evidence Accumulation Models\nEAMs assume that, upon stimulus presentation (e.g., left- or right-facing arrow), the decision maker:\n\nSamples noisy evidence for available options (e.g., “Should I press left or right?”)\nAccumulates that evidence until a threshold is crossed\n\n\n\n\n\n\n\nMulder, M. J., Wagenmakers, E. J., Ratcliff, R., Boekel, W., & Forstmann, B. U. (2012). Bias in the brain: a diffusion model analysis of prior probability and potential payoff. Journal of Neuroscience, 32(7), 2335–2343."
+    "section": "What is “evidence”?",
+    "text": "What is “evidence”?\nNeural signals reflecting sensory or internal information relevant to a choice.\n“Are dots moving to the right or to the left?”\n\nNeurons fire in proportion to motion direction & strength.\nThese firing rates = momentary evidence."
   },
   {
-    "objectID": "eam-intro.html#sequential-sampling-models",
-    "href": "eam-intro.html#sequential-sampling-models",
+    "objectID": "eam-intro.html#sensory-neurons-encode-momentary-evidence",
+    "href": "eam-intro.html#sensory-neurons-encode-momentary-evidence",
     "title": "Intro to EAM",
-    "section": "Sequential Sampling Models",
-    "text": "Sequential Sampling Models\nCould differ:\n\nNumber of accumulators (e.g., single vs multiple)\nDecision rules (relative vs absolute)\nDrift rate: constant or time-varying\nNoise: stochastic vs deterministic\nWith or without inhibition or decay"
+    "section": "1. Sensory neurons encode momentary evidence",
+    "text": "1. Sensory neurons encode momentary evidence\n\n\nSpiking in sensory cortex represents stimulus features.\nNoisy and varies trial-to-trial."
+  },
+  {
+    "objectID": "eam-intro.html#integrator-neurons-receive-this-input",
+    "href": "eam-intro.html#integrator-neurons-receive-this-input",
+    "title": "Intro to EAM",
+    "section": "2. Integrator neurons receive this input",
+    "text": "2. Integrator neurons receive this input\n\n\n\n\nNeurons in LIP, dlPFC, or striatum ramp up/down over time.\nReflects accumulated evidence\n\n Zylberberg & Shadlen, 2025\n\n\n\n\nNeurons in the lateral intraparietal (LIP) area with response fields overlapping the choice-target contralateral to the recording site (Tin neurons) represent the accumulation of evidence in favor of contralateral target selection. The monkey reports its decision via a saccadic eye movement to one of the targets and is rewarded for correct choices. In trials where the monkey chooses the contralateral target (i.e., the one within the neurons’ response field), the Tin neurons represent the winning race, whereas on ipsilateral choices, they represent the losing race."
+  },
+  {
+    "objectID": "eam-intro.html#threshold-crossing-triggers-a-decision",
+    "href": "eam-intro.html#threshold-crossing-triggers-a-decision",
+    "title": "Intro to EAM",
+    "section": "3. Threshold crossing triggers a decision",
+    "text": "3. Threshold crossing triggers a decision\n\n\nZylberberg & Shadlen, 2025"
+  },
+  {
+    "objectID": "eam-intro.html#brain-computation-of-decisions",
+    "href": "eam-intro.html#brain-computation-of-decisions",
+    "title": "Intro to EAM",
+    "section": "Brain computation of decisions",
+    "text": "Brain computation of decisions\n\n\n\n\nCognitive Term\nNeural Interpretation\n\n\n\n\nEvidence\nSensory neuron firing rates\n\n\nAccumulation\nIntegration in parietal/frontal areas\n\n\nNoise\nTrial-to-trial neural variability\n\n\nBound\nDecision threshold in firing/activity"
   },
   {
     "objectID": "eam-intro.html#sequential-processing-assumption",
     "href": "eam-intro.html#sequential-processing-assumption",
     "title": "Intro to EAM",
-    "section": "Sequential Processing Assumption",
-    "text": "Sequential Processing Assumption\nTotal Response Time (RT) is modeled as the sum of three sequential stages:\n\nStimulus encoding\nEvidence accumulation (decision-making)\nMotor response execution\n\nStages (1) and (3) are captured in the nondecision time (Ter) parameter.\n\nthe models contain parameters controlling the evidence starJng point (allowing for a priori biases), accumulaJon rate (controlling the speed of processing), threshold/boundary separaJon (controlling the amount of evidence required to make a response), and nondecision Jme (the sum of Jme taken for sJmulus encoding and motor response production)."
-  },
-  {
-    "objectID": "eam-intro.html#relative-evidence-models",
-    "href": "eam-intro.html#relative-evidence-models",
-    "title": "Intro to EAM",
-    "section": "Relative Evidence Models",
-    "text": "Relative Evidence Models\nIn relative evidence models (e.g., Wiener process, Diffusion Decision Model):\n\n\n\n\nDecision is based on the difference in accumulated evidence between two options.\n\n\n\nSuitable for binary choices.\n\n\n\n\n\nBoag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling. https://doi.org/10.31234/osf.io/snqgp"
-  },
-  {
-    "objectID": "eam-intro.html#absolute-evidence-models",
-    "href": "eam-intro.html#absolute-evidence-models",
-    "title": "Intro to EAM",
-    "section": "Absolute Evidence Models",
-    "text": "Absolute Evidence Models\nIn racing accumulator models (e.g., LBA, RDM):\n\n\n\nEach option has its own accumulator tracking absolute evidence.\nDecision is made by the first accumulator to reach threshold.\nCan handle multiple alternatives (not just binary choices).\n\n\n\n\n\nBoag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling. https://doi.org/10.31234/osf.io/snqgp\n\n\nAlthough relative and absolute evidence models differ in how they conceptualize evidence, they:\n\nShare similar assumptions about trial structure and data quality\nUse overlapping parameters (drift rate, threshold, bias, nondecision time)\nOften reach the same substantive conclusions\nProvide convergent results when applied to the same data"
-  },
-  {
-    "objectID": "eam-intro.html#wiener-process",
-    "href": "eam-intro.html#wiener-process",
-    "title": "Intro to EAM",
-    "section": "Wiener Process",
-    "text": "Wiener Process\nThe Wiener process (Brownian motion) is the foundation of many decision models. It models the accumulation of evidence as a noisy process:\n x(t)=z+vt+sW(t)\nx(t) = z + vt + sW(t)\n \n\n\n\nx(t)x(t): accumulated evidence at time tt\nz: starting point\nv: drift rate (signal strength)\ns: noise (standard deviation of the increments)\nW(t)W(t): standard Wiener process (Gaussian increments)"
-  },
-  {
-    "objectID": "eam-intro.html#wiener-first-passage-time-fpt",
-    "href": "eam-intro.html#wiener-first-passage-time-fpt",
-    "title": "Intro to EAM",
-    "section": "Wiener First Passage Time (FPT)",
-    "text": "Wiener First Passage Time (FPT)\n d(t,x=0|α,τ,β,δ)=1α2exp[−αβδ−12δ2(t−τ)]f(|t−τ|α2|β)\nd(t,x=0|\\alpha,\\tau,\\beta,\\delta) = \\frac{1}{\\alpha^2} \\exp\\left[-\\alpha\\beta\\delta - \\frac{1}{2}\\delta^2(t-\\tau)\\right] f\\left(\\frac{|t-\\tau|}{\\alpha^2}\\bigg|\\beta\\right)\n \n\n\n\n\n\nIt is the expected distribution of the time until the process first hits or crosses one or the other boundary. This results in a bivariate distribution, over responses xx and hitting times tt.\n\n\n\nWabersich and Vandekerckhove (2014), The R Journal"
-  },
-  {
-    "objectID": "eam-intro.html#full-diffusion-decision-model",
-    "href": "eam-intro.html#full-diffusion-decision-model",
-    "title": "Intro to EAM",
-    "section": "Full Diffusion Decision Model",
-    "text": "Full Diffusion Decision Model\n\nThe Full DDM accounts for more behavioral phenomena by allowing trial-to-trial variability in key parameters:\n\nDrift rate: v∼𝒩(μv,η2)v \\sim \\mathcal{N}(\\mu_v, \\eta^2)\nStarting point: z∼Uniform(z−sz/2,z+sz/2)z \\sim \\text{Uniform}(z - s_z/2, z + s_z/2)\nNon-decision time: t0∼Uniform(t0−st0/2,t0+st0/2)t_0 \\sim \\text{Uniform}(t_0 - s_{t_0}/2, t_0 + s_{t_0}/2)"
-  },
-  {
-    "objectID": "eam-intro.html#full-ddm-parameters",
-    "href": "eam-intro.html#full-ddm-parameters",
-    "title": "Intro to EAM",
-    "section": "Full DDM Parameters",
-    "text": "Full DDM Parameters\n\n\na: decision boundary\nz: starting point\nv: drift rate\nt_0: non-decision time\ns: noise scale (usually fixed)\nη\\eta: SD of drift rate across trials\nszs_{z}: variability in start point\nst0s_{t_0}: variability in non-decision time\n\n\n\n\nBoehm, U., Annis, J., Frank, … & Wagenmakers, E. J. (2018). Estimating across-trial variability parameters of the Diffusion Decision Model: Expert advice and recommendations. Journal of Mathematical Psychology, 87, 46-75. Ratcliff, R., & Rouder, J. N. (1998). Modeling Response Times for Two-Choice Decisions. Psychological Science, 9(5), 347-356."
-  },
-  {
-    "objectID": "eam-intro.html#purpose-of-variability",
-    "href": "eam-intro.html#purpose-of-variability",
-    "title": "Intro to EAM",
-    "section": "Purpose of Variability",
-    "text": "Purpose of Variability\n\nAdding variability improves the model’s ability to:\n\nCapture error RT differences\nReflect trial-to-trial attention or difficulty changes \n\nHowever, it increases computational demands."
-  },
-  {
-    "objectID": "eam-intro.html#racing-diffusion-model",
-    "href": "eam-intro.html#racing-diffusion-model",
-    "title": "Intro to EAM",
-    "section": "Racing Diffusion Model",
-    "text": "Racing Diffusion Model\n\nInstead of a single process choosing between boundaries, the Racing Diffusion Model (RDM) uses multiple independent diffusion processes, one per option:\n\ndxk(t)=vkdt+sdWk(t)for k=1,…,K\ndx_k(t) = v_k \\, dt + s \\, dW_k(t) \\quad \\text{for } k = 1,\\dots,K\n \nEach accumulator races toward its threshold. The first to cross wins."
+    "section": "Sequential processing assumption",
+    "text": "Sequential processing assumption\nTotal Response Time (RT) is modeled as the sum of three sequential stages:\n\nStimulus encoding\nEvidence accumulation (decision-making)\nMotor response execution\n\nStages (1) and (3) are captured in the nondecision time (Ter) parameter.\n\nthe models contain parameters controlling the evidence starJng point (allowing for a priori biases), accumulaJon rate (controlling the speed of processing), threshold/boundary separaJon (controlling the amount of evidence required to make a response), and nondecision Jme (the sum of Jme taken for sJmulus encoding and motor response production)."
   },
   {
     "objectID": "eam-intro.html#section",
     "href": "eam-intro.html#section",
     "title": "Intro to EAM",
     "section": "",
-    "text": "Tillman, G., Van Zandt, T., & Logan, G. D. (2020). Sequential sampling models without random between-trial variability: The racing diffusion model of speeded decision making. Psychonomic Bulletin & Review, 27(5), 911-936."
-  },
-  {
-    "objectID": "eam-intro.html#rdm",
-    "href": "eam-intro.html#rdm",
-    "title": "Intro to EAM",
-    "section": "RDM",
-    "text": "RDM\nWithout starting point variability…\n fi(t|b,v)=b(2πt3)−12exp[−12t(vt−b)2]\nf_{i}(t|b,v) = b(2 \\pi t^{3})^{-\\frac{1}{2}} \\exp\\left[-\\frac{1}{2t}(v t-b)^{2}\\right]\n  The winner is the first process to reach threshold:\n\ngi(t)=fi(t)∏j≠i(1−Fj(t)),\ng_{i}(t) = f_{i}(t) \\prod\\limits_{j \\neq i} (1 - F_{j}(t)),"
-  },
-  {
-    "objectID": "eam-intro.html#summary",
-    "href": "eam-intro.html#summary",
-    "title": "Intro to EAM",
-    "section": "Summary",
-    "text": "Summary\n\n\n\n\n\n\n\n\nModel\nCore Mechanism\nKey Strengths\n\n\n\n\nWiener\nStochastic accumulation\nSimple FPT, binary outcomes\n\n\nFull DDM\nAccumulation + param variability\nRealistic RTs, error patterns\n\n\nRacing DDM\nMultiple accumulators\nHandles multi-alternative decisions\n\n\n\n\nEvidence accumulates noisily over time until a decision threshold is reached."
-  },
-  {
-    "objectID": "eam-intro.html#latent-cognitive-parameters",
-    "href": "eam-intro.html#latent-cognitive-parameters",
-    "title": "Intro to EAM",
-    "section": "Latent Cognitive Parameters",
-    "text": "Latent Cognitive Parameters\nEAMs decompose decisions into:\n\nDrift rate (v)\nThreshold (a)\nBias (z)\nNondecision time (Ter)"
+    "text": "EAMs decompose decisions into:\n\nDrift rate (v)\nThreshold (a)\nBias (z)\nNondecision time (Ter)"
   },
   {
     "objectID": "eam-intro.html#drift-rate-v",
@@ -238,18 +84,81 @@
     "text": "Nondecision Time (Ter)\n\nTime to encode stimulus + execute response\nShifts RT distribution without changing shape/accuracy\n\nSensitive to:\n\nVisual complexity\nMotor demands\n\n\nHard to estimate precisely — often noisy across individuals."
   },
   {
-    "objectID": "eam-intro.html#use-of-parameters",
-    "href": "eam-intro.html#use-of-parameters",
+    "objectID": "eam-intro.html#relative-evidence-models",
+    "href": "eam-intro.html#relative-evidence-models",
     "title": "Intro to EAM",
-    "section": "Use of Parameters",
-    "text": "Use of Parameters\nCompare parameters:\n\nAcross individuals (e.g., young vs. older adults)\nWithin individuals (e.g., easy vs. hard conditions)\nWith covariates (e.g., BOLD activity, IQ)"
+    "section": "Relative Evidence Models",
+    "text": "Relative Evidence Models\nIn relative evidence models (e.g., Wiener process, Diffusion Decision Model):\n\n\n\n\nDecision is based on the difference in accumulated evidence between two options.\n\n\n\nSuitable for binary choices.\n\n\n\n\n\nBoag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling."
+  },
+  {
+    "objectID": "eam-intro.html#absolute-evidence-models",
+    "href": "eam-intro.html#absolute-evidence-models",
+    "title": "Intro to EAM",
+    "section": "Absolute Evidence Models",
+    "text": "Absolute Evidence Models\nIn racing accumulator models (e.g., LBA, RDM):\n\n\n\nEach option has its own accumulator tracking absolute evidence.\nDecision is made by the first accumulator to reach threshold.\nCan handle multiple alternatives (not just binary choices).\n\n\n\n\n\nBoag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling.\n\n\nAlthough relative and absolute evidence models differ in how they conceptualize evidence, they:\n\nShare similar assumptions about trial structure and data quality\nUse overlapping parameters (drift rate, threshold, bias, nondecision time)\nOften reach the same substantive conclusions\nProvide convergent results when applied to the same data"
+  },
+  {
+    "objectID": "eam-intro.html#wiener-process",
+    "href": "eam-intro.html#wiener-process",
+    "title": "Intro to EAM",
+    "section": "Wiener Process",
+    "text": "Wiener Process\nThe Wiener process (Brownian motion) is the foundation of many decision models (Smith & Ratcliff, 2024). It models the accumulation of evidence as a noisy process:\n x(t)=z+vt+sW(t)\nx(t) = z + vt + sW(t)\n \n\n\n\nx(t)x(t): accumulated evidence at time tt\nz: starting point\nv: drift rate (signal strength)\ns: noise (standard deviation of the increments)\nW(t)W(t): standard Wiener process (Gaussian increments)"
+  },
+  {
+    "objectID": "eam-intro.html#wiener-first-passage-time-fpt",
+    "href": "eam-intro.html#wiener-first-passage-time-fpt",
+    "title": "Intro to EAM",
+    "section": "Wiener First Passage Time (FPT)",
+    "text": "Wiener First Passage Time (FPT)\n\nIt is the expected distribution of the time until the process first hits or crosses one or the other boundary. This results in a bivariate distribution, over responses xx and hitting times tt.\n\n\n\n\n\n\nα\\alpha : threshold\nβ\\beta : initial bias\nδ\\delta: quality of the stimulus (often vv)\nτ\\tau: non-decision time\n\n\nNavarro & Fuss, 2009; Wabersich & Vandekerckhov, 2014. Copyright 2009, Joachim Vandekerckhove and Department of Psychology and Educational Sciences, University of Leuven, Belgium"
+  },
+  {
+    "objectID": "eam-intro.html#full-diffusion-decision-model",
+    "href": "eam-intro.html#full-diffusion-decision-model",
+    "title": "Intro to EAM",
+    "section": "Full Diffusion Decision Model",
+    "text": "Full Diffusion Decision Model\n\nThe Full DDM accounts for more behavioral phenomena by allowing trial-to-trial variability in key parameters:\n\nDrift rate: v∼𝒩(μv,η2)v \\sim \\mathcal{N}(\\mu_v, \\eta^2)\nStarting point: z∼Uniform(z−sz/2,z+sz/2)z \\sim \\text{Uniform}(z - s_z/2, z + s_z/2)\nNon-decision time: t0∼Uniform(t0−st0/2,t0+st0/2)t_0 \\sim \\text{Uniform}(t_0 - s_{t_0}/2, t_0 + s_{t_0}/2)"
+  },
+  {
+    "objectID": "eam-intro.html#full-ddm-parameters",
+    "href": "eam-intro.html#full-ddm-parameters",
+    "title": "Intro to EAM",
+    "section": "Full DDM Parameters",
+    "text": "Full DDM Parameters\n\n\naa: decision boundary\nzz: starting point\nvv: drift rate\nt0t_0: non-decision time\nss: noise scale (usually fixed to 1)\nη\\eta: SD of drift rate across trials\nszs_{z}: variability in start point\nst0s_{t_0}: variability in non-decision time\n\n\n\n\nBoehm, U., Annis, J., Frank, … & Wagenmakers, E. J. (2018). Estimating across-trial variability parameters of the Diffusion Decision Model: Expert advice and recommendations. Journal of Mathematical Psychology, 87, 46-75. Ratcliff, R., & Rouder, J. N. (1998). Modeling Response Times for Two-Choice Decisions. Psychological Science, 9(5), 347-356."
+  },
+  {
+    "objectID": "eam-intro.html#purpose-of-variability",
+    "href": "eam-intro.html#purpose-of-variability",
+    "title": "Intro to EAM",
+    "section": "Purpose of Variability",
+    "text": "Purpose of Variability\n\nAdding variability improves the model’s ability to:\n\nCapture error RT differences\nReflect trial-to-trial attention or difficulty changes \n\nHowever, it increases computational demands."
+  },
+  {
+    "objectID": "eam-intro.html#racing-diffusion-model",
+    "href": "eam-intro.html#racing-diffusion-model",
+    "title": "Intro to EAM",
+    "section": "Racing Diffusion Model",
+    "text": "Racing Diffusion Model\n\nInstead of a single process choosing between boundaries, the Racing Diffusion Model (RDM) uses multiple independent diffusion processes, one per option:\n\ndxk(t)=vkdt+sdWk(t)for k=1,…,K\ndx_k(t) = v_k \\, dt + s \\, dW_k(t) \\quad \\text{for } k = 1,\\dots,K\n \nEach accumulator races toward its threshold. The first to cross wins."
+  },
+  {
+    "objectID": "eam-intro.html#section-1",
+    "href": "eam-intro.html#section-1",
+    "title": "Intro to EAM",
+    "section": "",
+    "text": "Tillman, G., Van Zandt, T., & Logan, G. D. (2020). Sequential sampling models without random between-trial variability: The racing diffusion model of speeded decision making. Psychonomic Bulletin & Review, 27(5), 911-936."
+  },
+  {
+    "objectID": "eam-intro.html#summary",
+    "href": "eam-intro.html#summary",
+    "title": "Intro to EAM",
+    "section": "Summary",
+    "text": "Summary\n\n\n\n\n\n\n\n\nModel\nCore Mechanism\nKey Strengths\n\n\n\n\nWiener\nStochastic accumulation\nSimple FPT, binary outcomes\n\n\nFull DDM\nAccumulation + param variability\nRealistic RTs, error patterns\n\n\nRacing DDM\nMultiple accumulators\nHandles multi-alternative decisions"
   },
   {
     "objectID": "eam-intro.html#core-assumptions-of-the-basic-eam",
     "href": "eam-intro.html#core-assumptions-of-the-basic-eam",
     "title": "Intro to EAM",
     "section": "Core Assumptions of the Basic EAM",
-    "text": "Core Assumptions of the Basic EAM\n\n\nEach decision = a single, continuous accumulation of evidence\n\n\n\nCulminates in a discrete response\n\n\n\nEvidence accumulates from stimulus onset to response"
+    "text": "Core Assumptions of the Basic EAM\n\n\n\nEach decision = a single, continuous accumulation of evidence\n\n\n\n\nCulminates in a discrete response\n\n\n\n\nEvidence accumulates from stimulus onset to response"
   },
   {
     "objectID": "eam-intro.html#eam-suitable-tasks-should",
@@ -361,7 +270,7 @@
     "href": "eam-intro.html#collecting-data",
     "title": "Intro to EAM",
     "section": "Collecting Data",
-    "text": "Collecting Data\nEAM modeling requires detailed per-trial data:\nEach trial (row) should include:\n\nParticipant ID\nCondition\nStimulus presented\nResponse submitted\nRT\n\nOptional but recommended: - Session/trial number\n\nEvent timings: cue, stimulus, response, feedback, intertrial interval\n\n💾 Stored as .csv or similar — allows model software to reconstruct the timeline."
+    "text": "Collecting Data\n\nParticipant ID\nCondition\nStimulus presented\nResponse submitted\nRT\nSession/trial number\nEvent timings: cue, stimulus, response, feedback, intertrial interval"
   },
   {
     "objectID": "eam-intro.html#outliers",
@@ -371,25 +280,109 @@
     "text": "Outliers\nOutliers distort model fits.\n\n\nFast outliers:\n\nMay reflect:\n\nPremature guesses\nTrigger failures\n\nTypically: RT &lt; 150–300 ms (depending on response modality)\n\n\nSlow outliers:\n\nLess common to censor unless clearly implausible\nMay reflect:\n\nLapses\nMultiple evidence accumulation attempts"
   },
   {
-    "objectID": "eam-intro.html#identifying-fast-guessing",
-    "href": "eam-intro.html#identifying-fast-guessing",
-    "title": "Intro to EAM",
-    "section": "Identifying Fast Guessing",
-    "text": "Identifying Fast Guessing\nA principled method:\n\nSort RTs from fastest to slowest\nPlot accuracy as a function of RT\nFind the “chance-performance boundary”\nDiscard all RTs below that point\n\n\nBetter than arbitrary 200–300 ms cutoff"
+    "objectID": "eam-credits.html",
+    "href": "eam-credits.html",
+    "title": "",
+    "section": "",
+    "text": "Boag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling."
   },
   {
-    "objectID": "eam-intro.html#detecting-nonstationarity",
-    "href": "eam-intro.html#detecting-nonstationarity",
-    "title": "Intro to EAM",
-    "section": "Detecting Nonstationarity",
-    "text": "Detecting Nonstationarity\n\n\nCheck for drift across trials:\n\nCorrelate RT with trial number\nLook for trends suggesting:\n\nFatigue\nLearning\nStrategic shifts\n\n\n\nUse this to:\n\nExclude sessions\nModel time-on-task effects"
+    "objectID": "eam-credits.html#expert-guide",
+    "href": "eam-credits.html#expert-guide",
+    "title": "",
+    "section": "",
+    "text": "Boag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling."
   },
   {
-    "objectID": "eam-intro.html#all-models-are-wrong-but-some-are-useful-g.-box",
-    "href": "eam-intro.html#all-models-are-wrong-but-some-are-useful-g.-box",
-    "title": "Intro to EAM",
-    "section": "“All Models Are Wrong, but Some Are Useful” — G. Box",
-    "text": "“All Models Are Wrong, but Some Are Useful” — G. Box\n\nPromotes understanding of behavior\n\n🪒 Occam’s Razor: Avoid unnecessary complexity \nAccurately predicts new (out-of-sample) data\n\n📏 Captures uncertainty, variability, and structure"
+    "objectID": "eam-credits.html#emc2-resources",
+    "href": "eam-credits.html#emc2-resources",
+    "title": "",
+    "section": "EMC2 Resources",
+    "text": "EMC2 Resources\n\n📘 Tutorial\nModel Based Sampling with EMC2 - Extended Models of Choice. A comprehensive, step-by-step guide covering model structure, inference, and visualization using EMC2.\n\n\n📄 Preprint\nProvides theoretical background, methodology, and applications of EMC2.\n\n\n🧠 Summer School Materials\nFrom the Model Based Neuroscience Summer School — highly recommended for those interested in hands-on training in cognitive modeling and Bayesian inference."
+  },
+  {
+    "objectID": "eam-credits.html#brms-tutorial-by-henrik-singmann",
+    "href": "eam-credits.html#brms-tutorial-by-henrik-singmann",
+    "title": "",
+    "section": "brms tutorial by Henrik Singmann",
+    "text": "brms tutorial by Henrik Singmann\nDiffusion/Wiener Model Analysis with brms"
+  },
+  {
+    "objectID": "eam-workshop.html",
+    "href": "eam-workshop.html",
+    "title": "Workshop",
+    "section": "",
+    "text": "\\[\np(\\theta \\mid y) = \\frac{\\mathcal{L}(\\theta \\mid y) \\, p(\\theta)}{p(y)}\n\\] \n\n\\(p(\\theta)\\): Prior distribution\n\\(\\mathcal{L}(\\theta \\mid y)\\): Likelihood\n\\(p(\\theta \\mid y)\\): Posterior distribution"
+  },
+  {
+    "objectID": "eam-workshop.html#bayesian-inference",
+    "href": "eam-workshop.html#bayesian-inference",
+    "title": "Workshop",
+    "section": "",
+    "text": "\\[\np(\\theta \\mid y) = \\frac{\\mathcal{L}(\\theta \\mid y) \\, p(\\theta)}{p(y)}\n\\] \n\n\\(p(\\theta)\\): Prior distribution\n\\(\\mathcal{L}(\\theta \\mid y)\\): Likelihood\n\\(p(\\theta \\mid y)\\): Posterior distribution"
+  },
+  {
+    "objectID": "eam-workshop.html#hierarchical-modeling",
+    "href": "eam-workshop.html#hierarchical-modeling",
+    "title": "Workshop",
+    "section": "Hierarchical Modeling",
+    "text": "Hierarchical Modeling\nAre participants identical or fully independent?\n\n\n\nModels group-level structure \neach participant’s parameters ∼ drawn from a population distribution \n\n\n\n\n\n\n\n\n\n\n\n\nWhy Hierarchical Models?\n\nReduces bias from unmodeled individual variability\n\nPrevents overfitting and underfitting\n\nShrinkage: pulls extreme or low-quality estimates toward the group mean\n\n\nBoehm et al. (2018), Behavior Research Methods"
+  },
+  {
+    "objectID": "eam-workshop.html#model-structure",
+    "href": "eam-workshop.html#model-structure",
+    "title": "Workshop",
+    "section": "Model Structure",
+    "text": "Model Structure\nThe hierarchical model defines a joint posterior over all unknowns:\n\\[\np(\\alpha_i, \\mu, \\Sigma \\mid \\text{data}) \\propto\np(\\text{data} \\mid \\alpha_i) \\cdot\np(\\alpha_i \\mid \\mu, \\Sigma) \\cdot\np(\\mu, \\Sigma)\n\\]\n\nLikelihood:\n\\(p(\\text{data} \\mid \\alpha_i)\\)\n— How well each participant’s data is explained by their parameters\nGroup-level model:\n\\(p(\\alpha_i \\mid \\mu, \\Sigma)\\) — Individual parameters drawn from population distribution\nHyperprior:\n\\(p(\\mu, \\Sigma)\\) — Prior beliefs over the group-level structure\n\n\nGroup-Level Parameters\nLet \\(n\\) = number of individual parameters per subject:\n\n\\(\\mu\\): vector of population means\n\n\\(\\Sigma\\): symmetric covariance matrix, including:\nDiagonal: Variances (\\(\\sigma^2\\))\nOff-diagonal: Covariances\n\\(\\frac{n(n-1)}{2}\\) elements total"
+  },
+  {
+    "objectID": "eam-workshop.html#priors",
+    "href": "eam-workshop.html#priors",
+    "title": "Workshop",
+    "section": "Priors",
+    "text": "Priors\nCognitive model parameters are transformed to have support on the entire real line, ensuring compatibility with the assumption of a normally distributed group-level prior.\n\nLog transformation is applied to parameters that are strictly positive (e.g., non-decision time), preventing invalid negative values.\nProbit transformation is used for parameters bounded between 0 and 1 (e.g., the starting point in the Drift Diffusion Model, which lies between the two response boundaries).\n\nConsequently, prior distributions are defined on these transformed scales rather than on the natural parameter scales."
+  },
+  {
+    "objectID": "eam-workshop.html#design-specification",
+    "href": "eam-workshop.html#design-specification",
+    "title": "Workshop",
+    "section": "Design specification",
+    "text": "Design specification\nThe design function creates a design object that maps model parameters to experimental conditions using linear model formulas. This object specifies:\n\nModel type\nFormula: Linear models for estimated parameter types (default values are used for omitted types)\nParameters to be fixed as constants (optional)\nFunctions for creating custom factors (optional)\nCustom contrast coding for factors (optional)"
+  },
+  {
+    "objectID": "eam-workshop.html#simulation",
+    "href": "eam-workshop.html#simulation",
+    "title": "Workshop",
+    "section": "Simulation",
+    "text": "Simulation\nFirst. We construct a full-factorial data frame with all combinations of factors. These factors define the experimental design:\n\nCI: Congruency (“cong” or “inc”)\nGAP: Gap (“large” or “small”)\nS: Stimulus orientation (“left” or “right”)\nR: Response orientation (“left” or “right”)\nsubjects: 40 participants\n\n\ndat = expand.grid(\n  subjects = factor(1:40),\n  CI = factor(c(\"cong\", \"inc\")),\n  GAP = factor(c(\"large\", \"small\")),\n  S = factor(c(\"left\", \"right\")),\n  R = factor(c(\"left\", \"right\"))\n)\n\n\nNote. Reserved factor names in EMC2 are:\n\nR: response factor\nrt: response time (numeric)\nsubjects: participant IDs\n\n\nWe start by simulating some data using the Wiener Diffusion Decision Model.\n\n# See details of available parameters and transformations:\n?DDM\n\n\nDesign object\nThe formula argument maps DDM parameters to experimental factors using R’s linear modeling syntax. Each parameter type gets its own formula. It is not necessary to specify formulas for all nine parameter types of the DDM. Any parameters not explicitly included in the formula argument will be assigned default values. Additionally, parameters included in the formula can be fixed to specific values using the constants argument.\nWe customized how drift rates are mapped to experimental conditions by modifying the contrasts argument in the design. Instead of the default treatment contrasts for the stimulus factor (S), we used a contrast that codes left stimuli as -1 and right stimuli as 1. This coding allows the intercept parameter v to reflect overall response bias: positive values indicate a bias toward rightward perception, and negative values indicate a bias toward leftward.\nThe v_Sdif parameter captures how the drift rate depends on the stimulus direction (left vs. right), using the same -1/1 coding. Higher values of v_Sdif indicate faster evidence accumulation toward the correct response.\nBecause we had no reason to expect congruency (CI) to affect response bias, we fixed the v_CIinc parameter, which would capture bias shifts between congruent and incongruent trials, to zero using the constants argument.\nAs a result, the model estimates four drift rate–related parameters:\n\nv: overall bias (independent of stimulus)\nv_Sdif: stimulus-driven drift modulation\nv_Sdif:CIinc: interaction capturing how congruency affects the stimulus-dependent drift\n\n\nSmat = matrix(c(-1,1), nrow = 2,dimnames=list(NULL,\"dif\"))\n\ndesignWDDM = design(\n  model = DDM,\n  data = dat,\n  formula = list(\n    # Threshold (a) varies with GAP. \n    a ~ GAP, # The baseline (intercept) corresponds to \"large\".\n    # Drift rate (v) varies with CI\n    v ~ S*CI,\n    # Non-decision time (t0) and bias (Z) are estimated but \n    #constant across all conditions.\n    t0 ~ 1,\n    Z ~ 1),\n  contrasts = list(S = Smat),\n  constants=c(v_CIinc = 0)\n)\n\nParameter(s) s, st0, sv, SZ not specified in formula and assumed constant.\n\n\n\n Sampled Parameters: \n[1] \"a\"            \"a_GAPsmall\"   \"v\"            \"v_Sdif\"       \"v_Sdif:CIinc\"\n[6] \"t0\"           \"Z\"           \n\n Design Matrices: \n$a\n   GAP a a_GAPsmall\n large 1          0\n small 1          1\n\n$v\n     S   CI v v_Sdif v_CIinc v_Sdif:CIinc\n  left cong 1     -1       0            0\n  left  inc 1     -1       1           -1\n right cong 1      1       0            0\n right  inc 1      1       1            1\n\n$t0\n t0\n  1\n\n$Z\n Z\n 1\n\n$s\n s\n 1\n\n$st0\n st0\n   1\n\n$sv\n sv\n  1\n\n$SZ\n SZ\n  1\n\n\nThe design object shows which parameters will be estimated and how they map to the experimental design (the contrast matrices for each parameter type).\n\nmapped_pars(designWDDM)\n\n$a \n  GAP    \n large  : exp(a)\n small  : exp(a + a_GAPsmall)\n\n$v \n  S      CI    \n left   cong  : v - v_Sdif\n left   inc   : v - v_Sdif + v_CIinc - v_Sdif:CIinc\n right  cong  : v + v_Sdif\n right  inc   : v + v_Sdif + v_CIinc + v_Sdif:CIinc\n\n\n\nWe now simulate data from the model by specifying a vector of group-level means. These are defined on the transformed scale (log for positive, probit for bounded).\n\npmean_sim = c(\n  a = log(1.2),               # baseline threshold\n  a_GAPsmall = log(1.1),    # increase threshold\n  \n  v = 0,           # drift bias\n  v_Sdif = 1.1,   # drift rate\n  'v_Sdif:CIinc' = 0.7,     # increase drift\n  \n  t0 = log(0.3),       # non-decision time\n  Z = qnorm(0.5)        # bias (0.5 on natural scale = unbiased)\n)\n\n\nmapped_pars(designWDDM, p_vector = pmean_sim)\n\n    CI   GAP     S    v    a sv  t0 st0 s   Z SZ    z sz\n1 cong large  left -1.1 1.20  0 0.3   0 1 0.5  0 0.60  0\n2  inc large  left -1.8 1.20  0 0.3   0 1 0.5  0 0.60  0\n3 cong small  left -1.1 1.32  0 0.3   0 1 0.5  0 0.66  0\n4  inc small  left -1.8 1.32  0 0.3   0 1 0.5  0 0.66  0\n5 cong large right  1.1 1.20  0 0.3   0 1 0.5  0 0.60  0\n6  inc large right  1.8 1.20  0 0.3   0 1 0.5  0 0.60  0\n7 cong small right  1.1 1.32  0 0.3   0 1 0.5  0 0.66  0\n8  inc small right  1.8 1.32  0 0.3   0 1 0.5  0 0.66  0\n\n\n\n\nNote. log scale\n\nBecause a is estimated on a log scale adding an effect has a multiplicative effect on the natural scale. For example if \\(a = log(1)\\) and \\(a_{GAPsmall} = log(1) = 0\\), then the speed condition threshold is \\(exp( log(1) + log(1) ) = 1 x 1 = 1\\) (i.e, the same). Similarly if \\(a_{GAPsmall} = log(1.5) = exp( log(1) + log(1.5) ) = 1.5\\) (i.e., more).\n\nThe model’s proposed evidence accumulation indicates that drift rates decrease in the incongruent condition, while the decision boundary increases when the gap is small.\nplot_design(designWDDM,p_vector = pmean_sim,\n            factors = list(v = c(\"S\", \"CI\"), \n                           B = \"GAP\"),\n            plot_factor =\"S\")\n\n\n\n\n\n\n\n\nGenerate subject-level parameters:\n\nsubj_pars = make_random_effects(\n  design = designWDDM,\n  group_means = pmean_sim,\n  variance_proportion = 0.2,\n  covariances = diag(0.1, length(pmean_sim))  \n)\n\nSimulate response time and choice data (50 trials per subject per condition):\n\nsimWDDM = make_data(subj_pars, designWDDM, n_trials = 50)\n\n\n\n\n  1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20 \n400 400 400 400 400 400 400 400 400 400 400 400 400 400 400 400 400 400 400 400 \n 21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40 \n400 400 400 400 400 400 400 400 400 400 400 400 400 400 400 400 400 400 400 400 \n\n\nCheck simulated data:\n# Add accuracy column\nsimWDDM$acc = simWDDM$R == simWDDM$S\n\n# Accuracy and RT by condition\naggregate(acc~GAP, simWDDM, FUN = mean)\naggregate(acc~CI, simWDDM, FUN = mean)\naggregate(rt~GAP, simWDDM, FUN = median)\naggregate(rt~CI, simWDDM, FUN = median)\n# Plot RT distributions by factor\nplot_density(simWDDM, adjust = 1.5, defective_factor = \"GAP\")\nplot_density(simWDDM, adjust = 1.5, defective_factor = \"CI\")\n\n\n\n    GAP    acc\n1 large 0.7995\n2 small 0.8310\n\n\n    CI     acc\n1 cong 0.77425\n2  inc 0.85625\n\n\n\n\n    GAP        rt\n1 large 0.5246711\n2 small 0.5673353\n\n\n    CI        rt\n1 cong 0.5589868\n2  inc 0.5335750"
+  },
+  {
+    "objectID": "eam-workshop.html#fit-the-model-to-the-simulated-data",
+    "href": "eam-workshop.html#fit-the-model-to-the-simulated-data",
+    "title": "Workshop",
+    "section": "Fit the model to the simulated data",
+    "text": "Fit the model to the simulated data\nPrior specification:\n\n# Define prior means (on transformed scale) for model fitting\npmean = pmean_sim\npmean[\"a_GAPsmall\"]  = log(1) # effect 0\npmean[\"v_Sdif:CIinc\"]  = log(1) # effect 0\n\n\nmapped_pars(designWDDM, p_vector = pmean)\n\n    CI   GAP     S    v   a sv  t0 st0 s   Z SZ   z sz\n1 cong large  left -1.1 1.2  0 0.3   0 1 0.5  0 0.6  0\n2  inc large  left -1.1 1.2  0 0.3   0 1 0.5  0 0.6  0\n3 cong small  left -1.1 1.2  0 0.3   0 1 0.5  0 0.6  0\n4  inc small  left -1.1 1.2  0 0.3   0 1 0.5  0 0.6  0\n5 cong large right  1.1 1.2  0 0.3   0 1 0.5  0 0.6  0\n6  inc large right  1.1 1.2  0 0.3   0 1 0.5  0 0.6  0\n7 cong small right  1.1 1.2  0 0.3   0 1 0.5  0 0.6  0\n8  inc small right  1.1 1.2  0 0.3   0 1 0.5  0 0.6  0\n\n\nInspect and visualize the prior:\n\n# Prior standard deviations (psd)\npsd = sampled_pars(designWDDM, doMap = FALSE)\npsd[1:length(pmean)] = c(.5, .5, 1, 1, 1, 0.5, 0.4)\n\n# Prior object, type = \"standard\": hierarchical model with full covariance\npriorWDDM=prior(designWDDM,\n                mu_mean=pmean,\n                mu_sd=psd,\n                type = \"standard\")\npriorWDDM\n\nMean and variance of the prior on the transformed parameters: \na ~ 𝑁(0.18, 0.25)\na_GAPsmall ~ 𝑁(0, 0.25)\nv ~ 𝑁(0, 1)\nv_Sdif ~ 𝑁(1.1, 1)\nv_Sdif:CIinc ~ 𝑁(0, 1)\nt0 ~ 𝑁(-1.20, 0.25)\nZ ~ 𝑁(0, 0.16)\n\nFor detailed info use summary(&lt;prior&gt;)\n\nsummary(priorWDDM)\n\nmu  -  Group-level mean \n\nmean of the group-level mean prior : \n           a   a_GAPsmall            v       v_Sdif v_Sdif:CIinc           t0 \n   0.1823216    0.0000000    0.0000000    1.1000000    0.0000000   -1.2039728 \n           Z \n   0.0000000 \nvariance of the group-level mean prior : \n                a a_GAPsmall v v_Sdif v_Sdif:CIinc   t0    Z\na            0.25       0.00 0      0            0 0.00 0.00\na_GAPsmall   0.00       0.25 0      0            0 0.00 0.00\nv            0.00       0.00 1      0            0 0.00 0.00\nv_Sdif       0.00       0.00 0      1            0 0.00 0.00\nv_Sdif:CIinc 0.00       0.00 0      0            1 0.00 0.00\nt0           0.00       0.00 0      0            0 0.25 0.00\nZ            0.00       0.00 0      0            0 0.00 0.16\n\nSigma  -  Group-level covariance matrix \n\ndegrees of freedom on the group-level (co-)variance prior, 2 leads to uniform correlations. Single value : \n[1] 2\nscale on the group-level variance prior, larger values lead to larger variances : \n           a   a_GAPsmall            v       v_Sdif v_Sdif:CIinc           t0 \n         0.3          0.3          0.3          0.3          0.3          0.3 \n           Z \n         0.3 \n\n\nCarefully reviewing and visualizing the selected priors is highly important.\n\nplot(priorWDDM, map = FALSE) # transformed scale\n\n\n\n\n\n\n\nplot(priorWDDM) # natural scale\n\n\n\n\n\n\n\n\n\n\nNote. Probit scale.\n\nAlways check prior on both transformed and natural scale\n\n# Setting high sd for probit-transformed Z leads to a peaked prior (non-uniform)\npsd1 = psd\npsd1[7] = 4  # very wide spread\npriorWDDM1 = prior(designWDDM, pmean = pmean, psd = psd1, type = \"single\")\nplot(priorWDDM1, designWDDM, use_par = \"Z\")\n\n\n\n\n\n\n\n# Setting sd = 1 yields a uniform distribution on natural scale (Z ~ U(0,1))\npsd1[7] = 1\npriorWDDM1 = prior(designWDDM, pmean = pmean, psd = psd1, type = \"single\")\nplot(priorWDDM1, designWDDM, use_par = \"Z\")\n\n\n\n\n\n\n\n\n\n\nRun model\nThe make_emc() creates an emc object by combining the data, prior, and model specification into a emc object that is needed in fit()\n\n?make_emc()\n\n# Create MCMC samplers for model fitting\nsamplers = make_emc(simWDDM, designWDDM, prior = priorWDDM)\n\nProcessing data set 1\n\n\nLikelihood speedup factor: 1.9 (8634 unique trials)\n\n\n\n\nNote. rt_resolution\n\nBy default, rt_resolution = 0.02, which corresponds to a typical experimental setup using a 50Hz monitor without synchronization to screen refresh. This improves computational efficiency by calculating the likelihood only once for each unique combination of parameters and discretized response times (at the specified resolution), rather than for every trial individually. The resulting speedup and the number of unique trials retained after this compression are reported automatically.\n\n\nhWDDM=fit(samplers,verbose=TRUE, iter = 2000,\n          cores_per_chain = 3,fileName = \"fits/tmpWDDM.RData\")\n\nRunning preburn stage\n\n\n1: Iterations preburn = 50\n\n\nRunning burn stage\n\n\n1: Iterations burn = 100\n\n\nMean Rhat = 1.034\n\n\nRunning adapt stage\n\n\n1: Iterations adapt = 100\n\n\nEnough unique values detected: 150\n\n\nTesting proposal distribution creation\n\n\nSuccessfully adapted - stopping adaptation\n\n\nRunning sample stage\n\n\n1: Iterations sample = 100\n\n\nMax Rhat = 1.067\n\n\n2: Iterations sample = 200\n\n\nMax Rhat = 1.036\n\n\n3: Iterations sample = 300\n\n\nMax Rhat = 1.023\n\n\n4: Iterations sample = 400\n\n\nMax Rhat = 1.076\n\n\n5: Iterations sample = 500\n\n\nMax Rhat = 1.054\n\n\n6: Iterations sample = 600\n\n\nMax Rhat = 1.046\n\n\n7: Iterations sample = 700\n\n\nMax Rhat = 1.036\n\n\n8: Iterations sample = 800\n\n\nMax Rhat = 1.031\n\n\n9: Iterations sample = 900\n\n\nMax Rhat = 1.023\n\n\n10: Iterations sample = 1000\n\n\nMax Rhat = 1.019\n\n\n11: Iterations sample = 1100\n\n\nMax Rhat = 1.017\n\n\n12: Iterations sample = 1200\n\n\nMax Rhat = 1.015\n\n\n13: Iterations sample = 1300\n\n\nMax Rhat = 1.013\n\n\n14: Iterations sample = 1400\n\n\nMax Rhat = 1.011\n\n\n15: Iterations sample = 1500\n\n\nMax Rhat = 1.01\n\n\n16: Iterations sample = 1600\n\n\nMax Rhat = 1.009\n\n\n17: Iterations sample = 1700\n\n\nMax Rhat = 1.007\n\n\n18: Iterations sample = 1800\n\n\nMax Rhat = 1.006\n\n\n19: Iterations sample = 1900\n\n\nMax Rhat = 1.006\n\n\n20: Iterations sample = 2000\n\n\nMax Rhat = 1.006\n\n\nTime difference of 4.142872 mins\n\nsave(hWDDM,file=\"fits/WDDM.RData\")\n\n\n\nbatch mode option\n\nBecause hierarchical model sampling can be time-consuming, we typically avoid launching the fitting process directly from the console. Instead, we use batch mode to manage and run long sampling jobs more reliably.\nStep 1: Save the sampler object\nFirst, save the emc sampler object to disk. It’s best to store this in a subdirectory dedicated to model fits, for example, fits/WDDM.RData for the DDM model.\nsave(samplers, file = \"fits/WDDM.RData\")\nStep 2: Create a batch script\nNext, create a separate R script (e.g., runWDDM.R) in the same directory. This script should contain the fitting commands:\nlibrary(EMC2)\nload(\"WDDM.RData\")\nhWDDM = fit(samplers,verbose=TRUE, iter = 2000,\n            cores_per_chain = 3,fileName = \"tmpWDDM.RData\")\nsave(hWDDM,file=\"WDDM.RData\")\n\nThe fileName argument ensures that progress is saved after each fitting cycle, preventing loss in case of interruption.\ncores_per_chain allows parallel sampling across multiple cores (only on macOS and Linux). With 3 chains and 3 cores per chain, a total of 9 cores will be used.\n\nStep 3: Run the script from the terminal In RStudio, open a terminal via Terminal &gt; New Terminal, navigate to the relevant directory:\ncd ~/eam-workshop/fits\nThen run the batch script:\nnohup R CMD BATCH runWDDM.R &\n\nnohup (“no hangup”) ensures the fitting continues even if the terminal is closed. (To kill run kill process_ID_number)\n& runs the process in the background, so you can continue using the terminal.\n\nStep 4: Monitor progress\nAll console output will be saved to runWDDM.Rout. You can open this file while sampling is ongoing to monitor progress."
+  },
+  {
+    "objectID": "eam-workshop.html#load-fitted-model",
+    "href": "eam-workshop.html#load-fitted-model",
+    "title": "Workshop",
+    "section": "Load fitted model",
+    "text": "Load fitted model\nThis command loads the previously saved sampler results from a .RData file. This is useful when fitting was done in batch mode and you want to inspect the results.\n\nprint(load(\"fits/WDDM.RData\"))\n\n[1] \"hWDDM\"\n\n\n\nCheck convergence and summarize parameter estimates\nThe check() function displays convergence diagnostics such as R-hat values, highlighting parameters that may not have fully converged.\n\ncheck(hWDDM, selection = \"mu\")  # Show the worst convergence diagnostics\n\nIterations:\n     preburn burn adapt sample\n[1,]       0    0     0   2000\n[2,]       0    0     0   2000\n[3,]       0    0     0   2000\n\n mu \n        a a_GAPsmall        v   v_Sdif v_Sdif:CIinc   t0        Z\nRhat    1          1    1.001    1.002        1.001    1    1.001\nESS  6000       5696 4082.000 3533.000     2762.000 6259 5639.000\n\n\n\n\n\n\n\n\n\nYou can also check the correlation between parameters with the function pairs_posterior().\n\npairs_posterior(hWDDM, selection = \"mu\")\n\n\n\n\n\n\n\n\nThe summary() function provides posterior summaries for all parameters (e.g., mean, SD, quantiles).\n\nsummary(hWDDM)\n\n\n mu \n               2.5%    50%  97.5%  Rhat  ESS\na            -0.026  0.083  0.193 1.000 6000\na_GAPsmall    0.052  0.152  0.252 1.000 5696\nv            -0.104 -0.007  0.090 1.001 4082\nv_Sdif        1.069  1.181  1.295 1.002 3533\nv_Sdif:CIinc  0.536  0.659  0.784 1.001 2762\nt0           -1.288 -1.168 -1.044 1.000 6259\nZ            -0.182 -0.063  0.053 1.001 5639\n\n sigma2 \n              2.5%   50% 97.5%  Rhat  ESS\na            0.079 0.121 0.199 1.000 4882\na_GAPsmall   0.065 0.100 0.162 1.000 4822\nv            0.042 0.073 0.130 1.001 2717\nv_Sdif       0.064 0.108 0.188 1.002 2785\nv_Sdif:CIinc 0.055 0.104 0.195 1.001 1622\nt0           0.101 0.154 0.247 1.001 5352\nZ            0.096 0.146 0.237 1.000 4701\n\n alpha 1 \n               2.5%    50%  97.5%  Rhat  ESS\na             0.506  0.583  0.666 1.000 5826\na_GAPsmall   -0.105 -0.019  0.062 1.001 5963\nv             0.182  0.349  0.522 1.000 5234\nv_Sdif        0.963  1.139  1.315 1.000 4657\nv_Sdif:CIinc  0.463  0.706  0.944 1.000 4461\nt0           -1.398 -1.314 -1.249 1.000 5785\nZ            -0.094 -0.009  0.072 1.000 5719\n\n\nThe plot_pars() help inspect parameter estimates across conditions and assess sampling performance.\n\nplot_pars(hWDDM, layout = c(2, 4))\n\n\n\n\n\n\n\n# map = TRUE, natural scale (not transformed)\nplot_pars(hWDDM, layout = c(2, 4), use_prior_lim = FALSE, map = TRUE) \n\n\n\n\n\n\n\n\n\n\n\nPosterior predictive checks\nPosterior predictive checks are a key part of model validation, helping us assess how well the model can reproduce the observed data. By using the predict() function, we can simulate data from the model using the posterior samples, which can then be compared to the observed data.\n\nppWDDM = predict(hWDDM, n_cores = 4)\n\nPlot cumulative distribution functions (CDFs) and density plots for model predictions, split by conditions defined by the factors GAP and CI.\nplot_cdf(simWDDM, ppWDDM, defective_factor = \"GAP\")\nplot_density(simWDDM, ppWDDM, defective_factor = \"GAP\")\nplot_cdf(simWDDM, ppWDDM, defective_factor = \"CI\")\nplot_density(simWDDM, ppWDDM, defective_factor = \"CI\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLet’s take a closer look at key statistics to evaluate the model fit in more detail.\nAccuracy is well-predicted across all conditions, consistently falling within the 95% credible intervals of the posterior predictive distributions:\n\npc=function(d) 100 * mean(d$S == d$R)\nplot_stat(\n  simWDDM, ppWDDM,\n  factors = c(\"GAP\", \"CI\"),\n  layout = c(2, 2),\n  stat = pc,\n  stat_name = \"Accuracy (%)\"\n)\n\n\n\n\n\n\n\n\nThe median RT for correct responses is also accurately predicted, closely aligning with the observed data across conditions:\n\nplot_stat(\n  simWDDM, ppWDDM,\n  factors = c(\"GAP\", \"CI\"),\n  layout = c(2, 2),\n  stat = function(d) median(d$rt[d$R == d$S]),\n  stat_name = \"Median Correct RT (s)\"\n)\n\n\n\n\n\n\n\n\nThe model captures the variability in RTs for correct responses effectively, as shown by the predicted standard deviation:\n\nplot_stat(\n  simWDDM, ppWDDM,\n  factors = c(\"GAP\", \"CI\"),\n  layout = c(2, 2),\n  stat = function(d) sd(d$rt[d$R == d$S]),\n  stat_name = \"Sd of correct RT (s)\"\n)\n\n\n\n\n\n\n\n\nFinally, the model provides a reasonable estimate of the median RT for incorrect responses, despite fewer observations in these trials:\n\nplot_stat(\n  simWDDM, ppWDDM,\n  factors = c(\"GAP\", \"CI\"),\n  layout = c(2, 2),\n  stat = function(d) median(d$rt[d$R != d$S]),\n  stat_name = \"Median Incorrect RT (s)\"\n)\n\n\n\n\n\n\n\n\n\n\n\nParameter recovery\nParameter recovery is another critical diagnostic step in validating models. It helps answer the fundamental question:\n\nCan the model accurately estimate the true underlying parameters that generated the data?\n\n\nModel validity: Good recovery indicates that the model structure is appropriate and that the parameters are identifiable.\nInference reliability: If a model fails to recover known parameters, its estimates from real data may also be misleading or biased.\nDesign evaluation: Recovery can reveal whether certain experimental conditions or parameter settings are insufficient to constrain the model.\n\nWe begin by evaluating the overall recovery:\n\ntrue_pars = pmean_sim\nrecovery(hWDDM, true_pars = true_pars)\n\n\n\n\n\n\n\n\nTo visualize the accuracy of parameter estimation, we plot the posterior means against the true values for each parameter. A strong recovery is indicated by points clustering around the diagonal:\n\nplot_pars(hWDDM, layout = c(2, 5), true_pars = true_pars,\n          use_prior_lim = FALSE, plot_prior = FALSE)\n\n\n\n\n\n\n\n\nNext, we evaluate coverage, which checks whether the true parameter values fall within the 95% credible intervals of the posterior distributions.\nrecovery(hWDDM, true_pars = subj_pars, \n         do_CI = TRUE, stat = \"coverage\", selection = \"alpha\")\n\n\n\n\n\n\n\nGood recovery provides trustworthy inferences!\n\n\n\nPosterior Testing\nOnce the checks are performed, we can investigate hypotheses about specific parameters using their posterior distributions. The parameters() function extracts posterior samples, which can then be used for various forms of inference:\n\npost = parameters(hWDDM)\n\nPosterior samples provide a flexible foundation for testing directional hypotheses, computing credible intervals, and evaluating evidence against specific null values.\nPosterior Probability. A simple and intuitive use of the posterior is to compute the proportion of samples supporting a directional hypothesis. For example:\n\nmean(post$a_GAPsmall &gt; 0)\n\n[1] 0.997\n\ncredible(hWDDM, \"a_GAPsmall\", alternative = \"greater\")\n\n      a_GAPsmall mu\n2.5%        0.05 NA\n50%         0.15  0\n97.5%       0.25 NA\nattr(,\"greater\")\n[1] 0.997\n\n\nThis tells us the posterior probability that a_GAPsmall is greater than 0.\nCredible intervals and null value testing. To formally assess uncertainty and determine whether an effect is credibly different from a specific value (e.g., zero), we can compute credible intervals. The credible() function reports whether the 95% credible interval includes the null value (mu = 0).\n\ncredible(hWDDM, \"a_GAPsmall\", mu = 0)\n\n      a_GAPsmall mu\n2.5%        0.05 NA\n50%         0.15  0\n97.5%       0.25 NA\nattr(,\"less\")\n[1] 0.003\n\n\nBayes factor. To quantify the evidence for or against the null hypothesis, we can compute a Bayes factor. This tests whether the data shifts the belief away from the prior (evidence against the null).\n\nhypothesis(hWDDM, \"a_GAPsmall\", selection = \"mu\", map = FALSE)\n\n\n\n\n\n\n\n\n[1] 5.300889"
+  },
+  {
+    "objectID": "eam-workshop.html#racing-diffusion-model-rdm",
+    "href": "eam-workshop.html#racing-diffusion-model-rdm",
+    "title": "Workshop",
+    "section": "Racing Diffusion Model (RDM)",
+    "text": "Racing Diffusion Model (RDM)\nIn race models, each possible response is represented by a separate accumulator, and each accumulator has its own parameters. To help structure the model, the design function includes an argument called Rlevels, which automatically defines a latent response factor (lR) that indexes each accumulator according to its associated response (e.g., left or right).\nRace models require identifying which accumulator corresponds to the correct response for each trial. This is done using the matchfun argument, which takes a function that compares the stimulus and response labels.\nFor simple designs, where the stimulus factor (S) and response factor (lR) have the same levels, the matchfun looks like this:\n\nmatchfun=function(d)d$S==d$lR\n\nThis function returns TRUE when the accumulator corresponds to the correct response for a given stimulus.\nUsing matchfun, the model creates a new factor called lM (latent match), which distinguishes:\n\nmatching accumulators: those representing the correct response\nmismatching accumulators: those representing the incorrect response\n\nThis allows us to estimate different drift rates for correct vs. incorrect responses, which is crucial for modeling decision accuracy.\nTo make interpretation easier, drift rates are often reparameterized using:\n\nAn average (intercept) across accumulators\nA difference (dif) between matching and mismatching accumulators\n\nThis is done by applying a contrast matrix to the lM factor, typically:\n\nADmat=matrix(c(-1/2,1/2),ncol=1,dimnames=list(NULL,\"dif\")); ADmat\n\n      dif\n[1,] -0.5\n[2,]  0.5\n\n\nIn this parameterization, the intercept represents the overall drift rate, typically interpreted as a measure of decision urgency or stimulus strength. The v_lMdif parameter captures the difference in drift rates between matching and mismatching accumulators, reflecting how well the participant can discriminate between correct and incorrect responses.\nThis contrast coding is also applied to the congruence effect (CI). Specifically, we estimate v_lMdif:CIdif as the effect of congruency on drift quality, while fixing CIdif, the effect of congruency on the overall drift rate, to zero using the constant argument.\nAll parameters in the RDM are positive and estimated on the log scale. As in the DDM, within-trial variability is fixed to 1. We use a simplified RDM variant in which starting point variability (A) is fixed to zero.\n\ndesignRDM=design(data=simWDDM,model=RDM,\n                 formula=list(B~GAP+lR,\n                              v~lM*CI,\n                              t0~1),\n                 matchfun=function(d)d$S==d$lR,\n                 contrasts=list(lM=ADmat,\n                                CI=ADmat),\n                 constants = c(v_CIdif=0))\n\nParameter(s) A, s not specified in formula and assumed constant.\n\n\n\n Sampled Parameters: \n[1] \"B\"             \"B_GAPsmall\"    \"B_lRright\"     \"v\"            \n[5] \"v_lMdif\"       \"v_lMdif:CIdif\" \"t0\"           \n\n Design Matrices: \n$B\n   GAP    lR B B_GAPsmall B_lRright\n large  left 1          0         0\n large right 1          0         1\n small  left 1          1         0\n small right 1          1         1\n\n$v\n    lM   CI v v_lMdif v_CIdif v_lMdif:CIdif\n  TRUE cong 1     0.5    -0.5         -0.25\n FALSE cong 1    -0.5    -0.5          0.25\n  TRUE  inc 1     0.5     0.5          0.25\n FALSE  inc 1    -0.5     0.5         -0.25\n\n$t0\n t0\n  1\n\n$A\n A\n 1\n\n$s\n s\n 1\n\n\n\n\nPrior specification\nAs in previous analyses, we expect a higher threshold for participants anticipating a small gap, reflecting increased caution. Accuracy is also expected to be above chance, indicated by v_lMdif being well above log(1). Finally, we anticipate an increase in drift rate quality as a function of incongruency (i.e., v_lMdif:CIdif), reflecting greater discrimination during incongruent trials.\n\npmean = c(\n  B = log(2),               # baseline threshold\n  B_GAPsmall = log(1.2),    # increase threshold\n  B_lRright=log(1),  #left vs. right bias\n  \n  v = log(2.5),         # the average rate \n  v_lMdif = log(3),   # v_lMd is the average quality\n  'v_lMdif:CIdif' = log(1.5), # the incongruent condition effect on quality\n  \n  t0 = log(0.25)       # non-decision time\n)\n\n\nmapped_pars(designRDM, p_vector = pmean)\n\n     CI   GAP     S    lR    lM     v   B A   t0 s   b\n1  cong large  left  left  TRUE 3.913 2.0 0 0.25 1 2.0\n2  cong large  left right FALSE 1.597 2.0 0 0.25 1 2.0\n3   inc large  left  left  TRUE 4.792 2.0 0 0.25 1 2.0\n4   inc large  left right FALSE 1.304 2.0 0 0.25 1 2.0\n5  cong small  left  left  TRUE 3.913 2.4 0 0.25 1 2.4\n6  cong small  left right FALSE 1.597 2.4 0 0.25 1 2.4\n7   inc small  left  left  TRUE 4.792 2.4 0 0.25 1 2.4\n8   inc small  left right FALSE 1.304 2.4 0 0.25 1 2.4\n9  cong large right  left FALSE 1.597 2.0 0 0.25 1 2.0\n10 cong large right right  TRUE 3.913 2.0 0 0.25 1 2.0\n11  inc large right  left FALSE 1.304 2.0 0 0.25 1 2.0\n12  inc large right right  TRUE 4.792 2.0 0 0.25 1 2.0\n13 cong small right  left FALSE 1.597 2.4 0 0.25 1 2.4\n14 cong small right right  TRUE 3.913 2.4 0 0.25 1 2.4\n15  inc small right  left FALSE 1.304 2.4 0 0.25 1 2.4\n16  inc small right right  TRUE 4.792 2.4 0 0.25 1 2.4\n\n\nWe can visualize the assumed model via the plot_design() function:\n\nplot_design(designRDM, p_vector = pmean,\n            factors = list(v = c(\"S\", \"CI\"), \n                           B = \"GAP\"),\n            plot_factor = \"S\")\n\n\n\n\n\n\n\n\nSet the prior on the effect to zero before model fitting:\n\npmean['B_GAPsmall'] = log(1)\npmean['v_lMdif:CIdif'] =log(1)\n\npsd=c(1,1,1,1,1,1,.7)\n\npriorRDM=prior(designRDM,\n               mu_mean=pmean,\n               mu_sd=psd,\n               type = \"standard\")\n\n\n\nRun model\n\nsamplers = make_emc(simWDDM, designRDM, prior = priorRDM)\n\nProcessing data set 1\n\n\nLikelihood speedup factor: 1.9 (8634 unique trials)\n\nhRDM=fit(samplers,verbose=FALSE, iter = 2000,cores_per_chain = 3,\n         fileName = \"fits/tmpRDM.RData\")\nsave(hRDM,file=\"fits/RDM.RData\")\n\n\nprint(load(\"fits/RDM.RData\"))\n\n[1] \"hRDM\"\n\n\n\n\nCheck convergence and summarize parameter estimates\n\ncheck(hRDM,selection = \"mu\") \n\nIterations:\n     preburn burn adapt sample\n[1,]       0    0     0   2000\n[2,]       0    0     0   2000\n[3,]       0    0     0   2000\n\n mu \n        B B_GAPsmall B_lRright        v  v_lMdif v_lMdif:CIdif       t0\nRhat    1          1     1.001    1.003    1.003         1.002    1.001\nESS  5071       5136  5637.000 1882.000 1761.000      2130.000 5366.000\n\n\n\n\n\n\n\n\npairs_posterior(hRDM,selection = \"mu\")\n\n\n\n\n\n\n\n\nThese plots help inspect parameter estimates.\n\nplot_pars(hRDM, layout = c(2, 4))\n\n\n\n\n\n\n\nplot_pars(hRDM, layout = c(2, 5), use_prior_lim = FALSE, map = TRUE)\n\n\n\n\n\n\n\n\n\n\nCompare WDDM and RDM\nWe compare the WDDM and RDM based on predicted vs. observed response times. The data were simulated under the WDDM model, so we expect it to yield a better fit.\n\nppRDM = predict(hRDM, n_cores = 4)\n\nVisual Comparison: CDF and Density Plots\nThe plots below show cumulative distribution functions (CDFs) and probability density functions (PDFs) for observed vs. predicted response times. Comparisons are split by two experimental factors: GAP and CI.\nplot_cdf(simWDDM,list(DDM = ppWDDM,RDM = ppRDM), \n         defective_factor = \"GAP\")\nplot_density(simWDDM,list(DDM = ppWDDM,RDM = ppRDM), defective_factor = \"GAP\")\nplot_cdf(simWDDM,list(DDM = ppWDDM,RDM = ppRDM), defective_factor = \"CI\")\nplot_density(simWDDM,list(DDM = ppWDDM,RDM = ppRDM), defective_factor = \"CI\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nModel comparison metrics\nWe use model selection criteria provided by EMC2 to assess model fit:\n\nDIC (Deviance Information Criterion) and\nBPIC (Bayesian Predictive Information Criterion) balance fit and complexity; BPIC penalizes complexity more strongly, thus tending to prefer simpler models.\nMD (Marginal Deviance) is sensitive to prior specification and is used to compute Bayes Factors.\n\n\ncompare(list(WDDM = hWDDM, RDM = hRDM))\n\n        MD wMD   DIC wDIC  BPIC wBPIC EffectiveN meanD Dmean  minD\nWDDM -4691   1 -5373    1 -5041     1        333 -5706 -6019 -6039\nRDM  -3727   0 -4272    0 -3926     0        346 -4617 -4910 -4963\n\n\nLower values for DIC, BPIC, and MD indicate better model performance. Since the data were simulated under the WDDM, it is expected to outperform RDM."
+  },
+  {
+    "objectID": "eam-home.html",
+    "href": "eam-home.html",
+    "title": "A practical introduction to EAMs",
+    "section": "",
+    "text": "This workshop is designed to provide the rationale for using evidence accumulation models on experiments involving perceptual judgements. Evidence accumulation models offer a comprehensive approach by jointly considering participants’ choices and response times. These models can also handle multiple-choice scenarios (two or more), allowing the analysis of responses in a broad range of tasks."
   },
   {
     "objectID": "eam-slide.html",

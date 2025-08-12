@@ -1,8 +1,13 @@
 ---
-title: " "
+title: "Workshop"
+html:
+    grid:
+      margin-width: 100px
+execute: 
+  cache: true
 ---
 
-```{r}
+```{r setup}
 #| echo: false
 #| message: false
 library(ggplot2)
@@ -11,44 +16,40 @@ library(dplyr)
 
 ## Bayesian Inference
 
-**Data are fixed**, but **parameters are uncertain**.
-
 <br/>
 
 $$
-p(\boldsymbol{\theta}|\boldsymbol{D}) = \frac{p(\boldsymbol{D}|\boldsymbol{\theta})p(\boldsymbol{\theta})}{p({\boldsymbol D})}
+p(\theta \mid y) = \frac{\mathcal{L}(\theta \mid y) \, p(\theta)}{p(y)}
 $$
 <br/>
 
-- Inference produces **posterior distributions** over parameters  
+-   $p(\theta)$: Prior distribution
+-   $\mathcal{L}(\theta \mid y)$: Likelihood
+-   $p(\theta \mid y)$: Posterior distribution
 
-- Captures uncertainty and incorporates prior knowledge  
 
 
-## Hierarchical Modeling {.align-center}
+## Hierarchical Modeling
 
-*Are participants identical or fully independent?*
+**Are participants identical or fully independent?**
 
-:::: {.columns}
+:::: {.columns .align-center}
 ::: {.column width="45%"}
+<br/><br/>
 
 Models **group-level structure**
+<br/><br/>
 
 each participant’s parameters ∼ drawn from a population distribution
 <br/><br/>
 
-**Group-level** generalization
-<br/>
-
-**Individual-level** inference  
-<br/>
 
 :::
 
 ::: {.column width="55%"}
 
 
-```{r}
+```{r plot hie}
 #| echo: false
 #| fig-width: 8
 #| fig-asp: .7
@@ -56,27 +57,27 @@ each participant’s parameters ∼ drawn from a population distribution
 #| warning: false
 
 # Function to create a normal distribution curve
-normal_curve <- function(mean, sd, n = 200, range_mult = 3) {
-  x <- seq(mean - range_mult*sd, mean + range_mult*sd, length.out = n)
-  y <- dnorm(x, mean, sd)
+normal_curve = function(mean, sd, n = 200, range_mult = 3) {
+  x = seq(mean - range_mult*sd, mean + range_mult*sd, length.out = n)
+  y = dnorm(x, mean, sd)
   data.frame(x = x, y = y)
 }
 
 # Create data for the plots
-hyper_curve <- normal_curve(0.5, 0.05)
-individual_curves <- rbind(
+hyper_curve = normal_curve(0.5, 0.05)
+individual_curves = rbind(
   normal_curve(0.35, 0.06) %>% mutate(subj = "1"),
   normal_curve(0.5, 0.03) %>% mutate(subj = "2"),
   normal_curve(0.7, 0.04) %>% mutate(subj = "3")
 )
 
 # Normalize y values
-max_y <- max(c(hyper_curve$y, individual_curves$y))
-hyper_curve$y <- hyper_curve$y / max_y
-individual_curves$y <- individual_curves$y / max_y
+max_y = max(c(hyper_curve$y, individual_curves$y))
+hyper_curve$y = hyper_curve$y / max_y
+individual_curves$y = individual_curves$y / max_y
 
 # Create the main plot
-p1 <- ggplot() +
+p1 = ggplot() +
   # Hyper-distribution curve
   geom_line(data = hyper_curve, aes(x, y + 1.6), size = 2.5, color = "black") +
   # Individual curves
@@ -119,28 +120,24 @@ print(p1)
 :::::
 
 
-## Why Hierarchical Models?
+**Why Hierarchical Models?**
 
 -   Reduces bias from unmodeled individual variability  
 -   Prevents overfitting *and* underfitting  
 -   **Shrinkage**: pulls extreme or low-quality estimates toward the group mean  
 
-> [Boehm et al. (2018), *Behavior Research Methods*](https://doi.org/10.3758/s13428-018-1054-3)
+> [Boehm et al. (2018), *Behavior Research Methods*](https://doi.org/10.3758/s13428-018-1054-3){target="_blank"}
 
 
+---
 
-## What Are We Trying to Infer?
+# EMC2
 
-We want to estimate:
-
-- **Individual-level parameters**:  $\alpha_1, \alpha_2, \dots, \alpha_N$
-
-
-- **Group-level structure**:  
-  A shared population distribution  $\alpha_i \sim \mathcal{N}(\mu, \Sigma)$
-
-This enables both **individual** and **population** inference.
-
+```{r emc1, echo=TRUE}
+# # If not already done, install the EMC2 package
+# remotes::install_github("ampl-psych/EMC2",ref="dev")
+library(EMC2)
+```
 
 ## Model Structure
 
@@ -154,56 +151,713 @@ p(\mu, \Sigma)
 $$
 
 - **Likelihood**:  
-  $p(\text{data} \mid \alpha_i)$  
-  — How well each participant's data is explained by their parameters
+$p(\text{data} \mid \alpha_i)$  
+— How well each participant's data is explained by their parameters
 
 - **Group-level model**:  
-  $p(\alpha_i \mid \mu, \Sigma)$  — Individual parameters drawn from population distribution
+$p(\alpha_i \mid \mu, \Sigma)$  — Individual parameters drawn from population distribution
 
 - **Hyperprior**:  
-  $p(\mu, \Sigma)$  — Prior beliefs over the group-level structure
+$p(\mu, \Sigma)$  — Prior beliefs over the group-level structure
 
 
-## Group-Level Parameters
+### Group-Level Parameters
 
 Let $n$ = number of individual parameters per subject:
 
 - $\mu$: vector of **population means**  
 - $\Sigma$: symmetric **covariance matrix**, including:
 
-  - Diagonal: **Variances** ($\sigma^2$)
-  - Off-diagonal: **Covariances**  
-    $\frac{n(n-1)}{2}$ elements total
+- Diagonal: **Variances** ($\sigma^2$)
+- Off-diagonal: **Covariances**  
+$\frac{n(n-1)}{2}$ elements total
 
-These hyperparameters are **learned from the data**.
 
 ## Priors
 
-Cognitive-model parameters must be transformed to have support on the real line. This transformation is necessary to meet the assumption of the normal group-level distribution. 
+Cognitive model parameters are transformed to have support on the entire real line, ensuring compatibility with the assumption of a normally distributed group-level prior.
 
--   **Log** transform: Applied to parameters with a lower bound (e.g., non-decision time, which cannot be negative)
--   **Probit** transform: Applied to parameters with both lower and upper bounds (e.g., the starting point parameter in the Drift Diffusion Model, which must lie between two response boundaries)
+-   **Log** transformation is applied to parameters that are strictly positive (e.g., non-decision time), preventing invalid negative values.
 
-As a result, priors are specified on these transformed parameters rather than on the original scales.
+-   **Probit** transformation is used for parameters bounded between 0 and 1 (e.g., the starting point in the Drift Diffusion Model, which lies between the two response boundaries).
 
-## Set up - EMC2
+Consequently, prior distributions are defined on these transformed scales rather than on the natural parameter scales.
 
-```{r, echo=TRUE}
-# # If not already done, install the EMC2 package
-# remotes::install_github("ampl-psych/EMC2",ref="dev")
-library(EMC2)
-```
 
 ## Design specification
 
-The design function creates a design object that maps model parameters to experimental conditions using linear model formulas. This object specifies:
+The `design` function creates a design object that maps model parameters to experimental conditions using linear model formulas. This object specifies:
 
-1.  Model type
-2.  Linear models for estimated parameter types (default values are used for omitted types)
+1.  **Model** type
+2.  **Formula**: Linear models for estimated parameter types (default values are used for omitted types)
 3.  Parameters to be fixed as constants (optional)
 4.  Functions for creating custom factors (optional)
 5.  Custom contrast coding for factors (optional)
 
 
-The simulation procedure
+## Simulation
 
+**First.** We construct a full-factorial data frame with all combinations of factors.
+These factors define the experimental design:
+
+-   CI: Congruency ("cong" or "inc")
+-   GAP: Gap ("large" or "small")
+-   S: Stimulus orientation ("left" or "right")
+-   R: Response orientation ("left" or "right")
+-   subjects: 40 participants
+
+```{r datable,echo=TRUE}
+dat = expand.grid(
+  subjects = factor(1:40),
+  CI = factor(c("cong", "inc")),
+  GAP = factor(c("large", "small")),
+  S = factor(c("left", "right")),
+  R = factor(c("left", "right"))
+)
+```
+
+---
+
+**Note.** Reserved factor names in EMC2 are:
+
+-   ***R***: response factor
+-   ***rt***: response time (numeric)
+-   ***subjects***: participant IDs
+
+---
+
+We start by simulating some data using the Wiener Diffusion Decision Model.
+
+```{r ddm,echo=TRUE}
+# See details of available parameters and transformations:
+?DDM
+```
+
+### Design object
+
+The `formula` argument maps DDM parameters to experimental factors using R's
+linear modeling syntax. Each parameter type gets its own formula.
+It is not necessary to specify formulas for all nine parameter types of the DDM. Any parameters not explicitly included in the formula argument will be assigned default values. Additionally, parameters included in the formula can be fixed to specific values using the constants argument.
+
+We customized how drift rates are mapped to experimental conditions by modifying the `contrasts` argument in the design. Instead of the default treatment contrasts for the stimulus factor (**S**), we used a contrast that codes left stimuli as -1 and right stimuli as 1. 
+This coding allows the intercept parameter **v** to reflect overall response **bias**: positive values indicate a bias toward rightward perception, and negative values indicate a bias toward leftward.
+
+The **v_Sdif** parameter captures how the drift rate depends on the stimulus direction (left vs. right), using the same -1/1 coding. Higher values of **v_Sdif** indicate faster evidence accumulation toward the correct response.
+
+Because we had no reason to expect congruency (**CI**) to affect response bias, we fixed the **v_CIinc** parameter, which would capture bias shifts between congruent and incongruent trials, to zero using the `constants` argument.
+
+As a result, the model estimates four drift rate–related parameters:
+
+-   **v**: overall bias (independent of stimulus)
+
+-   **v_Sdif**: stimulus-driven drift modulation
+
+-   **v_Sdif:CIinc**: interaction capturing how congruency affects the stimulus-dependent drift
+
+
+```{r design DDM, echo=TRUE}
+Smat = matrix(c(-1,1), nrow = 2,dimnames=list(NULL,"dif"))
+
+designWDDM = design(
+  model = DDM,
+  data = dat,
+  formula = list(
+    # Threshold (a) varies with GAP. 
+    a ~ GAP, # The baseline (intercept) corresponds to "large".
+    # Drift rate (v) varies with CI
+    v ~ S*CI,
+    # Non-decision time (t0) and bias (Z) are estimated but 
+    #constant across all conditions.
+    t0 ~ 1,
+    Z ~ 1),
+  contrasts = list(S = Smat),
+  constants=c(v_CIinc = 0)
+)
+```
+
+
+The **design object** shows which parameters will be estimated and how they map to the
+experimental design (the contrast matrices for each parameter type).
+
+```{r, echo=TRUE}
+mapped_pars(designWDDM)
+```
+
+---
+
+We now simulate data from the model by specifying a vector of group-level means.
+These are defined on the transformed scale (log for positive, probit for bounded).
+
+```{r, echo=TRUE}
+pmean_sim = c(
+  a = log(1.2),               # baseline threshold
+  a_GAPsmall = log(1.1),    # increase threshold
+  
+  v = 0,           # drift bias
+  v_Sdif = 1.1,   # drift rate
+  'v_Sdif:CIinc' = 0.7,     # increase drift
+  
+  t0 = log(0.3),       # non-decision time
+  Z = qnorm(0.5)        # bias (0.5 on natural scale = unbiased)
+)
+```
+
+
+
+```{r, echo=TRUE}
+mapped_pars(designWDDM, p_vector = pmean_sim)
+```
+
+<details>
+<summary>**Note. log scale**</summary>
+Because a is estimated on a log scale adding an effect has a multiplicative effect on the natural scale. For example if $a = log(1)$ and $a_{GAPsmall} = log(1) = 0$, then the speed condition threshold is $exp( log(1) + log(1) ) = 1 x 1 = 1$ (i.e, the same). Similarly if $a_{GAPsmall} = log(1.5) = exp( log(1) + log(1.5) ) = 1.5$ (i.e., more).
+</details>
+
+The model’s proposed evidence accumulation indicates that drift rates decrease in the incongruent condition, while the decision boundary increases when the gap is small.
+
+```{r}
+#| layout-ncol: 1
+#| fig-height: 5
+#| fig-width: 8
+
+plot_design(designWDDM,p_vector = pmean_sim,
+            factors = list(v = c("S", "CI"), 
+                           B = "GAP"),
+            plot_factor ="S")
+```
+
+---
+
+Generate subject-level parameters:
+
+```{r, echo=TRUE}
+subj_pars = make_random_effects(
+  design = designWDDM,
+  group_means = pmean_sim,
+  variance_proportion = 0.2,
+  covariances = diag(0.1, length(pmean_sim))  
+)
+```
+
+Simulate response time and choice data (50 trials per subject per condition):
+
+```{r, eval=TRUE}
+simWDDM = make_data(subj_pars, designWDDM, n_trials = 50)
+```
+
+```{r,echo=FALSE}
+save(simWDDM, file = "fits/simWDDM.RData")
+load("fits/simWDDM.RData")
+table(simWDDM$subjects)
+```
+
+Check simulated data:
+
+```{r, echo=TRUE, message=FALSE,warning=FALSE}
+#| layout-ncol: 2
+
+# Add accuracy column
+simWDDM$acc = simWDDM$R == simWDDM$S
+
+# Accuracy and RT by condition
+aggregate(acc~GAP, simWDDM, FUN = mean)
+aggregate(acc~CI, simWDDM, FUN = mean)
+aggregate(rt~GAP, simWDDM, FUN = median)
+aggregate(rt~CI, simWDDM, FUN = median)
+
+# Plot RT distributions by factor
+plot_density(simWDDM, adjust = 1.5, defective_factor = "GAP")
+plot_density(simWDDM, adjust = 1.5, defective_factor = "CI")
+```
+
+
+## Fit the model to the simulated data
+
+Prior specification:
+
+```{r,echo=TRUE}
+# Define prior means (on transformed scale) for model fitting
+pmean = pmean_sim
+pmean["a_GAPsmall"]  = log(1) # effect 0
+pmean["v_Sdif:CIinc"]  = log(1) # effect 0
+```
+
+```{r, echo=TRUE}
+mapped_pars(designWDDM, p_vector = pmean)
+```
+
+
+Inspect and visualize the prior:
+
+```{r, echo=TRUE}
+# Prior standard deviations (psd)
+psd = sampled_pars(designWDDM, doMap = FALSE)
+psd[1:length(pmean)] = c(.5, .5, 1, 1, 1, 0.5, 0.4)
+
+# Prior object, type = "standard": hierarchical model with full covariance
+priorWDDM=prior(designWDDM,
+                mu_mean=pmean,
+                mu_sd=psd,
+                type = "standard")
+priorWDDM
+summary(priorWDDM)
+```
+
+
+Carefully reviewing and visualizing the selected priors is highly important.
+
+```{r, echo=TRUE}
+plot(priorWDDM, map = FALSE) # transformed scale
+plot(priorWDDM) # natural scale
+```
+
+
+<details>
+<summary>**Note. Probit scale.**</summary>
+Always check prior on both transformed and natural scale
+
+```{r, echo=TRUE}
+# Setting high sd for probit-transformed Z leads to a peaked prior (non-uniform)
+psd1 = psd
+psd1[7] = 4  # very wide spread
+priorWDDM1 = prior(designWDDM, pmean = pmean, psd = psd1, type = "single")
+plot(priorWDDM1, designWDDM, use_par = "Z")
+
+# Setting sd = 1 yields a uniform distribution on natural scale (Z ~ U(0,1))
+psd1[7] = 1
+priorWDDM1 = prior(designWDDM, pmean = pmean, psd = psd1, type = "single")
+plot(priorWDDM1, designWDDM, use_par = "Z")
+```
+
+</details>
+
+### Run model
+
+The `make_emc()` creates an emc object by combining the **data**, **prior**, and **model specification** into a emc object that is needed in `fit()`
+
+```{r, echo=TRUE}
+?make_emc()
+
+# Create MCMC samplers for model fitting
+samplers = make_emc(simWDDM, designWDDM, prior = priorWDDM)
+```
+
+<details>
+<summary>**Note. rt_resolution**</summary>
+By default, rt_resolution = 0.02, which corresponds to a typical experimental setup using a 50Hz monitor without synchronization to screen refresh. This improves computational efficiency by calculating the likelihood only once for each unique combination of parameters and discretized response times (at the specified resolution), rather than for every trial individually. The resulting speedup and the number of unique trials retained after this compression are reported automatically.
+</details>
+
+
+```{r, echo=TRUE}
+hWDDM=fit(samplers,verbose=TRUE, iter = 2000,
+          cores_per_chain = 3,fileName = "fits/tmpWDDM.RData")
+save(hWDDM,file="fits/WDDM.RData")
+```
+
+
+<details>
+<summary>**batch mode option**</summary>
+
+Because hierarchical model sampling can be time-consuming, we typically avoid launching the fitting process directly from the console. Instead, we use batch mode to manage and run long sampling jobs more reliably.
+
+**Step 1: Save the sampler object**
+
+First, save the emc sampler object to disk. It's best to store this in a subdirectory dedicated to model fits, for example, **fits/WDDM.RData** for the DDM model.
+
+```r
+save(samplers, file = "fits/WDDM.RData")
+```
+
+**Step 2: Create a batch script**
+
+Next, create a separate R script (e.g., **runWDDM.R**) in the same directory. This script should contain the fitting commands:
+
+```r
+library(EMC2)
+load("WDDM.RData")
+hWDDM = fit(samplers,verbose=TRUE, iter = 2000,
+            cores_per_chain = 3,fileName = "tmpWDDM.RData")
+save(hWDDM,file="WDDM.RData")
+```
+
+-   ***The fileName*** argument ensures that progress is saved after each fitting cycle, preventing loss in case of interruption.
+
+-   ***cores_per_chain*** allows parallel sampling across multiple cores (only on macOS and Linux). With 3 chains and 3 cores per chain, a total of 9 cores will be used.
+
+**Step 3: Run the script from the terminal**
+In RStudio, open a terminal via Terminal > New Terminal, navigate to the relevant directory: 
+
+```bash
+cd ~/eam-workshop/fits
+```
+
+Then run the batch script:
+
+```bash
+nohup R CMD BATCH runWDDM.R &
+```
+
+-   ***nohup*** ("no hangup") ensures the fitting continues even if the terminal is closed. (To kill run *kill process_ID_number*)
+
+-   ***&*** runs the process in the background, so you can continue using the terminal.
+
+**Step 4: Monitor progress**
+
+All console output will be saved to **runWDDM.Rout**. You can open this file while sampling is ongoing to monitor progress.
+
+</details>
+
+
+## Load fitted model
+This command loads the previously saved sampler results from a **.RData** file.
+This is useful when fitting was done in batch mode and you want to inspect the results.
+
+```{r, echo=TRUE}
+print(load("fits/WDDM.RData"))
+```
+
+### Check convergence and summarize parameter estimates
+
+The `check()` function displays convergence diagnostics such as R-hat values,
+highlighting parameters that may not have fully converged.
+
+```{r, echo=TRUE}
+check(hWDDM, selection = "mu")  # Show the worst convergence diagnostics
+```
+
+
+You can also check the correlation between parameters with the function `pairs_posterior()`. 
+
+```{r}
+pairs_posterior(hWDDM, selection = "mu")
+```
+
+
+The `summary()` function provides posterior summaries for all parameters (e.g., mean, SD, quantiles).
+```{r, echo=TRUE}
+summary(hWDDM)
+```
+
+
+The `plot_pars()` help inspect parameter estimates across conditions and assess sampling performance.
+```{r, echo=TRUE}
+plot_pars(hWDDM, layout = c(2, 4))
+
+# map = TRUE, natural scale (not transformed)
+plot_pars(hWDDM, layout = c(2, 4), use_prior_lim = FALSE, map = TRUE) 
+```
+
+---
+
+### Posterior predictive checks
+
+Posterior predictive checks are a key part of model validation, helping us assess how well the model can reproduce the observed data. By using the `predict()` function, we can simulate data from the model using the posterior samples, which can then be compared to the observed data.
+
+```{r, echo=TRUE}
+ppWDDM = predict(hWDDM, n_cores = 4)
+```
+
+Plot cumulative distribution functions (CDFs) and density plots for model predictions, split by conditions defined by the factors GAP and CI.
+```{r, echo=TRUE}
+#| layout-ncol: 2
+#| layout-nrow: 2
+plot_cdf(simWDDM, ppWDDM, defective_factor = "GAP")
+plot_density(simWDDM, ppWDDM, defective_factor = "GAP")
+plot_cdf(simWDDM, ppWDDM, defective_factor = "CI")
+plot_density(simWDDM, ppWDDM, defective_factor = "CI")
+```
+
+
+Let's take a closer look at key statistics to evaluate the model fit in more detail. 
+
+**Accuracy** is well-predicted across all conditions, consistently falling within the 95% credible intervals of the posterior predictive distributions:
+
+```{r}
+pc=function(d) 100 * mean(d$S == d$R)
+plot_stat(
+  simWDDM, ppWDDM,
+  factors = c("GAP", "CI"),
+  layout = c(2, 2),
+  stat = pc,
+  stat_name = "Accuracy (%)"
+)
+```
+
+The **median RT** for *correct* responses is also accurately predicted, closely aligning with the observed data across conditions:
+
+```{r}
+plot_stat(
+  simWDDM, ppWDDM,
+  factors = c("GAP", "CI"),
+  layout = c(2, 2),
+  stat = function(d) median(d$rt[d$R == d$S]),
+  stat_name = "Median Correct RT (s)"
+)
+```
+
+The model captures the variability in RTs for correct responses effectively, as shown by the predicted standard deviation:
+
+```{r}
+plot_stat(
+  simWDDM, ppWDDM,
+  factors = c("GAP", "CI"),
+  layout = c(2, 2),
+  stat = function(d) sd(d$rt[d$R == d$S]),
+  stat_name = "Sd of correct RT (s)"
+)
+```
+
+
+Finally, the model provides a reasonable estimate of the **median RT for incorrect** responses, despite fewer observations in these trials:
+
+```{r}
+plot_stat(
+  simWDDM, ppWDDM,
+  factors = c("GAP", "CI"),
+  layout = c(2, 2),
+  stat = function(d) median(d$rt[d$R != d$S]),
+  stat_name = "Median Incorrect RT (s)"
+)
+```
+
+---
+
+### Parameter recovery
+
+Parameter recovery is another critical diagnostic step in validating models. It helps answer the fundamental question: 
+
+> *Can the model accurately estimate the true underlying parameters that generated the data?*
+
+-   **Model validity**: Good recovery indicates that the model structure is appropriate and that the parameters are identifiable.
+-   **Inference reliability**: If a model fails to recover known parameters, its estimates from real data may also be misleading or biased.
+-   **Design evaluation**: Recovery can reveal whether certain experimental conditions or parameter settings are insufficient to constrain the model.
+
+
+We begin by evaluating the overall recovery:
+
+```{r, echo=TRUE}
+true_pars = pmean_sim
+recovery(hWDDM, true_pars = true_pars)
+```
+
+To visualize the accuracy of parameter estimation, we plot the posterior means against the true values for each parameter. A strong recovery is indicated by points clustering around the diagonal:
+
+```{r, echo=TRUE}
+plot_pars(hWDDM, layout = c(2, 5), true_pars = true_pars,
+          use_prior_lim = FALSE, plot_prior = FALSE)
+```
+
+Next, we evaluate coverage, which checks whether the true parameter values fall within the 95% credible intervals of the posterior distributions.
+
+```{r, echo=TRUE}
+#| layout-ncol: 1
+#| fig-height: 10
+
+recovery(hWDDM, true_pars = subj_pars, 
+         do_CI = TRUE, stat = "coverage", selection = "alpha")
+```
+
+
+Good recovery provides trustworthy inferences!
+
+---
+
+### Posterior Testing 
+
+Once the checks are performed, we can investigate hypotheses about specific parameters using their posterior distributions. The `parameters()` function extracts posterior samples, which can then be used for various forms of inference:
+
+```{r, echo=TRUE}
+post = parameters(hWDDM)
+```
+
+Posterior samples provide a flexible foundation for testing directional hypotheses, computing credible intervals, and evaluating evidence against specific null values.
+
+
+**Posterior Probability.** A simple and intuitive use of the posterior is to compute the proportion of samples supporting a directional hypothesis. For example:
+```{r, echo=TRUE}
+mean(post$a_GAPsmall > 0)
+credible(hWDDM, "a_GAPsmall", alternative = "greater")
+```
+
+This tells us the posterior probability that a_GAPsmall is greater than 0.
+
+
+**Credible intervals and null value testing.** To formally assess uncertainty and determine whether an effect is credibly different from a specific value (e.g., zero), we can compute credible intervals. The `credible()` function reports whether the 95% credible interval includes the null value (mu = 0).
+
+```{r, echo=TRUE}
+credible(hWDDM, "a_GAPsmall", mu = 0)
+```
+
+
+**Bayes factor.** To quantify the evidence for or against the null hypothesis, we can compute a Bayes factor. This tests whether the data shifts the belief away from the prior (evidence against the null).
+```{r, echo=TRUE}
+hypothesis(hWDDM, "a_GAPsmall", selection = "mu", map = FALSE)
+```
+
+
+## Racing Diffusion Model (RDM)
+
+```{r,echo=FALSE}
+load("fits/simWDDM.RData")
+```
+
+
+In race models, each possible response is represented by a separate accumulator, and each accumulator has its own parameters. To help structure the model, the `design` function includes an argument called **Rlevels**, which automatically defines a latent response factor (**lR**) that indexes each accumulator according to its associated response (e.g., left or right).
+
+Race models require identifying which accumulator corresponds to the correct response for each trial. This is done using the `matchfun` argument, which takes a function that compares the stimulus and response labels.
+
+For simple designs, where the stimulus factor (S) and response factor (lR) have the same levels, the `matchfun` looks like this:
+
+```{r, echo=TRUE}
+matchfun=function(d)d$S==d$lR
+```
+
+This function returns **TRUE** when the accumulator corresponds to the correct response for a given stimulus.
+
+Using `matchfun`, the model creates a new factor called **lM** (latent match), which distinguishes:
+
+-   **matching accumulators**: those representing the correct response
+-   **mismatching accumulators**: those representing the incorrect response
+
+This allows us to estimate different drift rates for correct vs. incorrect responses, which is crucial for **modeling decision accuracy**.
+
+To make interpretation easier, drift rates are often reparameterized using:
+
+-   An average (**intercept**) across accumulators
+-   A difference (**dif**) between matching and mismatching accumulators
+
+This is done by applying a `contrast` matrix to the **lM** factor, typically:
+
+```{r, echo=TRUE}
+ADmat=matrix(c(-1/2,1/2),ncol=1,dimnames=list(NULL,"dif")); ADmat
+```
+
+
+In this parameterization, the **intercept** represents the overall *drift rate*, typically interpreted as a measure of **decision urgency** or **stimulus strength**. The `v_lMdif` parameter captures the *difference in drift rates* between matching and mismatching accumulators, reflecting how well the participant can **discriminate** between correct and incorrect responses.
+
+This contrast coding is also applied to the **congruence effect (CI)**. Specifically, we estimate `v_lMdif:CIdif` as the **effect of congruency on drift quality**, while fixing `CIdif`, the **effect of congruency on the overall drift rate**, to zero using the `constant` argument.
+
+All parameters in the RDM are **positive** and estimated on the **log scale**. As in the DDM, **within-trial variability is fixed to 1**. We use a simplified RDM variant in which **starting point variability (`A`) is fixed to zero**.
+
+```{r, echo=TRUE}
+designRDM=design(data=simWDDM,model=RDM,
+                 formula=list(B~GAP+lR,
+                              v~lM*CI,
+                              t0~1),
+                 matchfun=function(d)d$S==d$lR,
+                 contrasts=list(lM=ADmat,
+                                CI=ADmat),
+                 constants = c(v_CIdif=0))
+```
+
+---
+
+### Prior specification
+
+As in previous analyses, we expect a higher threshold for participants anticipating a small gap, reflecting increased caution. Accuracy is also expected to be above chance, indicated by **v_lMdif** being well above *log(1)*. Finally, we anticipate an increase in drift rate quality as a function of incongruency (i.e., **v_lMdif:CIdif**), reflecting greater discrimination during incongruent trials.
+
+ 
+```{r, echo=TRUE}
+pmean = c(
+  B = log(2),               # baseline threshold
+  B_GAPsmall = log(1.2),    # increase threshold
+  B_lRright=log(1),  #left vs. right bias
+  
+  v = log(2.5),         # the average rate 
+  v_lMdif = log(3),   # v_lMd is the average quality
+  'v_lMdif:CIdif' = log(1.5), # the incongruent condition effect on quality
+  
+  t0 = log(0.25)       # non-decision time
+)
+
+
+mapped_pars(designRDM, p_vector = pmean)
+```
+
+We can visualize the assumed model via the `plot_design()` function:
+```{r, echo=TRUE}
+plot_design(designRDM, p_vector = pmean,
+            factors = list(v = c("S", "CI"), 
+                           B = "GAP"),
+            plot_factor = "S")
+```
+
+
+Set the prior on the effect to zero before model fitting:
+```{r, echo=TRUE}
+pmean['B_GAPsmall'] = log(1)
+pmean['v_lMdif:CIdif'] =log(1)
+
+psd=c(1,1,1,1,1,1,.7)
+
+priorRDM=prior(designRDM,
+               mu_mean=pmean,
+               mu_sd=psd,
+               type = "standard")
+```
+
+
+### Run model
+
+```{r, echo=TRUE}
+samplers = make_emc(simWDDM, designRDM, prior = priorRDM)
+
+hRDM=fit(samplers,verbose=FALSE, iter = 2000,cores_per_chain = 3,
+         fileName = "fits/tmpRDM.RData")
+save(hRDM,file="fits/RDM.RData")
+```
+
+```{r, echo=TRUE}
+print(load("fits/RDM.RData"))
+```
+
+### Check convergence and summarize parameter estimates
+
+```{r, echo=TRUE}
+check(hRDM,selection = "mu") 
+pairs_posterior(hRDM,selection = "mu")
+```
+
+These plots help inspect parameter estimates.
+```{r, echo=TRUE}
+plot_pars(hRDM, layout = c(2, 4))
+plot_pars(hRDM, layout = c(2, 5), use_prior_lim = FALSE, map = TRUE)
+```        
+
+### Compare WDDM and RDM
+
+We compare the WDDM and RDM  based on predicted vs. observed response times. The data were simulated under the WDDM model, so we expect it to yield a better fit.
+
+```{r, echo=TRUE}
+ppRDM = predict(hRDM, n_cores = 4)
+```
+
+
+**Visual Comparison: CDF and Density Plots**
+
+The plots below show cumulative distribution functions (CDFs) and probability density functions (PDFs) for observed vs. predicted response times. Comparisons are split by two experimental factors: GAP and CI.
+
+```{r, echo=TRUE}
+#| layout-ncol: 2
+#| layout-nrow: 2
+plot_cdf(simWDDM,list(DDM = ppWDDM,RDM = ppRDM), 
+         defective_factor = "GAP")
+plot_density(simWDDM,list(DDM = ppWDDM,RDM = ppRDM), defective_factor = "GAP")
+plot_cdf(simWDDM,list(DDM = ppWDDM,RDM = ppRDM), defective_factor = "CI")
+plot_density(simWDDM,list(DDM = ppWDDM,RDM = ppRDM), defective_factor = "CI")
+```
+
+
+#### **Model comparison metrics**
+
+We use model selection criteria provided by EMC2 to assess model fit:
+
+-   **DIC** (Deviance Information Criterion) and
+-   **BPIC** (Bayesian Predictive Information Criterion) balance fit and complexity; BPIC penalizes complexity more strongly, thus tending to prefer simpler models.
+-   **MD** (Marginal Deviance) is sensitive to prior specification and is used to compute Bayes Factors.
+
+```{r, echo=TRUE}
+compare(list(WDDM = hWDDM, RDM = hRDM))
+```
+
+Lower values for DIC, BPIC, and MD indicate better model performance. Since the data were simulated under the WDDM, it is expected to outperform RDM.

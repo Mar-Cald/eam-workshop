@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>quarto-input73f7b86994d48339</title>
+<title>Workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -180,59 +180,95 @@ window.Quarto = {
   <ul>
   <li><a href="#bayesian-inference" id="toc-bayesian-inference" class="nav-link active" data-scroll-target="#bayesian-inference">Bayesian Inference</a></li>
   <li><a href="#hierarchical-modeling" id="toc-hierarchical-modeling" class="nav-link" data-scroll-target="#hierarchical-modeling">Hierarchical Modeling</a></li>
-  <li><a href="#why-hierarchical-models" id="toc-why-hierarchical-models" class="nav-link" data-scroll-target="#why-hierarchical-models">Why Hierarchical Models?</a></li>
-  <li><a href="#what-are-we-trying-to-infer" id="toc-what-are-we-trying-to-infer" class="nav-link" data-scroll-target="#what-are-we-trying-to-infer">What Are We Trying to Infer?</a></li>
-  <li><a href="#model-structure" id="toc-model-structure" class="nav-link" data-scroll-target="#model-structure">Model Structure</a></li>
+  <li><a href="#emc2" id="toc-emc2" class="nav-link" data-scroll-target="#emc2">EMC2</a>
+  <ul class="collapse">
+  <li><a href="#model-structure" id="toc-model-structure" class="nav-link" data-scroll-target="#model-structure">Model Structure</a>
+  <ul class="collapse">
   <li><a href="#group-level-parameters" id="toc-group-level-parameters" class="nav-link" data-scroll-target="#group-level-parameters">Group-Level Parameters</a></li>
+  </ul></li>
   <li><a href="#priors" id="toc-priors" class="nav-link" data-scroll-target="#priors">Priors</a></li>
-  <li><a href="#set-up---emc2" id="toc-set-up---emc2" class="nav-link" data-scroll-target="#set-up---emc2">Set up - EMC2</a></li>
   <li><a href="#design-specification" id="toc-design-specification" class="nav-link" data-scroll-target="#design-specification">Design specification</a></li>
+  <li><a href="#simulation" id="toc-simulation" class="nav-link" data-scroll-target="#simulation">Simulation</a>
+  <ul class="collapse">
+  <li><a href="#design-object" id="toc-design-object" class="nav-link" data-scroll-target="#design-object">Design object</a></li>
+  </ul></li>
+  <li><a href="#fit-the-model-to-the-simulated-data" id="toc-fit-the-model-to-the-simulated-data" class="nav-link" data-scroll-target="#fit-the-model-to-the-simulated-data">Fit the model to the simulated data</a>
+  <ul class="collapse">
+  <li><a href="#run-model" id="toc-run-model" class="nav-link" data-scroll-target="#run-model">Run model</a></li>
+  </ul></li>
+  <li><a href="#load-fitted-model" id="toc-load-fitted-model" class="nav-link" data-scroll-target="#load-fitted-model">Load fitted model</a>
+  <ul class="collapse">
+  <li><a href="#check-convergence-and-summarize-parameter-estimates" id="toc-check-convergence-and-summarize-parameter-estimates" class="nav-link" data-scroll-target="#check-convergence-and-summarize-parameter-estimates">Check convergence and summarize parameter estimates</a></li>
+  <li><a href="#posterior-predictive-checks" id="toc-posterior-predictive-checks" class="nav-link" data-scroll-target="#posterior-predictive-checks">Posterior predictive checks</a></li>
+  <li><a href="#parameter-recovery" id="toc-parameter-recovery" class="nav-link" data-scroll-target="#parameter-recovery">Parameter recovery</a></li>
+  <li><a href="#posterior-testing" id="toc-posterior-testing" class="nav-link" data-scroll-target="#posterior-testing">Posterior Testing</a></li>
+  </ul></li>
+  <li><a href="#racing-diffusion-model-rdm" id="toc-racing-diffusion-model-rdm" class="nav-link" data-scroll-target="#racing-diffusion-model-rdm">Racing Diffusion Model (RDM)</a>
+  <ul class="collapse">
+  <li><a href="#prior-specification" id="toc-prior-specification" class="nav-link" data-scroll-target="#prior-specification">Prior specification</a></li>
+  <li><a href="#run-model-1" id="toc-run-model-1" class="nav-link" data-scroll-target="#run-model-1">Run model</a></li>
+  <li><a href="#check-convergence-and-summarize-parameter-estimates-1" id="toc-check-convergence-and-summarize-parameter-estimates-1" class="nav-link" data-scroll-target="#check-convergence-and-summarize-parameter-estimates-1">Check convergence and summarize parameter estimates</a></li>
+  <li><a href="#compare-wddm-and-rdm" id="toc-compare-wddm-and-rdm" class="nav-link" data-scroll-target="#compare-wddm-and-rdm">Compare WDDM and RDM</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Workshop</h1>
+</div>
 
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
 
 
 <section id="bayesian-inference" class="level2">
 <h2 class="anchored" data-anchor-id="bayesian-inference">Bayesian Inference</h2>
-<p><strong>Data are fixed</strong>, but <strong>parameters are uncertain</strong>.</p>
 <p><br></p>
 <p><span class="math display">\[
-p(\boldsymbol{\theta}|\boldsymbol{D}) = \frac{p(\boldsymbol{D}|\boldsymbol{\theta})p(\boldsymbol{\theta})}{p({\boldsymbol D})}
+p(\theta \mid y) = \frac{\mathcal{L}(\theta \mid y) \, p(\theta)}{p(y)}
 \]</span> <br></p>
 <ul>
-<li><p>Inference produces <strong>posterior distributions</strong> over parameters</p></li>
-<li><p>Captures uncertainty and incorporates prior knowledge</p></li>
+<li><span class="math inline">\(p(\theta)\)</span>: Prior distribution</li>
+<li><span class="math inline">\(\mathcal{L}(\theta \mid y)\)</span>: Likelihood</li>
+<li><span class="math inline">\(p(\theta \mid y)\)</span>: Posterior distribution</li>
 </ul>
 </section>
-<section id="hierarchical-modeling" class="level2 align-center">
-<h2 class="align-center anchored" data-anchor-id="hierarchical-modeling">Hierarchical Modeling</h2>
-<p><em>Are participants identical or fully independent?</em></p>
-<div class="columns">
+<section id="hierarchical-modeling" class="level2">
+<h2 class="anchored" data-anchor-id="hierarchical-modeling">Hierarchical Modeling</h2>
+<p><strong>Are participants identical or fully independent?</strong></p>
+<div class="columns align-center">
 <div class="column" style="width:45%;">
-<p>Models <strong>group-level structure</strong></p>
+<p><br><br></p>
+<p>Models <strong>group-level structure</strong> <br><br></p>
 <p>each participant’s parameters ∼ drawn from a population distribution <br><br></p>
-<p><strong>Group-level</strong> generalization <br></p>
-<p><strong>Individual-level</strong> inference<br>
-<br></p>
 </div><div class="column" style="width:55%;">
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="eam-workshop_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="768"></p>
+<p><img src="eam-workshop_files/figure-html/plot hie-1.png" class="img-fluid figure-img" width="768"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
 </div>
-</section>
-<section id="why-hierarchical-models" class="level2">
-<h2 class="anchored" data-anchor-id="why-hierarchical-models">Why Hierarchical Models?</h2>
+<p><strong>Why Hierarchical Models?</strong></p>
 <ul>
 <li>Reduces bias from unmodeled individual variability<br>
 </li>
@@ -241,19 +277,17 @@ p(\boldsymbol{\theta}|\boldsymbol{D}) = \frac{p(\boldsymbol{D}|\boldsymbol{\thet
 <li><strong>Shrinkage</strong>: pulls extreme or low-quality estimates toward the group mean</li>
 </ul>
 <blockquote class="blockquote">
-<p><a href="https://doi.org/10.3758/s13428-018-1054-3">Boehm et al.&nbsp;(2018), <em>Behavior Research Methods</em></a></p>
+<p><a href="https://doi.org/10.3758/s13428-018-1054-3" target="_blank">Boehm et al.&nbsp;(2018), <em>Behavior Research Methods</em></a></p>
 </blockquote>
+<hr>
 </section>
-<section id="what-are-we-trying-to-infer" class="level2">
-<h2 class="anchored" data-anchor-id="what-are-we-trying-to-infer">What Are We Trying to Infer?</h2>
-<p>We want to estimate:</p>
-<ul>
-<li><p><strong>Individual-level parameters</strong>: <span class="math inline">\(\alpha_1, \alpha_2, \dots, \alpha_N\)</span></p></li>
-<li><p><strong>Group-level structure</strong>:<br>
-A shared population distribution <span class="math inline">\(\alpha_i \sim \mathcal{N}(\mu, \Sigma)\)</span></p></li>
-</ul>
-<p>This enables both <strong>individual</strong> and <strong>population</strong> inference.</p>
-</section>
+<section id="emc2" class="level1">
+<h1>EMC2</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># # If not already done, install the EMC2 package</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># remotes::install_github("ampl-psych/EMC2",ref="dev")</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(EMC2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <section id="model-structure" class="level2">
 <h2 class="anchored" data-anchor-id="model-structure">Model Structure</h2>
 <p>The hierarchical model defines a <strong>joint posterior</strong> over all unknowns:</p>
@@ -272,55 +306,1198 @@ p(\mu, \Sigma)
 <li><p><strong>Hyperprior</strong>:<br>
 <span class="math inline">\(p(\mu, \Sigma)\)</span> — Prior beliefs over the group-level structure</p></li>
 </ul>
-</section>
-<section id="group-level-parameters" class="level2">
-<h2 class="anchored" data-anchor-id="group-level-parameters">Group-Level Parameters</h2>
+<section id="group-level-parameters" class="level3">
+<h3 class="anchored" data-anchor-id="group-level-parameters">Group-Level Parameters</h3>
 <p>Let <span class="math inline">\(n\)</span> = number of individual parameters per subject:</p>
 <ul>
 <li><p><span class="math inline">\(\mu\)</span>: vector of <strong>population means</strong><br>
 </p></li>
-<li><p><span class="math inline">\(\Sigma\)</span>: symmetric <strong>covariance matrix</strong>, including:</p>
-<ul>
-<li>Diagonal: <strong>Variances</strong> (<span class="math inline">\(\sigma^2\)</span>)</li>
-<li>Off-diagonal: <strong>Covariances</strong><br>
-<span class="math inline">\(\frac{n(n-1)}{2}\)</span> elements total</li>
-</ul></li>
+<li><p><span class="math inline">\(\Sigma\)</span>: symmetric <strong>covariance matrix</strong>, including:</p></li>
+<li><p>Diagonal: <strong>Variances</strong> (<span class="math inline">\(\sigma^2\)</span>)</p></li>
+<li><p>Off-diagonal: <strong>Covariances</strong><br>
+<span class="math inline">\(\frac{n(n-1)}{2}\)</span> elements total</p></li>
 </ul>
-<p>These hyperparameters are <strong>learned from the data</strong>.</p>
+</section>
 </section>
 <section id="priors" class="level2">
 <h2 class="anchored" data-anchor-id="priors">Priors</h2>
-<p>Cognitive-model parameters must be transformed to have support on the real line. This transformation is necessary to meet the assumption of the normal group-level distribution.</p>
+<p>Cognitive model parameters are transformed to have support on the entire real line, ensuring compatibility with the assumption of a normally distributed group-level prior.</p>
 <ul>
-<li><strong>Log</strong> transform: Applied to parameters with a lower bound (e.g., non-decision time, which cannot be negative)</li>
-<li><strong>Probit</strong> transform: Applied to parameters with both lower and upper bounds (e.g., the starting point parameter in the Drift Diffusion Model, which must lie between two response boundaries)</li>
+<li><p><strong>Log</strong> transformation is applied to parameters that are strictly positive (e.g., non-decision time), preventing invalid negative values.</p></li>
+<li><p><strong>Probit</strong> transformation is used for parameters bounded between 0 and 1 (e.g., the starting point in the Drift Diffusion Model, which lies between the two response boundaries).</p></li>
 </ul>
-<p>As a result, priors are specified on these transformed parameters rather than on the original scales.</p>
-</section>
-<section id="set-up---emc2" class="level2">
-<h2 class="anchored" data-anchor-id="set-up---emc2">Set up - EMC2</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># # If not already done, install the EMC2 package</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># remotes::install_github("ampl-psych/EMC2",ref="dev")</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(EMC2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'EMC2' was built under R version 4.4.3</code></pre>
-</div>
-</div>
+<p>Consequently, prior distributions are defined on these transformed scales rather than on the natural parameter scales.</p>
 </section>
 <section id="design-specification" class="level2">
 <h2 class="anchored" data-anchor-id="design-specification">Design specification</h2>
-<p>The design function creates a design object that maps model parameters to experimental conditions using linear model formulas. This object specifies:</p>
+<p>The <code>design</code> function creates a design object that maps model parameters to experimental conditions using linear model formulas. This object specifies:</p>
 <ol type="1">
-<li>Model type</li>
-<li>Linear models for estimated parameter types (default values are used for omitted types)</li>
+<li><strong>Model</strong> type</li>
+<li><strong>Formula</strong>: Linear models for estimated parameter types (default values are used for omitted types)</li>
 <li>Parameters to be fixed as constants (optional)</li>
 <li>Functions for creating custom factors (optional)</li>
 <li>Custom contrast coding for factors (optional)</li>
 </ol>
-<p>The simulation procedure</p>
+</section>
+<section id="simulation" class="level2">
+<h2 class="anchored" data-anchor-id="simulation">Simulation</h2>
+<p><strong>First.</strong> We construct a full-factorial data frame with all combinations of factors. These factors define the experimental design:</p>
+<ul>
+<li>CI: Congruency (“cong” or “inc”)</li>
+<li>GAP: Gap (“large” or “small”)</li>
+<li>S: Stimulus orientation (“left” or “right”)</li>
+<li>R: Response orientation (“left” or “right”)</li>
+<li>subjects: 40 participants</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">expand.grid</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">subjects =</span> <span class="fu">factor</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">40</span>),</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">CI =</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"cong"</span>, <span class="st">"inc"</span>)),</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">GAP =</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"large"</span>, <span class="st">"small"</span>)),</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">S =</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"left"</span>, <span class="st">"right"</span>)),</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">R =</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"left"</span>, <span class="st">"right"</span>))</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<hr>
+<p><strong>Note.</strong> Reserved factor names in EMC2 are:</p>
+<ul>
+<li><strong><em>R</em></strong>: response factor</li>
+<li><strong><em>rt</em></strong>: response time (numeric)</li>
+<li><strong><em>subjects</em></strong>: participant IDs</li>
+</ul>
+<hr>
+<p>We start by simulating some data using the Wiener Diffusion Decision Model.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># See details of available parameters and transformations:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>?DDM</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="design-object" class="level3">
+<h3 class="anchored" data-anchor-id="design-object">Design object</h3>
+<p>The <code>formula</code> argument maps DDM parameters to experimental factors using R’s linear modeling syntax. Each parameter type gets its own formula. It is not necessary to specify formulas for all nine parameter types of the DDM. Any parameters not explicitly included in the formula argument will be assigned default values. Additionally, parameters included in the formula can be fixed to specific values using the constants argument.</p>
+<p>We customized how drift rates are mapped to experimental conditions by modifying the <code>contrasts</code> argument in the design. Instead of the default treatment contrasts for the stimulus factor (<strong>S</strong>), we used a contrast that codes left stimuli as -1 and right stimuli as 1. This coding allows the intercept parameter <strong>v</strong> to reflect overall response <strong>bias</strong>: positive values indicate a bias toward rightward perception, and negative values indicate a bias toward leftward.</p>
+<p>The <strong>v_Sdif</strong> parameter captures how the drift rate depends on the stimulus direction (left vs.&nbsp;right), using the same -1/1 coding. Higher values of <strong>v_Sdif</strong> indicate faster evidence accumulation toward the correct response.</p>
+<p>Because we had no reason to expect congruency (<strong>CI</strong>) to affect response bias, we fixed the <strong>v_CIinc</strong> parameter, which would capture bias shifts between congruent and incongruent trials, to zero using the <code>constants</code> argument.</p>
+<p>As a result, the model estimates four drift rate–related parameters:</p>
+<ul>
+<li><p><strong>v</strong>: overall bias (independent of stimulus)</p></li>
+<li><p><strong>v_Sdif</strong>: stimulus-driven drift modulation</p></li>
+<li><p><strong>v_Sdif:CIinc</strong>: interaction capturing how congruency affects the stimulus-dependent drift</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>Smat <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>), <span class="at">nrow =</span> <span class="dv">2</span>,<span class="at">dimnames=</span><span class="fu">list</span>(<span class="cn">NULL</span>,<span class="st">"dif"</span>))</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>designWDDM <span class="ot">=</span> <span class="fu">design</span>(</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">model =</span> DDM,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> dat,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> <span class="fu">list</span>(</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Threshold (a) varies with GAP. </span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    a <span class="sc">~</span> GAP, <span class="co"># The baseline (intercept) corresponds to "large".</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Drift rate (v) varies with CI</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    v <span class="sc">~</span> S<span class="sc">*</span>CI,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Non-decision time (t0) and bias (Z) are estimated but </span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">#constant across all conditions.</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    t0 <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    Z <span class="sc">~</span> <span class="dv">1</span>),</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">contrasts =</span> <span class="fu">list</span>(<span class="at">S =</span> Smat),</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">constants=</span><span class="fu">c</span>(<span class="at">v_CIinc =</span> <span class="dv">0</span>)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Parameter(s) s, st0, sv, SZ not specified in formula and assumed constant.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+ Sampled Parameters: 
+[1] "a"            "a_GAPsmall"   "v"            "v_Sdif"       "v_Sdif:CIinc"
+[6] "t0"           "Z"           
+
+ Design Matrices: 
+$a
+   GAP a a_GAPsmall
+ large 1          0
+ small 1          1
+
+$v
+     S   CI v v_Sdif v_CIinc v_Sdif:CIinc
+  left cong 1     -1       0            0
+  left  inc 1     -1       1           -1
+ right cong 1      1       0            0
+ right  inc 1      1       1            1
+
+$t0
+ t0
+  1
+
+$Z
+ Z
+ 1
+
+$s
+ s
+ 1
+
+$st0
+ st0
+   1
+
+$sv
+ sv
+  1
+
+$SZ
+ SZ
+  1</code></pre>
+</div>
+</div>
+<p>The <strong>design object</strong> shows which parameters will be estimated and how they map to the experimental design (the contrast matrices for each parameter type).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mapped_pars</span>(designWDDM)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$a 
+  GAP    
+ large  : exp(a)
+ small  : exp(a + a_GAPsmall)
+
+$v 
+  S      CI    
+ left   cong  : v - v_Sdif
+ left   inc   : v - v_Sdif + v_CIinc - v_Sdif:CIinc
+ right  cong  : v + v_Sdif
+ right  inc   : v + v_Sdif + v_CIinc + v_Sdif:CIinc</code></pre>
+</div>
+</div>
+<hr>
+<p>We now simulate data from the model by specifying a vector of group-level means. These are defined on the transformed scale (log for positive, probit for bounded).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>pmean_sim <span class="ot">=</span> <span class="fu">c</span>(</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">a =</span> <span class="fu">log</span>(<span class="fl">1.2</span>),               <span class="co"># baseline threshold</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">a_GAPsmall =</span> <span class="fu">log</span>(<span class="fl">1.1</span>),    <span class="co"># increase threshold</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">v =</span> <span class="dv">0</span>,           <span class="co"># drift bias</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">v_Sdif =</span> <span class="fl">1.1</span>,   <span class="co"># drift rate</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">'v_Sdif:CIinc'</span> <span class="ot">=</span> <span class="fl">0.7</span>,     <span class="co"># increase drift</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">t0 =</span> <span class="fu">log</span>(<span class="fl">0.3</span>),       <span class="co"># non-decision time</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Z =</span> <span class="fu">qnorm</span>(<span class="fl">0.5</span>)        <span class="co"># bias (0.5 on natural scale = unbiased)</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mapped_pars</span>(designWDDM, <span class="at">p_vector =</span> pmean_sim)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    CI   GAP     S    v    a sv  t0 st0 s   Z SZ    z sz
+1 cong large  left -1.1 1.20  0 0.3   0 1 0.5  0 0.60  0
+2  inc large  left -1.8 1.20  0 0.3   0 1 0.5  0 0.60  0
+3 cong small  left -1.1 1.32  0 0.3   0 1 0.5  0 0.66  0
+4  inc small  left -1.8 1.32  0 0.3   0 1 0.5  0 0.66  0
+5 cong large right  1.1 1.20  0 0.3   0 1 0.5  0 0.60  0
+6  inc large right  1.8 1.20  0 0.3   0 1 0.5  0 0.60  0
+7 cong small right  1.1 1.32  0 0.3   0 1 0.5  0 0.66  0
+8  inc small right  1.8 1.32  0 0.3   0 1 0.5  0 0.66  0</code></pre>
+</div>
+</div>
+<details>
+<summary>
+<strong>Note. log scale</strong>
+</summary>
+Because a is estimated on a log scale adding an effect has a multiplicative effect on the natural scale. For example if <span class="math inline">\(a = log(1)\)</span> and <span class="math inline">\(a_{GAPsmall} = log(1) = 0\)</span>, then the speed condition threshold is <span class="math inline">\(exp( log(1) + log(1) ) = 1 x 1 = 1\)</span> (i.e, the same). Similarly if <span class="math inline">\(a_{GAPsmall} = log(1.5) = exp( log(1) + log(1.5) ) = 1.5\)</span> (i.e., more).
+</details>
+<p>The model’s proposed evidence accumulation indicates that drift rates decrease in the incongruent condition, while the decision boundary increases when the gap is small.</p>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_design</span>(designWDDM,<span class="at">p_vector =</span> pmean_sim,</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">factors =</span> <span class="fu">list</span>(<span class="at">v =</span> <span class="fu">c</span>(<span class="st">"S"</span>, <span class="st">"CI"</span>), </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>                           <span class="at">B =</span> <span class="st">"GAP"</span>),</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">plot_factor =</span><span class="st">"S"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel" data-layout-ncol="1">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img src="eam-workshop_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+</div>
+<hr>
+<p>Generate subject-level parameters:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>subj_pars <span class="ot">=</span> <span class="fu">make_random_effects</span>(</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">design =</span> designWDDM,</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">group_means =</span> pmean_sim,</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">variance_proportion =</span> <span class="fl">0.2</span>,</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">covariances =</span> <span class="fu">diag</span>(<span class="fl">0.1</span>, <span class="fu">length</span>(pmean_sim))  </span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Simulate response time and choice data (50 trials per subject per condition):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>simWDDM <span class="ot">=</span> <span class="fu">make_data</span>(subj_pars, designWDDM, <span class="at">n_trials =</span> <span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+  1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20 
+400 400 400 400 400 400 400 400 400 400 400 400 400 400 400 400 400 400 400 400 
+ 21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40 
+400 400 400 400 400 400 400 400 400 400 400 400 400 400 400 400 400 400 400 400 </code></pre>
+</div>
+</div>
+<p>Check simulated data:</p>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add accuracy column</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>simWDDM<span class="sc">$</span>acc <span class="ot">=</span> simWDDM<span class="sc">$</span>R <span class="sc">==</span> simWDDM<span class="sc">$</span>S</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Accuracy and RT by condition</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(acc<span class="sc">~</span>GAP, simWDDM, <span class="at">FUN =</span> mean)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(acc<span class="sc">~</span>CI, simWDDM, <span class="at">FUN =</span> mean)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(rt<span class="sc">~</span>GAP, simWDDM, <span class="at">FUN =</span> median)</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(rt<span class="sc">~</span>CI, simWDDM, <span class="at">FUN =</span> median)</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot RT distributions by factor</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_density</span>(simWDDM, <span class="at">adjust =</span> <span class="fl">1.5</span>, <span class="at">defective_factor =</span> <span class="st">"GAP"</span>)</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_density</span>(simWDDM, <span class="at">adjust =</span> <span class="fl">1.5</span>, <span class="at">defective_factor =</span> <span class="st">"CI"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="cell-output cell-output-stdout quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<pre><code>    GAP    acc
+1 large 0.7995
+2 small 0.8310</code></pre>
+</div>
+<div class="cell-output cell-output-stdout quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<pre><code>    CI     acc
+1 cong 0.77425
+2  inc 0.85625</code></pre>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="cell-output cell-output-stdout quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<pre><code>    GAP        rt
+1 large 0.5246711
+2 small 0.5673353</code></pre>
+</div>
+<div class="cell-output cell-output-stdout quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<pre><code>    CI        rt
+1 cong 0.5589868
+2  inc 0.5335750</code></pre>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="eam-workshop_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="eam-workshop_files/figure-html/unnamed-chunk-8-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="fit-the-model-to-the-simulated-data" class="level2">
+<h2 class="anchored" data-anchor-id="fit-the-model-to-the-simulated-data">Fit the model to the simulated data</h2>
+<p>Prior specification:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define prior means (on transformed scale) for model fitting</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>pmean <span class="ot">=</span> pmean_sim</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>pmean[<span class="st">"a_GAPsmall"</span>]  <span class="ot">=</span> <span class="fu">log</span>(<span class="dv">1</span>) <span class="co"># effect 0</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>pmean[<span class="st">"v_Sdif:CIinc"</span>]  <span class="ot">=</span> <span class="fu">log</span>(<span class="dv">1</span>) <span class="co"># effect 0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mapped_pars</span>(designWDDM, <span class="at">p_vector =</span> pmean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    CI   GAP     S    v   a sv  t0 st0 s   Z SZ   z sz
+1 cong large  left -1.1 1.2  0 0.3   0 1 0.5  0 0.6  0
+2  inc large  left -1.1 1.2  0 0.3   0 1 0.5  0 0.6  0
+3 cong small  left -1.1 1.2  0 0.3   0 1 0.5  0 0.6  0
+4  inc small  left -1.1 1.2  0 0.3   0 1 0.5  0 0.6  0
+5 cong large right  1.1 1.2  0 0.3   0 1 0.5  0 0.6  0
+6  inc large right  1.1 1.2  0 0.3   0 1 0.5  0 0.6  0
+7 cong small right  1.1 1.2  0 0.3   0 1 0.5  0 0.6  0
+8  inc small right  1.1 1.2  0 0.3   0 1 0.5  0 0.6  0</code></pre>
+</div>
+</div>
+<p>Inspect and visualize the prior:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prior standard deviations (psd)</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>psd <span class="ot">=</span> <span class="fu">sampled_pars</span>(designWDDM, <span class="at">doMap =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>psd[<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(pmean)] <span class="ot">=</span> <span class="fu">c</span>(.<span class="dv">5</span>, .<span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="fl">0.5</span>, <span class="fl">0.4</span>)</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Prior object, type = "standard": hierarchical model with full covariance</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>priorWDDM<span class="ot">=</span><span class="fu">prior</span>(designWDDM,</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">mu_mean=</span>pmean,</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">mu_sd=</span>psd,</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>                <span class="at">type =</span> <span class="st">"standard"</span>)</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>priorWDDM</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Mean and variance of the prior on the transformed parameters: 
+a ~ 𝑁(0.18, 0.25)
+a_GAPsmall ~ 𝑁(0, 0.25)
+v ~ 𝑁(0, 1)
+v_Sdif ~ 𝑁(1.1, 1)
+v_Sdif:CIinc ~ 𝑁(0, 1)
+t0 ~ 𝑁(-1.20, 0.25)
+Z ~ 𝑁(0, 0.16)
+
+For detailed info use summary(&lt;prior&gt;)</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(priorWDDM)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>mu  -  Group-level mean 
+
+mean of the group-level mean prior : 
+           a   a_GAPsmall            v       v_Sdif v_Sdif:CIinc           t0 
+   0.1823216    0.0000000    0.0000000    1.1000000    0.0000000   -1.2039728 
+           Z 
+   0.0000000 
+variance of the group-level mean prior : 
+                a a_GAPsmall v v_Sdif v_Sdif:CIinc   t0    Z
+a            0.25       0.00 0      0            0 0.00 0.00
+a_GAPsmall   0.00       0.25 0      0            0 0.00 0.00
+v            0.00       0.00 1      0            0 0.00 0.00
+v_Sdif       0.00       0.00 0      1            0 0.00 0.00
+v_Sdif:CIinc 0.00       0.00 0      0            1 0.00 0.00
+t0           0.00       0.00 0      0            0 0.25 0.00
+Z            0.00       0.00 0      0            0 0.00 0.16
+
+Sigma  -  Group-level covariance matrix 
+
+degrees of freedom on the group-level (co-)variance prior, 2 leads to uniform correlations. Single value : 
+[1] 2
+scale on the group-level variance prior, larger values lead to larger variances : 
+           a   a_GAPsmall            v       v_Sdif v_Sdif:CIinc           t0 
+         0.3          0.3          0.3          0.3          0.3          0.3 
+           Z 
+         0.3 </code></pre>
+</div>
+</div>
+<p>Carefully reviewing and visualizing the selected priors is highly important.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(priorWDDM, <span class="at">map =</span> <span class="cn">FALSE</span>) <span class="co"># transformed scale</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="eam-workshop_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(priorWDDM) <span class="co"># natural scale</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="eam-workshop_files/figure-html/unnamed-chunk-12-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<details>
+<summary>
+<strong>Note. Probit scale.</strong>
+</summary>
+<p>Always check prior on both transformed and natural scale</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Setting high sd for probit-transformed Z leads to a peaked prior (non-uniform)</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>psd1 <span class="ot">=</span> psd</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>psd1[<span class="dv">7</span>] <span class="ot">=</span> <span class="dv">4</span>  <span class="co"># very wide spread</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>priorWDDM1 <span class="ot">=</span> <span class="fu">prior</span>(designWDDM, <span class="at">pmean =</span> pmean, <span class="at">psd =</span> psd1, <span class="at">type =</span> <span class="st">"single"</span>)</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(priorWDDM1, designWDDM, <span class="at">use_par =</span> <span class="st">"Z"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="eam-workshop_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Setting sd = 1 yields a uniform distribution on natural scale (Z ~ U(0,1))</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>psd1[<span class="dv">7</span>] <span class="ot">=</span> <span class="dv">1</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>priorWDDM1 <span class="ot">=</span> <span class="fu">prior</span>(designWDDM, <span class="at">pmean =</span> pmean, <span class="at">psd =</span> psd1, <span class="at">type =</span> <span class="st">"single"</span>)</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(priorWDDM1, designWDDM, <span class="at">use_par =</span> <span class="st">"Z"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="eam-workshop_files/figure-html/unnamed-chunk-13-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</details>
+<section id="run-model" class="level3">
+<h3 class="anchored" data-anchor-id="run-model">Run model</h3>
+<p>The <code>make_emc()</code> creates an emc object by combining the <strong>data</strong>, <strong>prior</strong>, and <strong>model specification</strong> into a emc object that is needed in <code>fit()</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>?<span class="fu">make_emc</span>()</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create MCMC samplers for model fitting</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>samplers <span class="ot">=</span> <span class="fu">make_emc</span>(simWDDM, designWDDM, <span class="at">prior =</span> priorWDDM)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Processing data set 1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Likelihood speedup factor: 1.9 (8634 unique trials)</code></pre>
+</div>
+</div>
+<details>
+<summary>
+<strong>Note. rt_resolution</strong>
+</summary>
+By default, rt_resolution = 0.02, which corresponds to a typical experimental setup using a 50Hz monitor without synchronization to screen refresh. This improves computational efficiency by calculating the likelihood only once for each unique combination of parameters and discretized response times (at the specified resolution), rather than for every trial individually. The resulting speedup and the number of unique trials retained after this compression are reported automatically.
+</details>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>hWDDM<span class="ot">=</span><span class="fu">fit</span>(samplers,<span class="at">verbose=</span><span class="cn">TRUE</span>, <span class="at">iter =</span> <span class="dv">2000</span>,</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">cores_per_chain =</span> <span class="dv">3</span>,<span class="at">fileName =</span> <span class="st">"fits/tmpWDDM.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Running preburn stage</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>1: Iterations preburn = 50</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Running burn stage</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>1: Iterations burn = 100</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Mean Rhat = 1.034</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Running adapt stage</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>1: Iterations adapt = 100</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Enough unique values detected: 150</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Testing proposal distribution creation</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Successfully adapted - stopping adaptation</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Running sample stage</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>1: Iterations sample = 100</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Max Rhat = 1.067</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>2: Iterations sample = 200</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Max Rhat = 1.036</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>3: Iterations sample = 300</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Max Rhat = 1.023</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>4: Iterations sample = 400</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Max Rhat = 1.076</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>5: Iterations sample = 500</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Max Rhat = 1.054</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>6: Iterations sample = 600</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Max Rhat = 1.046</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>7: Iterations sample = 700</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Max Rhat = 1.036</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>8: Iterations sample = 800</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Max Rhat = 1.031</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>9: Iterations sample = 900</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Max Rhat = 1.023</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>10: Iterations sample = 1000</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Max Rhat = 1.019</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>11: Iterations sample = 1100</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Max Rhat = 1.017</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>12: Iterations sample = 1200</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Max Rhat = 1.015</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>13: Iterations sample = 1300</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Max Rhat = 1.013</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>14: Iterations sample = 1400</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Max Rhat = 1.011</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>15: Iterations sample = 1500</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Max Rhat = 1.01</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>16: Iterations sample = 1600</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Max Rhat = 1.009</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>17: Iterations sample = 1700</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Max Rhat = 1.007</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>18: Iterations sample = 1800</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Max Rhat = 1.006</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>19: Iterations sample = 1900</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Max Rhat = 1.006</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>20: Iterations sample = 2000</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Max Rhat = 1.006</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Time difference of 4.142872 mins</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(hWDDM,<span class="at">file=</span><span class="st">"fits/WDDM.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<details>
+<summary>
+<strong>batch mode option</strong>
+</summary>
+<p>Because hierarchical model sampling can be time-consuming, we typically avoid launching the fitting process directly from the console. Instead, we use batch mode to manage and run long sampling jobs more reliably.</p>
+<p><strong>Step 1: Save the sampler object</strong></p>
+<p>First, save the emc sampler object to disk. It’s best to store this in a subdirectory dedicated to model fits, for example, <strong>fits/WDDM.RData</strong> for the DDM model.</p>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(samplers, <span class="at">file =</span> <span class="st">"fits/WDDM.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Step 2: Create a batch script</strong></p>
+<p>Next, create a separate R script (e.g., <strong>runWDDM.R</strong>) in the same directory. This script should contain the fitting commands:</p>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(EMC2)</span>
+<span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"WDDM.RData"</span>)</span>
+<span id="cb90-3"><a href="#cb90-3" aria-hidden="true" tabindex="-1"></a>hWDDM <span class="ot">=</span> <span class="fu">fit</span>(samplers,<span class="at">verbose=</span><span class="cn">TRUE</span>, <span class="at">iter =</span> <span class="dv">2000</span>,</span>
+<span id="cb90-4"><a href="#cb90-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">cores_per_chain =</span> <span class="dv">3</span>,<span class="at">fileName =</span> <span class="st">"tmpWDDM.RData"</span>)</span>
+<span id="cb90-5"><a href="#cb90-5" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(hWDDM,<span class="at">file=</span><span class="st">"WDDM.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><p><strong><em>The fileName</em></strong> argument ensures that progress is saved after each fitting cycle, preventing loss in case of interruption.</p></li>
+<li><p><strong><em>cores_per_chain</em></strong> allows parallel sampling across multiple cores (only on macOS and Linux). With 3 chains and 3 cores per chain, a total of 9 cores will be used.</p></li>
+</ul>
+<p><strong>Step 3: Run the script from the terminal</strong> In RStudio, open a terminal via Terminal &gt; New Terminal, navigate to the relevant directory:</p>
+<div class="sourceCode" id="cb91"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/eam-workshop/fits</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then run the batch script:</p>
+<div class="sourceCode" id="cb92"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nohup</span> R CMD BATCH runWDDM.R <span class="kw">&amp;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><p><strong><em>nohup</em></strong> (“no hangup”) ensures the fitting continues even if the terminal is closed. (To kill run <em>kill process_ID_number</em>)</p></li>
+<li><p><strong><em>&amp;</em></strong> runs the process in the background, so you can continue using the terminal.</p></li>
+</ul>
+<p><strong>Step 4: Monitor progress</strong></p>
+<p>All console output will be saved to <strong>runWDDM.Rout</strong>. You can open this file while sampling is ongoing to monitor progress.</p>
+</details>
+</section>
+</section>
+<section id="load-fitted-model" class="level2">
+<h2 class="anchored" data-anchor-id="load-fitted-model">Load fitted model</h2>
+<p>This command loads the previously saved sampler results from a <strong>.RData</strong> file. This is useful when fitting was done in batch mode and you want to inspect the results.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">load</span>(<span class="st">"fits/WDDM.RData"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "hWDDM"</code></pre>
+</div>
+</div>
+<section id="check-convergence-and-summarize-parameter-estimates" class="level3">
+<h3 class="anchored" data-anchor-id="check-convergence-and-summarize-parameter-estimates">Check convergence and summarize parameter estimates</h3>
+<p>The <code>check()</code> function displays convergence diagnostics such as R-hat values, highlighting parameters that may not have fully converged.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="fu">check</span>(hWDDM, <span class="at">selection =</span> <span class="st">"mu"</span>)  <span class="co"># Show the worst convergence diagnostics</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Iterations:
+     preburn burn adapt sample
+[1,]       0    0     0   2000
+[2,]       0    0     0   2000
+[3,]       0    0     0   2000
+
+ mu 
+        a a_GAPsmall        v   v_Sdif v_Sdif:CIinc   t0        Z
+Rhat    1          1    1.001    1.002        1.001    1    1.001
+ESS  6000       5696 4082.000 3533.000     2762.000 6259 5639.000</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="eam-workshop_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>You can also check the correlation between parameters with the function <code>pairs_posterior()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs_posterior</span>(hWDDM, <span class="at">selection =</span> <span class="st">"mu"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="eam-workshop_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The <code>summary()</code> function provides posterior summaries for all parameters (e.g., mean, SD, quantiles).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(hWDDM)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+ mu 
+               2.5%    50%  97.5%  Rhat  ESS
+a            -0.026  0.083  0.193 1.000 6000
+a_GAPsmall    0.052  0.152  0.252 1.000 5696
+v            -0.104 -0.007  0.090 1.001 4082
+v_Sdif        1.069  1.181  1.295 1.002 3533
+v_Sdif:CIinc  0.536  0.659  0.784 1.001 2762
+t0           -1.288 -1.168 -1.044 1.000 6259
+Z            -0.182 -0.063  0.053 1.001 5639
+
+ sigma2 
+              2.5%   50% 97.5%  Rhat  ESS
+a            0.079 0.121 0.199 1.000 4882
+a_GAPsmall   0.065 0.100 0.162 1.000 4822
+v            0.042 0.073 0.130 1.001 2717
+v_Sdif       0.064 0.108 0.188 1.002 2785
+v_Sdif:CIinc 0.055 0.104 0.195 1.001 1622
+t0           0.101 0.154 0.247 1.001 5352
+Z            0.096 0.146 0.237 1.000 4701
+
+ alpha 1 
+               2.5%    50%  97.5%  Rhat  ESS
+a             0.506  0.583  0.666 1.000 5826
+a_GAPsmall   -0.105 -0.019  0.062 1.001 5963
+v             0.182  0.349  0.522 1.000 5234
+v_Sdif        0.963  1.139  1.315 1.000 4657
+v_Sdif:CIinc  0.463  0.706  0.944 1.000 4461
+t0           -1.398 -1.314 -1.249 1.000 5785
+Z            -0.094 -0.009  0.072 1.000 5719</code></pre>
+</div>
+</div>
+<p>The <code>plot_pars()</code> help inspect parameter estimates across conditions and assess sampling performance.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb100"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_pars</span>(hWDDM, <span class="at">layout =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="eam-workshop_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb101"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="co"># map = TRUE, natural scale (not transformed)</span></span>
+<span id="cb101-2"><a href="#cb101-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_pars</span>(hWDDM, <span class="at">layout =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>), <span class="at">use_prior_lim =</span> <span class="cn">FALSE</span>, <span class="at">map =</span> <span class="cn">TRUE</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="eam-workshop_files/figure-html/unnamed-chunk-20-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="posterior-predictive-checks" class="level3">
+<h3 class="anchored" data-anchor-id="posterior-predictive-checks">Posterior predictive checks</h3>
+<p>Posterior predictive checks are a key part of model validation, helping us assess how well the model can reproduce the observed data. By using the <code>predict()</code> function, we can simulate data from the model using the posterior samples, which can then be compared to the observed data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a>ppWDDM <span class="ot">=</span> <span class="fu">predict</span>(hWDDM, <span class="at">n_cores =</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Plot cumulative distribution functions (CDFs) and density plots for model predictions, split by conditions defined by the factors GAP and CI.</p>
+<div class="sourceCode cell-code" id="cb103"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_cdf</span>(simWDDM, ppWDDM, <span class="at">defective_factor =</span> <span class="st">"GAP"</span>)</span>
+<span id="cb103-2"><a href="#cb103-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_density</span>(simWDDM, ppWDDM, <span class="at">defective_factor =</span> <span class="st">"GAP"</span>)</span>
+<span id="cb103-3"><a href="#cb103-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_cdf</span>(simWDDM, ppWDDM, <span class="at">defective_factor =</span> <span class="st">"CI"</span>)</span>
+<span id="cb103-4"><a href="#cb103-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_density</span>(simWDDM, ppWDDM, <span class="at">defective_factor =</span> <span class="st">"CI"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel" data-layout-nrow="2" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="eam-workshop_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="eam-workshop_files/figure-html/unnamed-chunk-22-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="eam-workshop_files/figure-html/unnamed-chunk-22-3.png" class="img-fluid" width="672"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="eam-workshop_files/figure-html/unnamed-chunk-22-4.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+<p>Let’s take a closer look at key statistics to evaluate the model fit in more detail.</p>
+<p><strong>Accuracy</strong> is well-predicted across all conditions, consistently falling within the 95% credible intervals of the posterior predictive distributions:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb104"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a>pc<span class="ot">=</span><span class="cf">function</span>(d) <span class="dv">100</span> <span class="sc">*</span> <span class="fu">mean</span>(d<span class="sc">$</span>S <span class="sc">==</span> d<span class="sc">$</span>R)</span>
+<span id="cb104-2"><a href="#cb104-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_stat</span>(</span>
+<span id="cb104-3"><a href="#cb104-3" aria-hidden="true" tabindex="-1"></a>  simWDDM, ppWDDM,</span>
+<span id="cb104-4"><a href="#cb104-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">factors =</span> <span class="fu">c</span>(<span class="st">"GAP"</span>, <span class="st">"CI"</span>),</span>
+<span id="cb104-5"><a href="#cb104-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">layout =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>),</span>
+<span id="cb104-6"><a href="#cb104-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">stat =</span> pc,</span>
+<span id="cb104-7"><a href="#cb104-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">stat_name =</span> <span class="st">"Accuracy (%)"</span></span>
+<span id="cb104-8"><a href="#cb104-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="eam-workshop_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The <strong>median RT</strong> for <em>correct</em> responses is also accurately predicted, closely aligning with the observed data across conditions:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb105"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_stat</span>(</span>
+<span id="cb105-2"><a href="#cb105-2" aria-hidden="true" tabindex="-1"></a>  simWDDM, ppWDDM,</span>
+<span id="cb105-3"><a href="#cb105-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">factors =</span> <span class="fu">c</span>(<span class="st">"GAP"</span>, <span class="st">"CI"</span>),</span>
+<span id="cb105-4"><a href="#cb105-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">layout =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>),</span>
+<span id="cb105-5"><a href="#cb105-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">stat =</span> <span class="cf">function</span>(d) <span class="fu">median</span>(d<span class="sc">$</span>rt[d<span class="sc">$</span>R <span class="sc">==</span> d<span class="sc">$</span>S]),</span>
+<span id="cb105-6"><a href="#cb105-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">stat_name =</span> <span class="st">"Median Correct RT (s)"</span></span>
+<span id="cb105-7"><a href="#cb105-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="eam-workshop_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The model captures the variability in RTs for correct responses effectively, as shown by the predicted standard deviation:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb106"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_stat</span>(</span>
+<span id="cb106-2"><a href="#cb106-2" aria-hidden="true" tabindex="-1"></a>  simWDDM, ppWDDM,</span>
+<span id="cb106-3"><a href="#cb106-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">factors =</span> <span class="fu">c</span>(<span class="st">"GAP"</span>, <span class="st">"CI"</span>),</span>
+<span id="cb106-4"><a href="#cb106-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">layout =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>),</span>
+<span id="cb106-5"><a href="#cb106-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">stat =</span> <span class="cf">function</span>(d) <span class="fu">sd</span>(d<span class="sc">$</span>rt[d<span class="sc">$</span>R <span class="sc">==</span> d<span class="sc">$</span>S]),</span>
+<span id="cb106-6"><a href="#cb106-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">stat_name =</span> <span class="st">"Sd of correct RT (s)"</span></span>
+<span id="cb106-7"><a href="#cb106-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="eam-workshop_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Finally, the model provides a reasonable estimate of the <strong>median RT for incorrect</strong> responses, despite fewer observations in these trials:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb107"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb107-1"><a href="#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_stat</span>(</span>
+<span id="cb107-2"><a href="#cb107-2" aria-hidden="true" tabindex="-1"></a>  simWDDM, ppWDDM,</span>
+<span id="cb107-3"><a href="#cb107-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">factors =</span> <span class="fu">c</span>(<span class="st">"GAP"</span>, <span class="st">"CI"</span>),</span>
+<span id="cb107-4"><a href="#cb107-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">layout =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>),</span>
+<span id="cb107-5"><a href="#cb107-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">stat =</span> <span class="cf">function</span>(d) <span class="fu">median</span>(d<span class="sc">$</span>rt[d<span class="sc">$</span>R <span class="sc">!=</span> d<span class="sc">$</span>S]),</span>
+<span id="cb107-6"><a href="#cb107-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">stat_name =</span> <span class="st">"Median Incorrect RT (s)"</span></span>
+<span id="cb107-7"><a href="#cb107-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="eam-workshop_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="parameter-recovery" class="level3">
+<h3 class="anchored" data-anchor-id="parameter-recovery">Parameter recovery</h3>
+<p>Parameter recovery is another critical diagnostic step in validating models. It helps answer the fundamental question:</p>
+<blockquote class="blockquote">
+<p><em>Can the model accurately estimate the true underlying parameters that generated the data?</em></p>
+</blockquote>
+<ul>
+<li><strong>Model validity</strong>: Good recovery indicates that the model structure is appropriate and that the parameters are identifiable.</li>
+<li><strong>Inference reliability</strong>: If a model fails to recover known parameters, its estimates from real data may also be misleading or biased.</li>
+<li><strong>Design evaluation</strong>: Recovery can reveal whether certain experimental conditions or parameter settings are insufficient to constrain the model.</li>
+</ul>
+<p>We begin by evaluating the overall recovery:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb108"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a>true_pars <span class="ot">=</span> pmean_sim</span>
+<span id="cb108-2"><a href="#cb108-2" aria-hidden="true" tabindex="-1"></a><span class="fu">recovery</span>(hWDDM, <span class="at">true_pars =</span> true_pars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="eam-workshop_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>To visualize the accuracy of parameter estimation, we plot the posterior means against the true values for each parameter. A strong recovery is indicated by points clustering around the diagonal:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb109"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb109-1"><a href="#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_pars</span>(hWDDM, <span class="at">layout =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">5</span>), <span class="at">true_pars =</span> true_pars,</span>
+<span id="cb109-2"><a href="#cb109-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">use_prior_lim =</span> <span class="cn">FALSE</span>, <span class="at">plot_prior =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="eam-workshop_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Next, we evaluate coverage, which checks whether the true parameter values fall within the 95% credible intervals of the posterior distributions.</p>
+<div class="sourceCode cell-code" id="cb110"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="fu">recovery</span>(hWDDM, <span class="at">true_pars =</span> subj_pars, </span>
+<span id="cb110-2"><a href="#cb110-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">do_CI =</span> <span class="cn">TRUE</span>, <span class="at">stat =</span> <span class="st">"coverage"</span>, <span class="at">selection =</span> <span class="st">"alpha"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel" data-layout-ncol="1">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img src="eam-workshop_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+<p>Good recovery provides trustworthy inferences!</p>
+<hr>
+</section>
+<section id="posterior-testing" class="level3">
+<h3 class="anchored" data-anchor-id="posterior-testing">Posterior Testing</h3>
+<p>Once the checks are performed, we can investigate hypotheses about specific parameters using their posterior distributions. The <code>parameters()</code> function extracts posterior samples, which can then be used for various forms of inference:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb111"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb111-1"><a href="#cb111-1" aria-hidden="true" tabindex="-1"></a>post <span class="ot">=</span> <span class="fu">parameters</span>(hWDDM)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Posterior samples provide a flexible foundation for testing directional hypotheses, computing credible intervals, and evaluating evidence against specific null values.</p>
+<p><strong>Posterior Probability.</strong> A simple and intuitive use of the posterior is to compute the proportion of samples supporting a directional hypothesis. For example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb112"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(post<span class="sc">$</span>a_GAPsmall <span class="sc">&gt;</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.997</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb114"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="fu">credible</span>(hWDDM, <span class="st">"a_GAPsmall"</span>, <span class="at">alternative =</span> <span class="st">"greater"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      a_GAPsmall mu
+2.5%        0.05 NA
+50%         0.15  0
+97.5%       0.25 NA
+attr(,"greater")
+[1] 0.997</code></pre>
+</div>
+</div>
+<p>This tells us the posterior probability that a_GAPsmall is greater than 0.</p>
+<p><strong>Credible intervals and null value testing.</strong> To formally assess uncertainty and determine whether an effect is credibly different from a specific value (e.g., zero), we can compute credible intervals. The <code>credible()</code> function reports whether the 95% credible interval includes the null value (mu = 0).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb116"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="fu">credible</span>(hWDDM, <span class="st">"a_GAPsmall"</span>, <span class="at">mu =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      a_GAPsmall mu
+2.5%        0.05 NA
+50%         0.15  0
+97.5%       0.25 NA
+attr(,"less")
+[1] 0.003</code></pre>
+</div>
+</div>
+<p><strong>Bayes factor.</strong> To quantify the evidence for or against the null hypothesis, we can compute a Bayes factor. This tests whether the data shifts the belief away from the prior (evidence against the null).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb118"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hypothesis</span>(hWDDM, <span class="st">"a_GAPsmall"</span>, <span class="at">selection =</span> <span class="st">"mu"</span>, <span class="at">map =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="eam-workshop_files/figure-html/unnamed-chunk-33-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5.300889</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="racing-diffusion-model-rdm" class="level2">
+<h2 class="anchored" data-anchor-id="racing-diffusion-model-rdm">Racing Diffusion Model (RDM)</h2>
+<p>In race models, each possible response is represented by a separate accumulator, and each accumulator has its own parameters. To help structure the model, the <code>design</code> function includes an argument called <strong>Rlevels</strong>, which automatically defines a latent response factor (<strong>lR</strong>) that indexes each accumulator according to its associated response (e.g., left or right).</p>
+<p>Race models require identifying which accumulator corresponds to the correct response for each trial. This is done using the <code>matchfun</code> argument, which takes a function that compares the stimulus and response labels.</p>
+<p>For simple designs, where the stimulus factor (S) and response factor (lR) have the same levels, the <code>matchfun</code> looks like this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb120"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a>matchfun<span class="ot">=</span><span class="cf">function</span>(d)d<span class="sc">$</span>S<span class="sc">==</span>d<span class="sc">$</span>lR</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This function returns <strong>TRUE</strong> when the accumulator corresponds to the correct response for a given stimulus.</p>
+<p>Using <code>matchfun</code>, the model creates a new factor called <strong>lM</strong> (latent match), which distinguishes:</p>
+<ul>
+<li><strong>matching accumulators</strong>: those representing the correct response</li>
+<li><strong>mismatching accumulators</strong>: those representing the incorrect response</li>
+</ul>
+<p>This allows us to estimate different drift rates for correct vs.&nbsp;incorrect responses, which is crucial for <strong>modeling decision accuracy</strong>.</p>
+<p>To make interpretation easier, drift rates are often reparameterized using:</p>
+<ul>
+<li>An average (<strong>intercept</strong>) across accumulators</li>
+<li>A difference (<strong>dif</strong>) between matching and mismatching accumulators</li>
+</ul>
+<p>This is done by applying a <code>contrast</code> matrix to the <strong>lM</strong> factor, typically:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb121"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb121-1"><a href="#cb121-1" aria-hidden="true" tabindex="-1"></a>ADmat<span class="ot">=</span><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>),<span class="at">ncol=</span><span class="dv">1</span>,<span class="at">dimnames=</span><span class="fu">list</span>(<span class="cn">NULL</span>,<span class="st">"dif"</span>)); ADmat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      dif
+[1,] -0.5
+[2,]  0.5</code></pre>
+</div>
+</div>
+<p>In this parameterization, the <strong>intercept</strong> represents the overall <em>drift rate</em>, typically interpreted as a measure of <strong>decision urgency</strong> or <strong>stimulus strength</strong>. The <code>v_lMdif</code> parameter captures the <em>difference in drift rates</em> between matching and mismatching accumulators, reflecting how well the participant can <strong>discriminate</strong> between correct and incorrect responses.</p>
+<p>This contrast coding is also applied to the <strong>congruence effect (CI)</strong>. Specifically, we estimate <code>v_lMdif:CIdif</code> as the <strong>effect of congruency on drift quality</strong>, while fixing <code>CIdif</code>, the <strong>effect of congruency on the overall drift rate</strong>, to zero using the <code>constant</code> argument.</p>
+<p>All parameters in the RDM are <strong>positive</strong> and estimated on the <strong>log scale</strong>. As in the DDM, <strong>within-trial variability is fixed to 1</strong>. We use a simplified RDM variant in which <strong>starting point variability (<code>A</code>) is fixed to zero</strong>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb123"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb123-1"><a href="#cb123-1" aria-hidden="true" tabindex="-1"></a>designRDM<span class="ot">=</span><span class="fu">design</span>(<span class="at">data=</span>simWDDM,<span class="at">model=</span>RDM,</span>
+<span id="cb123-2"><a href="#cb123-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">formula=</span><span class="fu">list</span>(B<span class="sc">~</span>GAP<span class="sc">+</span>lR,</span>
+<span id="cb123-3"><a href="#cb123-3" aria-hidden="true" tabindex="-1"></a>                              v<span class="sc">~</span>lM<span class="sc">*</span>CI,</span>
+<span id="cb123-4"><a href="#cb123-4" aria-hidden="true" tabindex="-1"></a>                              t0<span class="sc">~</span><span class="dv">1</span>),</span>
+<span id="cb123-5"><a href="#cb123-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">matchfun=</span><span class="cf">function</span>(d)d<span class="sc">$</span>S<span class="sc">==</span>d<span class="sc">$</span>lR,</span>
+<span id="cb123-6"><a href="#cb123-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">contrasts=</span><span class="fu">list</span>(<span class="at">lM=</span>ADmat,</span>
+<span id="cb123-7"><a href="#cb123-7" aria-hidden="true" tabindex="-1"></a>                                <span class="at">CI=</span>ADmat),</span>
+<span id="cb123-8"><a href="#cb123-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">constants =</span> <span class="fu">c</span>(<span class="at">v_CIdif=</span><span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Parameter(s) A, s not specified in formula and assumed constant.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+ Sampled Parameters: 
+[1] "B"             "B_GAPsmall"    "B_lRright"     "v"            
+[5] "v_lMdif"       "v_lMdif:CIdif" "t0"           
+
+ Design Matrices: 
+$B
+   GAP    lR B B_GAPsmall B_lRright
+ large  left 1          0         0
+ large right 1          0         1
+ small  left 1          1         0
+ small right 1          1         1
+
+$v
+    lM   CI v v_lMdif v_CIdif v_lMdif:CIdif
+  TRUE cong 1     0.5    -0.5         -0.25
+ FALSE cong 1    -0.5    -0.5          0.25
+  TRUE  inc 1     0.5     0.5          0.25
+ FALSE  inc 1    -0.5     0.5         -0.25
+
+$t0
+ t0
+  1
+
+$A
+ A
+ 1
+
+$s
+ s
+ 1</code></pre>
+</div>
+</div>
+<hr>
+<section id="prior-specification" class="level3">
+<h3 class="anchored" data-anchor-id="prior-specification">Prior specification</h3>
+<p>As in previous analyses, we expect a higher threshold for participants anticipating a small gap, reflecting increased caution. Accuracy is also expected to be above chance, indicated by <strong>v_lMdif</strong> being well above <em>log(1)</em>. Finally, we anticipate an increase in drift rate quality as a function of incongruency (i.e., <strong>v_lMdif:CIdif</strong>), reflecting greater discrimination during incongruent trials.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb126"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb126-1"><a href="#cb126-1" aria-hidden="true" tabindex="-1"></a>pmean <span class="ot">=</span> <span class="fu">c</span>(</span>
+<span id="cb126-2"><a href="#cb126-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">B =</span> <span class="fu">log</span>(<span class="dv">2</span>),               <span class="co"># baseline threshold</span></span>
+<span id="cb126-3"><a href="#cb126-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">B_GAPsmall =</span> <span class="fu">log</span>(<span class="fl">1.2</span>),    <span class="co"># increase threshold</span></span>
+<span id="cb126-4"><a href="#cb126-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">B_lRright=</span><span class="fu">log</span>(<span class="dv">1</span>),  <span class="co">#left vs. right bias</span></span>
+<span id="cb126-5"><a href="#cb126-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb126-6"><a href="#cb126-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">v =</span> <span class="fu">log</span>(<span class="fl">2.5</span>),         <span class="co"># the average rate </span></span>
+<span id="cb126-7"><a href="#cb126-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">v_lMdif =</span> <span class="fu">log</span>(<span class="dv">3</span>),   <span class="co"># v_lMd is the average quality</span></span>
+<span id="cb126-8"><a href="#cb126-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">'v_lMdif:CIdif'</span> <span class="ot">=</span> <span class="fu">log</span>(<span class="fl">1.5</span>), <span class="co"># the incongruent condition effect on quality</span></span>
+<span id="cb126-9"><a href="#cb126-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb126-10"><a href="#cb126-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">t0 =</span> <span class="fu">log</span>(<span class="fl">0.25</span>)       <span class="co"># non-decision time</span></span>
+<span id="cb126-11"><a href="#cb126-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb126-12"><a href="#cb126-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb126-13"><a href="#cb126-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb126-14"><a href="#cb126-14" aria-hidden="true" tabindex="-1"></a><span class="fu">mapped_pars</span>(designRDM, <span class="at">p_vector =</span> pmean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     CI   GAP     S    lR    lM     v   B A   t0 s   b
+1  cong large  left  left  TRUE 3.913 2.0 0 0.25 1 2.0
+2  cong large  left right FALSE 1.597 2.0 0 0.25 1 2.0
+3   inc large  left  left  TRUE 4.792 2.0 0 0.25 1 2.0
+4   inc large  left right FALSE 1.304 2.0 0 0.25 1 2.0
+5  cong small  left  left  TRUE 3.913 2.4 0 0.25 1 2.4
+6  cong small  left right FALSE 1.597 2.4 0 0.25 1 2.4
+7   inc small  left  left  TRUE 4.792 2.4 0 0.25 1 2.4
+8   inc small  left right FALSE 1.304 2.4 0 0.25 1 2.4
+9  cong large right  left FALSE 1.597 2.0 0 0.25 1 2.0
+10 cong large right right  TRUE 3.913 2.0 0 0.25 1 2.0
+11  inc large right  left FALSE 1.304 2.0 0 0.25 1 2.0
+12  inc large right right  TRUE 4.792 2.0 0 0.25 1 2.0
+13 cong small right  left FALSE 1.597 2.4 0 0.25 1 2.4
+14 cong small right right  TRUE 3.913 2.4 0 0.25 1 2.4
+15  inc small right  left FALSE 1.304 2.4 0 0.25 1 2.4
+16  inc small right right  TRUE 4.792 2.4 0 0.25 1 2.4</code></pre>
+</div>
+</div>
+<p>We can visualize the assumed model via the <code>plot_design()</code> function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb128"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_design</span>(designRDM, <span class="at">p_vector =</span> pmean,</span>
+<span id="cb128-2"><a href="#cb128-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">factors =</span> <span class="fu">list</span>(<span class="at">v =</span> <span class="fu">c</span>(<span class="st">"S"</span>, <span class="st">"CI"</span>), </span>
+<span id="cb128-3"><a href="#cb128-3" aria-hidden="true" tabindex="-1"></a>                           <span class="at">B =</span> <span class="st">"GAP"</span>),</span>
+<span id="cb128-4"><a href="#cb128-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">plot_factor =</span> <span class="st">"S"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="eam-workshop_files/figure-html/unnamed-chunk-39-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Set the prior on the effect to zero before model fitting:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb129"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb129-1"><a href="#cb129-1" aria-hidden="true" tabindex="-1"></a>pmean[<span class="st">'B_GAPsmall'</span>] <span class="ot">=</span> <span class="fu">log</span>(<span class="dv">1</span>)</span>
+<span id="cb129-2"><a href="#cb129-2" aria-hidden="true" tabindex="-1"></a>pmean[<span class="st">'v_lMdif:CIdif'</span>] <span class="ot">=</span><span class="fu">log</span>(<span class="dv">1</span>)</span>
+<span id="cb129-3"><a href="#cb129-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-4"><a href="#cb129-4" aria-hidden="true" tabindex="-1"></a>psd<span class="ot">=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,.<span class="dv">7</span>)</span>
+<span id="cb129-5"><a href="#cb129-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-6"><a href="#cb129-6" aria-hidden="true" tabindex="-1"></a>priorRDM<span class="ot">=</span><span class="fu">prior</span>(designRDM,</span>
+<span id="cb129-7"><a href="#cb129-7" aria-hidden="true" tabindex="-1"></a>               <span class="at">mu_mean=</span>pmean,</span>
+<span id="cb129-8"><a href="#cb129-8" aria-hidden="true" tabindex="-1"></a>               <span class="at">mu_sd=</span>psd,</span>
+<span id="cb129-9"><a href="#cb129-9" aria-hidden="true" tabindex="-1"></a>               <span class="at">type =</span> <span class="st">"standard"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="run-model-1" class="level3">
+<h3 class="anchored" data-anchor-id="run-model-1">Run model</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb130"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb130-1"><a href="#cb130-1" aria-hidden="true" tabindex="-1"></a>samplers <span class="ot">=</span> <span class="fu">make_emc</span>(simWDDM, designRDM, <span class="at">prior =</span> priorRDM)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Processing data set 1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Likelihood speedup factor: 1.9 (8634 unique trials)</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb133"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb133-1"><a href="#cb133-1" aria-hidden="true" tabindex="-1"></a>hRDM<span class="ot">=</span><span class="fu">fit</span>(samplers,<span class="at">verbose=</span><span class="cn">FALSE</span>, <span class="at">iter =</span> <span class="dv">2000</span>,<span class="at">cores_per_chain =</span> <span class="dv">3</span>,</span>
+<span id="cb133-2"><a href="#cb133-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">fileName =</span> <span class="st">"fits/tmpRDM.RData"</span>)</span>
+<span id="cb133-3"><a href="#cb133-3" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(hRDM,<span class="at">file=</span><span class="st">"fits/RDM.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb134"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb134-1"><a href="#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">load</span>(<span class="st">"fits/RDM.RData"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "hRDM"</code></pre>
+</div>
+</div>
+</section>
+<section id="check-convergence-and-summarize-parameter-estimates-1" class="level3">
+<h3 class="anchored" data-anchor-id="check-convergence-and-summarize-parameter-estimates-1">Check convergence and summarize parameter estimates</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb136"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb136-1"><a href="#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="fu">check</span>(hRDM,<span class="at">selection =</span> <span class="st">"mu"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Iterations:
+     preburn burn adapt sample
+[1,]       0    0     0   2000
+[2,]       0    0     0   2000
+[3,]       0    0     0   2000
+
+ mu 
+        B B_GAPsmall B_lRright        v  v_lMdif v_lMdif:CIdif       t0
+Rhat    1          1     1.001    1.003    1.003         1.002    1.001
+ESS  5071       5136  5637.000 1882.000 1761.000      2130.000 5366.000</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="eam-workshop_files/figure-html/unnamed-chunk-43-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb138"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb138-1"><a href="#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs_posterior</span>(hRDM,<span class="at">selection =</span> <span class="st">"mu"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="eam-workshop_files/figure-html/unnamed-chunk-43-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>These plots help inspect parameter estimates.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb139"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb139-1"><a href="#cb139-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_pars</span>(hRDM, <span class="at">layout =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="eam-workshop_files/figure-html/unnamed-chunk-44-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb140"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb140-1"><a href="#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_pars</span>(hRDM, <span class="at">layout =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">5</span>), <span class="at">use_prior_lim =</span> <span class="cn">FALSE</span>, <span class="at">map =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="eam-workshop_files/figure-html/unnamed-chunk-44-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="compare-wddm-and-rdm" class="level3">
+<h3 class="anchored" data-anchor-id="compare-wddm-and-rdm">Compare WDDM and RDM</h3>
+<p>We compare the WDDM and RDM based on predicted vs.&nbsp;observed response times. The data were simulated under the WDDM model, so we expect it to yield a better fit.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb141"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb141-1"><a href="#cb141-1" aria-hidden="true" tabindex="-1"></a>ppRDM <span class="ot">=</span> <span class="fu">predict</span>(hRDM, <span class="at">n_cores =</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Visual Comparison: CDF and Density Plots</strong></p>
+<p>The plots below show cumulative distribution functions (CDFs) and probability density functions (PDFs) for observed vs.&nbsp;predicted response times. Comparisons are split by two experimental factors: GAP and CI.</p>
+<div class="sourceCode cell-code" id="cb142"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb142-1"><a href="#cb142-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_cdf</span>(simWDDM,<span class="fu">list</span>(<span class="at">DDM =</span> ppWDDM,<span class="at">RDM =</span> ppRDM), </span>
+<span id="cb142-2"><a href="#cb142-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">defective_factor =</span> <span class="st">"GAP"</span>)</span>
+<span id="cb142-3"><a href="#cb142-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_density</span>(simWDDM,<span class="fu">list</span>(<span class="at">DDM =</span> ppWDDM,<span class="at">RDM =</span> ppRDM), <span class="at">defective_factor =</span> <span class="st">"GAP"</span>)</span>
+<span id="cb142-4"><a href="#cb142-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_cdf</span>(simWDDM,<span class="fu">list</span>(<span class="at">DDM =</span> ppWDDM,<span class="at">RDM =</span> ppRDM), <span class="at">defective_factor =</span> <span class="st">"CI"</span>)</span>
+<span id="cb142-5"><a href="#cb142-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_density</span>(simWDDM,<span class="fu">list</span>(<span class="at">DDM =</span> ppWDDM,<span class="at">RDM =</span> ppRDM), <span class="at">defective_factor =</span> <span class="st">"CI"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel" data-layout-nrow="2" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="eam-workshop_files/figure-html/unnamed-chunk-46-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="eam-workshop_files/figure-html/unnamed-chunk-46-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="eam-workshop_files/figure-html/unnamed-chunk-46-3.png" class="img-fluid" width="672"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="eam-workshop_files/figure-html/unnamed-chunk-46-4.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+<section id="model-comparison-metrics" class="level4">
+<h4 class="anchored" data-anchor-id="model-comparison-metrics"><strong>Model comparison metrics</strong></h4>
+<p>We use model selection criteria provided by EMC2 to assess model fit:</p>
+<ul>
+<li><strong>DIC</strong> (Deviance Information Criterion) and</li>
+<li><strong>BPIC</strong> (Bayesian Predictive Information Criterion) balance fit and complexity; BPIC penalizes complexity more strongly, thus tending to prefer simpler models.</li>
+<li><strong>MD</strong> (Marginal Deviance) is sensitive to prior specification and is used to compute Bayes Factors.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb143"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb143-1"><a href="#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="fu">compare</span>(<span class="fu">list</span>(<span class="at">WDDM =</span> hWDDM, <span class="at">RDM =</span> hRDM))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        MD wMD   DIC wDIC  BPIC wBPIC EffectiveN meanD Dmean  minD
+WDDM -4691   1 -5373    1 -5041     1        333 -5706 -6019 -6039
+RDM  -3727   0 -4272    0 -3926     0        346 -4617 -4910 -4963</code></pre>
+</div>
+</div>
+<p>Lower values for DIC, BPIC, and MD indicate better model performance. Since the data were simulated under the WDDM, it is expected to outperform RDM.</p>
 
 
+</section>
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
