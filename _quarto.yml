@@ -17,9 +17,14 @@ website:
 format:
   html: 
     theme: cosmo
-    fontsize: 1.1em
+    fontsize: 1.12em
     linestretch: 1.7
     mainfont: Helvetica Neue
     css: styles.css
     toc: true
+    grid:
+      sidebar-width: 100px
+      body-width: 900px
+      margin-width: 300px
+      gutter-width: 1rem
 

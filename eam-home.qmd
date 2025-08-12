@@ -1,5 +1,5 @@
 ---
-title: "Evidence Accumulation Models"
+title: "A practical introduction to EAMs"
 image: img/logo.png
 about:
   id: hero-heading

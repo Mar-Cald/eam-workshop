@@ -1,5 +1,6 @@
 ---
 title: "Intro to EAM"
+subtitle: "@47th ECVP 2025 Mainz"
 author: Margherita Calderan
 format:  
   revealjs:  
@@ -642,41 +643,7 @@ Outliers distort model fits.
 :::
 :::::
 
-## Identifying Fast Guessing
 
-A principled method:
-
-1.  Sort RTs from fastest to slowest
-
-2.  Plot accuracy as a function of RT
-
-3.  Find the **"chance-performance boundary"**
-
-4.  Discard all RTs **below that point**
-
-> Better than arbitrary 200–300 ms cutoff
-
-## Detecting Nonstationarity
-
-::::: columns
-::: {.column width="50%"}
-Check for **drift** across trials:
-
--   Look for trends suggesting:
-
-    -   Fatigue
-    -   Learning
-    -   Strategic shifts
-:::
-
-::: {.column width="50%"}
-Use this to:
-
--   Exclude sessions
-
--   Model time-on-task effects
-:::
-:::::
 
 # "All Models Are Wrong, but Some Are Useful" - G. Box {.align-center}
 

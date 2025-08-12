@@ -17,3 +17,6 @@ Provides theoretical background, methodology, and applications of EMC2.
 ### 🧠 Summer School Materials
 From the [Model Based Neuroscience Summer School](https://modelbasedneurosci.com/){target="_blank"} — highly recommended for those interested in hands-on training in cognitive modeling and Bayesian inference.
 
+## **brms** tutorial by Henrik Singmann
+[Diffusion/Wiener Model Analysis with brms](http://singmann.org/wiener-model-analysis-with-brms-part-i/)
+
