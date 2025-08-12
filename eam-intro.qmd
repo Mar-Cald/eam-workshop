@@ -131,21 +131,19 @@ the models contain parameters controlling the evidence starJng point (allowing f
 
 EAMs decompose decisions into:
 
--   **Drift rate (v)**
+-   **Drift rate**
 
--   **Threshold (a)**
+-   **Threshold**
 
--   **Bias (z)**
+-   **Nondecision time**
 
--   **Nondecision time (Ter)**
+## Drift Rate
 
-## Drift Rate (v)
+Reflects **evidence strength**
 
--   Reflects **evidence strength**
+-   ⬆ Drift: fast & accurate decisions
 
--   ⬆ Drift → fast & accurate decisions
-
--   ⬇ Drift → slow, error-prone
+-   ⬇ Drift: slow, error-prone
 
 Manipulated by:
 
@@ -153,50 +151,26 @@ Manipulated by:
 
 -   Attention/task difficulty
 
-## Thresholds (a)
+## Thresholds
 
 -   Set before stimulus onset
 
 -   Reflect **response caution/cognitive control/bias/preference**
 
-⬆ Threshold:
+⬆ Threshold: Slower but more accurate
 
--   Slower but more accurate
-
-⬇ Threshold:
-
--   Faster but error-prone
+⬇ Threshold: Faster but error-prone
 
 > Manipulate via pre-trial cues or instructions.
 
-## Starting Point (z)
 
--   Reflects **response bias**
-
--   Midpoint = no bias
-
-Deviating from midpoint:
-
--   Favors one response:
-    -   Faster/more accurate for favored
-    -   Slower/less accurate for disfavored
-
-Set **before** stimulus onset.
-
-## Nondecision Time (Ter)
+## Nondecision Time 
 
 -   Time to encode stimulus + execute response
 
 -   Shifts RT distribution **without** changing shape/accuracy
 
-Sensitive to:
-
--   Visual complexity
-
--   Motor demands
-
 > Hard to estimate precisely — often noisy across individuals.
-
 
 
 ## Relative Evidence Models {.small-text}
