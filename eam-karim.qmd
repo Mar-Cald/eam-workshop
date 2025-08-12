@@ -30,7 +30,124 @@ library(ggplot2)
 library(dplyr)
 ```
 
-## Visual Perception
+::::: columns
+::: {.column width="70%"}
+![](img/2022abstract.jpg){width=700 height=700}
+:::
+
+::: {.column .small-text .center width="30%"}
+<br/>
+
+<span style="font-size:0.8em;">
+[Wolf, C., Belopolsky, A. V., & Lappe, M. (2022). *Current foveal inspection and previous peripheral preview influence subsequent eye movement decisions*. *iScience*, 25(9), 104922.](https://doi.org/10.1016/j.isci.2022.104922){target="_blank"}
+</span>
+:::
+:::::
+
+## Aims
+
+1.  Probe the existence of an interaction between foveal inspection and peripheral selection.
+
+2. Investigate the effect of previous fixations on peripheral selection. 
+
+## Experimental Task
+
+![](https://journals.plos.org/ploscompbiol/article/figure/image?id=10.1371/journal.pcbi.1007202.g001)  
+*Diagram: Participants fixate foveally on a central stimulus (face or noise) with or without peripheral preview; then choose between two peripheral targets.*
+
+- Trials start with foveal inspection of a stimulus.
+- Peripheral targets presented after inspection.
+- Participants make a saccade to select one peripheral target.
+- Conditions:
+  - Foveal stimulus meaningfulness (face vs noise).
+  - Peripheral preview (present vs absent).
+
+---
+
+## Drift-Diffusion Model (DDM)
+
+- Models choice and reaction times simultaneously.
+- Parameters:
+  - **Drift rate (v):** rate of evidence accumulation.
+  - **Boundary separation (a):** decision threshold.
+  - **Non-decision time (Ter):** encoding and motor delays.
+- Model fits provide insight into how foveal inspection and preview affect decision dynamics.
+
+---
+
+## Results: DDM Parameters
+
+| Condition               | Drift rate (v)    | Non-decision time (Ter) |
+|------------------------|-------------------|-------------------------|
+| Meaningful foveal + preview    | High               | Low                     |
+| Meaningful foveal + no preview | Lower              | Higher                  |
+| Noise foveal + preview          | Moderate           | Moderate                 |
+| Noise foveal + no preview       | Lowest             | Highest                  |
+
+- **Drift rate decreased** when foveal inspection was meaningful or when preview was absent.
+- **Non-decision time increased** under those same conditions.
+
+---
+
+## Interpretation
+
+- Foveal inspection with meaningful content delays and slows peripheral decision evidence accumulation.
+- Lack of peripheral preview similarly reduces decision efficiency.
+- Suggests **shared attentional resources** and **limited parallel processing** across foveal and peripheral vision.
+
+---
+
+## Figure: Model Fits and RT Distributions
+
+<!-- Add figure 5 from the paper here -->  
+![](https://doi.org/10.1167/jov.22.10.4.fig5)
+
+---
+
+## Conclusions
+
+- Evidence accumulation dynamics (DDM parameters) are sensitive to foveal and peripheral task demands.
+- Highlights importance of **interactions between foveal processing and peripheral decision-making**.
+- Drift-diffusion modeling provides mechanistic insight beyond accuracy or mean RTs alone.
+
+---
+
+## Reference
+
+Van Leeuwen, C., Wolf, C., Hessels, R. S., & Hooge, I. T. C. (2022).  
+*Current foveal inspection and previous peripheral preview influence subsequent eye movement decisions.*  
+Journal of Vision, 22(10), 4. https://doi.org/10.1167/jov.22.10.4
 
 
+## The Experiment
 
+## Stimuli
+
+2 x 2 x 2 design:
+
+- 2 **gap sizes** (small vs large)  
+- 2 **conditions** (congruent vs incongruent)  
+- 2 peripheral orientations (left vs right)
+
+---
+
+![](img/24leftcongruent1.png){width="1200" height="675"}
+
+---
+
+![](img/24leftincongruent1.png){width="1200" height="675"}
+
+---
+
+![](img/51leftcongruent1.png){width="1200" height="675"}
+
+---
+
+![](img/51leftincongruent1.png){width="1200" height="675"}
+
+## Procedure
+
+![](img/procedure.png){width="3194.4" height=""}
+Task:
+
+targets (peripheral) lines **orientation judgement** left vs right

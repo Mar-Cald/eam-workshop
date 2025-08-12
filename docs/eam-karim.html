@@ -346,8 +346,159 @@ Carolina Maria Oletto
 
   <p class="date">August 24, 2025</p>
 </section>
-<section id="visual-perception" class="slide level2">
-<h2>Visual Perception</h2>
+<section class="slide level2">
+
+<div class="columns">
+<div class="column" style="width:70%;">
+<p><img data-src="img/2022abstract.jpg" width="700" height="700"></p>
+</div><div class="column small-text center" style="width:30%;">
+<p><br></p>
+<p><span style="font-size:0.8em;"> <a href="https://doi.org/10.1016/j.isci.2022.104922" target="_blank">Wolf, C., Belopolsky, A. V., &amp; Lappe, M. (2022). <em>Current foveal inspection and previous peripheral preview influence subsequent eye movement decisions</em>. <em>iScience</em>, 25(9), 104922.</a> </span></p>
+</div></div>
+</section>
+<section id="aims" class="slide level2">
+<h2>Aims</h2>
+<ol type="1">
+<li><p>Probes the existence of an interaction between foveal inspection and peripheral selection.</p></li>
+<li><p>Investigate the effect of previous fixations on peripheral selection.</p></li>
+</ol>
+</section>
+<section id="experimental-paradigm" class="slide level2">
+<h2>Experimental Paradigm</h2>
+<p>Therefore, we here measured peripheral selection in a dual saccade paradigm (Figure 1) and employed a drift-diffusion computational modeling approach to uncover whether foveal inspection and peripheral selection interact.</p>
+</section>
+<section id="experimental-task" class="slide level2">
+<h2>Experimental Task</h2>
+<p><img data-src="https://journals.plos.org/ploscompbiol/article/figure/image?id=10.1371/journal.pcbi.1007202.g001"><br>
+<em>Diagram: Participants fixate foveally on a central stimulus (face or noise) with or without peripheral preview; then choose between two peripheral targets.</em></p>
+<ul>
+<li>Trials start with foveal inspection of a stimulus.</li>
+<li>Peripheral targets presented after inspection.</li>
+<li>Participants make a saccade to select one peripheral target.</li>
+<li>Conditions:
+<ul>
+<li>Foveal stimulus meaningfulness (face vs noise).</li>
+<li>Peripheral preview (present vs absent).</li>
+</ul></li>
+</ul>
+</section>
+<section id="drift-diffusion-model-ddm" class="slide level2">
+<h2>Drift-Diffusion Model (DDM)</h2>
+<ul>
+<li>Models choice and reaction times simultaneously.</li>
+<li>Parameters:
+<ul>
+<li><strong>Drift rate (v):</strong> rate of evidence accumulation.</li>
+<li><strong>Boundary separation (a):</strong> decision threshold.</li>
+<li><strong>Non-decision time (Ter):</strong> encoding and motor delays.</li>
+</ul></li>
+<li>Model fits provide insight into how foveal inspection and preview affect decision dynamics.</li>
+</ul>
+</section>
+<section id="results-ddm-parameters" class="slide level2">
+<h2>Results: DDM Parameters</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 35%">
+<col style="width: 27%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Condition</th>
+<th>Drift rate (v)</th>
+<th>Non-decision time (Ter)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Meaningful foveal + preview</td>
+<td>High</td>
+<td>Low</td>
+</tr>
+<tr class="even">
+<td>Meaningful foveal + no preview</td>
+<td>Lower</td>
+<td>Higher</td>
+</tr>
+<tr class="odd">
+<td>Noise foveal + preview</td>
+<td>Moderate</td>
+<td>Moderate</td>
+</tr>
+<tr class="even">
+<td>Noise foveal + no preview</td>
+<td>Lowest</td>
+<td>Highest</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Drift rate decreased</strong> when foveal inspection was meaningful or when preview was absent.</li>
+<li><strong>Non-decision time increased</strong> under those same conditions.</li>
+</ul>
+</section>
+<section id="interpretation" class="slide level2">
+<h2>Interpretation</h2>
+<ul>
+<li>Foveal inspection with meaningful content delays and slows peripheral decision evidence accumulation.</li>
+<li>Lack of peripheral preview similarly reduces decision efficiency.</li>
+<li>Suggests <strong>shared attentional resources</strong> and <strong>limited parallel processing</strong> across foveal and peripheral vision.</li>
+</ul>
+</section>
+<section id="figure-model-fits-and-rt-distributions" class="slide level2">
+<h2>Figure: Model Fits and RT Distributions</h2>
+<!-- Add figure 5 from the paper here -->
+
+<img data-src="https://doi.org/10.1167/jov.22.10.4.fig5" class="r-stretch"></section>
+<section id="conclusions" class="slide level2">
+<h2>Conclusions</h2>
+<ul>
+<li>Evidence accumulation dynamics (DDM parameters) are sensitive to foveal and peripheral task demands.</li>
+<li>Highlights importance of <strong>interactions between foveal processing and peripheral decision-making</strong>.</li>
+<li>Drift-diffusion modeling provides mechanistic insight beyond accuracy or mean RTs alone.</li>
+</ul>
+</section>
+<section id="reference" class="slide level2">
+<h2>Reference</h2>
+<p>Van Leeuwen, C., Wolf, C., Hessels, R. S., &amp; Hooge, I. T. C. (2022).<br>
+<em>Current foveal inspection and previous peripheral preview influence subsequent eye movement decisions.</em><br>
+Journal of Vision, 22(10), 4. https://doi.org/10.1167/jov.22.10.4</p>
+</section>
+<section id="the-experiment" class="slide level2">
+<h2>The Experiment</h2>
+</section>
+<section id="stimuli" class="slide level2">
+<h2>Stimuli</h2>
+<p>2 x 2 x 2 design:</p>
+<ul>
+<li>2 <strong>gap sizes</strong> (small vs large)<br>
+</li>
+<li>2 <strong>conditions</strong> (congruent vs incongruent)<br>
+</li>
+<li>2 peripheral orientations (left vs right)</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<p><img data-src="img/24leftcongruent1.png" width="1200" height="675"></p>
+</section>
+<section class="slide level2">
+
+<p><img data-src="img/24leftincongruent1.png" width="1200" height="675"></p>
+</section>
+<section class="slide level2">
+
+<p><img data-src="img/51leftcongruent1.png" width="1200" height="675"></p>
+</section>
+<section class="slide level2">
+
+<p><img data-src="img/51leftincongruent1.png" width="1200" height="675"></p>
+</section>
+<section id="procedure" class="slide level2">
+<h2>Procedure</h2>
+<p><img data-src="img/procedure.png" width="3194"> Task:</p>
+<p>targets (peripheral) lines <strong>orientation judgement</strong> left vs right</p>
 
 <div class="quarto-auto-generated-content">
 <p><img src="img/logo.png" class="slide-logo"></p>

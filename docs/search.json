@@ -411,5 +411,159 @@
     "title": "EAM in Visual Perception Research",
     "section": "Visual Perception",
     "text": "Visual Perception"
+  },
+  {
+    "objectID": "eam-karim.html#models",
+    "href": "eam-karim.html#models",
+    "title": "EAM in Visual Perception Research",
+    "section": "Models",
+    "text": "Models"
+  },
+  {
+    "objectID": "eam-karim.html#the-experiment",
+    "href": "eam-karim.html#the-experiment",
+    "title": "EAM in Visual Perception Research",
+    "section": "The Experiment",
+    "text": "The Experiment"
+  },
+  {
+    "objectID": "eam-karim.html#stimuli",
+    "href": "eam-karim.html#stimuli",
+    "title": "EAM in Visual Perception Research",
+    "section": "Stimuli",
+    "text": "Stimuli\n2 x 2 x 2 design:\n\n2 gap sizes (small vs large)\n\n2 conditions (congruent vs incongruent)\n\n2 peripheral orientations (left vs right)"
+  },
+  {
+    "objectID": "eam-karim.html#section",
+    "href": "eam-karim.html#section",
+    "title": "EAM in Visual Perception Research",
+    "section": "",
+    "text": "##\n ##\n ##"
+  },
+  {
+    "objectID": "eam-karim.html#procedure",
+    "href": "eam-karim.html#procedure",
+    "title": "EAM in Visual Perception Research",
+    "section": "Procedure",
+    "text": "Procedure\n Task:\ntargets (peripheral) lines orientation judgement left vs right"
+  },
+  {
+    "objectID": "eam-karim.html#background",
+    "href": "eam-karim.html#background",
+    "title": "EAM in Visual Perception Research",
+    "section": "Background",
+    "text": "Background\n\nVisual decision-making involves interaction between foveal inspection and peripheral selection.\nFovea processes high-resolution info, but decisions often require choosing peripheral targets.\nUnderstanding how foveal content and peripheral preview affect subsequent eye movements is critical."
+  },
+  {
+    "objectID": "eam-karim.html#experimental-paradigm",
+    "href": "eam-karim.html#experimental-paradigm",
+    "title": "EAM in Visual Perception Research",
+    "section": "Experimental Paradigm",
+    "text": "Experimental Paradigm\nTherefore, we here measured peripheral selection in a dual saccade paradigm (Figure 1) and employed a drift-diffusion computational modeling approach to uncover whether foveal inspection and peripheral selection interact."
+  },
+  {
+    "objectID": "eam-karim.html#drift-diffusion-modeling-framework",
+    "href": "eam-karim.html#drift-diffusion-modeling-framework",
+    "title": "EAM in Visual Perception Research",
+    "section": "Drift-Diffusion Modeling Framework",
+    "text": "Drift-Diffusion Modeling Framework\n\nDDM Fundamentals:\n\nDrift rate (v): Speed and quality of evidence accumulation.\nBoundary separation (a): Decision threshold, reflects caution.\nNon-decision time (Ter): Sensory/motor processes outside decision.\n\nProvides mechanistic insight into how foveal and preview conditions selectively affect decision parameters."
+  },
+  {
+    "objectID": "eam-karim.html#model-fits-reaction-time-distributions",
+    "href": "eam-karim.html#model-fits-reaction-time-distributions",
+    "title": "EAM in Visual Perception Research",
+    "section": "Model Fits & Reaction Time Distributions",
+    "text": "Model Fits & Reaction Time Distributions\n\nShows model predictions (gray lines) vs. actual RT data (black lines) across four conditions:\n\nFace preview vs. outline, Noise preview vs. outline.\n\nThe fit captures both choice proportions (side of the curves) and RT distributions."
+  },
+  {
+    "objectID": "eam-karim.html#parameter-changes-across-conditions",
+    "href": "eam-karim.html#parameter-changes-across-conditions",
+    "title": "EAM in Visual Perception Research",
+    "section": "Parameter Changes Across Conditions",
+    "text": "Parameter Changes Across Conditions\n\nDrift rate (v):\n\nReduced when the inspection target was meaningful (face) vs. noise.\nFurther modulated by preview presence: reduced drift when no preview.\nInteraction effect: drift changes depend on both factors.\n\nNon-decision time (Ter):\n\nIncreased when inspecting meaningful foveal content (face &gt; noise).\nAlso increased when peripheral preview was absent (outline condition)."
+  },
+  {
+    "objectID": "eam-karim.html#key-conclusions",
+    "href": "eam-karim.html#key-conclusions",
+    "title": "EAM in Visual Perception Research",
+    "section": "Key Conclusions",
+    "text": "Key Conclusions\n\nFoveal inspection meaning (face vs. noise) and lack of peripheral preview both:\n\nDelay decision onset (↑ non-decision time).\nSlow evidence accumulation (↓ drift rate).\n\nThe DDM elegantly dissociates perceptual encoding delays from decision-quality deterioration.\nSuggests interdependence between foveal inspection and peripheral target selection."
+  },
+  {
+    "objectID": "eam-karim.html#implications-future-directions",
+    "href": "eam-karim.html#implications-future-directions",
+    "title": "EAM in Visual Perception Research",
+    "section": "Implications & Future Directions",
+    "text": "Implications & Future Directions\n\nEvidence supports limited parallel processing across fovea and periphery.\nDDM parameters provide a window into underlying cognitive mechanisms during saccadic decision-making.\nApplications:\n\nInterface design: ensuring peripheral cues are not missed due to foveal tasks.\nClinical: understanding oculomotor impairments and attentional allocation.\n\nFuture work:\n\nLink DDM directly to neural measures (EEG, fMRI, single-unit).\nTest predictions in dynamic or cluttered real-world scenes."
+  },
+  {
+    "objectID": "eam-karim.html#reference",
+    "href": "eam-karim.html#reference",
+    "title": "EAM in Visual Perception Research",
+    "section": "Reference",
+    "text": "Reference\nVan Leeuwen, C., Wolf, C., Hessels, R. S., & Hooge, I. T. C. (2022).\nCurrent foveal inspection and previous peripheral preview influence subsequent eye movement decisions.\nJournal of Vision, 22(10), 4. https://doi.org/10.1167/jov.22.10.4"
+  },
+  {
+    "objectID": "eam-karim.html#research-question",
+    "href": "eam-karim.html#research-question",
+    "title": "EAM in Visual Perception Research",
+    "section": "Research Question",
+    "text": "Research Question\n\nHow do current foveal inspection and previous peripheral preview influence decision processes for choosing peripheral targets?\nHypothesis: Both factors modulate the dynamics of evidence accumulation in the decision."
+  },
+  {
+    "objectID": "eam-karim.html#experimental-task",
+    "href": "eam-karim.html#experimental-task",
+    "title": "EAM in Visual Perception Research",
+    "section": "Experimental Task",
+    "text": "Experimental Task\n\nDiagram: Participants fixate foveally on a central stimulus (face or noise) with or without peripheral preview; then choose between two peripheral targets.\n\nTrials start with foveal inspection of a stimulus.\nPeripheral targets presented after inspection.\nParticipants make a saccade to select one peripheral target.\nConditions:\n\nFoveal stimulus meaningfulness (face vs noise).\nPeripheral preview (present vs absent)."
+  },
+  {
+    "objectID": "eam-karim.html#drift-diffusion-model-ddm",
+    "href": "eam-karim.html#drift-diffusion-model-ddm",
+    "title": "EAM in Visual Perception Research",
+    "section": "Drift-Diffusion Model (DDM)",
+    "text": "Drift-Diffusion Model (DDM)\n\nModels choice and reaction times simultaneously.\nParameters:\n\nDrift rate (v): rate of evidence accumulation.\nBoundary separation (a): decision threshold.\nNon-decision time (Ter): encoding and motor delays.\n\nModel fits provide insight into how foveal inspection and preview affect decision dynamics."
+  },
+  {
+    "objectID": "eam-karim.html#results-ddm-parameters",
+    "href": "eam-karim.html#results-ddm-parameters",
+    "title": "EAM in Visual Perception Research",
+    "section": "Results: DDM Parameters",
+    "text": "Results: DDM Parameters\n\n\n\n\n\n\n\n\nCondition\nDrift rate (v)\nNon-decision time (Ter)\n\n\n\n\nMeaningful foveal + preview\nHigh\nLow\n\n\nMeaningful foveal + no preview\nLower\nHigher\n\n\nNoise foveal + preview\nModerate\nModerate\n\n\nNoise foveal + no preview\nLowest\nHighest\n\n\n\n\nDrift rate decreased when foveal inspection was meaningful or when preview was absent.\nNon-decision time increased under those same conditions."
+  },
+  {
+    "objectID": "eam-karim.html#interpretation",
+    "href": "eam-karim.html#interpretation",
+    "title": "EAM in Visual Perception Research",
+    "section": "Interpretation",
+    "text": "Interpretation\n\nFoveal inspection with meaningful content delays and slows peripheral decision evidence accumulation.\nLack of peripheral preview similarly reduces decision efficiency.\nSuggests shared attentional resources and limited parallel processing across foveal and peripheral vision."
+  },
+  {
+    "objectID": "eam-karim.html#figure-model-fits-and-rt-distributions",
+    "href": "eam-karim.html#figure-model-fits-and-rt-distributions",
+    "title": "EAM in Visual Perception Research",
+    "section": "Figure: Model Fits and RT Distributions",
+    "text": "Figure: Model Fits and RT Distributions"
+  },
+  {
+    "objectID": "eam-karim.html#conclusions",
+    "href": "eam-karim.html#conclusions",
+    "title": "EAM in Visual Perception Research",
+    "section": "Conclusions",
+    "text": "Conclusions\n\nEvidence accumulation dynamics (DDM parameters) are sensitive to foveal and peripheral task demands.\nHighlights importance of interactions between foveal processing and peripheral decision-making.\nDrift-diffusion modeling provides mechanistic insight beyond accuracy or mean RTs alone."
+  },
+  {
+    "objectID": "eam-karim.html#current-foveal-inspection-and-previous-peripheral-preview-influence-subsequent-eye-movement-decisions",
+    "href": "eam-karim.html#current-foveal-inspection-and-previous-peripheral-preview-influence-subsequent-eye-movement-decisions",
+    "title": "EAM in Visual Perception Research",
+    "section": "Current foveal inspection and previous peripheral preview influence subsequent eye movement decisions",
+    "text": "Current foveal inspection and previous peripheral preview influence subsequent eye movement decisions\n\n Wolf, C., Belopolsky, A. V., & Lappe, M. (2022). Current foveal inspection and previous peripheral preview influence subsequent eye movement decisions. iScience, 25(9), 104922."
+  },
+  {
+    "objectID": "eam-karim.html#aims",
+    "href": "eam-karim.html#aims",
+    "title": "EAM in Visual Perception Research",
+    "section": "Aims",
+    "text": "Aims\n\nProbes the existence of an interaction between foveal inspection and peripheral selection.\nInvestigate the effect of previous fixations on peripheral selection."
   }
 ]
