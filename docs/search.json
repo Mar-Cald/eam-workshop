@@ -235,7 +235,7 @@
     "href": "eam-intro.html#section",
     "title": "Intro to EAM",
     "section": "",
-    "text": "EAMs decompose decisions into:\n\nDrift rate (v)\nThreshold (a)\nBias (z)\nNondecision time (Ter)"
+    "text": "EAMs decompose decisions into:\n\nDrift rate\nThreshold\nNondecision time"
   },
   {
     "objectID": "eam-intro.html#drift-rate-v",
@@ -483,6 +483,7 @@
     "text": "EAM in Visual Perception Research\n[PDF version]\nHTML version"
   },
   {
+<<<<<<< HEAD
     "objectID": "eam-karim.html#aims-1",
     "href": "eam-karim.html#aims-1",
     "title": "EAM in Visual Perception Research",
@@ -544,5 +545,26 @@
     "title": "EAM in Visual Perception Research",
     "section": "Study 2",
     "text": "Study 2"
+=======
+    "objectID": "eam-intro.html#drift-rate",
+    "href": "eam-intro.html#drift-rate",
+    "title": "Intro to EAM",
+    "section": "Drift Rate",
+    "text": "Drift Rate\nReflects evidence strength\n\n⬆ Drift: fast & accurate decisions\n⬇ Drift: slow, error-prone\n\nManipulated by:\n\nStimulus discriminability\nAttention/task difficulty"
+  },
+  {
+    "objectID": "eam-intro.html#thresholds",
+    "href": "eam-intro.html#thresholds",
+    "title": "Intro to EAM",
+    "section": "Thresholds",
+    "text": "Thresholds\n\nSet before stimulus onset\nReflect response caution/cognitive control/bias/preference\n\n⬆ Threshold: Slower but more accurate\n⬇ Threshold: Faster but error-prone\n\nManipulate via pre-trial cues or instructions."
+  },
+  {
+    "objectID": "eam-intro.html#nondecision-time",
+    "href": "eam-intro.html#nondecision-time",
+    "title": "Intro to EAM",
+    "section": "Nondecision Time",
+    "text": "Nondecision Time\n\nTime to encode stimulus + execute response\nShifts RT distribution without changing shape/accuracy\n\n\nHard to estimate precisely — often noisy across individuals."
+>>>>>>> tita
   }
 ]

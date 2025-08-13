@@ -482,18 +482,17 @@ Margherita Calderan
 <h2></h2>
 <p>EAMs decompose decisions into:</p>
 <ul>
-<li><p><strong>Drift rate (v)</strong></p></li>
-<li><p><strong>Threshold (a)</strong></p></li>
-<li><p><strong>Bias (z)</strong></p></li>
-<li><p><strong>Nondecision time (Ter)</strong></p></li>
+<li><p><strong>Drift rate</strong></p></li>
+<li><p><strong>Threshold</strong></p></li>
+<li><p><strong>Nondecision time</strong></p></li>
 </ul>
 </section>
-<section id="drift-rate-v" class="slide level2">
-<h2>Drift Rate (v)</h2>
+<section id="drift-rate" class="slide level2">
+<h2>Drift Rate</h2>
+<p>Reflects <strong>evidence strength</strong></p>
 <ul>
-<li><p>Reflects <strong>evidence strength</strong></p></li>
-<li><p>⬆ Drift → fast &amp; accurate decisions</p></li>
-<li><p>⬇ Drift → slow, error-prone</p></li>
+<li><p>⬆ Drift: fast &amp; accurate decisions</p></li>
+<li><p>⬇ Drift: slow, error-prone</p></li>
 </ul>
 <p>Manipulated by:</p>
 <ul>
@@ -501,50 +500,23 @@ Margherita Calderan
 <li><p>Attention/task difficulty</p></li>
 </ul>
 </section>
-<section id="thresholds-a" class="slide level2">
-<h2>Thresholds (a)</h2>
+<section id="thresholds" class="slide level2">
+<h2>Thresholds</h2>
 <ul>
 <li><p>Set before stimulus onset</p></li>
 <li><p>Reflect <strong>response caution/cognitive control/bias/preference</strong></p></li>
 </ul>
-<p>⬆ Threshold:</p>
-<ul>
-<li>Slower but more accurate</li>
-</ul>
-<p>⬇ Threshold:</p>
-<ul>
-<li>Faster but error-prone</li>
-</ul>
+<p>⬆ Threshold: Slower but more accurate</p>
+<p>⬇ Threshold: Faster but error-prone</p>
 <blockquote>
 <p>Manipulate via pre-trial cues or instructions.</p>
 </blockquote>
 </section>
-<section id="starting-point-z" class="slide level2">
-<h2>Starting Point (z)</h2>
-<ul>
-<li><p>Reflects <strong>response bias</strong></p></li>
-<li><p>Midpoint = no bias</p></li>
-</ul>
-<p>Deviating from midpoint:</p>
-<ul>
-<li>Favors one response:
-<ul>
-<li>Faster/more accurate for favored</li>
-<li>Slower/less accurate for disfavored</li>
-</ul></li>
-</ul>
-<p>Set <strong>before</strong> stimulus onset.</p>
-</section>
-<section id="nondecision-time-ter" class="slide level2">
-<h2>Nondecision Time (Ter)</h2>
+<section id="nondecision-time" class="slide level2">
+<h2>Nondecision Time</h2>
 <ul>
 <li><p>Time to encode stimulus + execute response</p></li>
 <li><p>Shifts RT distribution <strong>without</strong> changing shape/accuracy</p></li>
-</ul>
-<p>Sensitive to:</p>
-<ul>
-<li><p>Visual complexity</p></li>
-<li><p>Motor demands</p></li>
 </ul>
 <blockquote>
 <p>Hard to estimate precisely — often noisy across individuals.</p>
@@ -680,7 +652,7 @@ x(t) = z + vt + sW(t)
 </blockquote>
 </section>
 <section id="purpose-of-variability" class="slide level2">
-<h2>Purpose of Variability</h2>
+<h2>Purpose of variability</h2>
 <p><br></p>
 <p>Adding variability improves the model’s ability to:</p>
 <ul>
@@ -745,7 +717,7 @@ dx_k(t) = v_k \, dt + s \, dW_k(t) \quad \text{for } k = 1,\dots,K
 </table>
 </section>
 <section id="core-assumptions-of-the-basic-eam" class="slide level2">
-<h2>Core Assumptions of the Basic EAM</h2>
+<h2>Core assumptions of the basic EAM</h2>
 <p><br></p>
 <div class="fragment">
 <ul>
@@ -778,42 +750,38 @@ dx_k(t) = v_k \, dt + s \, dW_k(t) \quad \text{for } k = 1,\dots,K
 </section>
 <section id="within-trial-stationarity" class="slide level2">
 <h2>Within-Trial Stationarity</h2>
-<ul>
-<li>Model parameters are <strong>fixed within a trial</strong></li>
-<li>Evidence accumulation:
+<p>Model parameters are <strong>fixed within a trial</strong></p>
+<p>Evidence accumulation:</p>
 <ul>
 <li>Constant <strong>mean rate</strong>, though noisy</li>
 <li>No changes in stimulus evidence mid-trial</li>
-</ul></li>
-<li>Decision thresholds:
+</ul>
+<p>Decision thresholds:</p>
 <ul>
 <li>Set <strong>before</strong> stimulus onset</li>
 <li><strong>Do not change</strong> during the trial</li>
-</ul></li>
 </ul>
 </section>
 <section id="within-condition-stationarity" class="slide level2">
 <h2>Within-Condition Stationarity</h2>
-<ul>
-<li>Parameters are constant <strong>across same-type trials</strong></li>
-<li>Needed for <strong>model fitting and averaging</strong></li>
-<li>Assumes:
+<p>Parameters are constant <strong>across same-type trials</strong></p>
+<p>Needed for <strong>model fitting and averaging</strong></p>
+<p>Assumes:</p>
 <ul>
 <li>Trials of same condition reflect <strong>same cognitive settings</strong></li>
 <li>Participant behavior is stable</li>
-</ul></li>
 </ul>
 <blockquote>
 <p>Example: Don’t change stimulus brightness mid-trial.</p>
 </blockquote>
 </section>
 <section id="positively-skewed-rt-distributions" class="slide level2">
-<h2>Positively Skewed RT Distributions</h2>
+<h2>Positively skewed RT distributions</h2>
 <p>EAMs naturally produce <strong>positively skewed</strong> RTs.</p>
 
 <img data-src="eam-intro_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
 <section id="free-of-contaminant-processes" class="slide level2">
-<h2>Free of Contaminant Processes</h2>
+<h2>Free of contaminant processes</h2>
 <p>Data should reflect <strong>evidence accumulation</strong>!</p>
 <p>Avoid:</p>
 <ul>
@@ -826,7 +794,7 @@ dx_k(t) = v_k \, dt + s \, dW_k(t) \quad \text{for } k = 1,\dots,K
 </blockquote>
 </section>
 <section id="stimulus-design" class="slide level2">
-<h2>Stimulus Design</h2>
+<h2>Stimulus design</h2>
 <p>Manipulate difficulty to modulate:</p>
 <ul>
 <li><p>Drift rate</p></li>
@@ -839,7 +807,7 @@ dx_k(t) = v_k \, dt + s \, dW_k(t) \quad \text{for } k = 1,\dots,K
 </ul>
 </section>
 <section id="response-modality" class="slide level2">
-<h2>Response Modality</h2>
+<h2>Response modality</h2>
 <p>EAMs assume the response begins <strong>after the decision ends</strong>.</p>
 <p>Best modalities:</p>
 <ul>
@@ -849,7 +817,7 @@ dx_k(t) = v_k \, dt + s \, dW_k(t) \quad \text{for } k = 1,\dots,K
 <p>Avoid imprecise, slow, or delayed responses.</p>
 </section>
 <section id="trial-structure-and-event-timing" class="slide level2">
-<h2>Trial Structure and Event Timing</h2>
+<h2>Trial structure and event timing</h2>
 <p>EAM tasks follow a structured sequence of events:</p>
 <ol type="1">
 <li><p><strong>Cue</strong> (optional)</p></li>
@@ -862,35 +830,29 @@ dx_k(t) = v_k \, dt + s \, dW_k(t) \quad \text{for } k = 1,\dots,K
 </section>
 <section id="cue" class="slide level2">
 <h2>Cue</h2>
-<ul>
-<li>Optional cue presented <strong>before</strong> stimulus onset.</li>
-<li>Informs participants <strong>how</strong> to respond (e.g., emphasis on speed or accuracy).</li>
-<li>May set cognitive control parameters:
+<p>Optional cue presented <strong>before</strong> stimulus onset.</p>
+<p>Informs participants <strong>how</strong> to respond (e.g., emphasis on speed or accuracy).</p>
+<p>May set cognitive control parameters:</p>
 <ul>
 <li><strong>Thresholds</strong></li>
 <li><strong>Biases</strong></li>
-</ul></li>
-<li>Can direct <strong>gaze or attention</strong> to a spatial location.</li>
 </ul>
+<p>Can direct <strong>gaze or attention</strong> to a spatial location.</p>
 <blockquote>
 <p>Must occur <strong>before</strong> evidence accumulation begins.</p>
 </blockquote>
 </section>
 <section id="fixation-interval" class="slide level2">
-<h2>Fixation Interval</h2>
+<h2>Fixation interval</h2>
 <ul>
 <li>Ensures eyes and attention are centered.</li>
 <li>Allows previous trial’s processes to return to <strong>baseline</strong>.</li>
 <li>Reduces overlap across trials.</li>
 </ul>
-<p><span class="emoji" data-emoji="bulb">💡</span> <strong>Best practice:</strong> Use <strong>variable durations</strong>, e.g.:</p>
-<ul>
-<li><p>Sample from exponential or pseudo-exponential distribution</p></li>
-<li><p>Mean ≈ 0.7 s; range = 0.2–5 s</p></li>
-</ul>
+<p><span class="emoji" data-emoji="bulb">💡</span> <strong>Best practice:</strong> Use <strong>variable durations</strong></p>
 </section>
 <section id="stimulus-onset" class="slide level2">
-<h2>Stimulus Onset</h2>
+<h2>Stimulus onset</h2>
 <ul>
 <li>Marks the <strong>start</strong> of evidence accumulation.</li>
 <li>Assumes <strong>constant signal strength</strong> from onset to response.</li>
@@ -900,15 +862,9 @@ dx_k(t) = v_k \, dt + s \, dW_k(t) \quad \text{for } k = 1,\dots,K
 </blockquote>
 </section>
 <section id="response-window" class="slide level2">
-<h2>Response Window</h2>
-<ul>
-<li>Starts with stimulus onset.</li>
-<li>Ends with:
-<ul>
-<li>A <strong>response</strong></li>
-<li>Or a <strong>deadline</strong></li>
-</ul></li>
-</ul>
+<h2>Response window</h2>
+<p>Starts with stimulus onset.</p>
+<p>Ends with: - A <strong>response</strong> - Or a <strong>deadline</strong></p>
 <p><span class="emoji" data-emoji="bulb">💡</span> Calibrate response window:</p>
 <ul>
 <li><p>Long enough to allow natural responding</p></li>
@@ -917,7 +873,7 @@ dx_k(t) = v_k \, dt + s \, dW_k(t) \quad \text{for } k = 1,\dots,K
 </ul>
 </section>
 <section id="but-eams-can-handle-longer-rts" class="slide level2">
-<h2>But… EAMs Can Handle Longer RTs</h2>
+<h2>But… EAMs can handle longer RTs</h2>
 <ul>
 <li><p><a href="https://doi.org/10.1037/xge0000774" target="_blank"><strong>Lerche, et al.&nbsp;(2020)</strong></a>. Drift rate and General Intelligence: fast tasks 0.655<em>s</em> and slow tasks 3,319<em>s</em> ms.</p></li>
 <li><p><a href="https://doi.org/10.1016/j.tics.2022.11.009" target="_blank"><strong>Boag et al.&nbsp;(2023)</strong></a>: EAMs used in:</p>
@@ -929,7 +885,7 @@ dx_k(t) = v_k \, dt + s \, dW_k(t) \quad \text{for } k = 1,\dots,K
 </ul>
 </section>
 <section id="intertrial-interval" class="slide level2">
-<h2>Intertrial Interval</h2>
+<h2>Intertrial interval</h2>
 <ul>
 <li>Time between trials</li>
 <li>Purpose:
@@ -941,7 +897,7 @@ dx_k(t) = v_k \, dt + s \, dW_k(t) \quad \text{for } k = 1,\dots,K
 </ul>
 </section>
 <section id="sample-size-planning" class="slide level2">
-<h2>Sample Size Planning</h2>
+<h2>Sample size planning</h2>
 <ul>
 <li>Critical for <strong>parameter recovery</strong> and <strong>error trials</strong></li>
 <li>Key question:
@@ -955,7 +911,7 @@ dx_k(t) = v_k \, dt + s \, dW_k(t) \quad \text{for } k = 1,\dots,K
 </blockquote>
 </section>
 <section id="collecting-data" class="slide level2">
-<h2>Collecting Data</h2>
+<h2>Collecting data</h2>
 <ul>
 <li><p>Participant ID</p></li>
 <li><p>Condition</p></li>
@@ -1204,80 +1160,42 @@ dx_k(t) = v_k \, dt + s \, dW_k(t) \quad \text{for } k = 1,\dots,K
       });
     </script>
     
-
     <script>
-
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-
       // slide changes (different for each slide format).
-
       (function () {
-
         // dispatch for htmlwidgets
-
         function fireSlideEnter() {
-
           const event = window.document.createEvent("Event");
-
           event.initEvent("slideenter", true, true);
-
           window.document.dispatchEvent(event);
-
         }
-
-    
 
         function fireSlideChanged(previousSlide, currentSlide) {
-
           fireSlideEnter();
 
-    
-
           // dispatch for shiny
-
           if (window.jQuery) {
-
             if (previousSlide) {
-
               window.jQuery(previousSlide).trigger("hidden");
-
             }
-
             if (currentSlide) {
-
               window.jQuery(currentSlide).trigger("shown");
-
             }
-
           }
-
         }
-
-    
 
         // hookup for slidy
-
         if (window.w3c_slidy) {
-
           window.w3c_slidy.add_observer(function (slide_num) {
-
             // slide_num starts at position 1
-
             fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-
           });
-
         }
 
-    
-
       })();
-
     </script>
-
-    
 
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {

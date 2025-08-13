@@ -137,11 +137,12 @@ EAMs decompose decisions into:
 
 -   **Nondecision time**
 
-## Drift Rate 
+
+## Drift Rate
 
 Reflects **evidence strength**
 
--   ⬆ Drift: fast and accurate decisions
+-   ⬆ Drift: fast & accurate decisions
 
 -   ⬇ Drift: slow, error-prone
 
@@ -163,6 +164,7 @@ Manipulated by:
 
 > Manipulate via pre-trial cues or instructions.
 
+
 ## Nondecision Time 
 
 -   Time to encode stimulus + execute response
@@ -170,7 +172,6 @@ Manipulated by:
 -   Shifts RT distribution **without** changing shape/accuracy
 
 > Hard to estimate precisely — often noisy across individuals.
-
 
 
 ## Relative Evidence Models {.small-text}
