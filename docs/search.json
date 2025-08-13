@@ -74,14 +74,14 @@
     "href": "eam-karim.html#aims",
     "title": "EAM in Visual Perception Research",
     "section": "Aims",
-    "text": "Aims\n\nProbe the existence of an interaction between foveal inspection and peripheral selection.\nInvestigate the effect of previous fixations on peripheral selection."
+    "text": "Aims\n\nProbe the existence of an interaction between foveal inspection and peripheral selection\n\n\nWolf, C., Belopolsky, A. V., & Lappe, M. (2022). Current foveal inspection and previous peripheral preview influence subsequent eye movement decisions. iScience, 25(9), 104922.\n\n\nInvestigate the effect of previous fixations on peripheral selection.  → Dual saccade paradigm + DDM"
   },
   {
     "objectID": "eam-karim.html#experimental-task",
     "href": "eam-karim.html#experimental-task",
     "title": "EAM in Visual Perception Research",
     "section": "Experimental Task",
-    "text": "Experimental Task\n\nDiagram: Participants fixate foveally on a central stimulus (face or noise) with or without peripheral preview; then choose between two peripheral targets.\n\nTrials start with foveal inspection of a stimulus.\nPeripheral targets presented after inspection.\nParticipants make a saccade to select one peripheral target.\nConditions:\n\nFoveal stimulus meaningfulness (face vs noise).\nPeripheral preview (present vs absent)."
+    "text": "Experimental Task\n\n\n\n\n\nPeripheral preview: face vs noise vs outline\n\nFirst saccade execution\nPeripheral target: face vs noise\n\nSecond saccade execution (free choice paradigm)\n\n\nIf foveal inspection affects the peripheral selection process\n\n → Changes in the drift rate\n\n\ndecision outcome\n\n\nfixation duration\n\n\n\n\n\nWolf, C., Belopolsky, A. V., & Lappe, M. (2022). Current foveal inspection and previous peripheral preview influence subsequent eye movement decisions. iScience, 25(9), 104922."
   },
   {
     "objectID": "eam-karim.html#drift-diffusion-model-ddm",
@@ -102,7 +102,7 @@
     "href": "eam-karim.html#interpretation",
     "title": "EAM in Visual Perception Research",
     "section": "Interpretation",
-    "text": "Interpretation\n\nFoveal inspection with meaningful content delays and slows peripheral decision evidence accumulation.\nLack of peripheral preview similarly reduces decision efficiency.\nSuggests shared attentional resources and limited parallel processing across foveal and peripheral vision."
+    "text": "Interpretation\nInterpretation:\n\nWolf, C., Belopolsky, A. V., & Lappe, M. (2022). Current foveal inspection and previous peripheral preview influence subsequent eye movement decisions. iScience, 25(9), 104922."
   },
   {
     "objectID": "eam-karim.html#figure-model-fits-and-rt-distributions",
@@ -481,5 +481,68 @@
     "title": "",
     "section": "EAM in Visual Perception Research",
     "text": "EAM in Visual Perception Research\n[PDF version]\nHTML version"
+  },
+  {
+    "objectID": "eam-karim.html#aims-1",
+    "href": "eam-karim.html#aims-1",
+    "title": "EAM in Visual Perception Research",
+    "section": "Aims",
+    "text": "Aims\n\nProbe the existence of an interaction between foveal inspection and peripheral selection\n → Dual saccade paradigm + DDM \nInvestigate the effect of previous fixations on peripheral selection.\nInvestigate the effect of previous fixations on peripheral selection."
+  },
+  {
+    "objectID": "eam-karim.html#results",
+    "href": "eam-karim.html#results",
+    "title": "EAM in Visual Perception Research",
+    "section": "Results",
+    "text": "Results\n\n\n\n\n\n\n\n\nCondition\nv\nt0 (ms)\n\n\n\n\nFace / Preview (FP)\n0.607 ± 0.129\n208 ± 20.4\n\n\nFace / Outline (FO)\n0.320 ± 0.131\n211 ± 18.9\n\n\nNoise / Preview (NP)\n-0.024 ± 0.198\n183 ± 17.0\n\n\nNoise / Outline (NO)\n0.096 ± 0.215\n192 ± 18.6\n\n\n\n\nFace inspection + preview → faster evidence accumulation\n\nFace inspection → longer non-decision times (prolonged foveal inspection)\n\nPeripheral preview → reduces non-decision time\n\n\n\n\nWolf, C., Belopolsky, A. V., & Lappe, M. (2022). Current foveal inspection and previous peripheral preview influence subsequent eye movement decisions. iScience, 25(9), 104922."
+  },
+  {
+    "objectID": "eam-karim.html#results-1",
+    "href": "eam-karim.html#results-1",
+    "title": "EAM in Visual Perception Research",
+    "section": "Results",
+    "text": "Results\n\nInvestigated effects of Foveal Inspection (Face vs Noise) and Peripheral Preview (Preview vs Outline) on DDM parameters.\n\nBest-fitting model: Drift rate (v) + Non-decision time (t0) varied across conditions.\n\n\n\n\nCondition\nDrift rate (v)\nNon-decision time (t0, ms)\n\n\n\n\nFace / Preview (FP)\n0.607 ± 0.129\n208 ± 20.4\n\n\nFace / Outline (FO)\n0.320 ± 0.131\n211 ± 18.9\n\n\nNoise / Preview (NP)\n-0.024 ± 0.198\n183 ± 17.0\n\n\nNoise / Outline (NO)\n0.096 ± 0.215\n192 ± 18.6\n\n\n\nKey stats:\n- Drift rate: Inspection × Preview interaction, F(1,35) = 12.80, p = 0.001\n- Non-decision time: Main effects of Inspection target, F(1,35) = 29.02, p &lt; 0.001, and Preview, F(1,35) = 7.30, p = 0.011\n- No significant interaction for non-decision time\n\nInterpretation:\n\nFace inspection + preview → faster evidence accumulation\n\nFace inspection → longer non-decision times (prolonged foveal inspection)\n\nPeripheral preview → reduces non-decision time (preview benefit)\n\n\n\nWolf, C., Belopolsky, A. V., & Lappe, M. (2022). Current foveal inspection and previous peripheral preview influence subsequent eye movement decisions. iScience, 25(9), 104922."
+  },
+  {
+    "objectID": "eam-karim.html#interpretation-1",
+    "href": "eam-karim.html#interpretation-1",
+    "title": "EAM in Visual Perception Research",
+    "section": "Interpretation",
+    "text": "Interpretation\n\nFoveal inspection with meaningful content delays and slows peripheral decision evidence accumulation.\nLack of peripheral preview similarly reduces decision efficiency.\nSuggests shared attentional resources and limited parallel processing across foveal and peripheral vision."
+  },
+  {
+    "objectID": "eam-karim.html#interpretation-2",
+    "href": "eam-karim.html#interpretation-2",
+    "title": "EAM in Visual Perception Research",
+    "section": "Interpretation 2",
+    "text": "Interpretation 2\n\nFoveal inspection with meaningful content delays and slows peripheral decision evidence accumulation.\nLack of peripheral preview similarly reduces decision efficiency.\nSuggests shared attentional resources and limited parallel processing across foveal and peripheral vision."
+  },
+  {
+    "objectID": "eam-karim.html#discussion-foveal-inspection-peripheral-selection",
+    "href": "eam-karim.html#discussion-foveal-inspection-peripheral-selection",
+    "title": "EAM in Visual Perception Research",
+    "section": "Discussion – Foveal Inspection & Peripheral Selection",
+    "text": "Discussion – Foveal Inspection & Peripheral Selection\nMechanistic Insight - Drift-diffusion modeling (DDM) captures both decision dynamics (drift rate) and timing (non-decision time) - Explains how foveal and peripheral processes interact, beyond simple accuracy or RT\nConclusion - Foveal and peripheral processing are not independent\n- Preview information influences subsequent eye movement decisions"
+  },
+  {
+    "objectID": "eam-karim.html#discussion",
+    "href": "eam-karim.html#discussion",
+    "title": "EAM in Visual Perception Research",
+    "section": "Discussion",
+    "text": "Discussion\n\nDDM captures both decision dynamics (drift rate) and timing (non-decision time)\nExplains how foveal and peripheral processes interact, beyond RT"
+  },
+  {
+    "objectID": "eam-karim.html#study-1",
+    "href": "eam-karim.html#study-1",
+    "title": "EAM in Visual Perception Research",
+    "section": "Study 1",
+    "text": "Study 1\n\n\n\n\n Wolf, C., Belopolsky, A. V., & Lappe, M. (2022). Current foveal inspection and previous peripheral preview influence subsequent eye movement decisions. iScience, 25(9), 104922."
+  },
+  {
+    "objectID": "eam-karim.html#study-2",
+    "href": "eam-karim.html#study-2",
+    "title": "EAM in Visual Perception Research",
+    "section": "Study 2",
+    "text": "Study 2"
   }
 ]

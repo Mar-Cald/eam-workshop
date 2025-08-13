@@ -352,117 +352,159 @@ Carolina Maria Oletto
 <div class="column" style="width:70%;">
 <p><img data-src="img/2022abstract.jpg" width="700" height="700"></p>
 </div><div class="column small-text center" style="width:30%;">
-<p><br></p>
-<p><span style="font-size:0.8em;"> <a href="https://doi.org/10.1016/j.isci.2022.104922" target="_blank">Wolf, C., Belopolsky, A. V., &amp; Lappe, M. (2022). <em>Current foveal inspection and previous peripheral preview influence subsequent eye movement decisions</em>. <em>iScience</em>, 25(9), 104922.</a> </span></p>
+<p><br> <span style="font-size:0.8em;"> <a href="https://doi.org/10.1016/j.isci.2022.104922" target="_blank">Wolf, C., Belopolsky, A. V., &amp; Lappe, M. (2022). <em>Current foveal inspection and previous peripheral preview influence subsequent eye movement decisions</em>. <em>iScience</em>, 25(9), 104922.</a> </span></p>
 </div></div>
 </section>
 <section id="aims" class="slide level2">
 <h2>Aims</h2>
 <ol type="1">
-<li><p>Probe the existence of an interaction between foveal inspection and peripheral selection.</p></li>
-<li><p>Investigate the effect of previous fixations on peripheral selection.</p></li>
+<li>Probe the existence of an <strong>interaction</strong> between foveal inspection and peripheral selection</li>
+</ol>
+<div style="
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+     text-align: left;
+     font-size: 0.5em;
+     color: gray;
+     padding-bottom: 10px;
+">
+<p><a href="https://doi.org/10.1016/j.isci.2022.104922" target="_blank">Wolf, C., Belopolsky, A. V., &amp; Lappe, M. (2022). <em>Current foveal inspection and previous peripheral preview influence subsequent eye movement decisions</em>. <em>iScience</em>, 25(9), 104922.</a></p>
+</div>
+<ol start="2" type="1">
+<li>Investigate the effect of previous fixations on peripheral selection. <span style="
+  display:inline-block;
+  border-radius:8px;
+  padding:4px 8px;
+  font-size:1.3em;
+  font-weight:bold;
+  color:#333;
+  "> → Dual saccade paradigm + DDM </span></li>
 </ol>
 </section>
 <section id="experimental-task" class="slide level2">
 <h2>Experimental Task</h2>
-<p><img data-src="https://journals.plos.org/ploscompbiol/article/figure/image?id=10.1371/journal.pcbi.1007202.g001"><br>
-<em>Diagram: Participants fixate foveally on a central stimulus (face or noise) with or without peripheral preview; then choose between two peripheral targets.</em></p>
-<ul>
-<li>Trials start with foveal inspection of a stimulus.</li>
-<li>Peripheral targets presented after inspection.</li>
-<li>Participants make a saccade to select one peripheral target.</li>
-<li>Conditions:
-<ul>
-<li>Foveal stimulus meaningfulness (face vs noise).</li>
-<li>Peripheral preview (present vs absent).</li>
-</ul></li>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="img/2022Fig1.jpg" width="441" height="450"></p>
+</div><div class="column small-small-text" style="width:50%;">
+<ol type="1">
+<li>Peripheral preview: face vs noise vs outline<br>
+</li>
+<li>First saccade execution</li>
+<li>Peripheral target: face vs noise<br>
+</li>
+<li>Second saccade execution (free choice paradigm)</li>
+</ol>
+<div style="margin-top: 10px;">
+<p>If foveal inspection affects the peripheral selection process</p>
+</div>
+<span style="
+     display:inline-block;
+     border-radius:8px;
+     padding:4px 8px;
+     font-size:1.3em;
+     font-weight:bold;
+     color:#333;
+     margin-top: 5px;
+     "> → Changes in the <strong>drift rate</strong>
+<ul style="margin: 5px 0 0 15px; font-size:0.9em;">
+<li>
+decision outcome
+</li>
+<li>
+fixation duration
+</li>
 </ul>
+<p></p>
+</span></div></div>
+<div style="
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+     text-align: left;
+     font-size: 0.5em;
+     color: gray;
+     padding-bottom: 10px;
+">
+<p><a href="https://doi.org/10.1016/j.isci.2022.104922" target="_blank">Wolf, C., Belopolsky, A. V., &amp; Lappe, M. (2022). <em>Current foveal inspection and previous peripheral preview influence subsequent eye movement decisions</em>. <em>iScience</em>, 25(9), 104922.</a></p>
+</div>
 </section>
-<section id="drift-diffusion-model-ddm" class="slide level2">
-<h2>Drift-Diffusion Model (DDM)</h2>
-<ul>
-<li>Models choice and reaction times simultaneously.</li>
-<li>Parameters:
-<ul>
-<li><strong>Drift rate (v):</strong> rate of evidence accumulation.</li>
-<li><strong>Boundary separation (a):</strong> decision threshold.</li>
-<li><strong>Non-decision time (Ter):</strong> encoding and motor delays.</li>
-</ul></li>
-<li>Model fits provide insight into how foveal inspection and preview affect decision dynamics.</li>
-</ul>
-</section>
-<section id="results-ddm-parameters" class="slide level2">
-<h2>Results: DDM Parameters</h2>
+<section class="slide level2">
+
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="img/2022Fig5.jpg" width="441" height="556"></p>
+</div><div class="column" style="width:60%;">
+<div style="font-size:0.7em;">
 <table class="caption-top">
-<colgroup>
-<col style="width: 35%">
-<col style="width: 27%">
-<col style="width: 36%">
-</colgroup>
 <thead>
 <tr class="header">
 <th>Condition</th>
-<th>Drift rate (v)</th>
-<th>Non-decision time (Ter)</th>
+<th>v</th>
+<th>t0 (ms)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Meaningful foveal + preview</td>
-<td>High</td>
-<td>Low</td>
+<td>Face / Preview (FP)</td>
+<td>0.607 ± 0.129</td>
+<td>208 ± 20.4</td>
 </tr>
 <tr class="even">
-<td>Meaningful foveal + no preview</td>
-<td>Lower</td>
-<td>Higher</td>
+<td>Face / Outline (FO)</td>
+<td>0.320 ± 0.131</td>
+<td>211 ± 18.9</td>
 </tr>
 <tr class="odd">
-<td>Noise foveal + preview</td>
-<td>Moderate</td>
-<td>Moderate</td>
+<td>Noise / Preview (NP)</td>
+<td>-0.024 ± 0.198</td>
+<td>183 ± 17.0</td>
 </tr>
 <tr class="even">
-<td>Noise foveal + no preview</td>
-<td>Lowest</td>
-<td>Highest</td>
+<td>Noise / Outline (NO)</td>
+<td>0.096 ± 0.215</td>
+<td>192 ± 18.6</td>
 </tr>
 </tbody>
 </table>
+</div>
+<div style="margin-top:10px; font-size:0.85em;">
 <ul>
-<li><strong>Drift rate decreased</strong> when foveal inspection was meaningful or when preview was absent.</li>
-<li><strong>Non-decision time increased</strong> under those same conditions.</li>
+<li>Face inspection + preview → faster evidence accumulation<br>
+</li>
+<li>Face inspection → longer non-decision times (prolonged foveal inspection)<br>
+</li>
+<li>Peripheral preview → reduces non-decision time</li>
+</ul>
+</div>
+</div></div>
+<div style="
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+     text-align: left;
+     font-size: 0.5em;
+     color: gray;
+     padding-bottom: 10px;
+">
+<p><a href="https://doi.org/10.1016/j.isci.2022.104922" target="_blank">Wolf, C., Belopolsky, A. V., &amp; Lappe, M. (2022). <em>Current foveal inspection and previous peripheral preview influence subsequent eye movement decisions</em>. <em>iScience</em>, 25(9), 104922.</a></p>
+</div>
+</section>
+<section id="discussion" class="slide level2">
+<h2>Discussion</h2>
+<ul>
+<li>DDM captures both decision dynamics (drift rate) and timing (non-decision time)</li>
+<li>Explains <strong>how</strong> foveal and peripheral processes interact, beyond RT</li>
 </ul>
 </section>
-<section id="interpretation" class="slide level2">
-<h2>Interpretation</h2>
-<ul>
-<li>Foveal inspection with meaningful content delays and slows peripheral decision evidence accumulation.</li>
-<li>Lack of peripheral preview similarly reduces decision efficiency.</li>
-<li>Suggests <strong>shared attentional resources</strong> and <strong>limited parallel processing</strong> across foveal and peripheral vision.</li>
-</ul>
+<section id="study-2" class="slide level2">
+<h2>Study 2</h2>
 </section>
-<section id="figure-model-fits-and-rt-distributions" class="slide level2">
-<h2>Figure: Model Fits and RT Distributions</h2>
-<!-- Add figure 5 from the paper here -->
+<section>
+<section id="the-experiment" class="title-slide slide level1 center">
+<h1>The Experiment</h1>
 
-<img data-src="https://doi.org/10.1167/jov.22.10.4.fig5" class="r-stretch"></section>
-<section id="conclusions" class="slide level2">
-<h2>Conclusions</h2>
-<ul>
-<li>Evidence accumulation dynamics (DDM parameters) are sensitive to foveal and peripheral task demands.</li>
-<li>Highlights importance of <strong>interactions between foveal processing and peripheral decision-making</strong>.</li>
-<li>Drift-diffusion modeling provides mechanistic insight beyond accuracy or mean RTs alone.</li>
-</ul>
-</section>
-<section id="reference" class="slide level2">
-<h2>Reference</h2>
-<p>Van Leeuwen, C., Wolf, C., Hessels, R. S., &amp; Hooge, I. T. C. (2022).<br>
-<em>Current foveal inspection and previous peripheral preview influence subsequent eye movement decisions.</em><br>
-Journal of Vision, 22(10), 4. https://doi.org/10.1167/jov.22.10.4</p>
-</section>
-<section id="the-experiment" class="slide level2">
-<h2>The Experiment</h2>
 </section>
 <section id="stimuli" class="slide level2">
 <h2>Stimuli</h2>
@@ -502,7 +544,7 @@ Journal of Vision, 22(10), 4. https://doi.org/10.1167/jov.22.10.4</p>
 
 </div>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
