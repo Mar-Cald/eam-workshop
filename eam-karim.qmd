@@ -175,6 +175,18 @@ An extension of the DDM to test **value-based decision making** where fixations 
 - Test whether **visual fixations** play an *active* role in value comparison during binary choice.  
 - Develop a **drift–diffusion framework** in which fixation location biases evidence accumulation toward the attended item.
 
+<div style="
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+     text-align: left;
+     font-size: 0.5em;
+     color: gray;
+     padding-bottom: 10px;
+">
+[Krajbich, I., Armel, C., & Rangel, A. (2010). Visual fixations and the computation and comparison of value in simple choice. Nature Neuroscience, 13(10), 1292–1298.](https://doi.org/10.1038/nn.2635){target="_blank"}
+</div>
+
 ::: notes
 The key idea of our model is that fixations affect the DDM value comparison process by introducing a temporary drift bias toward the fixated item. This drift bias in turn leads to a choice bias for items that are fixated on more.
 :::
@@ -192,6 +204,18 @@ The key idea of our model is that fixations affect the DDM value comparison proc
 :::
 :::::
 
+<div style="
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+     text-align: left;
+     font-size: 0.5em;
+     color: gray;
+     padding-bottom: 10px;
+">
+[Krajbich, I., Armel, C., & Rangel, A. (2010). Visual fixations and the computation and comparison of value in simple choice. Nature Neuroscience, 13(10), 1292–1298.](https://doi.org/10.1038/nn.2635){target="_blank"}
+</div>
+
 ## Relative Decision Value (RDV)
 
 ::::: columns
@@ -206,7 +230,19 @@ The key idea of our model is that fixations affect the DDM value comparison proc
 - Noise comes from internal variability rather than from noisy stimuli
 :::
 :::::
-*Prediction:* Longer fixation on an option increases probability of choosing it, even after controlling for its actual value.
+<small>*Prediction:* Longer fixation on an option increases probability of choosing it, even after controlling for its actual value.</small>
+
+<div style="
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+     text-align: left;
+     font-size: 0.5em;
+     color: gray;
+     padding-bottom: 10px;
+">
+[Krajbich, I., Armel, C., & Rangel, A. (2010). Visual fixations and the computation and comparison of value in simple choice. Nature Neuroscience, 13(10), 1292–1298.](https://doi.org/10.1038/nn.2635){target="_blank"}
+</div>
 
 ::: notes
 The brain computes a RDV that evolves over time as a Markov Gaussian process until a choice is made. The RDV starts each trial at 0 and continually evolves over time at one of two possible rates (depending on which item is fixated), and a choice is made when it reaches a barrier at either +1 or −1. If the RDV reaches the +1 threshold the left item is chosen and if it reaches the −1 threshold the right item is chosen.
@@ -214,22 +250,38 @@ The brain computes a RDV that evolves over time as a Markov Gaussian process unt
 
 ## Results
 
-**Choice bias confirmed**: options fixated longer were chosen more often.  
-
 <div style="font-size:0.85em;">
+**Choice bias confirmed**: options fixated longer were chosen more often.  
 
 **Testing fixation bias in value integration (θ parameter):**
 
 - **θ = 1 (No Bias)**  
-  - Drift rate does not depend on fixation (standard DDM)
+  <div style="font-size:0.75em; margin-left: 1em;">
+    - Drift rate does not depend on fixation (standard DDM)
+  </div>
 
 - **θ = 0 (Full Bias)**  
-  - Drift rate depends **only** on the fixated item’s value  
+  <div style="font-size:0.75em; margin-left: 1em;">
+    - Drift rate depends **only** on the fixated item’s value
+  </div>
 
 - **0 < θ < 1 (Partial Bias)** – *Best Fit*  
-  - Fixated item’s value weighted more heavily, but the non-fixated item still influences drift.  
-  - Best fit: **θ ≈ 0.3** → strong but not exclusive fixation bias.
+  <div style="font-size:0.75em; margin-left: 1em;">
+    - Fixated item’s value weighted more heavily, but the non-fixated item still influences drift.  
+    - Best fit: **θ ≈ 0.3** → strong but not exclusive fixation bias.
+  </div>
+</div>
 
+<div style="
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+     text-align: left;
+     font-size: 0.5em;
+     color: gray;
+     padding-bottom: 10px;
+">
+[Krajbich, I., Armel, C., & Rangel, A. (2010). Visual fixations and the computation and comparison of value in simple choice. Nature Neuroscience, 13(10), 1292–1298.](https://doi.org/10.1038/nn.2635){target="_blank"}
 </div>
 
 # The Experiment
