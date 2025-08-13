@@ -542,12 +542,17 @@ Can direct **gaze or attention** to a spatial location.
 
 ## Response window
 
+::::: columns
+::: {.column width="50%"}
 Starts with stimulus onset.
 
 Ends with:
 -   A **response**
 -   Or a **deadline**
 
+::: 
+
+::: {.column width="50%"}
 :bulb: Calibrate response window:
 
 Long enough to allow natural responding
@@ -555,6 +560,8 @@ Long enough to allow natural responding
 Short enough to avoid strategy shifts
 
 Typical EAM use: **mean RT \< 1.5 s**
+::: 
+:::::
 
 ## But… EAMs can handle longer RTs
 
