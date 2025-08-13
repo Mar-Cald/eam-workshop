@@ -111,6 +111,9 @@ Neurons in the lateral intraparietal (LIP) area with response fields overlapping
 | *Noise*        | Trial-to-trial neural variability     |
 | *Bound*        | Decision threshold in firing/activity |
 
+
+# Latent Cognitive Parameters
+
 ## Sequential processing assumption
 
 Total **Response Time (RT)** is modeled as the sum of **three sequential stages**:
@@ -124,8 +127,6 @@ Stages (1) and (3) are captured in the **nondecision time (Ter)** parameter.
 ::: notes
 the models contain parameters controlling the evidence starJng point (allowing for a priori biases), accumulaJon rate (controlling the speed of processing), threshold/boundary separaJon (controlling the amount of evidence required to make a response), and nondecision Jme (the sum of Jme taken for sJmulus encoding and motor response production).
 :::
-
-# Latent Cognitive Parameters
 
 ##
 
@@ -154,22 +155,22 @@ Manipulated by:
 
 ## Thresholds
 
--   Set before stimulus onset
+Set before stimulus onset
 
--   Reflect **response caution/cognitive control/bias/preference**
+Reflect **response caution/cognitive control/bias/preference**
 
-⬆ Threshold: Slower but more accurate
+-   ⬆ Threshold: Slower but more accurate
 
-⬇ Threshold: Faster but error-prone
+-   ⬇ Threshold: Faster but error-prone
 
 > Manipulate via pre-trial cues or instructions.
 
 
 ## Nondecision Time 
 
--   Time to encode stimulus + execute response
+Time to encode stimulus + execute response
 
--   Shifts RT distribution **without** changing shape/accuracy
+Shifts RT distribution **without** changing shape/accuracy
 
 > Hard to estimate precisely — often noisy across individuals.
 
@@ -225,6 +226,8 @@ Although relative and absolute evidence models differ in how they conceptualize 
 -   Provide convergent results when applied to the same data
 :::
 
+
+# Noisy process
 
 ## Wiener Process {.small-text .align-center}
 
@@ -292,7 +295,7 @@ ggplot(data = sim_path, aes(x = time, y = x))+
 
 ::: {.column width="50%"}
 -   $\alpha$ : threshold
--   $\beta$ : initial bias
+-   $\beta$ : initial bias (starting point)
 -   $\delta$: quality of the stimulus (often $v$)
 -   $\tau$: non-decision time
 :::
@@ -308,11 +311,11 @@ The **Full DDM** accounts for more behavioral phenomena by allowing **trial-to-t
 
 <br/>
 
-**Drift rate**: $v \sim \mathcal{N}(\mu_v, \eta^2)$
+**Drift rate**
 
-**Starting point**: $z \sim \text{Uniform}(z - s_z/2, z + s_z/2)$
+**Starting point**
 
-**Non-decision time**: $t_0 \sim \text{Uniform}(t_0 - s_{t_0}/2, t_0 + s_{t_0}/2)$
+**Non-decision time**
 
 ## Full DDM Parameters {.small-text .align-center}
 
@@ -416,12 +419,12 @@ Each accumulator races toward its threshold. The first to cross **wins**.
 
 Model parameters are **fixed within a trial**
 
-Evidence accumulation:
+**Evidence accumulation**:
 
 -   Constant **mean rate**, though noisy
 -   No changes in stimulus evidence mid-trial
 
-Decision thresholds:
+**Decision thresholds**:
 
 -   Set **before** stimulus onset
 -   **Do not change** during the trial
@@ -430,14 +433,10 @@ Decision thresholds:
 
 Parameters are constant **across same-type trials**
 
-Needed for **model fitting and averaging**
-
 Assumes:
 
 -   Trials of same condition reflect **same cognitive settings**
 -   Participant behavior is stable
-
-> Example: Don't change stimulus brightness mid-trial.
 
 ## Positively skewed RT distributions
 
@@ -551,11 +550,11 @@ Ends with:
 
 :bulb: Calibrate response window:
 
--   Long enough to allow natural responding
+Long enough to allow natural responding
 
--   Short enough to avoid strategy shifts
+Short enough to avoid strategy shifts
 
--   Typical EAM use: **mean RT \< 1.5 s**
+Typical EAM use: **mean RT \< 1.5 s**
 
 ## But… EAMs can handle longer RTs
 
@@ -569,17 +568,15 @@ Ends with:
 
 ## Intertrial interval
 
--   Time between trials
--   Purpose:
-    -   Allow participant to **reset**
-    -   Prevent **proactive interference**
-    -   Avoid **sequential effects**
+-   Allow participant to **reset**
+-   Prevent **proactive interference**
+-   Avoid **sequential effects**
 
 ## Sample size planning
 
--   Critical for **parameter recovery** and **error trials**
--   Key question:
-    -   Will you have enough **rare trial types** (e.g., errors on easy trials)?
+Critical for **parameter recovery** and **error trials**
+
+*Will you have enough **rare trial types** (e.g., errors on easy trials)?*
 
 > Example:\
 > 200 trials × 5% error rate = **10 error trials** — often the **minimum** for fitting.
@@ -594,7 +591,7 @@ Ends with:
 
 -   Response submitted
 
--   **RT**
+-   RT
 
 -   Session/trial number
 

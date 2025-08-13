@@ -291,14 +291,14 @@
     "href": "eam-intro.html#wiener-first-passage-time-fpt",
     "title": "Intro to EAM",
     "section": "Wiener First Passage Time (FPT)",
-    "text": "Wiener First Passage Time (FPT)\n\nIt is the expected distribution of the time until the process first hits or crosses one or the other boundary. This results in a bivariate distribution, over responses xx and hitting times tt.\n\n\n\n\n\n\nα\\alpha : threshold\nβ\\beta : initial bias\nδ\\delta: quality of the stimulus (often vv)\nτ\\tau: non-decision time\n\n\nNavarro & Fuss, 2009; Wabersich & Vandekerckhov, 2014. Copyright 2009, Joachim Vandekerckhove and Department of Psychology and Educational Sciences, University of Leuven, Belgium"
+    "text": "Wiener First Passage Time (FPT)\n\nIt is the expected distribution of the time until the process first hits or crosses one or the other boundary. This results in a bivariate distribution, over responses xx and hitting times tt.\n\n\n\n\n\n\nα\\alpha : threshold\nβ\\beta : initial bias (starting point)\nδ\\delta: quality of the stimulus (often vv)\nτ\\tau: non-decision time\n\n\nNavarro & Fuss, 2009; Wabersich & Vandekerckhov, 2014. Copyright 2009, Joachim Vandekerckhove and Department of Psychology and Educational Sciences, University of Leuven, Belgium"
   },
   {
     "objectID": "eam-intro.html#full-diffusion-decision-model",
     "href": "eam-intro.html#full-diffusion-decision-model",
     "title": "Intro to EAM",
     "section": "Full Diffusion Decision Model",
-    "text": "Full Diffusion Decision Model\n\nThe Full DDM accounts for more behavioral phenomena by allowing trial-to-trial variability in key parameters:\n\nDrift rate: v∼𝒩(μv,η2)v \\sim \\mathcal{N}(\\mu_v, \\eta^2)\nStarting point: z∼Uniform(z−sz/2,z+sz/2)z \\sim \\text{Uniform}(z - s_z/2, z + s_z/2)\nNon-decision time: t0∼Uniform(t0−st0/2,t0+st0/2)t_0 \\sim \\text{Uniform}(t_0 - s_{t_0}/2, t_0 + s_{t_0}/2)"
+    "text": "Full Diffusion Decision Model\n\nThe Full DDM accounts for more behavioral phenomena by allowing trial-to-trial variability in key parameters:\n\nDrift rate\nStarting point\nNon-decision time"
   },
   {
     "objectID": "eam-intro.html#full-ddm-parameters",
@@ -354,14 +354,14 @@
     "href": "eam-intro.html#within-trial-stationarity",
     "title": "Intro to EAM",
     "section": "Within-Trial Stationarity",
-    "text": "Within-Trial Stationarity\n\nModel parameters are fixed within a trial\nEvidence accumulation:\n\nConstant mean rate, though noisy\nNo changes in stimulus evidence mid-trial\n\nDecision thresholds:\n\nSet before stimulus onset\nDo not change during the trial"
+    "text": "Within-Trial Stationarity\nModel parameters are fixed within a trial\nEvidence accumulation:\n\nConstant mean rate, though noisy\nNo changes in stimulus evidence mid-trial\n\nDecision thresholds:\n\nSet before stimulus onset\nDo not change during the trial"
   },
   {
     "objectID": "eam-intro.html#within-condition-stationarity",
     "href": "eam-intro.html#within-condition-stationarity",
     "title": "Intro to EAM",
     "section": "Within-Condition Stationarity",
-    "text": "Within-Condition Stationarity\n\nParameters are constant across same-type trials\nNeeded for model fitting and averaging\nAssumes:\n\nTrials of same condition reflect same cognitive settings\nParticipant behavior is stable\n\n\n\nExample: Don’t change stimulus brightness mid-trial."
+    "text": "Within-Condition Stationarity\nParameters are constant across same-type trials\nAssumes:\n\nTrials of same condition reflect same cognitive settings\nParticipant behavior is stable"
   },
   {
     "objectID": "eam-intro.html#positively-skewed-rt-distributions",
@@ -403,14 +403,14 @@
     "href": "eam-intro.html#cue",
     "title": "Intro to EAM",
     "section": "Cue",
-    "text": "Cue\n\nOptional cue presented before stimulus onset.\nInforms participants how to respond (e.g., emphasis on speed or accuracy).\nMay set cognitive control parameters:\n\nThresholds\nBiases\n\nCan direct gaze or attention to a spatial location.\n\n\nMust occur before evidence accumulation begins."
+    "text": "Cue\nOptional cue presented before stimulus onset.\nInforms participants how to respond (e.g., emphasis on speed or accuracy).\nMay set cognitive control parameters:\n\nThresholds\nBiases\n\nCan direct gaze or attention to a spatial location.\n\nMust occur before evidence accumulation begins."
   },
   {
     "objectID": "eam-intro.html#fixation-interval",
     "href": "eam-intro.html#fixation-interval",
     "title": "Intro to EAM",
     "section": "Fixation Interval",
-    "text": "Fixation Interval\n\nEnsures eyes and attention are centered.\nAllows previous trial’s processes to return to baseline.\nReduces overlap across trials.\n\n💡 Best practice: Use variable durations, e.g.:\n\nSample from exponential or pseudo-exponential distribution\nMean ≈ 0.7 s; range = 0.2–5 s"
+    "text": "Fixation Interval\n\nEnsures eyes and attention are centered.\nAllows previous trial’s processes to return to baseline.\nReduces overlap across trials.\n\n💡 Best practice: Use variable durations"
   },
   {
     "objectID": "eam-intro.html#stimulus-onset",
@@ -424,7 +424,7 @@
     "href": "eam-intro.html#response-window",
     "title": "Intro to EAM",
     "section": "Response Window",
-    "text": "Response Window\n\nStarts with stimulus onset.\nEnds with:\n\nA response\nOr a deadline\n\n\n💡 Calibrate response window:\n\nLong enough to allow natural responding\nShort enough to avoid strategy shifts\nTypical EAM use: mean RT &lt; 1.5 s"
+    "text": "Response Window\nStarts with stimulus onset.\nEnds with:\n\nA response\nOr a deadline\n\n💡 Calibrate response window:\nLong enough to allow natural responding\nShort enough to avoid strategy shifts\nTypical EAM use: mean RT &lt; 1.5 s"
   },
   {
     "objectID": "eam-intro.html#but-eams-can-handle-longer-rts",
@@ -438,14 +438,14 @@
     "href": "eam-intro.html#intertrial-interval",
     "title": "Intro to EAM",
     "section": "Intertrial Interval",
-    "text": "Intertrial Interval\n\nTime between trials\nPurpose:\n\nAllow participant to reset\nPrevent proactive interference\nAvoid sequential effects"
+    "text": "Intertrial Interval\n\nAllow participant to reset\nPrevent proactive interference\nAvoid sequential effects"
   },
   {
     "objectID": "eam-intro.html#sample-size-planning",
     "href": "eam-intro.html#sample-size-planning",
     "title": "Intro to EAM",
     "section": "Sample Size Planning",
-    "text": "Sample Size Planning\n\nCritical for parameter recovery and error trials\nKey question:\n\nWill you have enough rare trial types (e.g., errors on easy trials)?\n\n\n\nExample:\n200 trials × 5% error rate = 10 error trials — often the minimum for fitting."
+    "text": "Sample Size Planning\nCritical for parameter recovery and error trials\nWill you have enough rare trial types (e.g., errors on easy trials)?\n\nExample:\n200 trials × 5% error rate = 10 error trials — often the minimum for fitting."
   },
   {
     "objectID": "eam-intro.html#collecting-data",
@@ -483,7 +483,6 @@
     "text": "EAM in Visual Perception Research\n[PDF version]\nHTML version"
   },
   {
-<<<<<<< HEAD
     "objectID": "eam-karim.html#aims-1",
     "href": "eam-karim.html#aims-1",
     "title": "EAM in Visual Perception Research",
@@ -545,7 +544,8 @@
     "title": "EAM in Visual Perception Research",
     "section": "Study 2",
     "text": "Study 2"
-=======
+  },
+  {
     "objectID": "eam-intro.html#drift-rate",
     "href": "eam-intro.html#drift-rate",
     "title": "Intro to EAM",
@@ -557,14 +557,13 @@
     "href": "eam-intro.html#thresholds",
     "title": "Intro to EAM",
     "section": "Thresholds",
-    "text": "Thresholds\n\nSet before stimulus onset\nReflect response caution/cognitive control/bias/preference\n\n⬆ Threshold: Slower but more accurate\n⬇ Threshold: Faster but error-prone\n\nManipulate via pre-trial cues or instructions."
+    "text": "Thresholds\nSet before stimulus onset\nReflect response caution/cognitive control/bias/preference\n\n⬆ Threshold: Slower but more accurate\n⬇ Threshold: Faster but error-prone\n\n\nManipulate via pre-trial cues or instructions."
   },
   {
     "objectID": "eam-intro.html#nondecision-time",
     "href": "eam-intro.html#nondecision-time",
     "title": "Intro to EAM",
     "section": "Nondecision Time",
-    "text": "Nondecision Time\n\nTime to encode stimulus + execute response\nShifts RT distribution without changing shape/accuracy\n\n\nHard to estimate precisely — often noisy across individuals."
->>>>>>> tita
+    "text": "Nondecision Time\nTime to encode stimulus + execute response\nShifts RT distribution without changing shape/accuracy\n\nHard to estimate precisely — often noisy across individuals."
   }
 ]
