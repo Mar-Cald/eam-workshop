@@ -59,7 +59,7 @@ library(dplyr)
 [Wolf, C., Belopolsky, A. V., & Lappe, M. (2022). *Current foveal inspection and previous peripheral preview influence subsequent eye movement decisions*. *iScience*, 25(9), 104922.](https://doi.org/10.1016/j.isci.2022.104922){target="_blank"}
 </div>
 
-2. Investigate the effect of previous fixations on peripheral selection.
+2. Investigate the effect of previous fixations on peripheral selection
    <span style="
      display:inline-block;
      border-radius:8px;
@@ -164,7 +164,73 @@ If foveal inspection affects the peripheral selection process
 -   DDM captures both decision dynamics (drift rate) and timing (non-decision time)
 -   Explains **how** foveal and peripheral processes interact, beyond RT
 
-## Study 2
+---
+
+[Krajbich, I., Armel, C., & Rangel, A. (2010). Visual fixations and the computation and comparison of value in simple choice. Nature Neuroscience, 13(10), 1292–1298.](https://doi.org/10.1038/nn.2635){target="_blank"}
+
+An extension of the DDM to test **value-based decision making** where fixations guide the comparison process.
+
+## Aim
+
+- Test whether **visual fixations** play an *active* role in value comparison during binary choice.  
+- Develop a **drift–diffusion framework** in which fixation location biases evidence accumulation toward the attended item.
+
+::: notes
+The key idea of our model is that fixations affect the DDM value comparison process by introducing a temporary drift bias toward the fixated item. This drift bias in turn leads to a choice bias for items that are fixated on more.
+:::
+
+## Experimental Task
+
+::::: columns
+::: {.column width="50%"}
+![](img/2010Fig1.png){width=500 height=400}  
+:::
+
+::: {.column width="50%" .small-text}
+- Participants made **simple food choices** between two simultaneously presented images 
+- **Which item was fixated**, for how long, and when in the trial
+:::
+:::::
+
+## Relative Decision Value (RDV)
+
+::::: columns
+::: {.column width="50%"}
+![](img/mgp.jpg){width=800 height=400}  
+:::
+
+::: {.column width="50%" .small-text}
+- **Relative Decision Value (RDV)** accumulates noisy evidence until it hits an upper or lower bound (choice).  
+- While fixating an option, the **drift rate** is biased toward that option’s value.  
+- Switch in fixation → drift rate bias changes sign. 
+- Noise comes from internal variability rather than from noisy stimuli
+:::
+:::::
+*Prediction:* Longer fixation on an option increases probability of choosing it, even after controlling for its actual value.
+
+::: notes
+The brain computes a RDV that evolves over time as a Markov Gaussian process until a choice is made. The RDV starts each trial at 0 and continually evolves over time at one of two possible rates (depending on which item is fixated), and a choice is made when it reaches a barrier at either +1 or −1. If the RDV reaches the +1 threshold the left item is chosen and if it reaches the −1 threshold the right item is chosen.
+:::
+
+## Results
+
+**Choice bias confirmed**: options fixated longer were chosen more often.  
+
+<div style="font-size:0.85em;">
+
+**Testing fixation bias in value integration (θ parameter):**
+
+- **θ = 1 (No Bias)**  
+  - Drift rate does not depend on fixation (standard DDM)
+
+- **θ = 0 (Full Bias)**  
+  - Drift rate depends **only** on the fixated item’s value  
+
+- **0 < θ < 1 (Partial Bias)** – *Best Fit*  
+  - Fixated item’s value weighted more heavily, but the non-fixated item still influences drift.  
+  - Best fit: **θ ≈ 0.3** → strong but not exclusive fixation bias.
+
+</div>
 
 # The Experiment
 
