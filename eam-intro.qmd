@@ -547,6 +547,7 @@ Can direct **gaze or attention** to a spatial location.
 Starts with stimulus onset.
 
 Ends with:
+
 -   A **response**
 -   Or a **deadline**
 
@@ -559,9 +560,10 @@ Long enough to allow natural responding
 
 Short enough to avoid strategy shifts
 
-Typical EAM use: **mean RT \< 1.5 s**
 ::: 
 :::::
+
+Typical EAM use: **mean RT \< 1.5 s**
 
 ## But… EAMs can handle longer RTs
 
