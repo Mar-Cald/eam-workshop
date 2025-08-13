@@ -449,6 +449,11 @@ Margherita Calderan
 </tr>
 </tbody>
 </table>
+</section></section>
+<section>
+<section id="latent-cognitive-parameters" class="title-slide slide level1 center">
+<h1>Latent Cognitive Parameters</h1>
+
 </section>
 <section id="sequential-processing-assumption" class="slide level2">
 <h2>Sequential processing assumption</h2>
@@ -472,11 +477,6 @@ Margherita Calderan
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</section></section>
-<section>
-<section id="latent-cognitive-parameters" class="title-slide slide level1 center">
-<h1>Latent Cognitive Parameters</h1>
-
 </section>
 <section id="section" class="slide level2">
 <h2></h2>
@@ -502,22 +502,20 @@ Margherita Calderan
 </section>
 <section id="thresholds" class="slide level2">
 <h2>Thresholds</h2>
+<p>Set before stimulus onset</p>
+<p>Reflect <strong>response caution/cognitive control/bias/preference</strong></p>
 <ul>
-<li><p>Set before stimulus onset</p></li>
-<li><p>Reflect <strong>response caution/cognitive control/bias/preference</strong></p></li>
+<li><p>⬆ Threshold: Slower but more accurate</p></li>
+<li><p>⬇ Threshold: Faster but error-prone</p></li>
 </ul>
-<p>⬆ Threshold: Slower but more accurate</p>
-<p>⬇ Threshold: Faster but error-prone</p>
 <blockquote>
 <p>Manipulate via pre-trial cues or instructions.</p>
 </blockquote>
 </section>
 <section id="nondecision-time" class="slide level2">
 <h2>Nondecision Time</h2>
-<ul>
-<li><p>Time to encode stimulus + execute response</p></li>
-<li><p>Shifts RT distribution <strong>without</strong> changing shape/accuracy</p></li>
-</ul>
+<p>Time to encode stimulus + execute response</p>
+<p>Shifts RT distribution <strong>without</strong> changing shape/accuracy</p>
 <blockquote>
 <p>Hard to estimate precisely — often noisy across individuals.</p>
 </blockquote>
@@ -577,6 +575,11 @@ Margherita Calderan
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section></section>
+<section>
+<section id="noisy-process" class="title-slide slide level1 center">
+<h1>Noisy process</h1>
+
 </section>
 <section id="wiener-process" class="slide level2 small-text align-center">
 <h2>Wiener Process</h2>
@@ -616,7 +619,7 @@ x(t) = z + vt + sW(t)
 </div><div class="column" style="width:50%;">
 <ul>
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math> : threshold</li>
-<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math> : initial bias</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math> : initial bias (starting point)</li>
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math>: quality of the stimulus (often <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>)</li>
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math>: non-decision time</li>
 </ul>
@@ -628,9 +631,9 @@ x(t) = z + vt + sW(t)
 <p><br></p>
 <p>The <strong>Full DDM</strong> accounts for more behavioral phenomena by allowing <strong>trial-to-trial variability</strong> in key parameters:</p>
 <p><br></p>
-<p><strong>Drift rate</strong>: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>∼</mo><mi>𝒩</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>μ</mi><mi>v</mi></msub><mo>,</mo><msup><mi>η</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">v \sim \mathcal{N}(\mu_v, \eta^2)</annotation></semantics></math></p>
-<p><strong>Starting point</strong>: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>∼</mo><mtext mathvariant="normal">Uniform</mtext><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>−</mo><msub><mi>s</mi><mi>z</mi></msub><mi>/</mi><mn>2</mn><mo>,</mo><mi>z</mi><mo>+</mo><msub><mi>s</mi><mi>z</mi></msub><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">z \sim \text{Uniform}(z - s_z/2, z + s_z/2)</annotation></semantics></math></p>
-<p><strong>Non-decision time</strong>: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mn>0</mn></msub><mo>∼</mo><mtext mathvariant="normal">Uniform</mtext><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>t</mi><mn>0</mn></msub><mo>−</mo><msub><mi>s</mi><msub><mi>t</mi><mn>0</mn></msub></msub><mi>/</mi><mn>2</mn><mo>,</mo><msub><mi>t</mi><mn>0</mn></msub><mo>+</mo><msub><mi>s</mi><msub><mi>t</mi><mn>0</mn></msub></msub><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">t_0 \sim \text{Uniform}(t_0 - s_{t_0}/2, t_0 + s_{t_0}/2)</annotation></semantics></math></p>
+<p><strong>Drift rate</strong></p>
+<p><strong>Starting point</strong></p>
+<p><strong>Non-decision time</strong></p>
 </section>
 <section id="full-ddm-parameters" class="slide level2 small-text align-center">
 <h2>Full DDM Parameters</h2>
@@ -751,12 +754,12 @@ dx_k(t) = v_k \, dt + s \, dW_k(t) \quad \text{for } k = 1,\dots,K
 <section id="within-trial-stationarity" class="slide level2">
 <h2>Within-Trial Stationarity</h2>
 <p>Model parameters are <strong>fixed within a trial</strong></p>
-<p>Evidence accumulation:</p>
+<p><strong>Evidence accumulation</strong>:</p>
 <ul>
 <li>Constant <strong>mean rate</strong>, though noisy</li>
 <li>No changes in stimulus evidence mid-trial</li>
 </ul>
-<p>Decision thresholds:</p>
+<p><strong>Decision thresholds</strong>:</p>
 <ul>
 <li>Set <strong>before</strong> stimulus onset</li>
 <li><strong>Do not change</strong> during the trial</li>
@@ -765,15 +768,11 @@ dx_k(t) = v_k \, dt + s \, dW_k(t) \quad \text{for } k = 1,\dots,K
 <section id="within-condition-stationarity" class="slide level2">
 <h2>Within-Condition Stationarity</h2>
 <p>Parameters are constant <strong>across same-type trials</strong></p>
-<p>Needed for <strong>model fitting and averaging</strong></p>
 <p>Assumes:</p>
 <ul>
 <li>Trials of same condition reflect <strong>same cognitive settings</strong></li>
 <li>Participant behavior is stable</li>
 </ul>
-<blockquote>
-<p>Example: Don’t change stimulus brightness mid-trial.</p>
-</blockquote>
 </section>
 <section id="positively-skewed-rt-distributions" class="slide level2">
 <h2>Positively skewed RT distributions</h2>
@@ -863,14 +862,20 @@ dx_k(t) = v_k \, dt + s \, dW_k(t) \quad \text{for } k = 1,\dots,K
 </section>
 <section id="response-window" class="slide level2">
 <h2>Response window</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <p>Starts with stimulus onset.</p>
-<p>Ends with: - A <strong>response</strong> - Or a <strong>deadline</strong></p>
-<p><span class="emoji" data-emoji="bulb">💡</span> Calibrate response window:</p>
+<p>Ends with:</p>
 <ul>
-<li><p>Long enough to allow natural responding</p></li>
-<li><p>Short enough to avoid strategy shifts</p></li>
-<li><p>Typical EAM use: <strong>mean RT &lt; 1.5 s</strong></p></li>
+<li>A <strong>response</strong></li>
+<li>Or a <strong>deadline</strong></li>
 </ul>
+</div><div class="column" style="width:50%;">
+<p><span class="emoji" data-emoji="bulb">💡</span> Calibrate response window:</p>
+<p>Long enough to allow natural responding</p>
+<p>Short enough to avoid strategy shifts</p>
+</div></div>
+<p>Typical EAM use: <strong>mean RT &lt; 1.5 s</strong></p>
 </section>
 <section id="but-eams-can-handle-longer-rts" class="slide level2">
 <h2>But… EAMs can handle longer RTs</h2>
@@ -887,24 +892,15 @@ dx_k(t) = v_k \, dt + s \, dW_k(t) \quad \text{for } k = 1,\dots,K
 <section id="intertrial-interval" class="slide level2">
 <h2>Intertrial interval</h2>
 <ul>
-<li>Time between trials</li>
-<li>Purpose:
-<ul>
 <li>Allow participant to <strong>reset</strong></li>
 <li>Prevent <strong>proactive interference</strong></li>
 <li>Avoid <strong>sequential effects</strong></li>
-</ul></li>
 </ul>
 </section>
 <section id="sample-size-planning" class="slide level2">
 <h2>Sample size planning</h2>
-<ul>
-<li>Critical for <strong>parameter recovery</strong> and <strong>error trials</strong></li>
-<li>Key question:
-<ul>
-<li>Will you have enough <strong>rare trial types</strong> (e.g., errors on easy trials)?</li>
-</ul></li>
-</ul>
+<p>Critical for <strong>parameter recovery</strong> and <strong>error trials</strong></p>
+<p><em>Will you have enough <strong>rare trial types</strong> (e.g., errors on easy trials)?</em></p>
 <blockquote>
 <p>Example:<br>
 200 trials × 5% error rate = <strong>10 error trials</strong> — often the <strong>minimum</strong> for fitting.</p>
@@ -917,7 +913,7 @@ dx_k(t) = v_k \, dt + s \, dW_k(t) \quad \text{for } k = 1,\dots,K
 <li><p>Condition</p></li>
 <li><p>Stimulus presented</p></li>
 <li><p>Response submitted</p></li>
-<li><p><strong>RT</strong></p></li>
+<li><p>RT</p></li>
 <li><p>Session/trial number</p></li>
 <li><p>Event timings: cue, stimulus, response, feedback, intertrial interval</p></li>
 </ul>

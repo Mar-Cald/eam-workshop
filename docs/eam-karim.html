@@ -372,7 +372,7 @@ Carolina Maria Oletto
 <p><a href="https://doi.org/10.1016/j.isci.2022.104922" target="_blank">Wolf, C., Belopolsky, A. V., &amp; Lappe, M. (2022). <em>Current foveal inspection and previous peripheral preview influence subsequent eye movement decisions</em>. <em>iScience</em>, 25(9), 104922.</a></p>
 </div>
 <ol start="2" type="1">
-<li>Investigate the effect of previous fixations on peripheral selection. <span style="
+<li>Investigate the effect of previous fixations on peripheral selection <span style="
   display:inline-block;
   border-radius:8px;
   padding:4px 8px;
@@ -510,6 +510,17 @@ fixation duration
 </li>
 <li>Develop a <strong>drift–diffusion framework</strong> in which fixation location biases evidence accumulation toward the attended item.</li>
 </ul>
+<div style="
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+     text-align: left;
+     font-size: 0.5em;
+     color: gray;
+     padding-bottom: 10px;
+">
+<p><a href="https://doi.org/10.1038/nn.2635" target="_blank">Krajbich, I., Armel, C., &amp; Rangel, A. (2010). Visual fixations and the computation and comparison of value in simple choice. Nature Neuroscience, 13(10), 1292–1298.</a></p>
+</div>
 <aside class="notes">
 <p>The key idea of our model is that fixations affect the DDM value comparison process by introducing a temporary drift bias toward the fixated item. This drift bias in turn leads to a choice bias for items that are fixated on more.</p>
 <style type="text/css">
@@ -535,6 +546,17 @@ fixation duration
 <li><strong>Which item was fixated</strong>, for how long, and when in the trial</li>
 </ul>
 </div></div>
+<div style="
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+     text-align: left;
+     font-size: 0.5em;
+     color: gray;
+     padding-bottom: 10px;
+">
+<p><a href="https://doi.org/10.1038/nn.2635" target="_blank">Krajbich, I., Armel, C., &amp; Rangel, A. (2010). Visual fixations and the computation and comparison of value in simple choice. Nature Neuroscience, 13(10), 1292–1298.</a></p>
+</div>
 </section>
 <section id="relative-decision-value-rdv" class="slide level2">
 <h2>Relative Decision Value (RDV)</h2>
@@ -551,7 +573,18 @@ fixation duration
 <li>Noise comes from internal variability rather than from noisy stimuli</li>
 </ul>
 </div></div>
-<p><em>Prediction:</em> Longer fixation on an option increases probability of choosing it, even after controlling for its actual value.</p>
+<p><small><em>Prediction:</em> Longer fixation on an option increases probability of choosing it, even after controlling for its actual value.</small></p>
+<div style="
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+     text-align: left;
+     font-size: 0.5em;
+     color: gray;
+     padding-bottom: 10px;
+">
+<p><a href="https://doi.org/10.1038/nn.2635" target="_blank">Krajbich, I., Armel, C., &amp; Rangel, A. (2010). Visual fixations and the computation and comparison of value in simple choice. Nature Neuroscience, 13(10), 1292–1298.</a></p>
+</div>
 <aside class="notes">
 <p>The brain computes a RDV that evolves over time as a Markov Gaussian process until a choice is made. The RDV starts each trial at 0 and continually evolves over time at one of two possible rates (depending on which item is fixated), and a choice is made when it reaches a barrier at either +1 or −1. If the RDV reaches the +1 threshold the left item is chosen and if it reaches the −1 threshold the right item is chosen.</p>
 <style type="text/css">
@@ -568,25 +601,45 @@ fixation duration
 </section>
 <section id="results" class="slide level2">
 <h2>Results</h2>
-<p><strong>Choice bias confirmed</strong>: options fixated longer were chosen more often.</p>
 <div style="font-size:0.85em;">
+<p><strong>Choice bias confirmed</strong>: options fixated longer were chosen more often.</p>
 <p><strong>Testing fixation bias in value integration (θ parameter):</strong></p>
 <ul>
-<li><strong>θ = 1 (No Bias)</strong>
+<li><strong>θ = 1 (No Bias)</strong><br>
+
+<div style="font-size:0.75em; margin-left: 1em;">
 <ul>
 <li>Drift rate does not depend on fixation (standard DDM)</li>
-</ul></li>
-<li><strong>θ = 0 (Full Bias)</strong>
+</ul>
+</div></li>
+<li><strong>θ = 0 (Full Bias)</strong><br>
+
+<div style="font-size:0.75em; margin-left: 1em;">
 <ul>
 <li>Drift rate depends <strong>only</strong> on the fixated item’s value</li>
-</ul></li>
-<li><strong>0 &lt; θ &lt; 1 (Partial Bias)</strong> – <em>Best Fit</em>
+</ul>
+</div></li>
+<li><strong>0 &lt; θ &lt; 1 (Partial Bias)</strong> – <em>Best Fit</em><br>
+
+<div style="font-size:0.75em; margin-left: 1em;">
 <ul>
 <li>Fixated item’s value weighted more heavily, but the non-fixated item still influences drift.<br>
 </li>
 <li>Best fit: <strong>θ ≈ 0.3</strong> → strong but not exclusive fixation bias.</li>
-</ul></li>
 </ul>
+</div></li>
+</ul>
+</div>
+<div style="
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+     text-align: left;
+     font-size: 0.5em;
+     color: gray;
+     padding-bottom: 10px;
+">
+<p><a href="https://doi.org/10.1038/nn.2635" target="_blank">Krajbich, I., Armel, C., &amp; Rangel, A. (2010). Visual fixations and the computation and comparison of value in simple choice. Nature Neuroscience, 13(10), 1292–1298.</a></p>
 </div>
 </section>
 <section>
