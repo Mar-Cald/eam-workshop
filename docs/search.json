@@ -242,7 +242,7 @@
     "href": "eam-intro.html#response-window",
     "title": "Intro to EAM",
     "section": "Response Window",
-    "text": "Response Window\nStarts with stimulus onset.\nEnds with:\n\nA response\nOr a deadline\n\n💡 Calibrate response window:\nLong enough to allow natural responding\nShort enough to avoid strategy shifts\nTypical EAM use: mean RT &lt; 1.5 s"
+    "text": "Response Window\n\n\nStarts with stimulus onset.\nEnds with:\n\nA response\nOr a deadline\n\n\n💡 Calibrate response window:\nLong enough to allow natural responding\nShort enough to avoid strategy shifts\nTypical EAM use: mean RT &lt; 1.5 s"
   },
   {
     "objectID": "eam-intro.html#but-eams-can-handle-longer-rts",
