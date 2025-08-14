@@ -30,6 +30,273 @@ library(ggplot2)
 library(dplyr)
 ```
 
+## Why should we use EAM in visual perception?
+
+## Why should we use EAM in visual perception?
+
+- accuracy
+
+## Why should we use EAM in visual perception?
+
+- accuracy
+
+- RT
+
+## Why should we use EAM in visual perception?
+
+- accuracy
+
+- RT
+
+Can we put them together?
+
+## Why should we use EAM in visual perception?
+
+- Speed-accuracy tradeoff
+
+- Learning effect
+
+---
+
+[Palmer, J., Huk, A. C., & Shadlen, M. N. (2005). The effect of stimulus strength on the speed and accuracy of a perceptual decision. Journal of Vision, 5(5), 1–1.](https://doi.org/10.1167/5.5.1){target="_blank"}
+
+Measurements of accuracy as a function of the stimulus strength are known as **psychometric functions**
+
+Measurements of response time as a function of stimulus strength?
+
+## Goal
+
+To understand relation between RT and accuracy measures.
+
+**RT and accuracy depend on the difficulty of a perceptual judgment.**
+
+<div style="
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+     text-align: left;
+     font-size: 0.5em;
+     color: gray;
+     padding-bottom: 10px;
+">
+[Palmer, J., Huk, A. C., & Shadlen, M. N. (2005). The effect of stimulus strength on the speed and accuracy of a perceptual decision. Journal of Vision, 5(5), 1–1.](https://doi.org/10.1167/5.5.1){target="_blank"}
+</div>
+
+## Accuracy - Signal detection theory
+
+- **Stimulus as a random variable**: perception is noisy 
+- **Decision**: compare a sample from the stimulus to a **criterion**
+- **Sensitivity (d′)**: measures ability to distinguish signal from noise
+- **Bias**: reflects decision criterion placement, independent of sensitivity  
+- SDT separates **perceptual sensitivity** from **decision strategy**
+- Psychometric Function
+
+<div style="
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+     text-align: left;
+     font-size: 0.5em;
+     color: gray;
+     padding-bottom: 10px;
+">
+[Palmer, J., Huk, A. C., & Shadlen, M. N. (2005). The effect of stimulus strength on the speed and accuracy of a perceptual decision. Journal of Vision, 5(5), 1–1.](https://doi.org/10.1167/5.5.1){target="_blank"}
+</div>
+
+## Chronometric and Psychometric Functions
+
+- **Chronometric function:** mean RT as a function of stimulus strength.  
+- **Psychometric function:** accuracy as a function of stimulus strength.  
+- DDM predicts **both jointly** using the same parameters:  
+  - Higher drift → faster RT and higher accuracy  
+  - Larger bound → slower RT but higher accuracy  
+  - Residual time shifts RT only  
+
+<div style="
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+     text-align: left;
+     font-size: 0.5em;
+     color: gray;
+     padding-bottom: 10px;
+">
+[Palmer, J., Huk, A. C., & Shadlen, M. N. (2005). The effect of stimulus strength on the speed and accuracy of a perceptual decision. Journal of Vision, 5(5), 1–1.](https://doi.org/10.1167/5.5.1){target="_blank"}
+</div>
+
+## Coupling of RT and Accuracy
+
+- DDM produces a fixed relationship between RT and accuracy for a given stimulus strength
+
+- SDT + separate RT modeling cannot capture this coupling  
+
+- RT modeling alone ignores accuracy constraints
+
+- DDM **integrates both**, predicting how changes in stimulus strength shift RT and accuracy together
+
+- Single generative framework → fewer parameters, more precise predictions
+
+<div style="
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+     text-align: left;
+     font-size: 0.5em;
+     color: gray;
+     padding-bottom: 10px;
+">
+[Palmer, J., Huk, A. C., & Shadlen, M. N. (2005). The effect of stimulus strength on the speed and accuracy of a perceptual decision. Journal of Vision, 5(5), 1–1.](https://doi.org/10.1167/5.5.1){target="_blank"}
+</div>
+
+## Experiments and Results
+
+::::: columns
+::: {.column width="40%"}
+![](img/2005task.jpeg){width=350 height=450}
+:::
+
+::: {.column .small-text width="60%"}
+- A **single sensitivity parameter** explains the effect of **stimulus strength** on both **RT** and **accuracy**.
+- **Threshold ratio** (RT-based vs accuracy-based sensitivity) ~3.0–3.6 → matches model prediction (3.5)
+
+- Robust across:
+  <div style="font-size:0.75em; margin-left: 1em;">
+  - Two **response modalities** (saccades and key pressing)  
+  - Three different **stimulus judgments** (motion discrimination, contrast detection, contrast discrimination)  
+  </div>
+  
+:::
+:::::
+<div style="
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+     text-align: left;
+     font-size: 0.5em;
+     color: gray;
+     padding-bottom: 10px;
+">
+[Palmer, J., Huk, A. C., & Shadlen, M. N. (2005). The effect of stimulus strength on the speed and accuracy of a perceptual decision. Journal of Vision, 5(5), 1–1.](https://doi.org/10.1167/5.5.1){target="_blank"}
+</div>
+
+## Discussion
+
+- **Speed-accuracy tradeoff** primarily captured by the **bound parameter**:
+  <div style="font-size:0.75em; margin-left: 1em;">
+  -   when instructed to respond fast, the bound is low (0.5) giving fast but less accurate responses
+  -   when instructed to respond slow, the bound is higher (1.3), giving slower but more accurate responses
+  </div>
+-  Sensitivity and residual time changed only slightly across speed instructions
+
+<div style="
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+     text-align: left;
+     font-size: 0.5em;
+     color: gray;
+     padding-bottom: 10px;
+">
+[Palmer, J., Huk, A. C., & Shadlen, M. N. (2005). The effect of stimulus strength on the speed and accuracy of a perceptual decision. Journal of Vision, 5(5), 1–1.](https://doi.org/10.1167/5.5.1){target="_blank"}
+</div>
+
+## Discussion
+
+The model:  
+  - Accounts for **both RT and accuracy**  
+  - Has **distinct parameters** for **sensitivity** and **speed-accuracy tradeoff**
+  
+<div style="
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+     text-align: left;
+     font-size: 0.5em;
+     color: gray;
+     padding-bottom: 10px;
+">
+[Palmer, J., Huk, A. C., & Shadlen, M. N. (2005). The effect of stimulus strength on the speed and accuracy of a perceptual decision. Journal of Vision, 5(5), 1–1.](https://doi.org/10.1167/5.5.1){target="_blank"}
+</div>
+  
+---
+
+[Zhang, J., & Rowe, J. B. (2014). Dissociable mechanisms of speed-accuracy tradeoff during visual perceptual learning are revealed by a hierarchical drift-diffusion model. Frontiers in neuroscience, 8, 69.](https://doi.org/10.3389/fnins.2014.00069){target="_blank"}
+
+Hierarchical drift-diffusion model to examine:
+
+- the speed-accuracy tradeoff
+- perceptual learning effect
+
+during learning of a coherent motion discrimination task across multiple training sessions.
+
+## Perceptual Learning
+
+Unlike the speed-accuracy tradeoff, perceptual learning can be automatic, without conscious insights of the task.
+
+<div style="font-size:0.75em; margin-left: 1em;">
+Motion discrimination improves as participants were exposed to subliminal motion stimuli when performing an motion-irrelevant task (Watanabe et al., 2001). 
+</div>
+
+<div style="
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+     text-align: left;
+     font-size: 0.5em;
+     color: gray;
+     padding-bottom: 10px;
+">
+[Zhang, J., & Rowe, J. B. (2014). Dissociable mechanisms of speed-accuracy tradeoff during visual perceptual learning are revealed by a hierarchical drift-diffusion model. Frontiers in neuroscience, 8, 69.](https://doi.org/10.3389/fnins.2014.00069){target="_blank"}
+</div>
+
+## Using DDM
+
+Speed-accuracy tradeoff and perceptual learning can be explained by different parameter changes in the DDM.
+
+- **Boundary separation** controls SAT:  
+  - **Speed emphasis** → smaller separation → less evidence → faster RT, lower accuracy  
+  - **Accuracy emphasis** → larger separation → more evidence → slower RT, higher accuracy  
+
+<div style="font-size:0.75em; margin-left: 1em;">
+(Ratcliff & Rouder 2000)
+</div>
+
+## Perceptual Learning in the DDM
+
+- Two main changes with training:  
+  - **↑ Drift rate** → better sensory processing → faster & more accurate decisions  
+  - **↓ Non-decision time** → faster stimulus encoding & response execution  
+
+## Open Questions
+
+1. Does SAT affect **only** boundary separation, or also drift rate & non-decision time?  
+   - Some evidence for effects on all three parameters (Vandekerckhove et al., 2011; Rae et al., in press).  
+2. How do SAT and perceptual learning interact?  
+   - Different timescales, but may influence the same parameters.
+
+## Current Study
+
+- **Task:** Coherent motion discrimination  
+- **Design:** Multiple training sessions × Speed vs. Accuracy emphasis  
+- **Analysis:** Bayesian estimation of DDM parameters
+
+## Key Results
+
+- **Early training:**  
+  - Accuracy emphasis → ↑ boundary separation, ↑ drift rate, ↑ non-decision time  
+- **After training:**  
+  - Accuracy emphasis → ↑ boundary separation only  
+- **Learning effects:**  
+  - Faster, more accurate decisions from ↓ boundary separation & ↑ drift rate  
+
+## Conclusion
+
+- SAT and learning both shape decision parameters, but at **different timescales**.  
+- Early in learning, SAT influences multiple parameters; later, mainly boundary separation.  
+- Learning improves both sensory quality (drift rate) and efficiency (boundary separation).
+
+---
+
 ::::: columns
 ::: {.column width="70%"}
 ![](img/2022abstract.jpg){width=700 height=700}
