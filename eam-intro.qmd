@@ -398,14 +398,6 @@ Each accumulator races toward its threshold. The first to cross **wins**.
 # Guidelines
 [Boag et al. 2025](https://osf.io/snqgp_v1)
 
-## EAM-suitable tasks should
-
--   Clearly define **stimulus and response onset**
-
--   Present **static, constant stimuli**
-
--   Avoid overlapping cognitive processes
-
 ## Within-Trial Stationarity
 
 Model parameters are **fixed within a trial**
