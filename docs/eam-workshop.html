@@ -187,8 +187,8 @@ window.Quarto = {
   <li><a href="#group-level-parameters" id="toc-group-level-parameters" class="nav-link" data-scroll-target="#group-level-parameters">Group-Level Parameters</a></li>
   </ul></li>
   <li><a href="#priors" id="toc-priors" class="nav-link" data-scroll-target="#priors">Priors</a></li>
-  <li><a href="#design-specification" id="toc-design-specification" class="nav-link" data-scroll-target="#design-specification">Design specification</a></li>
-  <li><a href="#simulation" id="toc-simulation" class="nav-link" data-scroll-target="#simulation">Simulation</a>
+  <li><a href="#simulation" id="toc-simulation" class="nav-link" data-scroll-target="#simulation">Simulation</a></li>
+  <li><a href="#design-specification" id="toc-design-specification" class="nav-link" data-scroll-target="#design-specification">Design specification</a>
   <ul class="collapse">
   <li><a href="#design-object" id="toc-design-object" class="nav-link" data-scroll-target="#design-object">Design object</a></li>
   </ul></li>
@@ -328,17 +328,6 @@ p(\mu, \Sigma)
 </ul>
 <p>Consequently, prior distributions are defined on these transformed scales rather than on the natural parameter scales.</p>
 </section>
-<section id="design-specification" class="level2">
-<h2 class="anchored" data-anchor-id="design-specification">Design specification</h2>
-<p>The <code>design</code> function creates a design object that maps model parameters to experimental conditions using linear model formulas. This object specifies:</p>
-<ol type="1">
-<li><strong>Model</strong> type</li>
-<li><strong>Formula</strong>: Linear models for estimated parameter types (default values are used for omitted types)</li>
-<li>Parameters to be fixed as constants (optional)</li>
-<li>Functions for creating custom factors (optional)</li>
-<li>Custom contrast coding for factors (optional)</li>
-</ol>
-</section>
 <section id="simulation" class="level2">
 <h2 class="anchored" data-anchor-id="simulation">Simulation</h2>
 <p><strong>First.</strong> We construct a full-factorial data frame with all combinations of factors. These factors define the experimental design:</p>
@@ -371,6 +360,17 @@ p(\mu, \Sigma)
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># See details of available parameters and transformations:</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>?DDM</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="design-specification" class="level2">
+<h2 class="anchored" data-anchor-id="design-specification">Design specification</h2>
+<p>The <code>design</code> function creates a design object that maps model parameters to experimental conditions using linear model formulas. This object specifies:</p>
+<ol type="1">
+<li><strong>Model</strong> type</li>
+<li><strong>Formula</strong>: Linear models for estimated parameter types (default values are used for omitted types)</li>
+<li>Parameters to be fixed as constants (optional)</li>
+<li>Functions for creating custom factors (optional)</li>
+<li>Custom contrast coding for factors (optional)</li>
+</ol>
 <section id="design-object" class="level3">
 <h3 class="anchored" data-anchor-id="design-object">Design object</h3>
 <p>The <code>formula</code> argument maps DDM parameters to experimental factors using R’s linear modeling syntax. Each parameter type gets its own formula. It is not necessary to specify formulas for all nine parameter types of the DDM. Any parameters not explicitly included in the formula argument will be assigned default values. Additionally, parameters included in the formula can be fixed to specific values using the constants argument.</p>
@@ -1038,7 +1038,7 @@ Z            -0.094 -0.009  0.072 1.000 5719</code></pre>
 <span id="cb103-2"><a href="#cb103-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_density</span>(simWDDM, ppWDDM, <span class="at">defective_factor =</span> <span class="st">"GAP"</span>)</span>
 <span id="cb103-3"><a href="#cb103-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_cdf</span>(simWDDM, ppWDDM, <span class="at">defective_factor =</span> <span class="st">"CI"</span>)</span>
 <span id="cb103-4"><a href="#cb103-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_density</span>(simWDDM, ppWDDM, <span class="at">defective_factor =</span> <span class="st">"CI"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell quarto-layout-panel" data-layout-ncol="2" data-layout-nrow="2">
+<div class="cell quarto-layout-panel" data-layout-nrow="2" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><img src="eam-workshop_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid" width="672"></p>
@@ -1458,7 +1458,7 @@ ESS  5071       5136  5637.000 1882.000 1761.000      2130.000 5366.000</code></
 <span id="cb142-3"><a href="#cb142-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_density</span>(simWDDM,<span class="fu">list</span>(<span class="at">DDM =</span> ppWDDM,<span class="at">RDM =</span> ppRDM), <span class="at">defective_factor =</span> <span class="st">"GAP"</span>)</span>
 <span id="cb142-4"><a href="#cb142-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_cdf</span>(simWDDM,<span class="fu">list</span>(<span class="at">DDM =</span> ppWDDM,<span class="at">RDM =</span> ppRDM), <span class="at">defective_factor =</span> <span class="st">"CI"</span>)</span>
 <span id="cb142-5"><a href="#cb142-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_density</span>(simWDDM,<span class="fu">list</span>(<span class="at">DDM =</span> ppWDDM,<span class="at">RDM =</span> ppRDM), <span class="at">defective_factor =</span> <span class="st">"CI"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell quarto-layout-panel" data-layout-ncol="2" data-layout-nrow="2">
+<div class="cell quarto-layout-panel" data-layout-nrow="2" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><img src="eam-workshop_files/figure-html/unnamed-chunk-46-1.png" class="img-fluid" width="672"></p>

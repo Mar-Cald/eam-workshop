@@ -184,17 +184,6 @@ Cognitive model parameters are transformed to have support on the entire real li
 Consequently, prior distributions are defined on these transformed scales rather than on the natural parameter scales.
 
 
-## Design specification
-
-The `design` function creates a design object that maps model parameters to experimental conditions using linear model formulas. This object specifies:
-
-1.  **Model** type
-2.  **Formula**: Linear models for estimated parameter types (default values are used for omitted types)
-3.  Parameters to be fixed as constants (optional)
-4.  Functions for creating custom factors (optional)
-5.  Custom contrast coding for factors (optional)
-
-
 ## Simulation
 
 **First.** We construct a full-factorial data frame with all combinations of factors.
@@ -232,6 +221,17 @@ We start by simulating some data using the Wiener Diffusion Model.
 # See details of available parameters and transformations:
 ?DDM
 ```
+
+## Design specification
+
+The `design` function creates a design object that maps model parameters to experimental conditions using linear model formulas. This object specifies:
+
+1.  **Model** type
+2.  **Formula**: Linear models for estimated parameter types (default values are used for omitted types)
+3.  Parameters to be fixed as constants (optional)
+4.  Functions for creating custom factors (optional)
+5.  Custom contrast coding for factors (optional)
+
 
 ### Design object
 
