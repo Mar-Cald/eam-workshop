@@ -275,7 +275,7 @@ ggplot(data = sim_path, aes(x = time, y = x))+
 :::::
 
 
-## Wiener First Passage Time (FPT) {.small-text .align-center}
+## Wiener Diffusion Model {.small-text .align-center}
 
 > It is the expected distribution of the time until the process first hits or crosses one or the other boundary. This results in a bivariate distribution, over responses $x$ and hitting times $t$.
 

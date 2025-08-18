@@ -226,7 +226,7 @@ dat = expand.grid(
 
 ---
 
-We start by simulating some data using the Wiener Diffusion Decision Model.
+We start by simulating some data using the Wiener Diffusion Model.
 
 ```{r ddm,echo=TRUE}
 # See details of available parameters and transformations:
