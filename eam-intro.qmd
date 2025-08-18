@@ -438,21 +438,6 @@ Assumes:
 -   Trials of same condition reflect **same cognitive settings**
 -   Participant behavior is stable
 
-## Positively skewed RT distributions
-
-EAMs naturally produce **positively skewed** RTs.
-
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
-
-dat = data.frame(rt = brms::rinv_gaussian(100000, mu = .5,shape = .8)+.2)
-ggplot(data = dat, aes(x = rt))+
-  geom_density(fill = "orange", size = 2)+xlab("RT")+
-  theme_classic()+
-  xlim(0,2)
-```
 
 ## Free of contaminant processes
 
@@ -468,143 +453,6 @@ Avoid:
 
 > Clean data = better model fit and interpretability.
 
-## Stimulus design
-
-Manipulate difficulty to modulate:
-
--   Drift rate
-
--   Error rates (target: **5–35%**)
-
-Avoid:
-
--   **Floor effects** → guessing
-
--   **Ceiling effects** → no errors to fit
-
-## Response modality
-
-EAMs assume the response begins **after the decision ends**.
-
-Best modalities:
-
--   **Manual keypresses**
-
--   **Saccades**
-
-Avoid imprecise, slow, or delayed responses.
-
-## Trial structure and event timing
-
-EAM tasks follow a structured sequence of events:
-
-1.  **Cue** (optional)
-
-2.  **Fixation**
-
-3.  **Stimulus onset**
-
-4.  **Response window**
-
-5.  **Intertrial interval**
-
-Each component affects the integrity of evidence accumulation.
-
-## Cue
-
-Optional cue presented **before** stimulus onset.
-
-Informs participants **how** to respond (e.g., emphasis on speed or accuracy).
-
-May set cognitive control parameters:
-
--   **Thresholds**
--   **Biases**
-
-Can direct **gaze or attention** to a spatial location.
-
-> Must occur **before** evidence accumulation begins.
-
-## Fixation interval
-
--   Ensures eyes and attention are centered.
--   Allows previous trial’s processes to return to **baseline**.
--   Reduces overlap across trials.
-
-:bulb: **Best practice:** Use **variable durations**
-
-## Stimulus onset
-
--   Marks the **start** of evidence accumulation.
--   Assumes **constant signal strength** from onset to response.
-
-> Any variability or delay in onset weakens the assumption of continuous accumulation.
-
-## Response window
-
-::::: columns
-::: {.column width="50%"}
-Starts with stimulus onset.
-
-Ends with:
-
--   A **response**
--   Or a **deadline**
-
-::: 
-
-::: {.column width="50%"}
-:bulb: Calibrate response window:
-
-Long enough to allow natural responding
-
-Short enough to avoid strategy shifts
-
-::: 
-:::::
-
-Typical EAM use: **mean RT \< 1.5 s**
-
-## But… EAMs can handle longer RTs
-
--   [**Lerche, et al. (2020)**](https://doi.org/10.1037/xge0000774){target="_blank"}. Drift rate and General Intelligence: fast tasks 0.655*s* and slow tasks 3,319*s* ms.
-
--   [**Boag et al. (2023)**](https://doi.org/10.1016/j.tics.2022.11.009){target="_blank"}: EAMs used in:
-
-    -   Air-traffic control
-    -   Maritime surveillance
-    -   Forensic decision making
-
-## Intertrial interval
-
--   Allow participant to **reset**
--   Prevent **proactive interference**
--   Avoid **sequential effects**
-
-## Sample size planning
-
-Critical for **parameter recovery** and **error trials**
-
-*Will you have enough **rare trial types** (e.g., errors on easy trials)?*
-
-> Example:\
-> 200 trials × 5% error rate = **10 error trials** — often the **minimum** for fitting.
-
-## Collecting data
-
--   Participant ID
-
--   Condition
-
--   Stimulus presented
-
--   Response submitted
-
--   RT
-
--   Session/trial number
-
--   Event timings: cue, stimulus, response, feedback, intertrial interval
 
 ## Outliers
 
@@ -633,8 +481,7 @@ Outliers distort model fits.
 :::::
 
 
-
-# "All Models Are Wrong, but Some Are Useful" - G. Box {.align-center}
+# "All models are wrong, but some are useful" - G. Box {.align-center}
 
 Promotes understanding of behavior.\
 

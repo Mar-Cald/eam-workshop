@@ -774,11 +774,6 @@ dx_k(t) = v_k \, dt + s \, dW_k(t) \quad \text{for } k = 1,\dots,K
 <li>Participant behavior is stable</li>
 </ul>
 </section>
-<section id="positively-skewed-rt-distributions" class="slide level2">
-<h2>Positively skewed RT distributions</h2>
-<p>EAMs naturally produce <strong>positively skewed</strong> RTs.</p>
-
-<img data-src="eam-intro_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
 <section id="free-of-contaminant-processes" class="slide level2">
 <h2>Free of contaminant processes</h2>
 <p>Data should reflect <strong>evidence accumulation</strong>!</p>
@@ -791,132 +786,6 @@ dx_k(t) = v_k \, dt + s \, dW_k(t) \quad \text{for } k = 1,\dots,K
 <blockquote>
 <p>Clean data = better model fit and interpretability.</p>
 </blockquote>
-</section>
-<section id="stimulus-design" class="slide level2">
-<h2>Stimulus design</h2>
-<p>Manipulate difficulty to modulate:</p>
-<ul>
-<li><p>Drift rate</p></li>
-<li><p>Error rates (target: <strong>5–35%</strong>)</p></li>
-</ul>
-<p>Avoid:</p>
-<ul>
-<li><p><strong>Floor effects</strong> → guessing</p></li>
-<li><p><strong>Ceiling effects</strong> → no errors to fit</p></li>
-</ul>
-</section>
-<section id="response-modality" class="slide level2">
-<h2>Response modality</h2>
-<p>EAMs assume the response begins <strong>after the decision ends</strong>.</p>
-<p>Best modalities:</p>
-<ul>
-<li><p><strong>Manual keypresses</strong></p></li>
-<li><p><strong>Saccades</strong></p></li>
-</ul>
-<p>Avoid imprecise, slow, or delayed responses.</p>
-</section>
-<section id="trial-structure-and-event-timing" class="slide level2">
-<h2>Trial structure and event timing</h2>
-<p>EAM tasks follow a structured sequence of events:</p>
-<ol type="1">
-<li><p><strong>Cue</strong> (optional)</p></li>
-<li><p><strong>Fixation</strong></p></li>
-<li><p><strong>Stimulus onset</strong></p></li>
-<li><p><strong>Response window</strong></p></li>
-<li><p><strong>Intertrial interval</strong></p></li>
-</ol>
-<p>Each component affects the integrity of evidence accumulation.</p>
-</section>
-<section id="cue" class="slide level2">
-<h2>Cue</h2>
-<p>Optional cue presented <strong>before</strong> stimulus onset.</p>
-<p>Informs participants <strong>how</strong> to respond (e.g., emphasis on speed or accuracy).</p>
-<p>May set cognitive control parameters:</p>
-<ul>
-<li><strong>Thresholds</strong></li>
-<li><strong>Biases</strong></li>
-</ul>
-<p>Can direct <strong>gaze or attention</strong> to a spatial location.</p>
-<blockquote>
-<p>Must occur <strong>before</strong> evidence accumulation begins.</p>
-</blockquote>
-</section>
-<section id="fixation-interval" class="slide level2">
-<h2>Fixation interval</h2>
-<ul>
-<li>Ensures eyes and attention are centered.</li>
-<li>Allows previous trial’s processes to return to <strong>baseline</strong>.</li>
-<li>Reduces overlap across trials.</li>
-</ul>
-<p><span class="emoji" data-emoji="bulb">💡</span> <strong>Best practice:</strong> Use <strong>variable durations</strong></p>
-</section>
-<section id="stimulus-onset" class="slide level2">
-<h2>Stimulus onset</h2>
-<ul>
-<li>Marks the <strong>start</strong> of evidence accumulation.</li>
-<li>Assumes <strong>constant signal strength</strong> from onset to response.</li>
-</ul>
-<blockquote>
-<p>Any variability or delay in onset weakens the assumption of continuous accumulation.</p>
-</blockquote>
-</section>
-<section id="response-window" class="slide level2">
-<h2>Response window</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Starts with stimulus onset.</p>
-<p>Ends with:</p>
-<ul>
-<li>A <strong>response</strong></li>
-<li>Or a <strong>deadline</strong></li>
-</ul>
-</div><div class="column" style="width:50%;">
-<p><span class="emoji" data-emoji="bulb">💡</span> Calibrate response window:</p>
-<p>Long enough to allow natural responding</p>
-<p>Short enough to avoid strategy shifts</p>
-</div></div>
-<p>Typical EAM use: <strong>mean RT &lt; 1.5 s</strong></p>
-</section>
-<section id="but-eams-can-handle-longer-rts" class="slide level2">
-<h2>But… EAMs can handle longer RTs</h2>
-<ul>
-<li><p><a href="https://doi.org/10.1037/xge0000774" target="_blank"><strong>Lerche, et al.&nbsp;(2020)</strong></a>. Drift rate and General Intelligence: fast tasks 0.655<em>s</em> and slow tasks 3,319<em>s</em> ms.</p></li>
-<li><p><a href="https://doi.org/10.1016/j.tics.2022.11.009" target="_blank"><strong>Boag et al.&nbsp;(2023)</strong></a>: EAMs used in:</p>
-<ul>
-<li>Air-traffic control</li>
-<li>Maritime surveillance</li>
-<li>Forensic decision making</li>
-</ul></li>
-</ul>
-</section>
-<section id="intertrial-interval" class="slide level2">
-<h2>Intertrial interval</h2>
-<ul>
-<li>Allow participant to <strong>reset</strong></li>
-<li>Prevent <strong>proactive interference</strong></li>
-<li>Avoid <strong>sequential effects</strong></li>
-</ul>
-</section>
-<section id="sample-size-planning" class="slide level2">
-<h2>Sample size planning</h2>
-<p>Critical for <strong>parameter recovery</strong> and <strong>error trials</strong></p>
-<p><em>Will you have enough <strong>rare trial types</strong> (e.g., errors on easy trials)?</em></p>
-<blockquote>
-<p>Example:<br>
-200 trials × 5% error rate = <strong>10 error trials</strong> — often the <strong>minimum</strong> for fitting.</p>
-</blockquote>
-</section>
-<section id="collecting-data" class="slide level2">
-<h2>Collecting data</h2>
-<ul>
-<li><p>Participant ID</p></li>
-<li><p>Condition</p></li>
-<li><p>Stimulus presented</p></li>
-<li><p>Response submitted</p></li>
-<li><p>RT</p></li>
-<li><p>Session/trial number</p></li>
-<li><p>Event timings: cue, stimulus, response, feedback, intertrial interval</p></li>
-</ul>
 </section>
 <section id="outliers" class="slide level2">
 <h2>Outliers</h2>
@@ -945,7 +814,7 @@ dx_k(t) = v_k \, dt + s \, dW_k(t) \quad \text{for } k = 1,\dots,K
 </div></div>
 </section></section>
 <section id="all-models-are-wrong-but-some-are-useful---g.-box" class="title-slide slide level1 align-center center">
-<h1>“All Models Are Wrong, but Some Are Useful” - G. Box</h1>
+<h1>“All models are wrong, but some are useful” - G. Box</h1>
 <p>Promotes understanding of behavior.<br>
 </p>
 <p>Accurately predicts new (<strong>out-of-sample</strong>) data.<br>
@@ -1156,80 +1025,42 @@ dx_k(t) = v_k \, dt + s \, dW_k(t) \quad \text{for } k = 1,\dots,K
       });
     </script>
     
-
     <script>
-
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-
       // slide changes (different for each slide format).
-
       (function () {
-
         // dispatch for htmlwidgets
-
         function fireSlideEnter() {
-
           const event = window.document.createEvent("Event");
-
           event.initEvent("slideenter", true, true);
-
           window.document.dispatchEvent(event);
-
         }
-
-    
 
         function fireSlideChanged(previousSlide, currentSlide) {
-
           fireSlideEnter();
 
-    
-
           // dispatch for shiny
-
           if (window.jQuery) {
-
             if (previousSlide) {
-
               window.jQuery(previousSlide).trigger("hidden");
-
             }
-
             if (currentSlide) {
-
               window.jQuery(currentSlide).trigger("shown");
-
             }
-
           }
-
         }
-
-    
 
         // hookup for slidy
-
         if (window.w3c_slidy) {
-
           window.w3c_slidy.add_observer(function (slide_num) {
-
             // slide_num starts at position 1
-
             fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-
           });
-
         }
 
-    
-
       })();
-
     </script>
-
-    
 
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
