@@ -4,7 +4,7 @@
     "href": "eam-intro.html#perception-into-action",
     "title": "Intro to EAM",
     "section": "Perception into action",
-    "text": "Perception into action\nEvidence Accumulation Models assume that, upon stimulus presentation, the decision maker:\n\nSamples noisy evidence for available options (e.g., “Should I press left or right?”)\nAccumulates that evidence until a threshold is crossed\n\n\n\n\n\n\n\nMulder, M. J., Wagenmakers, E. J., Ratcliff, R., Boekel, W., & Forstmann, B. U. (2012). Bias in the brain: a diffusion model analysis of prior probability and potential payoff. Journal of Neuroscience, 32(7), 2335–2343."
+    "text": "Perception into action\nEvidence Accumulation Models assume that, upon stimulus presentation, the decision maker:\n\nSamples noisy evidence for available options (e.g., “Should I press left or right?”)\nAccumulates that evidence until a threshold is crossed\n\n\n\n\n\n\n\nMulder, M. J., Wagenmakers, E. J., Ratcliff, R., Boekel, W., & Forstmann, B. U. (2012). Bias in the brain: a diffusion model analysis of prior probability and potential payoff. Journal of Neuroscience, 32(7), 2335–2343.\n\n\n\nThe brain samples information from the environment but that information is noisy and imperfect Rather than making a snap judgment, you accumulate that evidence until you’re confident enough to make a decision — say, pressing left or pressing right. Once the accumulated evidence passes a threshold, action is triggered. This is what evidence accumulation models capture."
   },
   {
     "objectID": "eam-intro.html#what-is-evidence",

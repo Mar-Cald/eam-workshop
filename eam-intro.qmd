@@ -50,6 +50,12 @@ Evidence Accumulation Models assume that, upon stimulus presentation, the decisi
 :::
 :::::
 
+::: notes
+The brain samples information from the environment but that information is noisy and imperfect
+Rather than making a snap judgment, you accumulate that evidence until you’re confident enough to make a decision — say, pressing left or pressing right.
+Once the accumulated evidence passes a threshold, action is triggered. This is what evidence accumulation models capture.
+:::
+
 ## What is “evidence”?
 
 Neural signals reflecting sensory or internal information relevant to a choice.
