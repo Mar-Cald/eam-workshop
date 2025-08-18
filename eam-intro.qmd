@@ -64,16 +64,12 @@ Neural signals reflecting sensory or internal information relevant to a choice.
 
 -   Neurons fire in proportion to motion direction & strength.
 -   These firing rates = **momentary evidence**.
-
-### 1. Sensory neurons encode momentary evidence
-
--   Spiking in **sensory cortex** represents stimulus features.
 -   Noisy and varies trial-to-trial.
 
 
 # How does the brain accumulate evidence?
 
-## 2. Integrator neurons receive this input
+## Integrator neurons receive this input
 
 ::::: columns
 ::: {.column width="50%"}
@@ -95,7 +91,7 @@ Neural signals reflecting sensory or internal information relevant to a choice.
 Neurons in the lateral intraparietal (LIP) area with response fields overlapping the choice-target contralateral to the recording site (Tin neurons) represent the accumulation of evidence in favor of contralateral target selection. The monkey reports its decision via a saccadic eye movement to one of the targets and is rewarded for correct choices. In trials where the monkey chooses the contralateral target (i.e., the one within the neurons’ response field), the Tin neurons represent the winning race, whereas on ipsilateral choices, they represent the losing race.
 :::
 
-## 3. Threshold crossing triggers a decision
+## Threshold crossing triggers a decision
 
 <br/>
 

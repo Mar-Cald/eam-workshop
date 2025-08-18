@@ -11,21 +11,21 @@
     "href": "eam-intro.html#what-is-evidence",
     "title": "Intro to EAM",
     "section": "What is “evidence”?",
-    "text": "What is “evidence”?\nNeural signals reflecting sensory or internal information relevant to a choice.\n“Are dots moving to the right or to the left?”\n\nNeurons fire in proportion to motion direction & strength.\nThese firing rates = momentary evidence.\n\n1. Sensory neurons encode momentary evidence\n\nSpiking in sensory cortex represents stimulus features.\nNoisy and varies trial-to-trial."
+    "text": "What is “evidence”?\nNeural signals reflecting sensory or internal information relevant to a choice.\n“Are dots moving to the right or to the left?”\n\nNeurons fire in proportion to motion direction & strength.\nThese firing rates = momentary evidence.\nNoisy and varies trial-to-trial."
   },
   {
     "objectID": "eam-intro.html#integrator-neurons-receive-this-input",
     "href": "eam-intro.html#integrator-neurons-receive-this-input",
     "title": "Intro to EAM",
-    "section": "2. Integrator neurons receive this input",
-    "text": "2. Integrator neurons receive this input\n\n\n\n\nNeurons in LIP, dlPFC, or striatum ramp up/down over time.\nReflects accumulated evidence\n\n Zylberberg & Shadlen, 2025\n\n\n\n\nNeurons in the lateral intraparietal (LIP) area with response fields overlapping the choice-target contralateral to the recording site (Tin neurons) represent the accumulation of evidence in favor of contralateral target selection. The monkey reports its decision via a saccadic eye movement to one of the targets and is rewarded for correct choices. In trials where the monkey chooses the contralateral target (i.e., the one within the neurons’ response field), the Tin neurons represent the winning race, whereas on ipsilateral choices, they represent the losing race."
+    "section": "Integrator neurons receive this input",
+    "text": "Integrator neurons receive this input\n\n\n\n\nNeurons in LIP, dlPFC, or striatum ramp up/down over time.\nReflects accumulated evidence\n\n Zylberberg & Shadlen, 2025\n\n\n\n\nNeurons in the lateral intraparietal (LIP) area with response fields overlapping the choice-target contralateral to the recording site (Tin neurons) represent the accumulation of evidence in favor of contralateral target selection. The monkey reports its decision via a saccadic eye movement to one of the targets and is rewarded for correct choices. In trials where the monkey chooses the contralateral target (i.e., the one within the neurons’ response field), the Tin neurons represent the winning race, whereas on ipsilateral choices, they represent the losing race."
   },
   {
     "objectID": "eam-intro.html#threshold-crossing-triggers-a-decision",
     "href": "eam-intro.html#threshold-crossing-triggers-a-decision",
     "title": "Intro to EAM",
-    "section": "3. Threshold crossing triggers a decision",
-    "text": "3. Threshold crossing triggers a decision\n\n\nZylberberg & Shadlen, 2025"
+    "section": "Threshold crossing triggers a decision",
+    "text": "Threshold crossing triggers a decision\n\n\nZylberberg & Shadlen, 2025"
   },
   {
     "objectID": "eam-intro.html#brain-computation-of-decisions",
