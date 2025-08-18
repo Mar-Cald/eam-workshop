@@ -483,10 +483,4 @@ Outliers distort model fits.
 
 # "All models are wrong, but some are useful" - G. Box {.align-center}
 
-Promotes understanding of behavior.\
-
-Accurately predicts new (**out-of-sample**) data.\
-
-Captures **uncertainty**, **variability**, and **structure**.\
-
 # Thank you!
