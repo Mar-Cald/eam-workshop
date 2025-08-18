@@ -11,14 +11,7 @@
     "href": "eam-intro.html#what-is-evidence",
     "title": "Intro to EAM",
     "section": "What is “evidence”?",
-    "text": "What is “evidence”?\nNeural signals reflecting sensory or internal information relevant to a choice.\n“Are dots moving to the right or to the left?”\n\nNeurons fire in proportion to motion direction & strength.\nThese firing rates = momentary evidence."
-  },
-  {
-    "objectID": "eam-intro.html#sensory-neurons-encode-momentary-evidence",
-    "href": "eam-intro.html#sensory-neurons-encode-momentary-evidence",
-    "title": "Intro to EAM",
-    "section": "1. Sensory neurons encode momentary evidence",
-    "text": "1. Sensory neurons encode momentary evidence\n\n\nSpiking in sensory cortex represents stimulus features.\nNoisy and varies trial-to-trial."
+    "text": "What is “evidence”?\nNeural signals reflecting sensory or internal information relevant to a choice.\n“Are dots moving to the right or to the left?”\n\nNeurons fire in proportion to motion direction & strength.\nThese firing rates = momentary evidence.\n\n1. Sensory neurons encode momentary evidence\n\nSpiking in sensory cortex represents stimulus features.\nNoisy and varies trial-to-trial."
   },
   {
     "objectID": "eam-intro.html#integrator-neurons-receive-this-input",
@@ -53,7 +46,7 @@
     "href": "eam-intro.html#section",
     "title": "Intro to EAM",
     "section": "",
-    "text": "EAMs decompose decisions into:\n\nDrift rate\nThreshold\nNondecision time"
+    "text": "EAMs decompose decisions into:\n\nDrift rate\nThreshold"
   },
   {
     "objectID": "eam-intro.html#drift-rate",
@@ -68,13 +61,6 @@
     "title": "Intro to EAM",
     "section": "Thresholds",
     "text": "Thresholds\nSet before stimulus onset\nReflect response caution/cognitive control/bias/preference\n\n⬆ Threshold: Slower but more accurate\n⬇ Threshold: Faster but error-prone\n\n\nManipulate via pre-trial cues or instructions."
-  },
-  {
-    "objectID": "eam-intro.html#nondecision-time",
-    "href": "eam-intro.html#nondecision-time",
-    "title": "Intro to EAM",
-    "section": "Nondecision Time",
-    "text": "Nondecision Time\nTime to encode stimulus + execute response\nShifts RT distribution without changing shape/accuracy\n\nHard to estimate precisely — often noisy across individuals."
   },
   {
     "objectID": "eam-intro.html#relative-evidence-models",

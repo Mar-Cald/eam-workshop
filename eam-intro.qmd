@@ -65,14 +65,13 @@ Neural signals reflecting sensory or internal information relevant to a choice.
 -   Neurons fire in proportion to motion direction & strength.
 -   These firing rates = **momentary evidence**.
 
-# How does the brain accumulate evidence?
-
-## 1. Sensory neurons encode momentary evidence
-
-<br/>
+### 1. Sensory neurons encode momentary evidence
 
 -   Spiking in **sensory cortex** represents stimulus features.
 -   Noisy and varies trial-to-trial.
+
+
+# How does the brain accumulate evidence?
 
 ## 2. Integrator neurons receive this input
 
@@ -142,8 +141,6 @@ EAMs decompose decisions into:
 
 -   **Threshold**
 
--   **Nondecision time**
-
 
 ## Drift Rate
 
@@ -171,14 +168,6 @@ Reflect **response caution/cognitive control/bias/preference**
 
 > Manipulate via pre-trial cues or instructions.
 
-
-## Nondecision Time 
-
-Time to encode stimulus + execute response
-
-Shifts RT distribution **without** changing shape/accuracy
-
-> Hard to estimate precisely — often noisy across individuals.
 
 
 ## Relative Evidence Models {.small-text}
