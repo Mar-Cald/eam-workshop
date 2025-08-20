@@ -382,7 +382,7 @@ Each component affects the integrity of evidence accumulation.
 
 ## Procedure
 
-![](img/procedure.png){width="3194.4" height=""}
+![](img/procedure.png){width="300"}
 
 <br/>
 
