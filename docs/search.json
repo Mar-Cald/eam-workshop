@@ -319,14 +319,14 @@
     "href": "eam-karim.html#why-should-we-use-eam-in-visual-perception-3",
     "title": "EAM in Visual Perception Research",
     "section": "Why should we use EAM in visual perception?",
-    "text": "Why should we use EAM in visual perception?\n\n\n\naccuracy\nRT\n\nCan we put them together?"
+    "text": "Why should we use EAM in visual perception?\n\n\n\naccuracy\nRT\n\n\nCan we put them together?"
   },
   {
     "objectID": "eam-karim.html#why-should-we-use-eam-in-visual-perception-4",
     "href": "eam-karim.html#why-should-we-use-eam-in-visual-perception-4",
     "title": "EAM in Visual Perception Research",
     "section": "Why should we use EAM in visual perception?",
-    "text": "Why should we use EAM in visual perception?\n\n\n\naccuracy\nRT\n\nCan we put them together?\nSpeed-accuracy trade-off"
+    "text": "Why should we use EAM in visual perception?\n\n\n\naccuracy\nRT\n\n\nCan we put them together?\n\n\nSpeed-accuracy trade-off"
   },
   {
     "objectID": "eam-karim.html#goal",
@@ -354,7 +354,7 @@
     "href": "eam-karim.html#coupling-of-rt-and-accuracy",
     "title": "EAM in Visual Perception Research",
     "section": "Coupling of RT and Accuracy",
-    "text": "Coupling of RT and Accuracy\n\nDDM produces a fixed relationship between RT and accuracy for a given stimulus strength\nSDT + separate RT modeling cannot capture this coupling\nRT modeling alone ignores accuracy constraints\nDDM integrates both, predicting how changes in stimulus strength shift RT and accuracy together\nSingle generative framework → fewer parameters, more precise predictions\n\n\nPalmer et al., 2005"
+    "text": "Coupling of RT and Accuracy\n\nDDM produces a fixed relationship between RT and accuracy for a given stimulus strength\n\n\nSDT + separate RT modeling cannot capture this coupling\nRT modeling alone ignores accuracy constraints\nDDM integrates both, predicting how changes in stimulus strength shift RT and accuracy together\nSingle generative framework → fewer parameters, more precise predictions\n\n\nPalmer et al., 2005"
   },
   {
     "objectID": "eam-karim.html#experiments-and-results",
@@ -480,14 +480,14 @@
     "href": "eam-karim.html#stimuli",
     "title": "EAM in Visual Perception Research",
     "section": "Stimuli",
-    "text": "Stimuli\nManipulate difficulty to modulate:\n\nDrift rate\nError rates (target: 5–35%)\n\nAvoid:\n\nFloor effects → guessing\nCeiling effects → no errors to fit\n\nBoag et al. 2025"
+    "text": "Stimuli\nManipulate difficulty to modulate:\n\nDrift rate\nError rates (target: 5–35%)\n\nAvoid:\n\nFloor effects → guessing\nCeiling effects → no errors to fit\n\n\nBoag et al. 2025"
   },
   {
     "objectID": "eam-karim.html#procedure",
     "href": "eam-karim.html#procedure",
     "title": "EAM in Visual Perception Research",
     "section": "Procedure",
-    "text": "Procedure\n Task:\ntargets (peripheral) lines orientation judgement left vs right"
+    "text": "Procedure\n\n\nTask:\ntargets (peripheral) lines orientation judgement left vs right"
   },
   {
     "objectID": "eam-karim.html#stimulus-design",
@@ -501,91 +501,91 @@
     "href": "eam-karim.html#response-modality",
     "title": "EAM in Visual Perception Research",
     "section": "Response modality",
-    "text": "Response modality\nEAMs assume the response begins after the decision ends.\nBest modalities:\n\nManual keypresses\nSaccades\n\nAvoid imprecise, slow, or delayed responses.\nBoag et al. 2025"
+    "text": "Response modality\n\nEAMs assume the response begins after the decision ends.\nBest modalities:\n\nManual keypresses\nSaccades\n\nAvoid imprecise, slow, or delayed responses.\n\nBoag et al. 2025"
   },
   {
     "objectID": "eam-karim.html#trial-structure-and-event-timing",
     "href": "eam-karim.html#trial-structure-and-event-timing",
     "title": "EAM in Visual Perception Research",
     "section": "Trial structure and event timing",
-    "text": "Trial structure and event timing\nEAM tasks follow a structured sequence of events:\n\nCue (optional)\nFixation\nStimulus onset\nResponse window\nIntertrial interval\n\nEach component affects the integrity of evidence accumulation."
+    "text": "Trial structure and event timing\nEAM tasks follow a structured sequence of events:\n\nCue (optional)\nFixation\nStimulus onset\nResponse window\nIntertrial interval\n\nEach component affects the integrity of evidence accumulation.\n\nBoag et al. 2025"
   },
   {
     "objectID": "eam-karim.html#cue",
     "href": "eam-karim.html#cue",
     "title": "EAM in Visual Perception Research",
     "section": "Cue",
-    "text": "Cue\nOptional cue presented before stimulus onset.\nInforms participants how to respond (e.g., emphasis on speed or accuracy).\nMay set cognitive control parameters:\n\nThresholds\nBiases\n\nCan direct gaze or attention to a spatial location.\n\nMust occur before evidence accumulation begins."
+    "text": "Cue\n\nOptional cue presented before stimulus onset.\n\nInforms participants how to respond (e.g., emphasis on speed or accuracy).\n\nBoag et al. 2025"
   },
   {
     "objectID": "eam-karim.html#fixation-interval",
     "href": "eam-karim.html#fixation-interval",
     "title": "EAM in Visual Perception Research",
     "section": "Fixation interval",
-    "text": "Fixation interval\n\nEnsures eyes and attention are centered.\nAllows previous trial’s processes to return to baseline.\nReduces overlap across trials.\n\n💡 Best practice: Use variable durations"
+    "text": "Fixation interval\n\n\nEnsures eyes and attention are centered.\nAllows previous trial’s processes to return to baseline.\nReduces overlap across trials.\n\n\n💡 Best practice: Use variable durations\n\nBoag et al. 2025"
   },
   {
     "objectID": "eam-karim.html#stimulus-onset",
     "href": "eam-karim.html#stimulus-onset",
     "title": "EAM in Visual Perception Research",
     "section": "Stimulus onset",
-    "text": "Stimulus onset\n\nMarks the start of evidence accumulation.\nAssumes constant signal strength from onset to response.\n\n\nAny variability or delay in onset weakens the assumption of continuous accumulation."
+    "text": "Stimulus onset\n\n\nMarks the start of evidence accumulation.\nAssumes constant signal strength from onset to response.\n\n\n\nAny variability or delay in onset weakens the assumption of continuous accumulation.\n\n\nBoag et al. 2025"
   },
   {
     "objectID": "eam-karim.html#response-window",
     "href": "eam-karim.html#response-window",
     "title": "EAM in Visual Perception Research",
     "section": "Response window",
-    "text": "Response window\n\n\nStarts with stimulus onset.\nEnds with:\n\nA response\nOr a deadline\n\n\n💡 Calibrate response window:\nLong enough to allow natural responding\nShort enough to avoid strategy shifts\n\nTypical EAM use: mean RT &lt; 1.5 s"
+    "text": "Response window\n\n\n\nStarts with stimulus onset.\nEnds with:\n\nA response\nOr a deadline\n\n\n💡 Calibrate response window:\nLong enough to allow natural responding\nShort enough to avoid strategy shifts\n\nTypical EAM use: mean RT &lt; 1.5 s\n\nBoag et al. 2025"
   },
   {
     "objectID": "eam-karim.html#intertrial-interval",
     "href": "eam-karim.html#intertrial-interval",
     "title": "EAM in Visual Perception Research",
     "section": "Intertrial interval",
-    "text": "Intertrial interval\n\nAllow participant to reset\nPrevent proactive interference\nAvoid sequential effects"
+    "text": "Intertrial interval\n\n\nAllow participant to reset\n\n\n\nPrevent proactive interference\n\n\n\nAvoid sequential effects\n\n\nBoag et al. 2025"
   },
   {
     "objectID": "eam-karim.html#collecting-data",
     "href": "eam-karim.html#collecting-data",
     "title": "EAM in Visual Perception Research",
     "section": "Collecting data",
-    "text": "Collecting data\n\nParticipant ID\nCondition\nStimulus presented\nResponse submitted\nRT\nSession/trial number\nEvent timings: cue, stimulus, response, feedback, intertrial interval\n\n2 x 2 x 2 design:\n\n2 gap sizes (small vs large)\n\n2 conditions (congruent vs incongruent)\n\n2 peripheral orientations (left vs right)"
+    "text": "Collecting data\n\nParticipant ID\nCondition\nStimulus presented\nResponse submitted\nRT\nSession/trial number\nEvent timings: cue, stimulus, response, feedback, intertrial interval\n\n\nBoag et al. 2025"
   },
   {
     "objectID": "eam-karim.html#the-effect-of-stimulus-strength-on-the-speed-and-accuracy-of-a-perceptual-decision",
     "href": "eam-karim.html#the-effect-of-stimulus-strength-on-the-speed-and-accuracy-of-a-perceptual-decision",
     "title": "EAM in Visual Perception Research",
     "section": "The effect of stimulus strength on the speed and accuracy of a perceptual decision",
-    "text": "The effect of stimulus strength on the speed and accuracy of a perceptual decision\nWhich is the relation between RT and Accuracy measures?\n\nPalmer et al., 2005"
+    "text": "The effect of stimulus strength on the speed and accuracy of a perceptual decision\n\nWhich is the relation between RT and Accuracy measures?\n\n\nPalmer et al., 2005"
   },
   {
     "objectID": "eam-karim.html#the-effect-of-stimulus-strength-on-the-speed-and-accuracy-of-a-perceptual-decision-1",
     "href": "eam-karim.html#the-effect-of-stimulus-strength-on-the-speed-and-accuracy-of-a-perceptual-decision-1",
     "title": "EAM in Visual Perception Research",
     "section": "The effect of stimulus strength on the speed and accuracy of a perceptual decision",
-    "text": "The effect of stimulus strength on the speed and accuracy of a perceptual decision\nWhich is the relation between RT and Accuracy measures?\nAccuracy → Signal Detection Theory (SDT)\n→ Psychometric function: d’ as a function of stimulus strength\n\nPalmer et al., 2005"
+    "text": "The effect of stimulus strength on the speed and accuracy of a perceptual decision\n\nWhich is the relation between RT and Accuracy measures?\n\nAccuracy → Signal Detection Theory (SDT)\n→ Psychometric function: d’ as a function of stimulus strength\n\nPalmer et al., 2005"
   },
   {
     "objectID": "eam-karim.html#the-effect-of-stimulus-strength-on-the-speed-and-accuracy-of-a-perceptual-decision-2",
     "href": "eam-karim.html#the-effect-of-stimulus-strength-on-the-speed-and-accuracy-of-a-perceptual-decision-2",
     "title": "EAM in Visual Perception Research",
     "section": "The effect of stimulus strength on the speed and accuracy of a perceptual decision",
-    "text": "The effect of stimulus strength on the speed and accuracy of a perceptual decision\nWhich is the relation between RT and Accuracy measures?\nAccuracy → Signal Detection Theory (SDT)\n→ Psychometric function: d’ as a function of stimulus strength\nRT → Chronometric function: mean RT as a function of stimulus strength\n\nPalmer et al., 2005"
+    "text": "The effect of stimulus strength on the speed and accuracy of a perceptual decision\n\nWhich is the relation between RT and Accuracy measures?\n\nAccuracy → Signal Detection Theory (SDT)\n→ Psychometric function: d’ as a function of stimulus strength\nRT → Chronometric function: mean RT as a function of stimulus strength\n\nPalmer et al., 2005"
   },
   {
     "objectID": "eam-karim.html#the-effect-of-stimulus-strength-on-the-speed-and-accuracy-of-a-perceptual-decision-3",
     "href": "eam-karim.html#the-effect-of-stimulus-strength-on-the-speed-and-accuracy-of-a-perceptual-decision-3",
     "title": "EAM in Visual Perception Research",
     "section": "The effect of stimulus strength on the speed and accuracy of a perceptual decision",
-    "text": "The effect of stimulus strength on the speed and accuracy of a perceptual decision\nWhich is the relation between RT and Accuracy measures?\nAccuracy → Signal Detection Theory (SDT)\n→ Psychometric function: d’ as a function of stimulus strength\nRT → Chronometric function: mean RT as a function of stimulus strength\nRT Accuracy depend on the difficulty of a perceptual judgment.\n\nPalmer et al., 2005"
+    "text": "The effect of stimulus strength on the speed and accuracy of a perceptual decision\n\nWhich is the relation between RT and Accuracy measures?\n\nAccuracy → Signal Detection Theory (SDT)\n→ Psychometric function: d’ as a function of stimulus strength\nRT → Chronometric function: mean RT as a function of stimulus strength\n\nRT Accuracy depend on the difficulty of a perceptual judgment.\n\nPalmer et al., 2005"
   },
   {
     "objectID": "eam-karim.html#dissociable-mechanisms-of-speed-accuracy-tradeoff-during-visual-perceptual-learning-are-revealed-by-a-hierarchical-drift-diffusion-model",
     "href": "eam-karim.html#dissociable-mechanisms-of-speed-accuracy-tradeoff-during-visual-perceptual-learning-are-revealed-by-a-hierarchical-drift-diffusion-model",
     "title": "EAM in Visual Perception Research",
     "section": "Dissociable mechanisms of speed-accuracy tradeoff during visual perceptual learning are revealed by a hierarchical drift-diffusion model",
-    "text": "Dissociable mechanisms of speed-accuracy tradeoff during visual perceptual learning are revealed by a hierarchical drift-diffusion model\nDrift-diffusion model to examine:\n\nthe speed-accuracy trad-eoff\nperceptual learning effect\n\nduring learning of a coherent motion discrimination task across multiple training sessions.\n\nZhang et al., 2014"
+    "text": "Dissociable mechanisms of speed-accuracy tradeoff during visual perceptual learning are revealed by a hierarchical drift-diffusion model\n\nDrift-diffusion model to examine:\n\nthe speed-accuracy trad-eoff\nperceptual learning effect\n\nduring learning of a coherent motion discrimination task across multiple training sessions.\n\nZhang et al., 2014"
   },
   {
     "objectID": "eam-karim.html#visual-fixations-and-the-computation-and-comparison-of-value-in-simple-choice",
@@ -593,5 +593,33 @@
     "title": "EAM in Visual Perception Research",
     "section": "Visual fixations and the computation and comparison of value in simple choice",
     "text": "Visual fixations and the computation and comparison of value in simple choice\nAn extension of the DDM to test value-based decision making where fixations guide the comparison process.\n\nKrajbich et al., 2010"
+  },
+  {
+    "objectID": "eam-karim.html#enhancing-change-perception-through-object-based-attention",
+    "href": "eam-karim.html#enhancing-change-perception-through-object-based-attention",
+    "title": "EAM in Visual Perception Research",
+    "section": "Enhancing change perception through object-based attention",
+    "text": "Enhancing change perception through object-based attention\n\nIn a change perception paradigm:\n\naccuracy\nRT\n\n\nIs change perception facilitated by object-based attention?\n\nXie & Fu, 2025"
+  },
+  {
+    "objectID": "eam-karim.html#stimuli-1",
+    "href": "eam-karim.html#stimuli-1",
+    "title": "EAM in Visual Perception Research",
+    "section": "Stimuli",
+    "text": "Stimuli\n\n2 x 2 x 2 design:\n\n2 gap sizes (small vs large)\n\n2 conditions (congruent vs incongruent)\n\n2 peripheral orientations (left vs right)"
+  },
+  {
+    "objectID": "eam-karim.html#hypotheses",
+    "href": "eam-karim.html#hypotheses",
+    "title": "EAM in Visual Perception Research",
+    "section": "Hypotheses",
+    "text": "Hypotheses\n\n\n\nSmaller gap enhances central interference (same-feature suppression)\n\n\n\nGap effect: small gap higher accuracy but slower RT (higher threshold)\n\n\n\nIncongruent lines enhance central-peripheral segmentation\n\n\n\nCongruency effect: incongruent conditions have higher accuracy and faster RT (higher drift rate)"
+  },
+  {
+    "objectID": "eam-karim.html#cue-1",
+    "href": "eam-karim.html#cue-1",
+    "title": "EAM in Visual Perception Research",
+    "section": "Cue",
+    "text": "Cue\n\nMay set cognitive control parameters:\n\nThresholds\nBiases\n\nCan direct gaze or attention to a spatial location.\n\nMust occur before evidence accumulation begins.\n\n\nBoag et al. 2025"
   }
 ]

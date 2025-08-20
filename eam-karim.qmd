@@ -52,7 +52,8 @@ library(dplyr)
 
 - RT
 
-Can we put them together?
+> Can we put them together?
+
 :::
 ::: {.column width="50%"}
 
@@ -69,7 +70,9 @@ Can we put them together?
 
 - RT
 
-Can we put them together?
+> Can we put them together?
+
+<br/>
 
 Speed-accuracy trade-off
 :::
@@ -81,19 +84,25 @@ Speed-accuracy trade-off
 
 # Some examples
 
-## The effect of stimulus strength on the speed and accuracy of a perceptual decision
+## The effect of stimulus strength on the speed and accuracy of a perceptual decision {.small-text}
+
+<br/>
 
 Which is the relation between **RT** and **Accuracy** measures?
+
+<br/>
 
 <div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 0.8em;">
 [Palmer et al., 2005](https://doi.org/10.1167/5.5.1){target="_blank"}
 </div>
 
----
+## The effect of stimulus strength on the speed and accuracy of a perceptual decision {.small-text}
 
-## The effect of stimulus strength on the speed and accuracy of a perceptual decision
+<br/>
 
 Which is the relation between **RT** and **Accuracy** measures?
+
+<br/>
 
 **Accuracy** → Signal Detection Theory (SDT)  
 → **Psychometric function**: d' as a function of stimulus strength
@@ -102,31 +111,37 @@ Which is the relation between **RT** and **Accuracy** measures?
 [Palmer et al., 2005](https://doi.org/10.1167/5.5.1){target="_blank"}
 </div>
 
----
+## The effect of stimulus strength on the speed and accuracy of a perceptual decision {.small-text}
 
-## The effect of stimulus strength on the speed and accuracy of a perceptual decision
+<br/>
 
 Which is the relation between **RT** and **Accuracy** measures?
+
+<br/>
+
+**Accuracy** → Signal Detection Theory (SDT)  
+→ **Psychometric function**: d' as a function of stimulus strength
+
+**RT** → **Chronometric function**: mean RT as a function of stimulus strength
+
+<div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 0.8em;">
+[Palmer et al., 2005](https://doi.org/10.1167/5.5.1){target="_blank"}
+</div>
+
+## The effect of stimulus strength on the speed and accuracy of a perceptual decision {.small-text}
+
+<br/>
+
+Which is the relation between **RT** and **Accuracy** measures?
+
+<br/>
 
 **Accuracy** → Signal Detection Theory (SDT)  
 → **Psychometric function**: d' as a function of stimulus strength
 
 **RT** → **Chronometric function**: mean RT as a function of stimulus strength
 
-<div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 0.8em;">
-[Palmer et al., 2005](https://doi.org/10.1167/5.5.1){target="_blank"}
-</div>
-
----
-
-## The effect of stimulus strength on the speed and accuracy of a perceptual decision
-
-Which is the relation between **RT** and **Accuracy** measures?
-
-**Accuracy** → Signal Detection Theory (SDT)  
-→ **Psychometric function**: d' as a function of stimulus strength
-
-**RT** → **Chronometric function**: mean RT as a function of stimulus strength
+<br/>
 
 **RT Accuracy depend on the difficulty of a perceptual judgment.**
 
@@ -134,9 +149,13 @@ Which is the relation between **RT** and **Accuracy** measures?
 [Palmer et al., 2005](https://doi.org/10.1167/5.5.1){target="_blank"}
 </div>
 
-## Coupling of RT and Accuracy
+## Coupling of RT and Accuracy {.small-text}
 
-- DDM produces a fixed relationship between RT and accuracy for a given stimulus strength
+<br/>
+
+**DDM produces a fixed relationship between RT and accuracy for a given stimulus strength**
+
+<br/>
 
 - SDT + separate RT modeling cannot capture this coupling  
 
@@ -158,7 +177,12 @@ Which is the relation between **RT** and **Accuracy** measures?
 :::
 
 ::: {.column .small-text width="60%"}
+
+<br/>
+
 **Drift rate reflects sensitivity to stimulus strength**:
+
+<br/>
 
 - Increases with stronger stimuli
 
@@ -172,7 +196,8 @@ Which is the relation between **RT** and **Accuracy** measures?
   
 :::
 :::::
-<div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 0.8em;">
+
+<div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size:0.64em;">
 [Palmer et al., 2005](https://doi.org/10.1167/5.5.1){target="_blank"}
 </div>
 
@@ -185,19 +210,27 @@ Which is the relation between **RT** and **Accuracy** measures?
 
 ::: {.column .small-text width="60%"}
 
+<br/>
+
 **Boundary separation reflects the speed-accuracy trade-off**:
 
+<br/>
+
 - Larger boundaries produce slower but more accurate responses
+
+<br/>
 
 - Variations in instructions or conditions that prioritize speed versus accuracy are captured primarily by adjustments in boundary, without altering drift rate
   
 :::
 :::::
-<div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 0.8em;">
+<div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 0.64em;">
 [Palmer et al., 2005](https://doi.org/10.1167/5.5.1){target="_blank"}
 </div>
   
-## Dissociable mechanisms of speed-accuracy tradeoff during visual perceptual learning are revealed by a hierarchical drift-diffusion model
+## Dissociable mechanisms of speed-accuracy tradeoff during visual perceptual learning are revealed by a hierarchical drift-diffusion model {.small-text}
+
+<br/>
 
 Drift-diffusion model to examine:
 
@@ -231,130 +264,36 @@ during learning of a coherent motion discrimination task across multiple trainin
 :::
 :::::
 
-<div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 0.8em;">
+<div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 0.64em;">
 [Zhang et al., 2014](https://doi.org/10.3389/fnins.2014.00069){target="_blank"}
 </div>
 
-## Visual fixations and the computation and comparison of value in simple choice
+## Enhancing change perception through object-based attention {.small-text}
 
-An extension of the DDM to test **value-based decision making** where fixations guide the comparison process.
+<br/>
+
+In a change perception paradigm:
+
+- accuracy
+
+- RT
+
+<br/>
+
+Is change perception facilitated by object-based attention?
 
 <div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 0.8em;">
-[Krajbich et al., 2010](https://doi.org/10.1038/nn.2635){target="_blank"}
+[Xie & Fu, 2025](https://doi.org/10.3758/s13414-025-03086-7){target="_blank"}
 </div>
 
-## Aim
+---
 
-- Test whether **visual fixations** play an *active* role in value comparison during binary choice.  
-- Develop a **drift–diffusion framework** in which fixation location biases evidence accumulation toward the attended item.
+![](img/XieProcedure.webp){height=400}
 
-<div style="
-     position: absolute;
-     bottom: 0;
-     width: 100%;
-     text-align: left;
-     font-size: 0.5em;
-     color: gray;
-     padding-bottom: 10px;
-">
-[Krajbich, I., Armel, C., & Rangel, A. (2010). Visual fixations and the computation and comparison of value in simple choice. Nature Neuroscience, 13(10), 1292–1298.](https://doi.org/10.1038/nn.2635){target="_blank"}
-</div>
+**Drift rate** consistently higher for within vs. between conditions → faster evidence accumulation.
 
-::: notes
-The key idea of our model is that fixations affect the DDM value comparison process by introducing a temporary drift bias toward the fixated item. This drift bias in turn leads to a choice bias for items that are fixated on more.
-:::
-
-## Experimental Task
-
-::::: columns
-::: {.column width="50%"}
-![](img/2010Fig1.png){width=500 height=400}  
-:::
-
-::: {.column width="50%" .small-text}
-- Participants made **simple food choices** between two simultaneously presented images 
-- **Which item was fixated**, for how long, and when in the trial
-:::
-:::::
-
-<div style="
-     position: absolute;
-     bottom: 0;
-     width: 100%;
-     text-align: left;
-     font-size: 0.5em;
-     color: gray;
-     padding-bottom: 10px;
-">
-[Krajbich, I., Armel, C., & Rangel, A. (2010). Visual fixations and the computation and comparison of value in simple choice. Nature Neuroscience, 13(10), 1292–1298.](https://doi.org/10.1038/nn.2635){target="_blank"}
-</div>
-
-## Relative Decision Value (RDV)
-
-::::: columns
-::: {.column width="50%"}
-![](img/mgp.jpg){width=800 height=400}  
-:::
-
-::: {.column width="50%" .small-text}
-- **Relative Decision Value (RDV)** accumulates noisy evidence until it hits an upper or lower bound (choice).  
-- While fixating an option, the **drift rate** is biased toward that option’s value.  
-- Switch in fixation → drift rate bias changes sign. 
-- Noise comes from internal variability rather than from noisy stimuli
-:::
-:::::
-<small>*Prediction:* Longer fixation on an option increases probability of choosing it, even after controlling for its actual value.</small>
-
-<div style="
-     position: absolute;
-     bottom: 0;
-     width: 100%;
-     text-align: left;
-     font-size: 0.5em;
-     color: gray;
-     padding-bottom: 10px;
-">
-[Krajbich, I., Armel, C., & Rangel, A. (2010). Visual fixations and the computation and comparison of value in simple choice. Nature Neuroscience, 13(10), 1292–1298.](https://doi.org/10.1038/nn.2635){target="_blank"}
-</div>
-
-::: notes
-The brain computes a RDV that evolves over time as a Markov Gaussian process until a choice is made. The RDV starts each trial at 0 and continually evolves over time at one of two possible rates (depending on which item is fixated), and a choice is made when it reaches a barrier at either +1 or −1. If the RDV reaches the +1 threshold the left item is chosen and if it reaches the −1 threshold the right item is chosen.
-:::
-
-## Results
-
-<div style="font-size:0.85em;">
-**Choice bias confirmed**: options fixated longer were chosen more often.  
-
-**Testing fixation bias in value integration (θ parameter):**
-
-- **θ = 1 (No Bias)**  
-  <div style="font-size:0.75em; margin-left: 1em;">
-    - Drift rate does not depend on fixation (standard DDM)
-  </div>
-
-- **θ = 0 (Full Bias)**  
-  <div style="font-size:0.75em; margin-left: 1em;">
-    - Drift rate depends **only** on the fixated item’s value
-  </div>
-
-- **0 < θ < 1 (Partial Bias)** – *Best Fit*  
-  <div style="font-size:0.75em; margin-left: 1em;">
-    - Fixated item’s value weighted more heavily, but the non-fixated item still influences drift.  
-    - Best fit: **θ ≈ 0.3** → strong but not exclusive fixation bias.
-  </div>
-</div>
-
-<div style="
-     position: absolute;
-     bottom: 0;
-     width: 100%;
-     text-align: left;
-     font-size: 0.5em;
-     color: gray;
-     padding-bottom: 10px;
-">
-[Krajbich, I., Armel, C., & Rangel, A. (2010). Visual fixations and the computation and comparison of value in simple choice. Nature Neuroscience, 13(10), 1292–1298.](https://doi.org/10.1038/nn.2635){target="_blank"}
+<div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 0.64em;">
+[Xie & Fu, 2025](https://doi.org/10.3758/s13414-025-03086-7){target="_blank"}
 </div>
 
 # The Experiment
@@ -373,9 +312,39 @@ Avoid:
 
 -   **Ceiling effects** → no errors to fit
 
-<span style="font-size:0.7em;">[Boag et al. 2025](https://osf.io/snqgp_v1)</span>
+<div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 0.8em;">
+[Boag et al. 2025](https://osf.io/snqgp_v1){target="_blank"}
+</div>
+
+## Stimuli
+
+<br/>
+
+2 x 2 x 2 design:
+
+- 2 **gap sizes** (small vs large)  
+- 2 **conditions** (congruent vs incongruent)  
+- 2 peripheral orientations (left vs right)
+
+---
+
+![](img/24leftcongruent1.png){width="1200" height="675"}
+
+---
+
+![](img/24leftincongruent1.png){width="1200" height="675"}
+
+---
+
+![](img/51leftcongruent1.png){width="1200" height="675"}
+
+---
+
+![](img/51leftincongruent1.png){width="1200" height="675"}
 
 ## Response modality
+
+<br/>
 
 EAMs assume the response begins **after the decision ends**.
 
@@ -387,7 +356,9 @@ Best modalities:
 
 Avoid imprecise, slow, or delayed responses.
 
-<span style="font-size:0.7em;">[Boag et al. 2025](https://osf.io/snqgp_v1)</span>
+<div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 0.8em;">
+[Boag et al. 2025](https://osf.io/snqgp_v1){target="_blank"}
+</div>
 
 ## Trial structure and event timing
 
@@ -405,37 +376,86 @@ EAM tasks follow a structured sequence of events:
 
 Each component affects the integrity of evidence accumulation.
 
+<div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 0.8em;">
+[Boag et al. 2025](https://osf.io/snqgp_v1){target="_blank"}
+</div>
+
+## Procedure
+
+![](img/procedure.png){width="3194.4" height=""}
+
+<br/>
+
+Task:
+
+targets (peripheral) lines **orientation judgement** left vs right
+
 ## Cue
+
+<br/>
 
 Optional cue presented **before** stimulus onset.
 
+<br/>
+
 Informs participants **how** to respond (e.g., emphasis on speed or accuracy).
+
+<div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 0.8em;">
+[Boag et al. 2025](https://osf.io/snqgp_v1){target="_blank"}
+</div>
+
+## Cue
+
+<br/>
 
 May set cognitive control parameters:
 
 -   **Thresholds**
 -   **Biases**
 
+
 Can direct **gaze or attention** to a spatial location.
 
 > Must occur **before** evidence accumulation begins.
 
+<div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 0.8em;">
+[Boag et al. 2025](https://osf.io/snqgp_v1){target="_blank"}
+</div>
+
 ## Fixation interval
+
+<br/>
 
 -   Ensures eyes and attention are centered.
 -   Allows previous trial’s processes to return to **baseline**.
 -   Reduces overlap across trials.
 
+<br/>
+
 :bulb: **Best practice:** Use **variable durations**
 
+<div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 0.8em;">
+[Boag et al. 2025](https://osf.io/snqgp_v1){target="_blank"}
+</div>
+
 ## Stimulus onset
+
+<br/>
 
 -   Marks the **start** of evidence accumulation.
 -   Assumes **constant signal strength** from onset to response.
 
+<br/>
+
 > Any variability or delay in onset weakens the assumption of continuous accumulation.
 
+<div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 0.8em;">
+[Boag et al. 2025](https://osf.io/snqgp_v1){target="_blank"}
+</div>
+
 ## Response window
+
+<br/>
 
 ::::: columns
 ::: {.column width="50%"}
@@ -460,11 +480,27 @@ Short enough to avoid strategy shifts
 
 Typical EAM use: **mean RT \< 1.5 s**
 
+<div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 0.8em;">
+[Boag et al. 2025](https://osf.io/snqgp_v1){target="_blank"}
+</div>
+
 ## Intertrial interval
 
+<br/>
+
 -   Allow participant to **reset**
+
+<br/>
+
 -   Prevent **proactive interference**
+
+<br/>
+
 -   Avoid **sequential effects**
+
+<div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 0.8em;">
+[Boag et al. 2025](https://osf.io/snqgp_v1){target="_blank"}
+</div>
 
 ## Collecting data
 
@@ -482,31 +518,29 @@ Typical EAM use: **mean RT \< 1.5 s**
 
 -   Event timings: cue, stimulus, response, feedback, intertrial interval
 
-2 x 2 x 2 design:
+<div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 0.8em;">
+[Boag et al. 2025](https://osf.io/snqgp_v1){target="_blank"}
+</div>
 
-- 2 **gap sizes** (small vs large)  
-- 2 **conditions** (congruent vs incongruent)  
-- 2 peripheral orientations (left vs right)
+## Hypotheses
 
----
+<br/>
 
-![](img/24leftcongruent1.png){width="1200" height="675"}
+<div style="font-size:0.85em;">
+1. Smaller gap enhances central interference (same-feature suppression)  
+</div>
 
----
+  Gap effect: **small gap** higher accuracy but slower RT (**higher threshold**)
 
-![](img/24leftincongruent1.png){width="1200" height="675"}
+<br/>
 
----
+<div style="font-size:0.85em;">
+2. Incongruent lines enhance central-peripheral segmentation  
+</div>
+   
+  Congruency effect: **incongruent conditions** have higher accuracy and faster RT (**higher drift rate**)
+  
+# Now your turn!
 
-![](img/51leftcongruent1.png){width="1200" height="675"}
 
----
 
-![](img/51leftincongruent1.png){width="1200" height="675"}
-
-## Procedure
-
-![](img/procedure.png){width="3194.4" height=""}
-Task:
-
-targets (peripheral) lines **orientation judgement** left vs right
