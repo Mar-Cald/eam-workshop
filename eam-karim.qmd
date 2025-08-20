@@ -186,14 +186,14 @@ Which is the relation between **RT** and **Accuracy** measures?
 
 - Increases with stronger stimuli
 
+<br/>
+
 - Robust across:
   <div style="font-size:0.75em; margin-left: 1em;">
   - Two **response modalities** (saccades and key pressing)  
   - Three different **stimulus judgments** (motion discrimination, contrast detection, contrast discrimination)  
   </div>
 
-- Power-rate exponents are consistent with prior psychometric findings
-  
 :::
 :::::
 
@@ -300,6 +300,8 @@ Is change perception facilitated by object-based attention?
 
 ## Stimuli
 
+<br/>
+
 Manipulate difficulty to modulate:
 
 -   Drift rate
@@ -313,7 +315,7 @@ Avoid:
 -   **Ceiling effects** → no errors to fit
 
 <div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 0.8em;">
-[Boag et al. 2025](https://osf.io/snqgp_v1){target="_blank"}
+[Boag et al. 2025](https://doi.org/10.1177/25152459251336127){target="_blank"}
 </div>
 
 ## Stimuli
@@ -357,7 +359,7 @@ Best modalities:
 Avoid imprecise, slow, or delayed responses.
 
 <div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 0.8em;">
-[Boag et al. 2025](https://osf.io/snqgp_v1){target="_blank"}
+[Boag et al. 2025](https://doi.org/10.1177/25152459251336127){target="_blank"}
 </div>
 
 ## Trial structure and event timing
@@ -377,7 +379,7 @@ EAM tasks follow a structured sequence of events:
 Each component affects the integrity of evidence accumulation.
 
 <div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 0.8em;">
-[Boag et al. 2025](https://osf.io/snqgp_v1){target="_blank"}
+[Boag et al. 2025](https://doi.org/10.1177/25152459251336127){target="_blank"}
 </div>
 
 ## Procedure
@@ -401,7 +403,7 @@ Optional cue presented **before** stimulus onset.
 Informs participants **how** to respond (e.g., emphasis on speed or accuracy).
 
 <div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 0.8em;">
-[Boag et al. 2025](https://osf.io/snqgp_v1){target="_blank"}
+[Boag et al. 2025](https://doi.org/10.1177/25152459251336127){target="_blank"}
 </div>
 
 ## Cue
@@ -419,7 +421,7 @@ Can direct **gaze or attention** to a spatial location.
 > Must occur **before** evidence accumulation begins.
 
 <div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 0.8em;">
-[Boag et al. 2025](https://osf.io/snqgp_v1){target="_blank"}
+[Boag et al. 2025](https://doi.org/10.1177/25152459251336127){target="_blank"}
 </div>
 
 ## Fixation interval
@@ -435,7 +437,7 @@ Can direct **gaze or attention** to a spatial location.
 :bulb: **Best practice:** Use **variable durations**
 
 <div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 0.8em;">
-[Boag et al. 2025](https://osf.io/snqgp_v1){target="_blank"}
+[Boag et al. 2025](https://doi.org/10.1177/25152459251336127){target="_blank"}
 </div>
 
 ## Stimulus onset
@@ -450,7 +452,7 @@ Can direct **gaze or attention** to a spatial location.
 > Any variability or delay in onset weakens the assumption of continuous accumulation.
 
 <div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 0.8em;">
-[Boag et al. 2025](https://osf.io/snqgp_v1){target="_blank"}
+[Boag et al. 2025](https://doi.org/10.1177/25152459251336127){target="_blank"}
 </div>
 
 ## Response window
@@ -481,7 +483,7 @@ Short enough to avoid strategy shifts
 Typical EAM use: **mean RT \< 1.5 s**
 
 <div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 0.8em;">
-[Boag et al. 2025](https://osf.io/snqgp_v1){target="_blank"}
+[Boag et al. 2025](https://doi.org/10.1177/25152459251336127){target="_blank"}
 </div>
 
 ## Intertrial interval
@@ -499,7 +501,7 @@ Typical EAM use: **mean RT \< 1.5 s**
 -   Avoid **sequential effects**
 
 <div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 0.8em;">
-[Boag et al. 2025](https://osf.io/snqgp_v1){target="_blank"}
+[Boag et al. 2025](https://doi.org/10.1177/25152459251336127){target="_blank"}
 </div>
 
 ## Collecting data
@@ -519,7 +521,7 @@ Typical EAM use: **mean RT \< 1.5 s**
 -   Event timings: cue, stimulus, response, feedback, intertrial interval
 
 <div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 0.8em;">
-[Boag et al. 2025](https://osf.io/snqgp_v1){target="_blank"}
+[Boag et al. 2025](https://doi.org/10.1177/25152459251336127){target="_blank"}
 </div>
 
 ## Hypotheses
