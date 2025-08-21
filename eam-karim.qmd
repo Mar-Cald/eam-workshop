@@ -143,7 +143,7 @@ Which is the relation between **RT** and **Accuracy** measures?
 
 <br/>
 
-**RT Accuracy depend on the difficulty of a perceptual judgment.**
+**RT and Accuracy depend on the difficulty of a perceptual judgment.**
 
 <div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 0.8em;">
 [Palmer et al., 2005](https://doi.org/10.1167/5.5.1){target="_blank"}
@@ -288,7 +288,7 @@ Is change perception facilitated by object-based attention?
 
 ---
 
-![](img/XieProcedure.webp){height=400}
+![](img/XieProcedure.webp){height=480}
 
 **Drift rate** consistently higher for within vs. between conditions → faster evidence accumulation.
 
@@ -384,13 +384,13 @@ Each component affects the integrity of evidence accumulation.
 
 ## Procedure
 
+<br/>
+
 ![](img/procedure.png){width="300"}
 
 <br/>
 
-Task:
-
-targets (peripheral) lines **orientation judgement** left vs right
+Task: targets (peripheral) lines **orientation judgement** left vs right.
 
 ## Cue
 
