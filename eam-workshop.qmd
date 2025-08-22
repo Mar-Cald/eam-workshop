@@ -14,7 +14,7 @@ library(ggplot2)
 library(dplyr)
 ```
 
-## Bayesian Inference
+## Bayesian estimation
 
 <br/>
 
@@ -186,7 +186,7 @@ Consequently, prior distributions are defined on these transformed scales rather
 
 ## Simulation
 
-**First.** We construct a full-factorial data frame with all combinations of factors.
+**First**,  we construct a full-factorial data frame with all combinations of factors.
 These factors define the experimental design:
 
 -   CI: Congruency ("cong" or "inc")
@@ -224,7 +224,7 @@ We start by simulating some data using the Wiener Diffusion Model.
 
 ## Design specification
 
-The `design` function creates a design object that maps model parameters to experimental conditions using linear model formulas. This object specifies:
+The `design` function creates a design object that maps model parameters to experimental conditions. This object specifies:
 
 1.  **Model** type
 2.  **Formula**: Linear models for estimated parameter types (default values are used for omitted types)
@@ -235,12 +235,14 @@ The `design` function creates a design object that maps model parameters to expe
 
 ### Design object
 
-The `formula` argument maps DDM parameters to experimental factors using R's
-linear modeling syntax. Each parameter type gets its own formula.
-It is not necessary to specify formulas for all nine parameter types of the DDM. Any parameters not explicitly included in the formula argument will be assigned default values. Additionally, parameters included in the formula can be fixed to specific values using the constants argument.
+The `formula` argument maps DDM parameters to experimental factors using R's linear modeling syntax. Each parameter type gets its own formula. It is not necessary to specify formulas for all nine parameter types of the DDM. Any parameters not explicitly included in the formula argument will be assigned default values. Additionally, parameters included in the formula can be fixed to specific values using the constants argument.
 
-We customized how drift rates are mapped to experimental conditions by modifying the `contrasts` argument in the design. Instead of the default treatment contrasts for the stimulus factor (**S**), we used a contrast that codes left stimuli as -1 and right stimuli as 1. 
-This coding allows the intercept parameter **v** to reflect overall response **bias**: positive values indicate a bias toward rightward perception, and negative values indicate a bias toward leftward.
+We customized how drift rates are mapped to experimental conditions by modifying the `contrasts` argument in the design. Instead of the default treatment contrasts for the stimulus factor (**S**), we used a contrast that codes left stimuli as -1 and right stimuli as 1. This coding allows the intercept parameter **v** to reflect overall response **bias**: positive values indicate a bias toward rightward perception, and negative values indicate a bias toward leftward.
+
+```{r}
+Smat = matrix(c(-1,1), nrow = 2,dimnames=list(NULL,"dif"))
+Smat
+```
 
 The **v_Sdif** parameter captures how the drift rate depends on the stimulus direction (left vs. right), using the same -1/1 coding. Higher values of **v_Sdif** indicate faster evidence accumulation toward the correct response.
 
@@ -256,7 +258,6 @@ As a result, the model estimates four drift rate–related parameters:
 
 
 ```{r design DDM, echo=TRUE}
-Smat = matrix(c(-1,1), nrow = 2,dimnames=list(NULL,"dif"))
 
 designWDDM = design(
   model = DDM,
@@ -274,10 +275,9 @@ designWDDM = design(
   constants=c(v_CIinc = 0)
 )
 ```
-
-
 The **design object** shows which parameters will be estimated and how they map to the
 experimental design (the contrast matrices for each parameter type).
+
 
 ```{r, echo=TRUE}
 mapped_pars(designWDDM)
@@ -733,7 +733,7 @@ ADmat=matrix(c(-1/2,1/2),ncol=1,dimnames=list(NULL,"dif")); ADmat
 ```
 
 
-In this parameterization, the **intercept** represents the overall *drift rate*, typically interpreted as a measure of **decision urgency** or **stimulus strength**. The `v_lMdif` parameter captures the *difference in drift rates* between matching and mismatching accumulators, reflecting how well the participant can **discriminate** between correct and incorrect responses.
+In this parameterization, the **intercept** represents the overall *drift rate*, typically interpreted as a measure of **decision urgency**. The `v_lMdif` parameter captures the *difference in drift rates* between matching and mismatching accumulators, reflecting how well the participant can **discriminate** between correct and incorrect responses.
 
 This contrast coding is also applied to the **congruence effect (CI)**. Specifically, we estimate `v_lMdif:CIdif` as the **effect of congruency on drift quality**, while fixing `CIdif`, the **effect of congruency on the overall drift rate**, to zero using the `constant` argument.
 

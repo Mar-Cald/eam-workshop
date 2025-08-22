@@ -364,7 +364,7 @@ Margherita Calderan
 </blockquote>
 </div></div>
 <aside class="notes">
-<p>The brain samples information from the environment but that information is noisy and imperfect Rather than making a snap judgment, you accumulate that evidence until you’re confident enough to make a decision — say, pressing left or pressing right. Once the accumulated evidence passes a threshold, action is triggered. This is what evidence accumulation models capture.</p>
+<p>The brain samples information from the environment, you accumulate that evidence until you’re confident enough to make a decision — say, pressing left or pressing right. Once the accumulated evidence passes a threshold, action is triggered. This is what evidence accumulation models capture.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -470,19 +470,6 @@ Margherita Calderan
 <li><strong>Motor response execution</strong></li>
 </ol>
 <p>Stages (1) and (3) are captured in the <strong>nondecision time (Ter)</strong> parameter.</p>
-<aside class="notes">
-<p>the models contain parameters controlling the evidence starJng point (allowing for a priori biases), accumulaJon rate (controlling the speed of processing), threshold/boundary separaJon (controlling the amount of evidence required to make a response), and nondecision Jme (the sum of Jme taken for sJmulus encoding and motor response production).</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
 <section id="section" class="slide level2">
 <h2></h2>
@@ -499,11 +486,9 @@ Margherita Calderan
 <li><p>⬆ Drift: fast &amp; accurate decisions</p></li>
 <li><p>⬇ Drift: slow, error-prone</p></li>
 </ul>
-<p>Manipulated by:</p>
-<ul>
-<li><p>Stimulus discriminability</p></li>
-<li><p>Attention/task difficulty</p></li>
-</ul>
+<blockquote>
+<p>Manipulated by stimulus discriminability/task difficulty</p>
+</blockquote>
 </section>
 <section id="thresholds" class="slide level2">
 <h2>Thresholds</h2>
@@ -551,7 +536,7 @@ Margherita Calderan
 <p><img data-src="img/eam-absolute.png" width="550" height="350"></p>
 </div></div>
 <blockquote>
-<p><a href="https://doi.org/10.31234/osf.io/snqgp" target="_blank">Boag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling.</a></p>
+<p><a href="https://publications.aston.ac.uk/id/eprint/47619/1/boag-et-al-2025-an-expert-guide-to-planning-experimental-tasks-for-evidence-accumulation-modeling.pdf" target="_blank">Boag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2025) An expert guide to planning experimental tasks for evidence accumulation modelling.</a></p>
 </blockquote>
 <aside class="notes">
 <p>Although relative and absolute evidence models differ in how they conceptualize evidence, they:</p>
@@ -608,7 +593,7 @@ x(t) = z + vt + sW(t)
 <section id="wiener-diffusion-model" class="slide level2 small-text align-center">
 <h2>Wiener Diffusion Model</h2>
 <blockquote>
-<p>It is the expected distribution of the time until the process first hits or crosses one or the other boundary. This results in a bivariate distribution, over responses <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math> and hitting times <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>.</p>
+<p>It is the expected distribution of the time until the process first hits or crosses one or the other boundary. This results in a bivariate distribution, over responses and hitting times.</p>
 </blockquote>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -661,29 +646,14 @@ x(t) = z + vt + sW(t)
 </ul>
 <p>However, it increases computational demands.</p>
 </section>
-<section id="racing-diffusion-model" class="slide level2 align-center">
+<section id="racing-diffusion-model" class="slide level2 align-center small-text">
 <h2>Racing Diffusion Model</h2>
-<p><br></p>
-<p>Instead of a single process choosing between boundaries, the <strong>Racing Diffusion Model</strong> (RDM) uses <strong>multiple independent diffusion processes</strong>, one per option:</p>
-<p><br></p>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><msub><mi>x</mi><mi>k</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>v</mi><mi>k</mi></msub><mspace width="0.167em"></mspace><mi>d</mi><mi>t</mi><mo>+</mo><mi>s</mi><mspace width="0.167em"></mspace><mi>d</mi><msub><mi>W</mi><mi>k</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="1.0em"></mspace><mrow><mtext mathvariant="normal">for </mtext><mspace width="0.333em"></mspace></mrow><mi>k</mi><mo>=</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>K</mi></mrow><annotation encoding="application/x-tex">
-dx_k(t) = v_k \, dt + s \, dW_k(t) \quad \text{for } k = 1,\dots,K
-</annotation></semantics></math> <br></p>
-<p>Each accumulator races toward its threshold. The first to cross <strong>wins</strong>.</p>
-</section>
-<section id="section-1" class="slide level2 small-small-text align-center">
-<h2></h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/rdm.webp" class="quarto-figure quarto-figure-center" width="800" height="500"></p>
-</figure>
-</div>
-<blockquote>
-<p><a href="https://link.springer.com/content/pdf/10.3758/s13423-020-01719-6.pdf" target="_blank">Tillman, G., Van Zandt, T., &amp; Logan, G. D. (2020). Sequential sampling models without random between-trial variability: The racing diffusion model of speeded decision making. Psychonomic Bulletin &amp; Review, 27(5), 911-936.</a></p>
-</blockquote>
+<p>Instead of a single process choosing between boundaries, the RDM uses <strong>multiple independent diffusion processes</strong>, one per option. Each accumulator races toward its threshold. The first to cross <strong>wins</strong>. <a href="https://link.springer.com/content/pdf/10.3758/s13423-020-01719-6.pdf" class="small-small-text" target="_blank">Tillman, Van Zandt, &amp; Logan, 2020</a></p>
+<p><img data-src="img/rdm.webp" width="800" height="450"></p>
 </section>
 <section id="summary" class="slide level2">
 <h2>Summary</h2>
+<p><br></p>
 <table class="caption-top">
 <colgroup>
 <col style="width: 22%">
@@ -700,7 +670,7 @@ dx_k(t) = v_k \, dt + s \, dW_k(t) \quad \text{for } k = 1,\dots,K
 <tbody>
 <tr class="odd">
 <td><strong>Wiener</strong></td>
-<td>Stochastic accumulation</td>
+<td>Noisy accumulation</td>
 <td>Simple FPT, binary outcomes</td>
 </tr>
 <tr class="even">
@@ -709,7 +679,7 @@ dx_k(t) = v_k \, dt + s \, dW_k(t) \quad \text{for } k = 1,\dots,K
 <td>Realistic RTs, error patterns</td>
 </tr>
 <tr class="odd">
-<td><strong>Racing DDM</strong></td>
+<td><strong>Racing DM</strong></td>
 <td>Multiple accumulators</td>
 <td>Handles multi-alternative decisions</td>
 </tr>
@@ -738,7 +708,7 @@ dx_k(t) = v_k \, dt + s \, dW_k(t) \quad \text{for } k = 1,\dots,K
 <section>
 <section id="guidelines" class="title-slide slide level1 center">
 <h1>Guidelines</h1>
-<p><a href="https://osf.io/snqgp_v1">Boag et al.&nbsp;2025</a></p>
+<p><a href="https://publications.aston.ac.uk/id/eprint/47619/1/boag-et-al-2025-an-expert-guide-to-planning-experimental-tasks-for-evidence-accumulation-modeling.pdf">Boag et al.&nbsp;2025</a></p>
 </section>
 <section id="within-trial-stationarity" class="slide level2">
 <h2>Within-Trial Stationarity</h2>
@@ -775,32 +745,6 @@ dx_k(t) = v_k \, dt + s \, dW_k(t) \quad \text{for } k = 1,\dots,K
 <blockquote>
 <p>Clean data = better model fit and interpretability.</p>
 </blockquote>
-</section>
-<section id="outliers" class="slide level2">
-<h2>Outliers</h2>
-<p>Outliers distort model fits.</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Fast outliers:</strong></p>
-<ul>
-<li>May reflect:
-<ul>
-<li>Premature guesses</li>
-<li>Trigger failures</li>
-</ul></li>
-<li>Typically: <strong>RT &lt; 150–300 ms</strong> (depending on response modality)</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<p><strong>Slow outliers:</strong></p>
-<ul>
-<li><p>Less common to censor unless clearly implausible</p></li>
-<li><p>May reflect:</p>
-<ul>
-<li>Lapses</li>
-<li>Multiple evidence accumulation attempts</li>
-</ul></li>
-</ul>
-</div></div>
 </section></section>
 <section id="all-models-are-wrong-but-some-are-useful---g.-box" class="title-slide slide level1 align-center center">
 <h1>“All models are wrong, but some are useful” - G. Box</h1>
