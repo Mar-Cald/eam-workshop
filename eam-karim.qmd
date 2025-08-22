@@ -542,7 +542,7 @@ Typical EAM use: **mean RT \< 1.5 s**
    
   Congruency effect: **incongruent conditions** have higher accuracy and faster RT (**higher drift rate**)
   
-# Now your turn!
+# Your turn now!
 
 
 
