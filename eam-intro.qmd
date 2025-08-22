@@ -146,11 +146,7 @@ Reflects **evidence strength**
 
 -   ⬇ Drift: slow, error-prone
 
-Manipulated by:
-
--   Stimulus discriminability
-
--   Attention/task difficulty
+>  Manipulated by stimulus discriminability/task difficulty
 
 ## Thresholds
 
@@ -262,7 +258,7 @@ path = function(drift, sp1=0,  noise_constant=1, dt=0.0001, max_rt=2) {
   return (data.frame(time=time, x=x1, accumulator=rep(1, length(x1))))
 }
 
-drift = -0.5
+drift = 0.2
 
 sim_path = path(drift = drift)
 
@@ -277,7 +273,7 @@ ggplot(data = sim_path, aes(x = time, y = x))+
 
 ## Wiener Diffusion Model {.small-text .align-center}
 
-> It is the expected distribution of the time until the process first hits or crosses one or the other boundary. This results in a bivariate distribution, over responses $x$ and hitting times $t$.
+> It is the expected distribution of the time until the process first hits or crosses one or the other boundary. This results in a bivariate distribution, over responses and hitting times.
 
 ::::: columns
 ::: {.column width="50%"}
@@ -347,34 +343,23 @@ Adding variability improves the model's ability to:
 
 However, it increases computational demands.
 
-## Racing Diffusion Model {.align-center}
+## Racing Diffusion Model {.align-center .small-text}
 
-<br/>
+Instead of a single process choosing between boundaries, 
+the RDM uses **multiple independent diffusion processes**, one per option. 
+Each accumulator races toward its threshold. The first to cross **wins**. [Tillman, Van Zandt, & Logan, 2020](https://link.springer.com/content/pdf/10.3758/s13423-020-01719-6.pdf){target="_blank" .small-small-text}
 
-Instead of a single process choosing between boundaries, the **Racing Diffusion Model** (RDM) uses **multiple independent diffusion processes**, one per option:
-
-<br/>
-
-$$
-dx_k(t) = v_k \, dt + s \, dW_k(t) \quad \text{for } k = 1,\dots,K
-$$ <br/>
-
-Each accumulator races toward its threshold. The first to cross **wins**.
-
-##  {.small-small-text .align-center}
-
-![](img/rdm.webp){width="800" height="500" fig-align="center"}
-
-> [Tillman, G., Van Zandt, T., & Logan, G. D. (2020). Sequential sampling models without random between-trial variability: The racing diffusion model of speeded decision making. Psychonomic Bulletin & Review, 27(5), 911-936.](https://link.springer.com/content/pdf/10.3758/s13423-020-01719-6.pdf){target="_blank"}
+![](img/rdm.webp){width="800" height="450"}
 
 
 ## Summary
+<br/>
 
 | Model | Core Mechanism | Key Strengths |
 |----------------|------------------------|--------------------------------|
-| **Wiener** | Stochastic accumulation | Simple FPT, binary outcomes |
+| **Wiener** | Noisy accumulation | Simple FPT, binary outcomes |
 | **Full DDM** | Accumulation + param variability | Realistic RTs, error patterns |
-| **Racing DDM** | Multiple accumulators | Handles multi-alternative decisions |
+| **Racing DM** | Multiple accumulators | Handles multi-alternative decisions |
 
 
 ## Core assumptions of the basic EAM
@@ -435,33 +420,6 @@ Avoid:
 -   Attention lapses or missing responses
 
 > Clean data = better model fit and interpretability.
-
-
-## Outliers
-
-Outliers distort model fits.
-
-::::: columns
-::: {.column width="50%"}
-**Fast outliers:**
-
--   May reflect:
-    -   Premature guesses
-    -   Trigger failures
--   Typically: **RT \< 150–300 ms** (depending on response modality)
-:::
-
-::: {.column width="50%"}
-**Slow outliers:**
-
--   Less common to censor unless clearly implausible
-
--   May reflect:
-
-    -   Lapses
-    -   Multiple evidence accumulation attempts
-:::
-:::::
 
 
 # "All models are wrong, but some are useful" - G. Box {.align-center}
