@@ -197,7 +197,7 @@ In **racing accumulator models** (e.g., LBA, RDM):
 :::
 :::::
 
-> [Boag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling.](https://doi.org/10.31234/osf.io/snqgp){target="_blank"}
+> [Boag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2025) An expert guide to planning experimental tasks for evidence accumulation modelling.](https://publications.aston.ac.uk/id/eprint/47619/1/boag-et-al-2025-an-expert-guide-to-planning-experimental-tasks-for-evidence-accumulation-modeling.pdf){target="_blank"}
 
 ::: notes
 Although relative and absolute evidence models differ in how they conceptualize evidence, they:
@@ -376,7 +376,7 @@ Each accumulator races toward its threshold. The first to cross **wins**. [Tillm
 . . . 
 
 # Guidelines
-[Boag et al. 2025](https://osf.io/snqgp_v1)
+[Boag et al. 2025](https://publications.aston.ac.uk/id/eprint/47619/1/boag-et-al-2025-an-expert-guide-to-planning-experimental-tasks-for-evidence-accumulation-modeling.pdf)
 
 ## Within-Trial Stationarity
 

@@ -4,7 +4,7 @@ title: " "
 
 ## Expert Guide
 
-[Boag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2024, July 2). An expert guide to planning experimental tasks for evidence accumulation modelling.](https://doi.org/10.31234/osf.io/snqgp)
+[Boag, R. J., Innes, R. J., Stevenson, N., Bahg, G., Busemeyer, J. R., Cox, G. E., … Forstmann, B. (2025) An expert guide to planning experimental tasks for evidence accumulation modelling.](https://publications.aston.ac.uk/id/eprint/47619/1/boag-et-al-2025-an-expert-guide-to-planning-experimental-tasks-for-evidence-accumulation-modeling.pdf)
 
 ## EMC2 Resources
 ### 📘 Tutorial
