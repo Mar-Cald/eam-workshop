@@ -510,7 +510,6 @@ All console output will be saved to **runWDDM.Rout**. You can open this file whi
 
 ## Load fitted model
 This command loads the previously saved sampler results from a **.RData** file.
-This is useful when fitting was done in batch mode and you want to inspect the results.
 
 ```{r, echo=TRUE}
 print(load("fits/WDDM.RData"))
@@ -682,7 +681,7 @@ credible(hWDDM, "a_GAPsmall", alternative = "greater")
 This tells us the posterior probability that a_GAPsmall is greater than 0.
 
 
-**Credible intervals and null value testing.** To formally assess uncertainty and determine whether an effect is credibly different from a specific value (e.g., zero), we can compute credible intervals. The `credible()` function reports whether the 95% credible interval includes the null value (mu = 0).
+**Credible intervals.** We can run the same test with the `credible()` function).
 
 ```{r, echo=TRUE}
 credible(hWDDM, "a_GAPsmall", mu = 0)
@@ -690,6 +689,7 @@ credible(hWDDM, "a_GAPsmall", mu = 0)
 
 
 **Bayes factor.** To quantify the evidence for or against the null hypothesis, we can compute a Bayes factor. This tests whether the data shifts the belief away from the prior (evidence against the null).
+
 ```{r, echo=TRUE}
 hypothesis(hWDDM, "a_GAPsmall", selection = "mu", map = FALSE)
 ```
@@ -705,8 +705,6 @@ load("fits/simWDDM.RData")
 In race models, each possible response is represented by a separate accumulator, and each accumulator has its own parameters. To help structure the model, the `design` function includes an argument called **Rlevels**, which automatically defines a latent response factor (**lR**) that indexes each accumulator according to its associated response (e.g., left or right).
 
 Race models require identifying which accumulator corresponds to the correct response for each trial. This is done using the `matchfun` argument, which takes a function that compares the stimulus and response labels.
-
-For simple designs, where the stimulus factor (S) and response factor (lR) have the same levels, the `matchfun` looks like this:
 
 ```{r, echo=TRUE}
 matchfun=function(d)d$S==d$lR

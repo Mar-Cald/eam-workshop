@@ -933,7 +933,7 @@ By default, rt_resolution = 0.02, which corresponds to a typical experimental se
 </section>
 <section id="load-fitted-model" class="level2">
 <h2 class="anchored" data-anchor-id="load-fitted-model">Load fitted model</h2>
-<p>This command loads the previously saved sampler results from a <strong>.RData</strong> file. This is useful when fitting was done in batch mode and you want to inspect the results.</p>
+<p>This command loads the previously saved sampler results from a <strong>.RData</strong> file.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb95"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">load</span>(<span class="st">"fits/WDDM.RData"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1207,7 +1207,7 @@ attr(,"greater")
 </div>
 </div>
 <p>This tells us the posterior probability that a_GAPsmall is greater than 0.</p>
-<p><strong>Credible intervals and null value testing.</strong> To formally assess uncertainty and determine whether an effect is credibly different from a specific value (e.g., zero), we can compute credible intervals. The <code>credible()</code> function reports whether the 95% credible interval includes the null value (mu = 0).</p>
+<p><strong>Credible intervals.</strong> We can run the same test with the <code>credible()</code> function).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb118"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">credible</span>(hWDDM, <span class="st">"a_GAPsmall"</span>, <span class="at">mu =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1239,7 +1239,6 @@ attr(,"less")
 <h2 class="anchored" data-anchor-id="racing-diffusion-model-rdm">Racing Diffusion Model (RDM)</h2>
 <p>In race models, each possible response is represented by a separate accumulator, and each accumulator has its own parameters. To help structure the model, the <code>design</code> function includes an argument called <strong>Rlevels</strong>, which automatically defines a latent response factor (<strong>lR</strong>) that indexes each accumulator according to its associated response (e.g., left or right).</p>
 <p>Race models require identifying which accumulator corresponds to the correct response for each trial. This is done using the <code>matchfun</code> argument, which takes a function that compares the stimulus and response labels.</p>
-<p>For simple designs, where the stimulus factor (S) and response factor (lR) have the same levels, the <code>matchfun</code> looks like this:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb122"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a>matchfun<span class="ot">=</span><span class="cf">function</span>(d)d<span class="sc">$</span>S<span class="sc">==</span>d<span class="sc">$</span>lR</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
