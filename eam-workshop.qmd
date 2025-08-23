@@ -674,17 +674,10 @@ Posterior samples provide a flexible foundation for testing directional hypothes
 **Posterior Probability.** A simple and intuitive use of the posterior is to compute the proportion of samples supporting a directional hypothesis. For example:
 ```{r, echo=TRUE}
 mean(post$a_GAPsmall > 0)
-credible(hWDDM, "a_GAPsmall", alternative = "greater")
+credible(hWDDM, "a_GAPsmall", alternative = "greater",  mu = 0)
 ```
 
 This tells us the posterior probability that a_GAPsmall is greater than 0.
-
-
-**Credible intervals.** We can run the same test with the `credible()` function).
-
-```{r, echo=TRUE}
-credible(hWDDM, "a_GAPsmall", mu = 0)
-```
 
 
 **Bayes factor.** To quantify the evidence for or against the null hypothesis, we can compute a Bayes factor. This tests whether the data shifts the belief away from the prior (evidence against the null).
