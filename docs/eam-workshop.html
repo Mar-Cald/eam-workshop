@@ -1045,7 +1045,7 @@ Z             0.060  0.146  0.230 1.000 5907</code></pre>
 <span id="cb105-2"><a href="#cb105-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_density</span>(simWDDM, ppWDDM, <span class="at">defective_factor =</span> <span class="st">"GAP"</span>)</span>
 <span id="cb105-3"><a href="#cb105-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_cdf</span>(simWDDM, ppWDDM, <span class="at">defective_factor =</span> <span class="st">"CI"</span>)</span>
 <span id="cb105-4"><a href="#cb105-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_density</span>(simWDDM, ppWDDM, <span class="at">defective_factor =</span> <span class="st">"CI"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell quarto-layout-panel" data-layout-ncol="2" data-layout-nrow="2">
+<div class="cell quarto-layout-panel" data-layout-nrow="2" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><img src="eam-workshop_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid" width="672"></p>
@@ -1146,7 +1146,7 @@ Z             0.060  0.146  0.230 1.000 5907</code></pre>
 <li><strong>Inference reliability</strong>: If a model fails to recover known parameters, its estimates from real data may also be misleading or biased.</li>
 <li><strong>Design evaluation</strong>: Recovery can reveal whether certain experimental conditions or parameter settings are insufficient to constrain the model.</li>
 </ul>
-<p>We begin by evaluating the overall recovery:</p>
+<p>We begin by evaluating the overall recovery. A strong recovery is indicated by points clustering around the diagonal:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb110"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a>true_pars <span class="ot">=</span> pmean_sim</span>
 <span id="cb110-2"><a href="#cb110-2" aria-hidden="true" tabindex="-1"></a><span class="fu">recovery</span>(hWDDM, <span class="at">true_pars =</span> true_pars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1158,7 +1158,7 @@ Z             0.060  0.146  0.230 1.000 5907</code></pre>
 </div>
 </div>
 </div>
-<p>To visualize the accuracy of parameter estimation, we plot the posterior means against the true values for each parameter. A strong recovery is indicated by points clustering around the diagonal:</p>
+<p>To visualize the accuracy of parameter estimation, we plot the posterior means against the true values for each parameter.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb111"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb111-1"><a href="#cb111-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_pars</span>(hWDDM, <span class="at">layout =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">5</span>), <span class="at">true_pars =</span> true_pars,</span>
 <span id="cb111-2"><a href="#cb111-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">use_prior_lim =</span> <span class="cn">FALSE</span>, <span class="at">plot_prior =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1464,7 +1464,7 @@ ESS  5420   4937.000      5618 1642.000 1438.000          2515 5649</code></pre>
 <span id="cb144-3"><a href="#cb144-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_density</span>(simWDDM,<span class="fu">list</span>(<span class="at">DDM =</span> ppWDDM,<span class="at">RDM =</span> ppRDM), <span class="at">defective_factor =</span> <span class="st">"GAP"</span>)</span>
 <span id="cb144-4"><a href="#cb144-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_cdf</span>(simWDDM,<span class="fu">list</span>(<span class="at">DDM =</span> ppWDDM,<span class="at">RDM =</span> ppRDM), <span class="at">defective_factor =</span> <span class="st">"CI"</span>)</span>
 <span id="cb144-5"><a href="#cb144-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_density</span>(simWDDM,<span class="fu">list</span>(<span class="at">DDM =</span> ppWDDM,<span class="at">RDM =</span> ppRDM), <span class="at">defective_factor =</span> <span class="st">"CI"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell quarto-layout-panel" data-layout-ncol="2" data-layout-nrow="2">
+<div class="cell quarto-layout-panel" data-layout-nrow="2" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><img src="eam-workshop_files/figure-html/unnamed-chunk-47-1.png" class="img-fluid" width="672"></p>

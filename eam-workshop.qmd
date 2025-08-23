@@ -632,15 +632,14 @@ Parameter recovery is another critical diagnostic step in validating models. It 
 -   **Design evaluation**: Recovery can reveal whether certain experimental conditions or parameter settings are insufficient to constrain the model.
 
 
-We begin by evaluating the overall recovery:
+We begin by evaluating the overall recovery. A strong recovery is indicated by points clustering around the diagonal:
 
 ```{r, echo=TRUE}
 true_pars = pmean_sim
 recovery(hWDDM, true_pars = true_pars)
 ```
 
-To visualize the accuracy of parameter estimation, we plot the posterior means against the true values for each parameter. A strong recovery is indicated by points clustering around the diagonal:
-
+To visualize the accuracy of parameter estimation, we plot the posterior means against the true values for each parameter. 
 ```{r, echo=TRUE}
 plot_pars(hWDDM, layout = c(2, 5), true_pars = true_pars,
           use_prior_lim = FALSE, plot_prior = FALSE)
