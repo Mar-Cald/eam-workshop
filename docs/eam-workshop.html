@@ -1045,7 +1045,7 @@ Z             0.060  0.146  0.230 1.000 5907</code></pre>
 <span id="cb105-2"><a href="#cb105-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_density</span>(simWDDM, ppWDDM, <span class="at">defective_factor =</span> <span class="st">"GAP"</span>)</span>
 <span id="cb105-3"><a href="#cb105-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_cdf</span>(simWDDM, ppWDDM, <span class="at">defective_factor =</span> <span class="st">"CI"</span>)</span>
 <span id="cb105-4"><a href="#cb105-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_density</span>(simWDDM, ppWDDM, <span class="at">defective_factor =</span> <span class="st">"CI"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell quarto-layout-panel" data-layout-nrow="2" data-layout-ncol="2">
+<div class="cell quarto-layout-panel" data-layout-ncol="2" data-layout-nrow="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><img src="eam-workshop_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid" width="672"></p>
@@ -1206,8 +1206,6 @@ attr(,"greater")
 [1] 0.996</code></pre>
 </div>
 </div>
-<p>This tells us the posterior probability that a_GAPsmall is greater than 0.</p>
-<p><strong>Credible intervals.</strong> We can run the same test with the <code>credible()</code> function).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb118"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">credible</span>(hWDDM, <span class="st">"a_GAPsmall"</span>, <span class="at">mu =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1464,7 +1462,7 @@ ESS  5420   4937.000      5618 1642.000 1438.000          2515 5649</code></pre>
 <span id="cb144-3"><a href="#cb144-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_density</span>(simWDDM,<span class="fu">list</span>(<span class="at">DDM =</span> ppWDDM,<span class="at">RDM =</span> ppRDM), <span class="at">defective_factor =</span> <span class="st">"GAP"</span>)</span>
 <span id="cb144-4"><a href="#cb144-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_cdf</span>(simWDDM,<span class="fu">list</span>(<span class="at">DDM =</span> ppWDDM,<span class="at">RDM =</span> ppRDM), <span class="at">defective_factor =</span> <span class="st">"CI"</span>)</span>
 <span id="cb144-5"><a href="#cb144-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_density</span>(simWDDM,<span class="fu">list</span>(<span class="at">DDM =</span> ppWDDM,<span class="at">RDM =</span> ppRDM), <span class="at">defective_factor =</span> <span class="st">"CI"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell quarto-layout-panel" data-layout-nrow="2" data-layout-ncol="2">
+<div class="cell quarto-layout-panel" data-layout-ncol="2" data-layout-nrow="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><img src="eam-workshop_files/figure-html/unnamed-chunk-47-1.png" class="img-fluid" width="672"></p>
