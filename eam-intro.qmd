@@ -62,7 +62,6 @@ Neural signals reflecting sensory or internal information relevant to a choice.
 
 -   Neurons fire in proportion to motion direction & strength.
 -   These firing rates = **momentary evidence**.
--   Noisy and varies trial-to-trial.
 
 
 # How does the brain accumulate evidence?
@@ -107,7 +106,6 @@ Neurons in the lateral intraparietal (LIP) area with response fields overlapping
 |----------------|---------------------------------------|
 | *Evidence*     | Sensory neuron firing rates           |
 | *Accumulation* | Integration in parietal/frontal areas |
-| *Noise*        | Trial-to-trial neural variability     |
 | *Bound*        | Decision threshold in firing/activity |
 
 
@@ -181,7 +179,7 @@ In **relative evidence models** (e.g., Wiener process, Diffusion Decision Model)
 
 ## Absolute Evidence Models {.small-text}
 
-In **racing accumulator models** (e.g., LBA, RDM):
+In **racing accumulator models** (e.g., LBA, LNR, RDM):
 
 ::::: columns
 ::: {.column width="40%"}
@@ -215,18 +213,21 @@ Although relative and absolute evidence models differ in how they conceptualize 
 
 The **Wiener process** (Brownian motion) is the foundation of many decision models [(Smith & Ratcliff, 2024)](https://doi.org/10.1007/978-3-031-45271-0_4){.small-small-text}. It models the accumulation of evidence as a noisy process:
 
-<br/> $$
+<br/> 
+$$
 x(t) = z + vt + sW(t)
-$$ <br/>
+$$ 
+<br/>
 
 ::::: columns
 ::: {.column width="40%"}
 -   $x(t)$: accumulated evidence at time $t$
 -   z: starting point
 -   v: drift rate (signal strength)
--   s: noise (standard deviation of the increments)
+-   s: diffusion coefficient 
 -   $W(t)$: standard Wiener process (Gaussian increments)
 :::
+
 
 ::: {.column width="60%"}
 ```{r}
@@ -309,15 +310,15 @@ $z$: starting point
 
 $v$: drift rate
 
-$t_0$: non-decision time
+$T_{er}$: non-decision time
 
 $s$: noise scale (usually fixed to 1)
 
-$\eta$: SD of drift rate across trials
+$s_{v}$: variability in drift rate 
 
 $s_{z}$: variability in start point
 
-$s_{t_0}$: variability in non-decision time
+$s_{T_{er}}$: variability in non-decision time
 :::
 
 ::: {.column width="60%"}
@@ -417,6 +418,87 @@ Avoid:
 > Clean data = better model fit and interpretability.
 
 
-# "All models are wrong, but some are useful" - G. Box {.align-center}
+## Response modality
 
-# Thank you!
+Avoid imprecise, slow, or delayed responses.
+
+<br/>
+
+Best:
+
+-   **Manual keypresses**
+
+-   **Saccades**
+
+
+## Response window
+
+::::: columns
+::: {.column width="50%"}
+Starts with stimulus onset.
+
+Ends with:
+
+-   A **response**
+-   Or a **deadline**
+
+::: 
+
+::: {.fragment .column width="50%"}
+:bulb: Calibrate response window:
+
+Long enough to allow natural responding
+
+Short enough to avoid strategy shifts
+:::
+:::::
+
+## Pratical Example (by Carolina Maria Oletto)
+
+<br/>
+
+![](img/procedure.png){width="300"}
+
+<br/>
+
+Task: targets (peripheral) lines **orientation judgement** left vs right.
+
+---
+
+![](img/24leftcongruent1.png){width="1200" height="675"}
+
+---
+
+![](img/24leftincongruent1.png){width="1200" height="675"}
+
+---
+
+![](img/51leftcongruent1.png){width="1200" height="675"}
+
+---
+
+![](img/51leftincongruent1.png){width="1200" height="675"}
+
+---
+
+
+## Design
+
+2 x 2 x 2:
+
+- 2 **gap sizes** (small vs large)  
+- 2 **conditions** (congruent vs incongruent)  
+- 2 peripheral orientations (left vs right)
+
+
+## Hypotheses
+
+<br/>
+
+1. Gap effect: **small gap** higher accuracy but slower RT (**higher threshold**)
+
+<br/>
+
+2. Congruency effect: **incongruent conditions** have higher accuracy and faster RT (**higher drift rate**)
+
+# [Let's do it!](https://mar-cald.github.io/eam-workshop/eam-workshop.html)
