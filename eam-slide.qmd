@@ -6,9 +6,9 @@ You can access the slides in both PDF and HTML formats:
 
 ## Intro to EAM
 
-[PDF version](docs/eam-intro.pdf){target="_blank"}
+[PDF version](docs/docs/eam-intro.pdf){target="_blank"}
 
-[HTML version](eam-intro.qmd){target="_blank"}
+[HTML version](docs/eam-intro.html){target="_blank"}
 
 ## EAM in Visual Perception Research
 
