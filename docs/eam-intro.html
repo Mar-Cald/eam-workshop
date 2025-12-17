@@ -384,7 +384,6 @@ Margherita Calderan
 <ul>
 <li>Neurons fire in proportion to motion direction &amp; strength.</li>
 <li>These firing rates = <strong>momentary evidence</strong>.</li>
-<li>Noisy and varies trial-to-trial.</li>
 </ul>
 </section>
 <section>
@@ -446,10 +445,6 @@ Margherita Calderan
 <td>Integration in parietal/frontal areas</td>
 </tr>
 <tr class="odd">
-<td><em>Noise</em></td>
-<td>Trial-to-trial neural variability</td>
-</tr>
-<tr class="even">
 <td><em>Bound</em></td>
 <td>Decision threshold in firing/activity</td>
 </tr>
@@ -524,7 +519,7 @@ Margherita Calderan
 </section>
 <section id="absolute-evidence-models" class="slide level2 small-text">
 <h2>Absolute Evidence Models</h2>
-<p>In <strong>racing accumulator models</strong> (e.g., LBA, RDM):</p>
+<p>In <strong>racing accumulator models</strong> (e.g., LBA, LNR, RDM):</p>
 <div class="columns">
 <div class="column" style="width:40%;">
 <ul>
@@ -575,7 +570,7 @@ x(t) = z + vt + sW(t)
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">x(t)</annotation></semantics></math>: accumulated evidence at time <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math></li>
 <li>z: starting point</li>
 <li>v: drift rate (signal strength)</li>
-<li>s: noise (standard deviation of the increments)</li>
+<li>s: diffusion coefficient</li>
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">W(t)</annotation></semantics></math>: standard Wiener process (Gaussian increments)</li>
 </ul>
 </div><div class="column" style="width:60%;">
@@ -624,11 +619,11 @@ x(t) = z + vt + sW(t)
 <p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>: decision boundary</p>
 <p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>: starting point</p>
 <p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>: drift rate</p>
-<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>t</mi><mn>0</mn></msub><annotation encoding="application/x-tex">t_0</annotation></semantics></math>: non-decision time</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mrow><mi>e</mi><mi>r</mi></mrow></msub><annotation encoding="application/x-tex">T_{er}</annotation></semantics></math>: non-decision time</p>
 <p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>: noise scale (usually fixed to 1)</p>
-<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>η</mi><annotation encoding="application/x-tex">\eta</annotation></semantics></math>: SD of drift rate across trials</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><mi>v</mi></msub><annotation encoding="application/x-tex">s_{v}</annotation></semantics></math>: variability in drift rate</p>
 <p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><mi>z</mi></msub><annotation encoding="application/x-tex">s_{z}</annotation></semantics></math>: variability in start point</p>
-<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><msub><mi>t</mi><mn>0</mn></msub></msub><annotation encoding="application/x-tex">s_{t_0}</annotation></semantics></math>: variability in non-decision time</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><msub><mi>T</mi><mrow><mi>e</mi><mi>r</mi></mrow></msub></msub><annotation encoding="application/x-tex">s_{T_{er}}</annotation></semantics></math>: variability in non-decision time</p>
 </div><div class="column" style="width:60%;">
 <p><img data-src="img/fullDDM.jpg"></p>
 </div></div>
@@ -745,14 +740,80 @@ x(t) = z + vt + sW(t)
 <blockquote>
 <p>Clean data = better model fit and interpretability.</p>
 </blockquote>
-</section></section>
-<section id="all-models-are-wrong-but-some-are-useful---g.-box" class="title-slide slide level1 align-center center">
-<h1>“All models are wrong, but some are useful” - G. Box</h1>
-
 </section>
+<section id="response-modality" class="slide level2">
+<h2>Response modality</h2>
+<p>Avoid imprecise, slow, or delayed responses.</p>
+<p><br></p>
+<p>Best:</p>
+<ul>
+<li><p><strong>Manual keypresses</strong></p></li>
+<li><p><strong>Saccades</strong></p></li>
+</ul>
+</section>
+<section id="response-window" class="slide level2">
+<h2>Response window</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Starts with stimulus onset.</p>
+<p>Ends with:</p>
+<ul>
+<li>A <strong>response</strong></li>
+<li>Or a <strong>deadline</strong></li>
+</ul>
+</div><div class="fragment column" style="width:50%;">
+<p><span class="emoji" data-emoji="bulb">💡</span> Calibrate response window:</p>
+<p>Long enough to allow natural responding</p>
+<p>Short enough to avoid strategy shifts</p>
+</div></div>
+</section>
+<section id="pratical-example-by-carolina-maria-oletto" class="slide level2">
+<h2>Pratical Example (by Carolina Maria Oletto)</h2>
+<p><br></p>
 
-<section id="thank-you" class="title-slide slide level1 center">
-<h1>Thank you!</h1>
+<img data-src="img/procedure.png" width="300" class="r-stretch"><p><br></p>
+<p>Task: targets (peripheral) lines <strong>orientation judgement</strong> left vs right.</p>
+</section>
+<section class="slide level2">
+
+<p><img data-src="img/24leftcongruent1.png" width="1200" height="675"></p>
+</section>
+<section class="slide level2">
+
+<p><img data-src="img/24leftincongruent1.png" width="1200" height="675"></p>
+</section>
+<section class="slide level2">
+
+<p><img data-src="img/51leftcongruent1.png" width="1200" height="675"></p>
+</section>
+<section class="slide level2">
+
+<p><img data-src="img/51leftincongruent1.png" width="1200" height="675"></p>
+</section>
+<section id="design" class="slide level2">
+<h2>Design</h2>
+<p>2 x 2 x 2:</p>
+<ul>
+<li>2 <strong>gap sizes</strong> (small vs large)<br>
+</li>
+<li>2 <strong>conditions</strong> (congruent vs incongruent)<br>
+</li>
+<li>2 peripheral orientations (left vs right)</li>
+</ul>
+</section>
+<section id="hypotheses" class="slide level2">
+<h2>Hypotheses</h2>
+<p><br></p>
+<ol type="1">
+<li>Gap effect: <strong>small gap</strong> higher accuracy but slower RT (<strong>higher threshold</strong>)</li>
+</ol>
+<p><br></p>
+<ol start="2" type="1">
+<li>Congruency effect: <strong>incongruent conditions</strong> have higher accuracy and faster RT (<strong>higher drift rate</strong>)</li>
+</ol>
+</section></section>
+<section id="lets-do-it" class="title-slide slide level1 center">
+<h1><a href="https://mar-cald.github.io/eam-workshop/eam-workshop.html">Let’s do it!</a></h1>
 
 <div class="quarto-auto-generated-content">
 <p><img src="img/logo.png" class="slide-logo"></p>
