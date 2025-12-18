@@ -31,7 +31,25 @@ library(ggplot2)
 library(dplyr)
 ```
 
-## Perception into action {.small-text}
+## Why should we use Evidence Accumulation Models?
+
+::::: columns
+::: {.column width="50%"}
+
+- accuracy
+
+- RT
+
+> Can we put them together?
+
+:::
+::: {.column width="50%"}
+
+![](img/meme.png){width="400" height="400"}
+:::
+:::::
+
+## Evidence Accumulation Models{.small-text}
 
 Evidence Accumulation Models assume that, upon stimulus presentation, the decision maker:
 
